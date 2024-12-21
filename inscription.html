@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="contact.css" rel="stylesheet">
+    <link href="inscription.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&amp;family=Fredoka:wght@300..700&amp;display=swap" rel="stylesheet">
-    <title>Page - Contact</title>
+    <title>Page - Inscription</title>
 </head>
 <body>
     <nav>
@@ -20,30 +20,30 @@
         <img src="./Images/Logo.png" title="Retour à la page d'accueil" alt="Logo">
     </header>
     <main>
-        <div class="contact">
+        <div class="inscription">
             <div class="bande_horizontale_1"></div>
             <div class="bande_horizontale_2"></div>
 
-            <h2>Contact</h2>
+            <h2>Bienvenue futur·e lombric-addict·e ou simple curieux·e !</h2>
 
-            <p>Besoin d’aide ? Une question ? Une suggestion ? Ou simplement l’envie de me laisser un petit mot ?</p>
+            <p>Vous êtes à quelques clics de votre inscription !</p>
 
             <form method="post" action="monProgramme.php">
                 <fieldset>
-                    <legend><img src="./Images/ver_contact.png" alt="ver qui écrit"/></legend>
+                    <legend><img src="./Images/trois_vers.png" alt="vers_sortant_du_compost"/></legend>
                     <div>
-                        <label for="name">Prénom NOM</label>
+                        <label for="name">Votre identifiant</label>
                         <input type="text" name="prenom_nom" placeholder="Entrez votre prénom et votre nom" minlength="2" maxlength="25" id="name" required>
                     </div>
                     <div>
-                        <label for="mail">Adresse mail</label>
-                        <input type="email" name="email" placeholder="Entrez votre adresse mail" minlength="2" maxlength="25" id="mail" required>
+                        <label for="password_1">Votre mot de passe</label>
+                        <input type="password" name="password" placeholder="(8 caractères minimum)" minlength="2" maxlength="25" id="password_1" required>
                     </div>
                     <div>
-                        <label for="message">Message</label>
-                        <textarea placeholder="Écrivez votre message ✏️" cols="45" rows="10" id="message" required></textarea>
+                        <label for="password_2">Confirmez votre mot de passe</label>
+                        <input type="password" name="password" placeholder="(8 caractères minimum)" minlength="2" maxlength="25" id="password_2" required>
                     </div>
-                    <button type="submit">Envoyer</button>
+                    <button type="submit">Inscription</button>
                 </fieldset>
             </form>
             <div class="bande_horizontale_2"></div>

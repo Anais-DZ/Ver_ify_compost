@@ -82,9 +82,9 @@ main {
 }
 
 
-/* code page contact */
+/* code page inscription */
 
-.contact {
+.inscription {
     background-color: white;
     background-size: cover;
     background-position: center;
@@ -108,18 +108,16 @@ main {
     width: 80%;
 }
 
-.contact h2 {
+.inscription h2 {
     font-family: 'Fredoka';
     font-size: 24px;
     font-weight: bolder;
     color: #564E4E;
     text-align: center;
-    border-bottom: solid 0.5px #564E4E;
-    margin: 0;
-    padding: 20px 0 10px 0;
+    margin: 20px 30px;
 }
 
-.contact p {
+.inscription p {
     font-family: 'Fredoka condensed';
     font-size: 20px;
     font-weight:normal;
@@ -129,7 +127,7 @@ main {
     padding: 15px 30px 0 30px;
 }
 
-.contact label {
+.inscription label {
     font-family: 'Fredoka';
     display: block;
     font-size: 15px;
@@ -137,13 +135,13 @@ main {
     margin: 25px 0 4px 0;
 }
 
-.contact img {
-    width: 40%;
+.inscription img {
+    width: 55%;
     height: auto;
-    margin-left: 30%;
+    margin-left: 20%;
 }
 
-.contact input {
+.inscription input {
     border: 1px solid #ccc;
     width: 100%;
     border-radius: 5px;
@@ -154,19 +152,7 @@ main {
     padding: 10px 10px;
 }
 
-.contact textarea {
-    resize: none;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 12px;
-    font-style: italic;
-    box-sizing: border-box;
-    font-family: 'Fredoka';
-    width: 100%;
-    padding: 10px 10px;
-}
-
-.contact button {
+.inscription button {
     background-color: #564E4E;
     color: white;
     border: none;
@@ -176,16 +162,16 @@ main {
     font-family: 'Cabin Sketch';
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.523);
     text-align: center;
-    margin: 30px 40px;
+    margin: 40px 40px;
     padding: 5px 20px;
 }
 
-.contact button:hover {
+.inscription button:hover {
     background-color: #221b1b;
 }
 
 
-.contact form {
+.inscription form {
     width: 90%;
     height: auto;
     background: url(Images/feuilles_header.png);
@@ -198,14 +184,15 @@ main {
     margin-bottom: 60px;
 }
 
-.contact fieldset {
+.inscription fieldset {
     background-color: #fff0d4;
-    width: 85%;
+    width: 80%;
     height: auto;
-    position: relative;
-    bottom: 35px;
     display: flex;
     flex-direction: column;
     border: none;
+    margin: 25px;
+    position: relative;
+    bottom: 40px;
     padding: 0 20px;
 }
