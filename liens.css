@@ -19,7 +19,7 @@ header, footer {
 
 header {
     height: 148px;
-    width: auto;
+    width: 100%;
 }
 
 footer {
@@ -76,7 +76,7 @@ main {
     background-image: url("./Images/carton_body.png");
     background-size: cover;
     background-position: center;
-    margin: 80px 0 50px 0;
+    margin: 60px 0 50px 0;
 }
 
 .links {
