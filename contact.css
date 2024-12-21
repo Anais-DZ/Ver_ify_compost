@@ -1,0 +1,214 @@
+/* code commun à toutes les pages : header + footer */
+
+@import url("https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Fredoka:wght@300..700&display=swap");
+
+
+html, body {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  margin: 0;
+}
+
+header, footer {
+  background-image: url("./Images/feuilles_header.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+    height: 148px;
+    width: auto;
+}
+
+footer {
+    height: 114px;
+    width: auto;
+    justify-content: flex-end;
+}
+
+header h1, footer a, footer p {
+    color: white;
+    text-shadow:
+      5px 5px 10px #022a08,
+      -5px 5px 10px #022a08,
+      -5px -5px 10px #022a08,
+      5px -5px 10px #022a08;
+    font-family: 'Fredoka';
+}
+
+header h1 {
+  font-size: 36px;
+  letter-spacing: 2px;
+  margin: 25px 0 10px 0;
+}
+
+header img {
+  width: 110px;
+  height: auto;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 14px;
+  background-color: transparent;
+}
+
+nav img {
+  width: 50px;
+  height: auto;
+}
+
+footer a {
+    font-size: 30px;
+    text-decoration: none;
+}
+
+footer p {
+    font-size: 14px;
+
+}
+
+main {
+    background-image: url("./Images/carton_body.png");
+    background-size: cover;
+    background-position: center;
+    margin: 80px 0 50px 0;
+}
+
+
+/* code page contact */
+
+.contact {
+    background-color: white;
+    background-size: cover;
+    background-position: center;
+    margin: 50px 0;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bande_horizontale_1 {
+    height: 4px;
+    margin: 5px 0;
+    background-color: #564E4E;
+    width: 90%;
+}
+
+.bande_horizontale_2 {
+    height: 2px;
+    background-color: #564E4E;
+    width: 80%;
+}
+
+.contact h2 {
+    font-family: 'Fredoka';
+    font-size: 24px;
+    font-weight: bolder;
+    color: #564E4E;
+    text-align: center;
+    border-bottom: solid 0.5px #564E4E;
+    margin: 0;
+    padding: 20px 0 10px 0;
+}
+
+.contact p {
+    font-family: 'Fredoka condensed';
+    font-size: 20px;
+    font-weight:normal;
+    color: #564E4E;
+    text-align: center;
+    margin: 0;
+    padding: 15px 30px 0 30px;
+}
+
+.contact label {
+    font-family: 'Fredoka';
+    display: block;
+    font-size: 15px;
+    color: #564E4E;
+    margin: 25px 0 4px 0;
+}
+
+.contact label:nth-child(1) {
+    margin-top: 5px;
+}
+
+.contact img {
+    width: 40%;
+    height: auto;
+    margin-left: 30%;
+}
+
+.contact input {
+    border: 1px solid #ccc;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 12px;
+    font-style: italic;
+    box-sizing: border-box;
+    font-family: 'Fredoka';
+    padding: 10px 10px;
+}
+
+.contact textarea {
+    resize: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 12px;
+    font-style: italic;
+    box-sizing: border-box;
+    font-family: 'Fredoka';
+    width: 100%;
+    padding: 10px 10px;
+}
+
+.contact button {
+    background-color: #564E4E;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor:pointer;
+    font-size: 28px;
+    font-family: 'Cabin Sketch';
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.523);
+    text-align: center;
+    margin: 30px 40px;
+    padding: 5px 20px;
+}
+
+.contact button:hover {
+    background-color: #221b1b;
+}
+
+
+.contact form {
+    width: 90%;
+    height: auto;
+    background: url(Images/feuilles_header.png);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.contact fieldset {
+    background-color: #fff0d4;
+    width: 85%;
+    height: auto;
+    position: relative;
+    bottom: 35px;
+    display: flex;
+    flex-direction: column;
+    border: none;
+}
