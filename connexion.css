@@ -55,7 +55,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 7px 14px;
+  padding: 5px 14px;
   background-color: transparent;
 }
 
@@ -142,11 +142,7 @@ main {
 
 #checkbox {
     width: auto;
-    margin-right: 5px;
-}
-
-input[type="checkbox"]:checked {
-    background-color: #8CC37C; /* Couleur une fois coché */
+    margin-right: 5px; /*changer la couleur avec javascript*/
 }
 
 .connexion img {
