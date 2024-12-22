@@ -62,6 +62,31 @@ nav img {
   height: auto;
 }
 
+/*.dropdown_menu {
+    display: flex;
+    flex-direction: column;
+
+    a {
+        border: solid 5px #8CC37C;
+        border-radius: 8px;
+        padding: 10px 30px;
+        width: 80%;
+        font-family: "fredoka";
+        font-size: 20px;
+        text-align: center;
+        color: #564E4E;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    img {
+        width: 25px;
+        margin-right: 5px;
+    }
+}*/
+
 footer a {
     font-size: 30px;
     text-decoration: none;
@@ -101,7 +126,7 @@ main {
         text-align: center;
         color: #564E4E;
         width: 60%;
-        margin: 0;
+        margin: 5px 0;
     }
 }
 
