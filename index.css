@@ -80,6 +80,7 @@ main {
 
 .carrousel{
     margin: 50px 0px;
+    width: 90%;
 
     h2 {
         font-family: "cabin sketch";
@@ -97,6 +98,7 @@ main {
         font-size: 16px;
         text-align: center;
         margin: 0 40px;
+        color: #564E4E;
     }
 }
 
@@ -115,7 +117,7 @@ main {
         font-size: 28px;
         padding: 15px 0 25px 0;
         text-align: center;
-        margin: 0;
+        margin: 0 40px;
     }
 
     .separation {
@@ -139,7 +141,7 @@ main {
         border: solid 0.5px #564e4e76;
         border-radius: 8px;
         margin: 2%;
-        padding: 5%;
+        padding: 3%;
     }
 
 }
@@ -152,8 +154,8 @@ main {
     border-radius: 12px;
 
     img {
-        width: 20%;
-        height: auto;
+        width: 60px;
+        height: 60px;
         cursor: pointer;
         margin: 10px 5px;
     }
@@ -170,4 +172,50 @@ main {
         box-sizing: border-box;
         text-align: center;
     }
+}
+
+.down_menu {
+    display: flex;
+    flex-direction: column;
+    margin: 60px 0 30px 0;
+    width: 90%;
+
+    img {
+        width: 40px;
+        height: auto;
+        margin: 5px 0 10px 0;
+    }
+
+    a {
+        border: solid 8px #8CC37C;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        font-family: "fredoka";
+        font-size: 20px;
+        text-align: center;
+        text-decoration:none;
+        color: #564E4E;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding-right: 20px;
+        background-color: white;
+        box-shadow: 0px -2px 2px 0px #564e4e5d;
+        position: relative;
+    }
+
+    #liens {
+        z-index: 0;
+    }
+    
+    #guide {
+        z-index: 1; 
+        top: -15px; 
+    }
+    
+    #calendrier {
+        z-index: 2;
+        top: -30px;
+    }
+    
 }
