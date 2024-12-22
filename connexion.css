@@ -134,14 +134,19 @@ main {
 
 .connexion label {
     font-family: 'Fredoka';
-    display: block;
+    display: inline-block;
     font-size: 15px;
     color: #564E4E;
     margin: 25px 0 4px 0;
 }
 
-#rester_connecte{
-    text-align: center;
+#checkbox {
+    width: auto;
+    margin-right: 5px;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #8CC37C; /* Couleur une fois coché */
 }
 
 .connexion img {
