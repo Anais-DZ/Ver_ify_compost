@@ -65,6 +65,7 @@ nav img {
 /*.dropdown_menu {
     display: flex;
     flex-direction: column;
+    list-style-type: none;
 
     a {
         border: solid 5px #8CC37C;
@@ -103,11 +104,13 @@ main {
     align-items: center;
 }
 
-.carrousel{
+.carousel_container {
+    width: 100vw; /* longueur égale à 100% de la longueur de la vue*/
     margin: 50px 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden; /* Cache les éléments qui dépassent du container */
     
     h2 {
         font-family: "cabin sketch";
@@ -116,17 +119,60 @@ main {
         text-align: center;
         margin: 10px 0;
     }
+}
+
+.carousel {
+    position: relative;
+}
+
+.carousel_inner {
+    display: flex;
+    overflow: hidden;
+    /* Cache les éléments qui dépassent */
+    height: 100%;
+    /* Hauteur égale à 100% de la hauteur de la vue */
+    flex-wrap: nowrap;
+    /* Empêche les éléments de se placer sur plusieurs lignes */
+}
+
+.slide {
+    flex: 0 0 100%;
+    /* Largeur de chaque diapositive est de 100% */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    /* Hauteur de chaque diapositive est de 100% */
+    transition: .5s ease-in-out;
+    /* Transition entre les slides */
 
     p {
         border: solid 12px #8CC37C;
         border-radius: 8px;
-        padding: 20px 10px;
+        padding: 15px 10px;
         font-family: "fredoka";
         font-size: 16px;
         text-align: center;
         color: #564E4E;
-        width: 60%;
-        margin: 5px 0;
+        width: 40vw;
+    }
+}
+
+.carousel_control {
+    position: absolute;
+    /* Les boutons sont absolument positionnés */
+    z-index: 2;
+    top: 40%;
+    left: 12%;
+    /* La distance à gauche est de 10% */
+    right: 12%;
+    /* La distance à droite est de 10% */
+    display: flex;
+    justify-content: space-around;
+
+    img {
+        cursor: pointer;
+        width: 40px;
     }
 }
 
@@ -138,9 +184,9 @@ main {
     border-radius: 8px;
 
     h2 {
-        font-family: "fredoka one";
+        font-family: "fredoka"; /* "fredoka one" n'apparaît pas sur tous les moteurs de recherche*/
         color: #564E4E;
-        -webkit-text-stroke: 0.01px white;
+        /*-webkit-text-stroke: 0.2px white; /* n'apparaît pas sur tous les moteurs de recherche */
         letter-spacing: 2px;
         font-size: 28px;
         padding: 15px 0 25px 0;
