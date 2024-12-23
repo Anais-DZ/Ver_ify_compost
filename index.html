@@ -12,7 +12,7 @@
 <body>
     <nav>
         <img src="./Images/menu.png" title="Menu" alt="Logo menu">
-        <!--<ul class="dropdown_menu">
+        <ul class="dropdown_menu">
             <li><a href="#" alt="accueil">Accueil</a></li>
             <li><a href="#" alt="calendrier_memo">Calendrier & Mémo</a></li>
             <li><a href="#" alt="guide_entretien">Guide d'entretien</a></li>
@@ -20,10 +20,11 @@
             <li><a href="#" alt="contact"> Contact</a></li>
             <li><a href="#" alt="profil">Profil</a></li>
             <li><a href="#" alt="deconnexion"><img src="./Icones/deconnexion.png" alt="deconnexion">Déconnexion</a></li>
-        </ul>-->
+        </ul>
         <img src="./Images/calendrier.png" title="Calendrier" alt="Logo calendrier">
         <img src="./Images/user.png" title="Connexion" alt="Logo utilisateur">
     </nav>
+    <div id="overlay"></div>
     <header>
         <h1>Ver'ify Compost</h1>
         <a href="index.html" alt="Retour à la page d'accueil" ><img src="./Images/Logo.png" alt="Logo"></a>
@@ -53,8 +54,8 @@
                 <p>Saisir le nom du biodéchet dans la barre de recherche, puis cliquer sur la loupe pour découvrir le composteur adapté instantanément.</p>
                 <div class="separation"></div>
                 <div class="search_bar">
-                    <input type="text" placeholder="Le nom du biodéchet, c'est ici !" />
-                    <img src="./Images/loupe_2.png" alt="icone_loupe_pour_recherche"/>
+                    <input type="text" maxlength="25" placeholder="Le nom du biodéchet, c'est ici !" />
+                    <img class="button_loupe" src="./Images/loupe_2.png" alt="icone_loupe_pour_recherche"/>
                 </div>
             </div>
         </div>

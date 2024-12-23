@@ -55,12 +55,15 @@ nav {
   align-items: center;
   padding: 5px 14px;
   background-color: transparent;
+  position: relative;
 }
 
 nav img {
   width: 50px;
   height: auto;
 }
+
+/*dropdown menu*/
 
 /*.dropdown_menu {
     display: flex;
@@ -88,6 +91,50 @@ nav img {
     }
 }*/
 
+.dropdown_menu {
+    display: none; /* Masquer le menu par défaut */
+    flex-direction: column;
+    list-style-type: none;
+    top: 100%; /* Positionner le menu en dessous de l'image menu */
+    left: -10; /* Aligner le menu avec le bord gauche du conteneur parent */
+    z-index: 10;
+    position: absolute;
+}
+
+.dropdown_menu a {
+    border: solid 5px #8CC37C;
+    border-radius: 8px;
+    padding: 10px 30px;
+    width: 80%;
+    font-family: "fredoka";
+    font-size: 20px;
+    text-align: center;
+    color: #564E4E;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white; /* Fond blanc pour rendre le menu visible */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* ombre*/
+}
+
+.dropdown_menu img {
+    width: 25px;
+    margin-right: 5px;
+}
+
+/* Overlay pour assombrir l'arrière-plan */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Couleur semi-transparente */
+    display: none; /* Masqué par défaut */
+    z-index: 9; /* Sous le menu (z-index du menu doit être supérieur) */
+}
+
 footer a {
     font-size: 30px;
     text-decoration: none;
@@ -106,7 +153,7 @@ main {
 
 
 .carousel_container {
-    margin: 50px 0px;
+    margin: 50px 0 40px 0;
     position: relative;
     width: 100%;
     overflow: hidden;
