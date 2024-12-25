@@ -36,28 +36,28 @@ document.addEventListener("DOMContentLoaded", function () { /* permet d'afficher
 
 
 
+//menu en overlay
+// document.addEventListener("DOMContentLoaded", function() {
+//     const menuImage = document.querySelector('nav > img[title="Menu"]');
+//     const dropdownMenu = document.querySelector('.dropdown_menu');
+//     const overlay = document.getElementById('overlay');
 
-document.addEventListener("DOMContentLoaded", function() {
-    const menuImage = document.querySelector('nav > img[title="Menu"]');
-    const dropdownMenu = document.querySelector('.dropdown_menu');
-    const overlay = document.getElementById('overlay');
+//     // Fonction pour afficher/masquer le menu et l'overlay
+//     menuImage.addEventListener('click', function() {
+//         const menu_visible = dropdownMenu.style.display === 'flex';
 
-    // Fonction pour afficher/masquer le menu et l'overlay
-    menuImage.addEventListener('click', function() {
-        const menu_visible = dropdownMenu.style.display === 'flex';
+//         if (menu_visible) {
+//             dropdownMenu.style.display = 'none';
+//             overlay.style.display = 'none'; // Masquer l'overlay
+//         } else {
+//             dropdownMenu.style.display = 'flex';
+//             overlay.style.display = 'block'; // Afficher l'overlay
+//         }
+//     });
 
-        if (menu_visible) {
-            dropdownMenu.style.display = 'none';
-            overlay.style.display = 'none'; // Masquer l'overlay
-        } else {
-            dropdownMenu.style.display = 'flex';
-            overlay.style.display = 'block'; // Afficher l'overlay
-        }
-    });
-
-    // Fermer le menu et l'overlay quand on clique sur l'overlay
-    overlay.addEventListener('click', function() {
-        dropdownMenu.style.display = 'none';
-        overlay.style.display = 'none';
-    });
-});
+//     // Fermer le menu et l'overlay quand on clique sur l'overlay
+//     overlay.addEventListener('click', function() {
+//         dropdownMenu.style.display = 'none';
+//         overlay.style.display = 'none';
+//     });
+// });
