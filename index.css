@@ -128,7 +128,7 @@ nav img {
     transform: translateX(-100%);
     transition: transform 0.4s cubic-bezier(0.73, 0.11, 0.67, 0.84);
     z-index: 9;
-    margin-top: 475px;
+    margin-top: 465px;
 }
 
 .left_menu.active {
@@ -241,7 +241,7 @@ nav img {
 }
 
 .connexion.active {
-    transform: translate(-135px);
+    transform: translate(-145px);
 }
 
 footer a {
