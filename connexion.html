@@ -24,28 +24,21 @@
             <div class="bande_horizontale_1"></div>
             <div class="bande_horizontale_2"></div>
 
-            <p>Nouvel·le arrivant·e ?
-                Par <a hred="incription.html" alt="lien_page_inscription">ici</a> !</p>
-
-            <h2>Sinon la connexion, c’est bien là !</h2>
+            <h2>Mot de passe oublié ?</h2>
+            <p>Pas de panique ! Saisissez et valider votre nouveau mot de passe ci-dessous.</p>
 
             <form method="post" action="monProgramme.php">
                 <fieldset>
                     <legend><img src="./Images/trois_vers.png" alt="vers_sortant_du_compost"/></legend>
                     <div>
-                        <label for="name">Votre identifiant</label>
-                        <input type="text" name="prenom_nom" placeholder="Entrez votre prénom et votre nom" minlength="2" maxlength="25" id="name" required>
-                    </div>
-                    <div>
-                        <label for="password_1">Votre mot de passe</label>
+                        <label for="password_1">Votre nouveau mot de passe</label>
                         <input type="password" name="password" placeholder="(8 caractères minimum)" minlength="2" maxlength="25" id="password_1" required>
                     </div>
-                    <div class="checkbox_container">
-                        <input type="checkbox" id="checkbox" checked />
-                        <label for="checkbox">Rester connecté·e</label>
+                    <div>
+                        <label for="password_1">Confirmer votre nouveau mot de passe</label>
+                        <input type="password" name="password" placeholder="(8 caractères minimum)" minlength="2" maxlength="25" id="password_1" required>
                     </div>
-                    <button type="submit">Connexion</button>
-                    <a id="forgetten_password" href="#" alt="reinitialisation_mot_de_passe">Mot de passe oublié ?</a>
+                    <button type="submit">Valider</button>
                 </fieldset>
             </form>
             <div class="bande_horizontale_2"></div>
