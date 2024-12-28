@@ -40,9 +40,18 @@ document.addEventListener("DOMContentLoaded", function () { /* permet d'afficher
 const hamburgerButton = document.querySelector(".menu_toggler")
 const leftMenu = document.querySelector(".left_menu")
 
+const userButton = document.querySelector("#user_button")
+const connexion = document.querySelector(".connexion")
+
 hamburgerButton.addEventListener("click", toggleMenu)
+userButton.addEventListener("click", toggleUser)
 
 function toggleMenu() {
     hamburgerButton.classList.toggle("active")
     leftMenu.classList.toggle("active")
+}
+
+function toggleUser() {
+    connexion.classList.toggle("active")
+    userButton.setAttribute("src", "close.png")
 }

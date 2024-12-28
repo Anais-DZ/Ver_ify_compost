@@ -63,8 +63,13 @@ nav img {
     height: 50px;
 }
 
-#button_user {
+#user_button {
     margin-right: 10px;
+}
+
+#calendrier {
+    position: relative;
+    right: -10%;
 }
 
 /*menu rideau*/
@@ -121,7 +126,7 @@ nav img {
     flex-direction: column;
     background-image: url(./Images/carton_body.png);
     transform: translateX(-100%);
-    transition: transform 0.3s cubic-bezier(0.73, 0.11, 0.67, 0.84);
+    transition: transform 0.4s cubic-bezier(0.73, 0.11, 0.67, 0.84);
     z-index: 9;
     margin-top: 475px;
 }
@@ -137,8 +142,107 @@ nav img {
     text-decoration: none;
     display: block;
     margin: 10px 0;
+    font-weight: bold;
 }
 
+#deconnexion {
+    display: flex;
+    align-items: center;
+    margin: 20px 30px 0 0;
+
+    img {
+        width: 30px;
+        height: auto;
+        margin-right: 5px;
+    }
+}
+
+
+
+/* espace connexion*/
+
+.connexion a {
+    font-family: 'Fredoka';
+    color: #689e58;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.connexion p {
+    font-family: 'Fredoka';
+    color: #564E4E;
+    text-align: center;
+    margin: 0;
+}
+
+.connexion label {
+    font-family: 'Fredoka';
+    display: inline-block;
+    font-size: 15px;
+    color: #564E4E;
+    margin: 25px 0 4px 0;
+}
+
+#checkbox {
+    width: auto;
+    margin-right: 5px; /*changer la couleur avec javascript*/
+}
+
+.connexion input {
+    border: 1px solid #ccc;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 12px;
+    font-style: italic;
+    box-sizing: border-box;
+    font-family: 'Fredoka';
+    padding: 10px 10px;
+}
+
+.connexion button {
+    background-color: #564E4E;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor:pointer;
+    font-size: 24px;
+    font-family: 'Cabin Sketch';
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.523);
+    text-align: center;
+    margin: 20px 30px 30px;
+    padding: 5px 10px;
+}
+
+.connexion button:hover {
+    background-color: #221b1b;
+}
+
+#forgetten_password {
+    font-family: 'Fredoka condensed';
+    font-size: 15px;
+    font-weight:normal;
+    color: #564E4E;
+    text-align: center;
+    margin: 20px 0 10px 0;
+}
+
+.connexion {
+    background-image: url(./Images/carton_body.png);
+    position: fixed;
+    width: 65vw; /*65% de l'écran*/
+    min-height: 40vh;
+    display: flex;
+    flex-direction: column;
+    border: none;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.73, 0.11, 0.67, 0.84);
+    z-index: 9;
+    margin-top: 32px;
+}
+
+.connexion.active {
+    transform: translate(-135px);
+}
 
 footer a {
     font-size: 30px;
