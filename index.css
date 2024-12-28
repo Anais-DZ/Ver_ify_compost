@@ -10,7 +10,7 @@ html, body {
 
 header, footer {
   background-image: url("./Images/feuilles_header.png");
-  /*background-image: url("../Images/header.png");*/
+  /* background-image: url("./Images/header.png"); */
   background-size: cover;
   background-position: center;
   display: flex;
@@ -54,7 +54,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 7px 0px;
+    padding: 7px 0;
     background-color: transparent;
 }
 
@@ -67,9 +67,9 @@ nav img {
     margin-right: 10px;
 }
 
-#calendrier {
+#calendar {
     position: relative;
-    right: -10%;
+    right: -9%;
 }
 
 /*menu rideau*/

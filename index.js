@@ -53,5 +53,12 @@ function toggleMenu() {
 
 function toggleUser() {
     connexion.classList.toggle("active")
-    userButton.setAttribute("src", "close.png")
+
+    if (connexion.classList.contains("active")) {
+    // Si la classe "active" est présente, la fonction exécute cette logique
+        userButton.setAttribute("src", "./Icones/close.png");
+    } else {
+    // Sinon, le code exécute une logique différente
+        userButton.setAttribute("src", "./Icones/user.png");
+    }
 }
