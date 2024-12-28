@@ -6,4 +6,9 @@ Actuellement, un prototype dynamique est disponible sur mon [Figma](https://www.
 
 L'objectif principal du site est de faciliter le tri des déchets compostables pour les utilisateurs de composteurs et de lombricomposteurs, en mettant en avant des informations claires, rapides et pratiques. Par ailleurs, l’aspect écologique est au cœur de ce projet : "Ver'ify Compost" vise à sensibiliser les utilisateurs à une gestion durable des biodéchets tout en promouvant des pratiques respectueuses de l’environnement.
 
-Ce projet est une opportunité idéale pour associer mes valeurs écologiques à mon apprentissage technique, tout en répondant à un besoin concret.
+Ce projet est une opportunité idéale pour concilier mes préoccupations environnementales avec mon apprentissage technique, tout en répondant à un besoin concret.
+
+Le site est maintenant accessible en ligne (en mobile first pour le moment), [Ver'ify Compost](https://ver-ify-compost.vercel.app/) , mais il est toujours en cours de développement. Il me sert principalement à avoir une vision concrète de l'avancement et des fonctionnalités à venir. Certaines sections peuvent être incomplètes ou en travaux. Merci pour votre compréhension et n'hésitez pas à revenir régulièrement pour suivre les avancés ! :blush:
+
+<br/>Update ! 28 décembre 2024 --> ajout de menus rideaux avec JavaScript
+
