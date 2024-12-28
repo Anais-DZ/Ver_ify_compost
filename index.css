@@ -9,7 +9,7 @@ html, body {
 }
 
 header, footer {
-  background-image: url("../Images/feuilles_header.png");
+  background-image: url("./Images/feuilles_header.png");
   /*background-image: url("../Images/header.png");*/
   background-size: cover;
   background-position: center;
@@ -119,7 +119,7 @@ nav img {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-image: url(../Images/carton_body.png);
+    background-image: url(./Images/carton_body.png);
     transform: translateX(-100%);
     transition: transform 0.3s cubic-bezier(0.73, 0.11, 0.67, 0.84);
     z-index: 9;
@@ -206,7 +206,7 @@ main {
 .carousel_control.next { right: 5px; }
 
 .search {
-    background: url(../Images/carton_body.png);
+    background: url(./Images/carton_body.png);
     width: 90%;
     height: auto;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.523);
