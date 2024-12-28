@@ -41,7 +41,7 @@ const hamburgerButton = document.querySelector(".menu_toggler")
 const leftMenu = document.querySelector(".left_menu")
 
 const userButton = document.querySelector("#user_button")
-const connexion = document.querySelector(".connexion")
+const connexion = document.querySelector(".right_menu")
 
 hamburgerButton.addEventListener("click", toggleMenu)
 userButton.addEventListener("click", toggleUser)

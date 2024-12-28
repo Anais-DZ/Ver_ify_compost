@@ -1,3 +1,5 @@
+/* code commun à toutes les pages : header + footer */
+
 @import url("https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Fredoka:wght@300..700&display=swap");
 
 
@@ -10,6 +12,7 @@ html, body {
 
 header, footer {
   background-image: url("./Images/feuilles_header.png");
+  /* background-image: url("./Images/header.png"); */
   background-size: cover;
   background-position: center;
   display: flex;
@@ -19,7 +22,7 @@ header, footer {
 
 header {
     height: 148px;
-    width: 100%;
+    width: auto;
 }
 
 footer {
@@ -49,17 +52,210 @@ header img {
   height: auto;
 }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 7px 14px;
-  background-color: transparent;
+#entete {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 0;
+    background-color: transparent;
 }
 
-nav img {
-  width: 50px;
-  height: auto;
+#entete img {
+    width: 50px;
+    height: 50px;
+}
+
+#user_button {
+    margin-right: 10px;
+}
+
+#calendar {
+    position: relative;
+    right: -9%;
+}
+
+/*menu rideau*/
+.menu_toggler {  /*le bouton du menu */
+    height: 45px;
+    width: 50px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: transparent;
+    margin-left: 10px;
+}
+
+.line {
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 3px;
+    border-radius: 5px;
+    background: #5bc501;
+    transition: transform 0.3s ease-out;
+    opacity: 0.1s ease-out;
+}
+
+.l1 {
+    transform: translateY(-10px);
+}
+
+.l3 {
+    transform: translateY(10px);
+}
+
+.menu_toggler.active .l1 {
+    transform: translateY(0) rotate(135deg);
+}
+
+.menu_toggler.active .l2 {
+    opacity: 0;
+}
+
+.menu_toggler.active .l3 {
+    transform: translateY(0) rotate(-135deg);
+}
+
+.left_menu {
+    position: fixed;
+    width: 70vw; /*70% de l'écran*/
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url(./Images/carton_body.png);
+    transform: translateX(-100%);
+    transition: transform 0.8s cubic-bezier(0.18,0.89,0.32,1.27);
+    z-index: 9;
+    margin-top: 459px;
+}
+
+.left_menu.active {
+    transform: translate(0);
+}
+
+.left_menu a {
+    font-family: "fredoka";
+    font-size: 22px;
+    color: #564E4E;
+    text-decoration: none;
+    display: block;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+#deconnexion {
+    display: flex;
+    align-items: center;
+    margin: 20px 30px 0 0;
+
+    img {
+        width: 30px;
+        height: auto;
+        margin-right: 5px;
+    }
+}
+
+
+
+/* espace connexion*/
+
+.right_menu a {
+    font-family: 'Fredoka';
+    color: #689e58;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.right_menu p {
+    font-family: 'Fredoka';
+    color: #564E4E;
+    text-align: center;
+    margin: 0;
+    font-size: 18px;
+}
+
+.right_menu label {
+    font-family: 'Fredoka';
+    display: inline-block;
+    font-size: 18px;
+    color: #564E4E;
+    margin: 25px 0 4px 0;
+}
+
+#checkbox {
+    width: auto;
+    margin-right: 15px; /*changer la couleur avec javascript*/
+}
+
+.checkbox_container {
+    display: flex;
+    align-items: center;
+
+    label {
+        margin: 0;
+    }
+}
+
+.right_menu input {
+    border: 1px solid #ccc;
+    width: 100%;
+    height: 45px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-style: italic;
+    box-sizing: border-box;
+    font-family: 'Fredoka';
+    padding: 10px 10px;
+}
+
+.right_menu button {
+    background-color: #564E4E;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor:pointer;
+    font-size: 24px;
+    font-family: 'Cabin Sketch';
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.523);
+    text-align: center;
+    margin: 20px 30px 30px;
+    padding: 10px 10px;
+}
+
+.right_menu button:hover {
+    background-color: #221b1b;
+}
+
+#forgetten_password {
+    font-family: 'Fredoka condensed';
+    font-size: 15px;
+    font-weight:normal;
+    color: #564E4E;
+    text-align: center;
+    margin: 20px 0 10px 0;
+}
+
+.right_menu {
+    background-image: url(./Images/carton_body.png);
+    position: fixed;
+    width: 80vw;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    border: none;
+    transform: translateX(100%);
+    transition: transform 0.8s cubic-bezier(0.18,0.89,0.32,1.27);
+    z-index: 9;
+    margin-top: 32px;
+}
+
+.right_menu.active {
+    transform: translate(-205px);
 }
 
 footer a {
@@ -133,21 +329,23 @@ main {
 }
 
 .links img {
-    width: 18%;
+    width: 70px;
     height: auto;
-    position: relative;
-    right: -60%;
+    position: absolute;
+    right: 70px;
+    bottom: -460px;
 }
 
 #suggestion {
+    position: relative;
     background: url(Images/carton_body.png);
     text-align: center;
-    margin: 5px 80px 40px;
+    margin: 90px 80px 40px;
     height: 50%;
     display: flex;
     align-items: center;
     border-radius: 8px;
-    box-shadow: 0 0 5px 4px #564e4e76;
+    box-shadow: 0 0 5px 2px #564e4e76;
 }
 
 #suggestion a {
