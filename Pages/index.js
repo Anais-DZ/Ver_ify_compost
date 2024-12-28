@@ -36,28 +36,13 @@ document.addEventListener("DOMContentLoaded", function () { /* permet d'afficher
 
 
 
-//menu en overlay
-// document.addEventListener("DOMContentLoaded", function() {
-//     const menuImage = document.querySelector('nav > img[title="Menu"]');
-//     const dropdownMenu = document.querySelector('.dropdown_menu');
-//     const overlay = document.getElementById('overlay');
+//menu en rideau
+const hamburgerButton = document.querySelector(".menu_toggler")
+const leftMenu = document.querySelector(".left_menu")
 
-//     // Fonction pour afficher/masquer le menu et l'overlay
-//     menuImage.addEventListener('click', function() {
-//         const menu_visible = dropdownMenu.style.display === 'flex';
+hamburgerButton.addEventListener("click", toggleMenu)
 
-//         if (menu_visible) {
-//             dropdownMenu.style.display = 'none';
-//             overlay.style.display = 'none'; // Masquer l'overlay
-//         } else {
-//             dropdownMenu.style.display = 'flex';
-//             overlay.style.display = 'block'; // Afficher l'overlay
-//         }
-//     });
-
-//     // Fermer le menu et l'overlay quand on clique sur l'overlay
-//     overlay.addEventListener('click', function() {
-//         dropdownMenu.style.display = 'none';
-//         overlay.style.display = 'none';
-//     });
-// });
+function toggleMenu() {
+    hamburgerButton.classList.toggle("active")
+    leftMenu.classList.toggle("active")
+}

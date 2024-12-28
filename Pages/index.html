@@ -11,31 +11,32 @@
 </head>
 <body>
     <nav>
-        <img src="./Images/menu.png" title="Menu" alt="Logo menu">
-        <div class="menu-overlay" id="menu"></div>
-            <ul class="dropdown_menu">
-                <li><a href="#" alt="accueil">Accueil</a></li>
-                <li><a href="#" alt="calendrier_memo">Calendrier & Mémo</a></li>
-                <li><a href="#" alt="guide_entretien">Guide d'entretien</a></li>
-                <li><a href="liens.html" alt="liens_ressources">Liens & Ressources</a></li>
-                <li><a href="#" alt="contact"> Contact</a></li>
-                <li><a href="#" alt="profil">Profil</a></li>
-                <li><a href="#" alt="deconnexion"><img src="./Icones/deconnexion.png" alt="deconnexion">Déconnexion</a></li>
-            </ul>
+        <div class="left_menu">
+            <a href="#" alt="accueil">Accueil</a>
+            <a href="#" alt="calendrier_memo">Calendrier & Mémo</a>
+            <a href="#" alt="guide_entretien">Guide d'entretien</a>
+            <a href="liens.html" alt="liens_ressources">Liens & Ressources</a>
+            <a href="#" alt="contact"> Contact</a>
+            <a href="#" alt="profil">Profil</a>
+            <a href="#" alt="deconnexion"><!--<img src="../Icones/deconnexion.png" alt="deconnexion">-->Déconnexion</a>
         </div>
-        <img src="./Images/calendrier.png" title="Calendrier" alt="Logo calendrier">
-        <img src="./Images/user.png" title="Connexion" alt="Logo utilisateur">
+        <button type="button" aria-label="toggle left menu" class="menu_toggler">
+            <span class="line l1"></span> <!--span dans un bouton, oui mais div dans un bouton, non-->
+            <span class="line l2"></span>
+            <span class="line l3"></span>
+        </button>
+        <img src="../Images/calendrier.png" title="Calendrier" alt="Logo calendrier">
+        <img src="../Images/user.png" title="Connexion" alt="Logo utilisateur">
     </nav>
-    <div id="overlay"></div>
     <header>
         <h1>Ver'ify Compost</h1>
-        <a href="index.html" alt="Retour à la page d'accueil" ><img src="./Images/Logo.png" alt="Logo"></a>
+        <a href="index.html" alt="Retour à la page d'accueil" ><img src="../Images/Logo.png" alt="Logo"></a>
     </header>
     <main>
         <div class="carousel_container"> <!-- élément contenant le carousel + titre + fleche -->
             <h2>Composter, c'est aussi :</h2>
             <!-- Bouton gauche-->
-            <img class="carousel_control prev" src="./Icones/arrow_left.png">
+            <img class="carousel_control prev" src="../Icones/arrow_left.png">
             <div class="carousel"> <!-- élément contenant que le carousel-->
                 <ul class="carousel_inner"> <!-- élément contenant toutes les slides -->                   
                 <!-- Première slide -->
@@ -45,7 +46,7 @@
                     <li class="slide">Faire faire des économies à sa collectivité et, à terme, à soi-même</li>
                 </ul>
             <!-- Bouton droite -->
-            <img class="carousel_control next" src="./Icones/arrow_right.png">
+            <img class="carousel_control next" src="../Icones/arrow_right.png">
                 </div>
             </div>
         </div>
@@ -57,14 +58,14 @@
                 <div class="separation"></div>
                 <div class="search_bar">
                     <input type="text" maxlength="25" placeholder="Le nom du biodéchet, c'est ici !" />
-                    <img class="button_loupe" src="./Images/loupe_2.png" alt="icone_loupe_pour_recherche"/>
+                    <img class="button_loupe" src="../Images/loupe_2.png" alt="icone_loupe_pour_recherche"/>
                 </div>
             </div>
         </div>
         <div class="down_menu">
-            <a id="liens" href="liens.html" alt="redirection_page_liens"><img src="./Icones/liens.png">Liens | Ressources</a>
-            <a id="guide" href="#" alt="redirection_page_guide"><img src="./Icones/guide.png">Guide d'entretien</a>
-            <a id="calendrier" href="#" alt="redirection_page_calendrier"><img src="./Icones/calendrier.png">Calendrier | Mémo</a>
+            <a id="liens" href="liens.html" alt="redirection_page_liens"><img src="../Icones/liens.png">Liens | Ressources</a>
+            <a id="guide" href="#" alt="redirection_page_guide"><img src="../Icones/guide.png">Guide d'entretien</a>
+            <a id="calendrier" href="#" alt="redirection_page_calendrier"><img src="../Icones/calendrier.png">Calendrier | Mémo</a>
         </div>
     </main>
     <footer>
