@@ -131,10 +131,11 @@ header img {
     transition: transform 0.8s cubic-bezier(0.18,0.89,0.32,1.27);
     z-index: 9;
     margin-top: 459px;
+    
 }
 
 .left_menu.active {
-    transform: translate(0);
+    transform: translate(0);  
 }
 
 .left_menu a {
@@ -266,6 +267,12 @@ footer a {
 footer p {
     font-size: 14px;
 
+}
+
+.attribution {
+    font-size: 15px;
+    text-decoration: underline;
+    text-underline-offset: 2px;
 }
 
 main {

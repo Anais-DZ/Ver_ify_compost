@@ -308,6 +308,12 @@ footer p {
 
 }
 
+.attribution {
+    font-size: 15px;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
 main {
     background-image: url("./Images/carton_body.png");
     background-size: cover;

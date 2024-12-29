@@ -262,8 +262,13 @@ footer a {
 }
 
 footer p {
-    font-size: 14px;
+    font-size: 15px;
+}
 
+.attribution {
+    font-size: 15px;
+    text-decoration: underline;
+    text-underline-offset: 2px;
 }
 
 main {

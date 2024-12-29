@@ -37,17 +37,17 @@ document.addEventListener("DOMContentLoaded", function () { /* permet d'afficher
 
 
 //menu en rideau
-const hamburgerButton = document.querySelector(".menu_toggler")
+const burgerButton = document.querySelector(".menu_toggler")
 const leftMenu = document.querySelector(".left_menu")
 
 const userButton = document.querySelector("#user_button")
 const connexion = document.querySelector(".right_menu")
 
-hamburgerButton.addEventListener("click", toggleMenu)
+burgerButton.addEventListener("click", toggleMenu)
 userButton.addEventListener("click", toggleUser)
 
 function toggleMenu() {
-    hamburgerButton.classList.toggle("active")
+    burgerButton.classList.toggle("active")
     leftMenu.classList.toggle("active")
 }
 
