@@ -8,7 +8,7 @@ L'objectif principal du site est de faciliter le tri des déchets compostables p
 
 Ce projet est une opportunité idéale pour concilier mes préoccupations environnementales avec mon apprentissage technique, tout en répondant à un besoin concret.
 
-Le site est maintenant accessible en ligne (en mobile first pour le moment), [Ver'ify Compost](https://ver-ify-compost.vercel.app/) , en étant toujours en cours de développement. Il me sert principalement à avoir une vision concrète de l'avancement et des fonctionnalités à venir. Certaines sections peuvent être incomplètes ou en travaux. Merci pour votre compréhension et n'hésitez pas à revenir régulièrement pour suivre les avancés ! :blush:
+Le site est maintenant accessible en ligne (en mobile first pour le moment), [Ver'ify Compost](https://ver-ify-compost.vercel.app/) , en étant toujours en cours de développement. Il me sert principalement à avoir une vision concrète de l'avancement et des fonctionnalités à venir. Certaines pages peuvent être incomplètes ou en travaux. Merci pour votre compréhension et n'hésitez pas à revenir régulièrement pour suivre les avancés ! :blush:
 
 <br/>Update ! 28 décembre 2024 --> ajout de menus rideaux avec JavaScript
 
