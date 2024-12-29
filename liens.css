@@ -188,6 +188,14 @@ header img {
     margin: 25px 0 4px 0;
 }
 
+.right_menu h2 {
+    font-family: "Cabin sketch";
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 0;
+    color: #564E4E;
+}
+
 #checkbox {
     width: auto;
     margin-right: 15px; /*changer la couleur avec javascript*/
