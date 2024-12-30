@@ -459,7 +459,7 @@ main {
 .overlay-content {
     background-color: #FDEED1;
     width: 330px;
-    height: 560;
+    height: auto;
     padding: 20px;
     text-align: center;
     border-radius: 10px;
@@ -479,14 +479,14 @@ main {
 }
 
 h1 {
-    font-size: 24px;
+    font-size: 28px;
     color: #4e3d28;
     font-family: "Cabin sketch";
 }
 
 p {
     color: #4e3d28;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 #overlay-image {

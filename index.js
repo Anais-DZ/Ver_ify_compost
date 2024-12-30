@@ -63,11 +63,10 @@ function toggleUser() {
     }
 }
 
-
+//en attendant le cours sur la Base De Données, quelques déchets pour faire tester le site 
 const compostables = [
     { name: "Coquilles d'oeuf", types: ["composteur", "lombricomposteur"] },
     { name: "Boîte d'oeufs sans encre", types: ["composteur", "lombricomposteur"] },
-    { name: "oeuf", types: ["composteur", "lombricomposteur"] },
     { name: "Coquilles de noix", types: ["composteur"] },
     { name: "Pelures de banane", types: ["composteur", "lombricomposteur"] },
     { name: "Épluchures de carotte", types: ["composteur", "lombricomposteur"] },
