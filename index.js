@@ -177,9 +177,8 @@ const nonCompostables = [
     "Coquilles de moules",
     "Coquilles de crustacés",
     "Viandes",
-    "Restes de nourriture",
-    "Autres déchets non recyclables"
-];
+    "Restes de nourriture"
+]
 
 // Récupération des éléments DOM
 const input = document.getElementById('biodéchet');
