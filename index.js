@@ -76,14 +76,46 @@ const compostables = [
     { name: "Fanes de radis", types: ["composteur", "lombricomposteur"] },
     { name: "Épluchures de pomme", types: ["composteur", "lombricomposteur"] },
     { name: "Ail", types: ["composteur"] },
-    { name: "Carton sans encre", types: ["composteur", "lombricomposteur"] }
+    { name: "Échalottes", types: ["composteur"] },
+    { name: "Piment", types: ["composteur"] },
+    { name: "Agrûmes", types: ["composteur"] },
+    { name: "Carton sans encre", types: ["composteur", "lombricomposteur"] },
+    { name: "Tontes de pelouse", types: ["composteur"] },
+    { name: "Feuilles mortes", types: ["composteur", "lombricomposteur"] },
+    { name: "Fleurs fanées", types: ["composteur", "lombricomposteur"] },
+    { name: "Sciure de bois (non traité)", types: ["composteur"] },
+    { name: "Cendres de bois (en petites quantités)", types: ["composteur"] },
+    { name: "Fanes de carottes", types: ["composteur", "lombricomposteur"] },
+    { name: "Épluchures de pommes de terre", types: ["composteur", "lombricomposteur"] },
+    { name: "Épluchures de courgettes", types: ["composteur", "lombricomposteur"] },
+    { name: "Peaux de kiwi", types: ["composteur"] },
+    { name: "Peaux de mangue", types: ["composteur"] },
+    { name: "Sachets de thé (sans agrafe)", types: ["composteur", "lombricomposteur"] },
+    { name: "Mouchoirs en papier", types: ["composteur", "lombricomposteur"] },
+    { name: "Essuie-tout", types: ["composteur", "lombricomposteur"] },
+    { name: "Boîtes en carton brun (sans encre)", types: ["composteur", "lombricomposteur"] },
+    { name: "Terre d’anciennes plantes", types: ["composteur"] },
+    { name: "Fruits abîmés", types: ["composteur", "lombricomposteur"] },
+    { name: "Légumes abîmés", types: ["composteur", "lombricomposteur"] },
+    { name: "Plumes", types: ["composteur"] },
+    { name: "Cheveux", types: ["composteur"] },
+    { name: "Peaux de melon", types: ["composteur"] },
+    { name: "Reste de salade", types: ["composteur", "lombricomposteur"] },
+    { name: "Épluchures de poire", types: ["composteur", "lombricomposteur"] },
+    { name: "Peaux de pêche", types: ["composteur", "lombricomposteur"] },
+    { name: "Trognons de pommes", types: ["composteur", "lombricomposteur"] }
+
 ];
 
 const nonCompostables = [
     "Coquilles de moules",
     "Coquilles de crustacés",
     "Viandes",
-    "Restes de nourriture"
+    "Restes de nourriture",
+    "Verre",
+    "Papier journal",
+    "Croûtes de fromage",
+    "Produits laitiers",
 ]
 
 // Récupération des éléments DOM
