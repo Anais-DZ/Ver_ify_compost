@@ -159,7 +159,9 @@ function toggleUser() {
 
 
 const compostables = [
-    { name: "Coquilles d'œuf", types: ["un composteur", "un lombricomposteur"] },
+    { name: "Coquilles d'oeuf", types: ["un composteur", "un lombricomposteur"] },
+    { name: "Boîte d'oeufs sans encre", types: ["un composteur", "un lombricomposteur"] },
+    { name: "oeuf", types: ["un composteur", "un lombricomposteur"] },
     { name: "Coquilles de noix", types: ["un composteur"] },
     { name: "Pelures de banane", types: ["un composteur", "un lombricomposteur"] },
     { name: "Épluchures de carotte", types: ["un composteur", "un lombricomposteur"] },
@@ -252,7 +254,7 @@ function showResult(biodechet) {
             showResultOverlay(message); // Affiche le message dans l'overlay
         } else {
             const types = compostableItem.types.join(' et '); // Join types (e.g., Composteur et Lombricomposteur)
-            const message = `Le biodéchet "${biodechet}" peut aller dans ${types}.`;
+            const message = `Le biodéchet "${biodechet}" peut aller dans ${types}. En petits morceaux pour nos amis les vers`;
             showResultOverlay(message); // Affiche le message dans l'overlay
         }
     } else if (nonCompostables.some(item => item.toLowerCase() === formattedBiodechet)) {
