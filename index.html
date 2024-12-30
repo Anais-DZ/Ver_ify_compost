@@ -96,8 +96,11 @@
                     <input id="biodéchet" name="biodéchet" placeholder="Le nom du biodéchet, c'est ici !"><button id="verifier"><img src="./Images/loupe_2.png" alt="icone_loupe_pour_recherche"/></button>
                     <div id="resultat-overlay" class="overlay">
                         <div class="overlay-content">
-                            <span id="resultat"></span>
-                            <button id="close-overlay">&#x2716;</button>
+                            <button id="close-overlay" class="close-button">&times;</button>
+                            <h1 id="overlay-title"></h1>
+                            <p id="overlay-description"></p>
+                            <img id="overlay-image" src="" alt="image_composteur" />
+                            <p id="overlay-status"></p>
                         </div>
                     </div>
                     <ul id="suggestions"></ul>
