@@ -120,10 +120,6 @@ function toggleUser() {
     }
   });
 
-
-  suggestionsList.addEventListener('touchmove', function (event) {
-    event.stopPropagation(); // Bloque la propagation vers les parents
-  }, { passive: false }); // Nécessaire pour permettre la capture des événements tactiles
   
   
   

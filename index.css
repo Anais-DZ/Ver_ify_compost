@@ -411,33 +411,31 @@ main {
     font-family: "fredoka";
     font-style: italic;
     color: #564E4E;
-    font-size: 16px;
+    font-size: 18px;
     position: absolute;
     top: 80%; /* Juste sous l'input */
     left: 20px;
     list-style-type: none;
-    width: 65%;
+    width: 75%;
     border: 2px solid #5bc501;
     border-radius: 3px;
     background-color: white;
     z-index: 10;
-    max-height: 200px; /* Limite la hauteur */
+    max-height: 300px; /* Limite la hauteur */
     overflow-y: scroll; /* Permet de faire défiler si la liste est longue */
-    -webkit-overflow-scrolling: touch; /* Assure le défilement fluide */
-    touch-action: manipulation;
     display: none; /* Par défaut, la liste est masquée */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     padding: 0;
   }
 
   #suggestions li {
-    padding: 8px;
+    padding: 10px;
     cursor: pointer;
   }
 
-  #suggestions li:hover {
+  /*#suggestions li:hover {
     background-color: #f0f0f0;
-  }
+  }*/  /*à mettre pour desktop*/
 
 .down_menu {
     display: flex;
