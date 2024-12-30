@@ -159,16 +159,16 @@ function toggleUser() {
 
 
 const compostables = [
-    { name: "Coquilles d'œuf", types: ["Composteur", "Lombricomposteur"] },
-    { name: "Coquilles de noix", types: ["Composteur"] },
-    { name: "Pelures de banane", types: ["Composteur", "Lombricomposteur"] },
-    { name: "Épluchures de carotte", types: ["Composteur", "Lombricomposteur"] },
-    { name: "Marc de café", types: ["Composteur", "Lombricomposteur"] },
-    { name: "Peaux d'orange", types: ["Composteur"] },
-    { name: "Fanes de radis", types: ["Composteur", "Lombricomposteur"] },
-    { name: "Épluchures de pomme", types: ["Composteur", "Lombricomposteur"] },
-    { name: "Ail", types: ["Composteur"] },
-    { name: "Carton sans encre", types: ["Composteur", "Lombricomposteur"] }
+    { name: "Coquilles d'œuf", types: ["un composteur", "un lombricomposteur"] },
+    { name: "Coquilles de noix", types: ["un composteur"] },
+    { name: "Pelures de banane", types: ["un composteur", "un lombricomposteur"] },
+    { name: "Épluchures de carotte", types: ["un composteur", "un lombricomposteur"] },
+    { name: "Marc de café", types: ["un composteur", "un lombricomposteur"] },
+    { name: "Peaux d'orange", types: ["un composteur"] },
+    { name: "Fanes de radis", types: ["un composteur", "un lombricomposteur"] },
+    { name: "Épluchures de pomme", types: ["un composteur", "un lombricomposteur"] },
+    { name: "Ail", types: ["un composteur"] },
+    { name: "Carton sans encre", types: ["un composteur", "un lombricomposteur"] }
 ];
 
 const nonCompostables = [
@@ -248,11 +248,11 @@ function showResult(biodechet) {
     if (compostableItem) {
         // Vérifier si le déchet est marqué uniquement pour le composteur
         if (compostableItem.types.length === 1 && compostableItem.types[0] === 'Composteur') {
-            const message = `Le biodéchet "${biodechet}" peut aller uniquement dans un Composteur. Il ne convient pas au lombricomposteur`;      
+            const message = `Le biodéchet "${biodechet}" peut aller uniquement dans un composteur. Il ne convient pas au lombricomposteur`;      
             showResultOverlay(message); // Affiche le message dans l'overlay
         } else {
             const types = compostableItem.types.join(' et '); // Join types (e.g., Composteur et Lombricomposteur)
-            const message = `Le biodéchet "${biodechet}" peut aller dans un ${types}.`;
+            const message = `Le biodéchet "${biodechet}" peut aller dans ${types}.`;
             showResultOverlay(message); // Affiche le message dans l'overlay
         }
     } else if (nonCompostables.some(item => item.toLowerCase() === formattedBiodechet)) {
