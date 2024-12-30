@@ -62,3 +62,55 @@ function toggleUser() {
         userButton.setAttribute("src", "./Icones/user.png");
     }
 }
+
+
+//fonction pour suggestion dynamique quand l'utilisateur commence à rentrer le nom d'un biodéchet
+
+ // Liste des biodéchets pour la suggestion
+ const biodéchets = [
+    "Coquilles d'œuf",
+    "Coquilles de noix",
+    "Coquilles de moules",
+    "Coquilles de crustacés",
+    "Pelures de banane",
+    "Épluchures de carotte",
+    "Marc de café",
+    "Peaux d'orange",
+    "Fanes de radis",
+  ];
+
+  const input = document.getElementById('biodéchet');
+  const suggestionsList = document.getElementById('suggestions');
+
+  input.addEventListener('input', function () {
+    const query = input.value.toLowerCase();
+    suggestionsList.innerText = ''; // Réinitialise la liste avant de générer les nouvelles suggestions
+
+    if (query) {
+      // Filtrer les suggestions
+      const matches = biodéchets.filter(item => item.toLowerCase().includes(query));
+      if (matches.length > 0) {
+        suggestionsList.style.display = 'block';
+        matches.forEach(match => {
+          const li = document.createElement('li');
+          li.textContent = match;
+          li.addEventListener('click', function () {
+            input.value = match; // Remplit le champ avec la suggestion cliquée
+            suggestionsList.style.display = 'none'; // Masque les suggestions après sélection
+          });
+          suggestionsList.appendChild(li);
+        });
+      } else {
+        suggestionsList.style.display = 'none';
+      }
+    } else {
+      suggestionsList.style.display = 'none';
+    }
+  });
+
+  // Masquer la liste si l'utilisateur clique ailleurs
+  document.addEventListener('click', function (event) {
+    if (!input.contains(event.target) && !suggestionsList.contains(event.target)) {
+      suggestionsList.style.display = 'none';
+    }
+  });

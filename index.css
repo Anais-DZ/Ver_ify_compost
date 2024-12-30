@@ -379,6 +379,7 @@ main {
 }
 
 .search_bar {
+    position: relative; /* pour ne pas déformer la barre lors des suggestions*/
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -405,6 +406,38 @@ main {
         text-align: center;
     }
 }
+
+#suggestions {
+    font-family: "fredoka";
+    font-style: italic;
+    color: #564E4E;
+    font-size: 14px;
+    position: absolute;
+    top: 100%; /* Juste sous l'input */
+    left: 0;
+    list-style-type: none;
+    width: 65%;
+    border: 2px solid #ccc;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-top: none; /* Pas de double bordure avec l'input */
+    background-color: white;
+    z-index: 10;
+    max-height: 150px; /* Limite la hauteur */
+    overflow-y: auto; /* Permet de faire défiler si la liste est longue */
+    display: none; /* Par défaut, la liste est masquée */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 0;
+  }
+
+  #suggestions li {
+    padding: 8px;
+    cursor: pointer;
+  }
+
+  #suggestions li:hover {
+    background-color: #f0f0f0;
+  }
 
 .down_menu {
     display: flex;

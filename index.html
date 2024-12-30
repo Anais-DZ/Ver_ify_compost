@@ -79,7 +79,8 @@
                 <div class="separation"></div>
                 <p>Saisir le nom du biodéchet dans la barre de recherche, puis cliquer sur la loupe pour découvrir le composteur adapté instantanément.</p>
                 <div class="separation"></div>
-                <!-- en attendant cours sur la base de données-->
+
+                <!-- en attendant cours sur la base de données. L'inconvénient, le liste de suggestion n'est pas dynamique
                 <form class="search_bar">
                     <input list="suggestions" id="biodéchet" name="biodéchet" placeholder="Le nom du biodéchet, c'est ici !"><img class="button_loupe" src="./Images/loupe_2.png" alt="icone_loupe_pour_recherche"/>
                     
@@ -89,6 +90,11 @@
                       <option value="Coquilles de moules">
                       <option value="Coquilles de crustacés">
                     </datalist>
+                  </form>-->
+
+                  <form class="search_bar">
+                    <input id="biodéchet" name="biodéchet" placeholder="Le nom du biodéchet, c'est ici !"><img class="button_loupe" src="./Images/loupe_2.png" alt="icone_loupe_pour_recherche"/>
+                    <ul id="suggestions"></ul>
                   </form>
             </div>
         </div>
