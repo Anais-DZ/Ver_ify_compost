@@ -28,7 +28,7 @@
             <span class="line l3"></span>
         </button>
         <img id="calendar" src="./Icones/calendar.png" title="Calendrier" alt="Logo calendrier">
-        <form method="post" action="monProgramme.php">
+        <form method="post" action="monProgramme.php" autocomplete="on">
             <fieldset class="right_menu">
                 <h2>Connexion</h2>
                 <div>
@@ -79,10 +79,17 @@
                 <div class="separation"></div>
                 <p>Saisir le nom du biodéchet dans la barre de recherche, puis cliquer sur la loupe pour découvrir le composteur adapté instantanément.</p>
                 <div class="separation"></div>
-                <div class="search_bar">
-                    <input type="text" maxlength="25" placeholder="Le nom du biodéchet, c'est ici !" />
-                    <img class="button_loupe" src="./Images/loupe_2.png" alt="icone_loupe_pour_recherche"/>
-                </div>
+                <!-- en attendant cours sur la base de données-->
+                <form class="search_bar">
+                    <input list="suggestions" id="biodéchet" name="biodéchet" placeholder="Le nom du biodéchet, c'est ici !"><img class="button_loupe" src="./Images/loupe_2.png" alt="icone_loupe_pour_recherche"/>
+                    
+                    <datalist id="suggestions">
+                      <option value="Coquilles d'œuf">
+                      <option value="Coquilles de noix">
+                      <option value="Coquilles de moules">
+                      <option value="Coquilles de crustacés">
+                    </datalist>
+                  </form>
             </div>
         </div>
         <div class="down_menu">
