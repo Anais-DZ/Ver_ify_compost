@@ -77,6 +77,11 @@ function toggleUser() {
     "Marc de café",
     "Peaux d'orange",
     "Fanes de radis",
+    "litière d'animaux",
+    "épluchures de pomme",
+    "ail",
+    "restes de nourriture",
+    "carton sans encre"
   ];
 
   const input = document.getElementById('biodéchet');
