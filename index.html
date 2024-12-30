@@ -93,7 +93,13 @@
                   </form>-->
 
                   <form class="search_bar">
-                    <input id="biodéchet" name="biodéchet" placeholder="Le nom du biodéchet, c'est ici !"><img class="button_loupe" src="./Images/loupe_2.png" alt="icone_loupe_pour_recherche"/>
+                    <input id="biodéchet" name="biodéchet" placeholder="Le nom du biodéchet, c'est ici !"><button id="verifier"><img src="./Images/loupe_2.png" alt="icone_loupe_pour_recherche"/></button>
+                    <div id="resultat-overlay" class="overlay">
+                        <div class="overlay-content">
+                            <span id="resultat"></span>
+                            <button id="close-overlay">&#x2716;</button>
+                        </div>
+                    </div>
                     <ul id="suggestions"></ul>
                   </form>
             </div>
