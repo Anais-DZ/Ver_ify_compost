@@ -109,12 +109,12 @@ const compostables = [
 const nonCompostables = [
     "Coquilles de moules",
     "Coquilles de crustacés",
-    "Viandes",
+    "Viande",
     "Restes de nourriture",
     "Verre",
     "Papier journal",
     "Croûtes de fromage",
-    "Produits laitiers",
+    "Produit laitier",
 ]
 
 // Récupération des éléments DOM
@@ -173,17 +173,18 @@ function afficherSuggestions(query) {
 }
 
 // Fonction pour afficher l'overlay avec les détails dynamiques
-function showResultOverlay(title, description, iconPath, status) {
+function showResultOverlay(title, description, status, iconPath) {
     const overlayTitle = document.getElementById('overlay-title');
     const overlayDescription = document.getElementById('overlay-description');
-    const overlayIcon = document.getElementById('overlay-image');
     const overlayStatus = document.getElementById('overlay-status');
+    const overlayIcon = document.getElementById('overlay-image');
+    
 
     // Met à jour les contenus dynamiques de l'overlay
     overlayTitle.textContent = title;
     overlayDescription.textContent = description;
-    overlayIcon.src = `./Images/${iconPath}`; // Met à jour l'icône
     overlayStatus.textContent = status;
+    overlayIcon.src = `./Images/${iconPath}`; // Met à jour l'icône
 
     // Affiche l'overlay
     resultatOverlay.style.display = 'flex';
@@ -199,31 +200,34 @@ function showResult(biodechet) {
             showResultOverlay(
                 `${biodechet}`,
                 'Ne convient pas au lombricomposteur',
-                'Composteur_okay.png', // Icône pour composteur
-                'Convient uniquement au composteur.'
+                'Convient uniquement au composteur',
+                'Composteur_okay.png' // Icône pour composteur   
             );
+
         } else {
             const types = compostableItem.types.join(' et ');
             showResultOverlay(
                 `${biodechet}`,
                 '(en petits morceaux et/ou humidifiés pour nos amis les vers)',
-                'Compost_coeurs.png', // Icône pour lombricomposteur
-                `Convient au ${types.toLowerCase()}.`
+                `Convient au ${types.toLowerCase()}`,
+                'Compost_coeurs.png' // Icône pour lombricomposteur   
             );
         }
+        
     } else if (nonCompostables.some(item => item.toLowerCase() === formattedBiodechet)) {
         showResultOverlay(
             `${biodechet}`,
             "Ce déchet doit être jeté avec les ordures ménagères ou au recyclage s'il se recycle",
-            'Composte_triste.png', // Icône pour non compostable
-            'Ne convient pas au composteur, ni au lombricomposteur'
+            'Ne convient ni au composteur, ni au lombricomposteur',
+            'Composte_triste.png' // Icône pour non compostable 
         );
+
     } else {
         showResultOverlay(
             `${biodechet}`,
+            "",
             "Ce déchet va me demander quelques recherches plus approfondies. En attendant, le mieux est de le jeter dans la poubelle ordinaire ou au recyclage s'il se recycle.",
-            'ver_perplexe.png', // Icône pour déchet inconnu
-            ''
+            'ver_perplexe.png' // Icône pour déchet inconnu 
         );
     }
 }

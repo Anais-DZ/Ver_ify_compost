@@ -425,7 +425,7 @@ main {
     border: 2px solid #5bc501;
     border-radius: 3px;
     background-color: white;
-    z-index: 10;
+    z-index: 9;
     max-height: 300px; /* Limite la hauteur */
     overflow-y: scroll; /* Permet de faire défiler si la liste est longue */
     display: none; /* Par défaut, la liste est masquée */
@@ -480,7 +480,7 @@ main {
 }
 
 h1 {
-    font-size: 28px;
+    font-size: 40px;
     color: #4e3d28;
     font-family: "Cabin sketch";
 }
@@ -493,12 +493,12 @@ p {
 #overlay-image {
     width: 250px;
     height: auto;
-    margin: 15px;
+    margin: 0;
 }
 
 #overlay-status {
-    font-size: 14px;
-    color: green;
+    font-size: 20px;
+    color: #4e3d28;
 }
 
 
