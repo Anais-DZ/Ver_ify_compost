@@ -460,7 +460,7 @@ main {
     background-color: #FDEED1;
     width: 330px;
     height: auto;
-    padding: 20px;
+    padding: 40px 20px 20px 20px;
     text-align: center;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -474,8 +474,9 @@ main {
     right: 10px;
     background: none;
     border: none;
-    font-size: 32px;
+    font-size: 45px;
     cursor: pointer;
+    color: #4e3d28;
 }
 
 h1 {
@@ -490,7 +491,7 @@ p {
 }
 
 #overlay-image {
-    width: 300px;
+    width: 250px;
     height: auto;
     margin: 15px;
 }
