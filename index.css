@@ -413,17 +413,17 @@ main {
     color: #564E4E;
     font-size: 16px;
     position: absolute;
-    top: 100%; /* Juste sous l'input */
-    left: 0;
+    top: 80%; /* Juste sous l'input */
+    left: 20px;
     list-style-type: none;
     width: 65%;
     border: 2px solid #ccc;
     border-radius: 3px;
     background-color: white;
     z-index: 10;
-    max-height: 150px; /* Limite la hauteur */
+    max-height: 200px; /* Limite la hauteur */
     overflow-y: auto; /* Permet de faire défiler si la liste est longue */
-    /*-webkit-overflow-scrolling: touch;*/ /* Permet de faire défiler avec le doigt sur mobile*/
+    -webkit-overflow-scrolling: touch; /* Permet de faire défiler avec le doigt sur mobile*/
     display: none; /* Par défaut, la liste est masquée */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     padding: 0;
