@@ -77,11 +77,11 @@ function toggleUser() {
     "Marc de café",
     "Peaux d'orange",
     "Fanes de radis",
-    "litière d'animaux",
-    "épluchures de pomme",
-    "ail",
-    "restes de nourriture",
-    "carton sans encre"
+    "Litière d'animaux",
+    "Épluchures de pomme",
+    "Ail",
+    "Restes de nourriture",
+    "Carton sans encre"
   ];
 
   const input = document.getElementById('biodéchet');
@@ -119,3 +119,9 @@ function toggleUser() {
       suggestionsList.style.display = 'none';
     }
   });
+
+  // Permet le défilement de la liste au lieu de faire défiler toute la page
+  suggestionsList.addEventListener('touchmove', function (event) {
+    event.stopPropagation();
+  });
+  
