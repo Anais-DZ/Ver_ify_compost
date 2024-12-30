@@ -417,12 +417,13 @@ main {
     left: 20px;
     list-style-type: none;
     width: 65%;
-    border: 2px solid #ccc;
+    border: 2px solid #5bc501;
     border-radius: 3px;
     background-color: white;
     z-index: 10;
     max-height: 200px; /* Limite la hauteur */
     overflow-y: scroll; /* Permet de faire défiler si la liste est longue */
+    -webkit-overflow-scrolling: touch; /* Assure le défilement fluide */
     touch-action: manipulation;
     display: none; /* Par défaut, la liste est masquée */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
