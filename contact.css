@@ -124,11 +124,12 @@ header img {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-image: url(./Images/carton_body.png);
+    background-image: url(./Images/green_menu.jpg);
     transform: translateX(-100%);
     transition: transform 0.8s cubic-bezier(0.18,0.89,0.32,1.27);
     z-index: 9;
     margin-top: 459px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.307);
 }
 
 .left_menu.active {
@@ -142,7 +143,6 @@ header img {
     text-decoration: none;
     display: block;
     margin: 10px 0;
-    font-weight: bold;
 }
 
 #deconnexion {
@@ -247,7 +247,7 @@ header img {
 }
 
 .right_menu {
-    background-image: url(./Images/carton_body.png);
+    background-image: url(./Images/green_menu.jpg);
     position: fixed;
     width: 80vw;
     min-height: 50vh;
@@ -258,6 +258,7 @@ header img {
     transition: transform 0.8s cubic-bezier(0.18,0.89,0.32,1.27);
     z-index: 9;
     margin-top: 32px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.307);
 }
 
 .right_menu.active {

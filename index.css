@@ -129,6 +129,7 @@ header img {
     transition: transform 0.8s cubic-bezier(0.18,0.89,0.32,1.27);
     z-index: 9;
     margin-top: 459px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.307);
 }
 
 .left_menu.active {
@@ -142,7 +143,6 @@ header img {
     text-decoration: none;
     display: block;
     margin: 10px 0;
-    font-weight: bold;
 }
 
 #deconnexion {
@@ -258,6 +258,7 @@ header img {
     transition: transform 0.8s cubic-bezier(0.18,0.89,0.32,1.27);
     z-index: 9;
     margin-top: 32px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.307);
 }
 
 .right_menu.active {
@@ -419,17 +420,16 @@ main {
     font-size: 18px;
     position: absolute;
     top: 80%; /* Juste sous l'input */
-    left: 20px;
+    left: 0;
     list-style-type: none;
-    width: 75%;
-    border: 2px solid #5bc501;
-    border-radius: 3px;
+    width: 100%;
+    border-radius: 8px;
     background-color: white;
     z-index: 9;
     max-height: 300px; /* Limite la hauteur */
     overflow-y: scroll; /* Permet de faire défiler si la liste est longue */
     display: none; /* Par défaut, la liste est masquée */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.307);
     padding: 0;
   }
 

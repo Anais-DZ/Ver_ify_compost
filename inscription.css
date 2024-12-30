@@ -1,5 +1,3 @@
-/* code commun à toutes les pages : header + footer */
-
 @import url("https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Fredoka:wght@300..700&display=swap");
 
 
@@ -126,11 +124,12 @@ header img {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-image: url(./Images/carton_body.png);
+    background-image: url(./Images/green_menu.jpg);
     transform: translateX(-100%);
     transition: transform 0.8s cubic-bezier(0.18,0.89,0.32,1.27);
     z-index: 9;
     margin-top: 459px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.307);
 }
 
 .left_menu.active {
@@ -144,7 +143,6 @@ header img {
     text-decoration: none;
     display: block;
     margin: 10px 0;
-    font-weight: bold;
 }
 
 #deconnexion {
@@ -249,7 +247,7 @@ header img {
 }
 
 .right_menu {
-    background-image: url(./Images/carton_body.png);
+    background-image: url(./Images/green_menu.jpg);
     position: fixed;
     width: 80vw;
     min-height: 50vh;
@@ -260,50 +258,11 @@ header img {
     transition: transform 0.8s cubic-bezier(0.18,0.89,0.32,1.27);
     z-index: 9;
     margin-top: 32px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.307);
 }
 
 .right_menu.active {
     transform: translate(-205px);
-}
-
-footer {
-    height: 114px;
-    width: auto;
-    justify-content: flex-end;
-}
-
-header h1, footer a, footer p {
-    color: white;
-    text-shadow:
-      5px 5px 10px #022a08,
-      -5px 5px 10px #022a08,
-      -5px -5px 10px #022a08,
-      5px -5px 10px #022a08;
-    font-family: 'Fredoka';
-}
-
-header h1 {
-  font-size: 36px;
-  letter-spacing: 2px;
-  margin: 25px 0 10px 0;
-}
-
-header img {
-  width: 110px;
-  height: auto;
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 7px 14px;
-  background-color: transparent;
-}
-
-nav img {
-  width: 50px;
-  height: auto;
 }
 
 footer a {
@@ -312,8 +271,7 @@ footer a {
 }
 
 footer p {
-    font-size: 14px;
-
+    font-size: 15px;
 }
 
 .attribution {
