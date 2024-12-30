@@ -120,10 +120,5 @@ function toggleUser() {
     }
   });
 
-  // Permet le défilement de la liste au lieu de faire défiler toute la page
-  suggestionsList.addEventListener('touchmove', function (event) {
-    // Empêche l'écran de défiler lorsqu'on interagit avec la liste
-    event.preventDefault();
-  }, { passive: false }); // 'passive: false' est crucial pour bloquer le scroll global
   
   

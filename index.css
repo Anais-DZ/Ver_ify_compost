@@ -422,8 +422,8 @@ main {
     background-color: white;
     z-index: 10;
     max-height: 200px; /* Limite la hauteur */
-    overflow-y: auto; /* Permet de faire défiler si la liste est longue */
-    -webkit-overflow-scrolling: touch; /* Permet de faire défiler avec le doigt sur mobile*/
+    overflow-y: scroll; /* Permet de faire défiler si la liste est longue */
+    touch-action: manipulation;
     display: none; /* Par défaut, la liste est masquée */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     padding: 0;
