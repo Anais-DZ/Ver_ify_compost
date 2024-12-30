@@ -283,9 +283,12 @@ resultatOverlay.addEventListener('click', function (event) {
 verifierButton.addEventListener('click', (event) => {
     event.preventDefault(); // Empêche le comportement par défaut du bouton submit
     const nomBiodéchet = input.value.trim();
-    showResult(nomBiodéchet);
-    input.focus(); // Maintient le focus sur le champ d'entrée après le clic
+    showResult(nomBiodéchet); // Affiche le résultat
 });
+
+// Fonction pour gérer l'input focus et la réinitialisation
+input.addEventListener('focus', resetInput); // Réinitialise l'input seulement lorsqu'il reçoit le focus
+
 
 
 
