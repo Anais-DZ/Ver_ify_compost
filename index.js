@@ -246,14 +246,20 @@ function showResult(biodechet) {
     const compostableItem = compostables.find(item => item.name.toLowerCase() === formattedBiodechet);
 
     if (compostableItem) {
-        const types = compostableItem.types.join(' et '); // Join types (e.g., Composteur et Lombricomposteur)
-        const message = `Le biodéchet "${biodechet}" va dans : ${types}.`;
-        showResultOverlay(message); // Affiche le message dans l'overlay
+        // Vérifier si le déchet est marqué uniquement pour le composteur
+        if (compostableItem.types.length === 1 && compostableItem.types[0] === 'Composteur') {
+            const message = `Le biodéchet "${biodechet}" peut aller uniquement dans un Composteur. Il ne convient pas au lombricomposteur`;      
+            showResultOverlay(message); // Affiche le message dans l'overlay
+        } else {
+            const types = compostableItem.types.join(' et '); // Join types (e.g., Composteur et Lombricomposteur)
+            const message = `Le biodéchet "${biodechet}" peut aller dans un ${types}.`;
+            showResultOverlay(message); // Affiche le message dans l'overlay
+        }
     } else if (nonCompostables.some(item => item.toLowerCase() === formattedBiodechet)) {
-        const message = `Le déchet "${biodechet}" va dans : Ordures ménagères.`;
+        const message = `Le déchet "${biodechet}" ne va  ni dans un composteur, ni dans un lombricomposteur mais dans la poubelle ordinaire ou au recyclage s'il se recycle`;
         showResultOverlay(message);
     } else {
-        const message = `Le déchet "${biodechet}" n'est pas reconnu.`;
+        const message = `Le déchet "${biodechet}" va me demander quelques recherches plus approfondies. En attendant une rapide réponse, le mieux est de le jeter dans la poubelle ordinaire `;
         showResultOverlay(message);
     }
 }
