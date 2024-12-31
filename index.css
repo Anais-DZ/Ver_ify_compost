@@ -305,45 +305,46 @@ main {
 .carousel_inner {
     display: flex;
     justify-content: center;
-    padding: 0;
+    padding: 5px 0 0 0;
     height: 90%;
     margin: 0;
 }
 
 .slide {
     position: absolute;
-    width: 170px;
+    width: 165px;
     height: 90px;
     font-family: "fredoka";
     font-size: 18px;
     text-align: center;
     color: #564E4E;
-    top: 372px;
+    top: 355px;
 }
 
 #slide_economy {
-    width: 190px;
+    width: 200px;
+    top: 350px;
 }
 
 .little_slide {
-    top: 382px;
+    top: 365px;
 }
 
 #cadre_feuilles {
     position: relative;
-    width: 280px;
-    height: 190px;
+    width: 260px;
+    height: 150px;
 }
 
 .carousel_control {
     position: absolute;
-    top: 387px;
+    top: 375px;
     cursor: pointer;
     width: 45px;
 }
 
-.carousel_control.prev { left: 5px; }
-.carousel_control.next { right: 5px; }
+.carousel_control.prev { left: 8px; }
+.carousel_control.next { right: 8px; }
 
 .search {
     background: url(./Images/carton_body.png);
