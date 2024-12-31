@@ -372,7 +372,21 @@ main {
     padding: 10px 10px;
 }
 
-.contact button {
+#charCount {
+    text-align: right;
+    font-size: 12px;
+    margin: 5px 0;
+    color: #555;
+}
+
+#error-message {
+    color: red;
+    font-family: "fredoka";
+    font-size: 14px;
+    text-align: center;
+}
+
+#submit-button {
     background-color: #564E4E;
     color: white;
     border: none;
@@ -386,8 +400,12 @@ main {
     padding: 5px 20px;
 }
 
-.contact button:hover {
+#submit-button:hover {
     background-color: #221b1b;
+}
+
+#submit-button:disabled {
+    background-color: rgba(255, 0, 0, 0.162);
 }
 
 
