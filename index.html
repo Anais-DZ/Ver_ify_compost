@@ -60,17 +60,18 @@
         <div class="carousel_container"> <!-- élément contenant le carousel + titre + fleche -->
             <h2>Composter, c'est aussi :</h2>
             <!-- Bouton gauche-->
-            <img class="carousel_control prev" src="./Icones/arrow_left.png">
+            <img class="carousel_control prev" src="./Icones/arrow_left.png" alt="fleche_gauche">
             <div class="carousel"> <!-- élément contenant que le carousel-->
-                <ul class="carousel_inner"> <!-- élément contenant toutes les slides -->                   
+                <ul class="carousel_inner"> <!-- élément contenant toutes les slides -->
+                    <img src="./Images/cadre_feuilles.png" id="cadre_feuilles" al="image_cadre_feuilles">                  
                 <!-- Première slide -->
                     <li class="slide">Éviter à 100 kg/an de biodéchets d’être transformés en gaz à effet de serre</li>
-                    <li class="slide">Produire son propre compost, gratuit et sans odeur</li>
-                    <li class="slide">Diminuer de plus d’1/3 le poids de sa poubelle</li>
-                    <li class="slide">Faire faire des économies à sa collectivité et, à terme, à soi-même</li>
+                    <li class="slide little_slide">Produire son propre compost, gratuit et sans odeur</li>
+                    <li class="slide little_slide">Diminuer de plus d’1/3 le poids de sa poubelle</li>
+                    <li class="slide" id="slide_economy">Faire faire des économies à sa collectivité et, à terme, à soi-même</li>
                 </ul>
             <!-- Bouton droite -->
-            <img class="carousel_control next" src="./Icones/arrow_right.png">
+            <img class="carousel_control next" src="./Icones/arrow_right.png" alt="fleche_droite">
                 </div>
             </div>
         </div>
@@ -78,7 +79,7 @@
             <div id="border">
                 <h2>Prêt·e à composter ?</h2>
                 <div class="separation"></div>
-                <p>Saisir le nom du biodéchet dans la barre de recherche, puis cliquer sur la loupe pour découvrir le composteur adapté instantanément.</p>
+                <p>Saisir le nom du déchet dans la barre de recherche, puis cliquer sur la loupe pour découvrir le composteur adapté instantanément.</p>
                 <div class="separation"></div>
 
                 <!-- en attendant cours sur la base de données. L'inconvénient, le liste de suggestion n'est pas dynamique
@@ -94,7 +95,7 @@
                   </form>-->
 
                   <form class="search_bar" autocomplete="off">
-                    <input id="biodéchet" name="biodéchet" placeholder="Le nom du biodéchet, c'est ici !"><button id="verifier"><img src="./Images/loupe_2.png" alt="icone_loupe_pour_recherche"/></button>
+                    <input id="biodéchet" name="biodéchet" placeholder="Le nom du déchet, c'est ici !"><button id="verifier"><img src="./Images/loupe_2.png" alt="icone_loupe_pour_recherche"/></button>
                     <div id="resultat-overlay" class="overlay">
                         <div class="overlay-content">
                             <button id="close-overlay" class="close-button">&times;</button>

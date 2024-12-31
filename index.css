@@ -125,7 +125,7 @@ header img {
     align-items: center;
     flex-direction: column;
     background-image: url(./Images/green_menu.jpg);
-    transform: translateX(-100%);
+    transform: translateX(-102%);
     transition: transform 0.8s cubic-bezier(0.18,0.89,0.32,1.27);
     z-index: 9;
     margin-top: 459px;
@@ -289,7 +289,6 @@ main {
 
 .carousel_container {
     margin: 50px 0 40px 0;
-    position: relative;
     width: 100%;
     overflow: hidden;
 
@@ -307,29 +306,41 @@ main {
     display: flex;
     justify-content: center;
     padding: 0;
-    height: 80%;
+    height: 90%;
+    margin: 0;
 }
 
 .slide {
-    width: 60%;
-    height: 70px;
-    border: solid 12px #5bc501;
-    border-radius: 8px;
-    padding: 15px 10px;
+    position: absolute;
+    width: 160px;
+    height: 90px;
     font-family: "fredoka";
-    font-size: 16px;
+    font-size: 17px;
     text-align: center;
     color: #564E4E;
-    margin: 0 20px;
+    top: 45%;
+}
+
+#slide_economy {
+    top: 44.5%;
+    width: 180px;
+}
+
+.little_slide {
+    top: 46.5%;
+}
+
+#cadre_feuilles {
+    position: relative;
+    width: 280px;
+    height: 190px;
 }
 
 .carousel_control {
     position: absolute;
-    top: 60%;
+    top: 47%;
     cursor: pointer;
-    transform: translateY(-50%);
-    z-index: 1;
-    width: 40px;
+    width: 45px;
 }
 
 .carousel_control.prev { left: 5px; }
