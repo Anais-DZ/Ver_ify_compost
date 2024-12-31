@@ -373,6 +373,7 @@ main {
 }
 
 #charCount {
+    font-family: "fredoka";
     text-align: right;
     font-size: 12px;
     margin: 5px 0;
@@ -410,24 +411,24 @@ main {
 
 
 .contact form {
-    width: 90%;
+    width: 370px;
     height: auto;
-    background: url(Images/feuilles_header.png);
+    background: url(./Images/bg_watercolor.jpg);
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 60px;
-    margin-bottom: 60px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .contact fieldset {
-    background-color: #fff0d4;
-    width: 85%;
+    background-color: #fffbf4e2;
+    width: 290px;
     height: auto;
     position: relative;
-    bottom: 35px;
+    bottom: 25px;
     display: flex;
     flex-direction: column;
     border: none;
