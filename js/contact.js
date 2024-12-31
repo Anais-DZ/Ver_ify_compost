@@ -13,8 +13,11 @@ textarea.addEventListener("input", function () {
     charCountDisplay.textContent = `${remainingChars} caractères restants`;
 
     // Validation de la longueur du message
-    if (message.length < 5 || message.length > 500) {
-        errorMessage.textContent = "Le message doit contenir entre 5 et 500 caractères.";
+    if (message.length < 5) {
+        errorMessage.textContent = "Le message doit contenir 5 caractères minimum.";
+        submitButton.disabled = true; // Désactiver le bouton si la validation échoue
+    } else if (message.length == 500) {
+        errorMessage.textContent = "Vous avez atteint le nombre de caractères maximum.";
         submitButton.disabled = true; // Désactiver le bouton si la validation échoue
     } else {
         errorMessage.textContent = ""; // Effacer le message d'erreur
