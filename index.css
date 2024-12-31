@@ -312,22 +312,21 @@ main {
 
 .slide {
     position: absolute;
-    width: 160px;
+    width: 170px;
     height: 90px;
     font-family: "fredoka";
-    font-size: 17px;
+    font-size: 18px;
     text-align: center;
     color: #564E4E;
-    top: 45%;
+    top: 372px;
 }
 
 #slide_economy {
-    top: 44.5%;
-    width: 180px;
+    width: 190px;
 }
 
 .little_slide {
-    top: 46.5%;
+    top: 382px;
 }
 
 #cadre_feuilles {
@@ -338,7 +337,7 @@ main {
 
 .carousel_control {
     position: absolute;
-    top: 47%;
+    top: 387px;
     cursor: pointer;
     width: 45px;
 }
