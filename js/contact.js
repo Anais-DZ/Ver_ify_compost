@@ -18,7 +18,7 @@ textarea.addEventListener("input", function () {
         submitButton.disabled = true; // Désactiver le bouton si la validation échoue
     } else if (message.length == 500) {
         errorMessage.textContent = "Vous avez atteint le nombre de caractères maximum.";
-        submitButton.disabled = true; // Désactiver le bouton si la validation échoue
+        submitButton.disabled = false; // Désactiver le bouton si la validation échoue
     } else {
         errorMessage.textContent = ""; // Effacer le message d'erreur
         submitButton.disabled = false; // Activer le bouton si la validation réussit
