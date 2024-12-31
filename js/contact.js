@@ -22,14 +22,6 @@ textarea.addEventListener("input", function () {
     }
 });
 
-// Empêcher l'envoi si les conditions ne sont pas remplies
-document.getElementById("contact-form").addEventListener("submit", function (event) {
-    const message = messageField.value.trim();
-    if (message.value.length < 5 || message.value.length > 500) {
-        errorMessage.textContent = "Le message doit contenir entre 5 et 500 caractères.";
-        event.preventDefault(); // Bloquer l'envoi si le message n'est pas valide
-    }
-});
 
 
 
