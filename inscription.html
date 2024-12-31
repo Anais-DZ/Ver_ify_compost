@@ -5,7 +5,8 @@
     <link rel="icon" href="./Images/Logo.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="inscription.css" rel="stylesheet">
-    <script src="common.js" defer></script>
+    <script src="./js/inscription.js" defer></script>
+    <script src="./js/common.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&amp;family=Fredoka:wght@300..700&amp;display=swap" rel="stylesheet">
@@ -64,24 +65,27 @@
 
             <p>Vous êtes à quelques clics de votre inscription !</p>
 
-            <form method="post" action="monProgramme.php">
+            <form method="post" action="monProgramme.php" id="inscription-form">
                 <fieldset>
-                    <legend><img src="./Images/trois_vers.png" alt="vers_sortant_du_compost"/></legend>
+                    <legend><img src="./Images/trois_vers.png" alt="vers_sortant_du_compost" /></legend>
                     <div>
                         <label for="name">Votre identifiant</label>
-                        <input type="text" name="prenom_nom" placeholder="Entrez votre prénom et votre nom" minlength="2" maxlength="25" id="name" required>
+                        <input type="text" name="prenom_nom" placeholder="Entrez votre identifiant" minlength="2" maxlength="25" id="name" autocomplete="on" required />
                     </div>
                     <div>
-                        <label for="password_1">Votre mot de passe</label>
-                        <input type="password" name="password" placeholder="(8 caractères minimum)" minlength="2" maxlength="25" id="password_1" required>
+                        <label for="password_2">Votre mot de passe</label>
+                        <input type="password" name="password_2" placeholder="Entrer votre mot de passe" id="password_2" autocomplete="on" required />
+                        <div id="password-error-message-1"></div>
                     </div>
                     <div>
-                        <label for="password_2">Confirmez votre mot de passe</label>
-                        <input type="password" name="password" placeholder="(8 caractères minimum)" minlength="2" maxlength="25" id="password_2" required>
+                        <label for="password_3">Confirmez votre mot de passe</label>
+                        <input type="password" name="password_3" placeholder="Confirmez le mot de passe" id="password_3" autocomplete="on" required />
+                        <div id="password-error-message-2"></div>
                     </div>
-                    <button type="submit">Inscription</button>
+                    <button id="submit-btn" type="submit" disabled>Inscription</button>
                 </fieldset>
             </form>
+
             <div class="bande_horizontale_2"></div>
             <div class="bande_horizontale_1"></div>
         </div>

@@ -342,9 +342,12 @@ main {
 }
 
 .inscription img {
-    width: 55%;
+    width: 70%;
     height: auto;
-    margin-left: 20%;
+    left: 45px;
+    top: -25px;
+    position: relative;
+
 }
 
 .inscription input {
@@ -358,7 +361,7 @@ main {
     padding: 10px 10px;
 }
 
-.inscription button {
+#submit-btn {
     background-color: #564E4E;
     color: white;
     border: none;
@@ -372,33 +375,52 @@ main {
     padding: 5px 20px;
 }
 
-.inscription button:hover {
-    background-color: #221b1b;
+#submit-btn:hover {
+    background-color: #278a20;
+}
+
+#submit-btn:disabled {
+    background-color: rgba(255, 0, 0, 0.162);
+    cursor: not-allowed;
 }
 
 
 .inscription form {
-    width: 90%;
+    width: 370px;
     height: auto;
-    background: url(Images/feuilles_header.png);
+    background: url(./Images/bg_watercolor.jpg);
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 60px;
-    margin-bottom: 60px;
+    margin-top: 65px;
+    margin-bottom: 50px;
+    padding: 0 0 20px 0;
 }
 
 .inscription fieldset {
-    background-color: #fff0d4;
-    width: 80%;
+    position: relative;
+    background-color: #fffbf4e2;
+    width: 290px;
     height: auto;
+    position: relative;
+    bottom: 25px;
     display: flex;
     flex-direction: column;
     border: none;
-    margin: 25px;
-    position: relative;
-    bottom: 40px;
     padding: 0 20px;
+    margin: 0;
+}
+
+#password-error-message-1, #password-error-message-2  {
+    color: red;
+    font-family: "fredoka";
+    font-size: 14px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+#password-error-message-1 {
+    color: #564E4E;
 }

@@ -5,7 +5,7 @@ const textarea = document.getElementById("message");
 const charCountDisplay = document.getElementById("charCount");
 const maxLength = textarea.getAttribute("maxlength");
 
-// Écoute des changements dans le champ de message
+// Écoute des changements dans textarea
 textarea.addEventListener("input", function () {
     const message = textarea.value.trim();
 // Mise à jour du nombre de caractères restants

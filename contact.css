@@ -386,7 +386,7 @@ main {
     font-size: 14px;
     text-align: center;
     position: absolute;
-    bottom: 90px ;
+    bottom: 95px ;
 }
 
 #submit-button {
@@ -404,11 +404,12 @@ main {
 }
 
 #submit-button:hover {
-    background-color: #221b1b;
+    background-color: #278a20;
 }
 
 #submit-button:disabled {
     background-color: rgba(255, 0, 0, 0.162);
+    cursor: not-allowed;
 }
 
 
