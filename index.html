@@ -16,7 +16,7 @@
     <nav id="entete">
         <div class="left_menu">
             <a href="index.html" alt="accueil">Accueil</a>
-            <a href="#" alt="calendrier_memo">Calendrier & Mémo</a>
+            <a href="#calendar-fonctionnality" alt="calendrier_memo">Calendrier</a>
             <a href="#" alt="guide_entretien">Guide d'entretien</a>
             <a href="liens.html" alt="liens_ressources">Liens & Ressources</a>
             <a href="#" alt="profil">Profil</a>
@@ -28,7 +28,7 @@
             <span class="line l2"></span>
             <span class="line l3"></span>
         </button>
-        <img id="calendar" src="./Icones/calendar.png" title="Calendrier" alt="Logo calendrier">
+        <a href="#calendar-fonctionnality" alt="calendrier_memo"><img id="calendar" src="./Icones/calendar.png" title="Calendrier" alt="Logo calendrier"></a>
         <form method="post" action="monProgramme.php" autocomplete="on">
             <fieldset class="right_menu">
                 <h2>Connexion</h2>
@@ -76,7 +76,7 @@
             </div>
         </div>
         <div class="search">
-            <div id="border">
+            <div class="border">
                 <h2>Prêt·e à composter ?</h2>
                 <div class="separation"></div>
                 <p>Saisir le nom du déchet dans la barre de recherche, puis cliquer sur la loupe pour découvrir le composteur adapté instantanément.</p>
@@ -109,39 +109,43 @@
                   </form>
             </div>
         </div>
+
         <div class="down_menu">
             <a id="liens" href="liens.html" alt="redirection_page_liens"><img src="./Icones/liens.png">Liens | Ressources</a>
             <a id="guide" href="#" alt="redirection_page_guide"><img src="./Icones/guide.png">Guide d'entretien</a>
             <a id="calendrier" href="#" alt="redirection_page_calendrier"><img src="./Icones/calendrier.png">Calendrier | Mémo</a>
         </div>
-    </main>
-
-    <section class="calendar-fonctionnality">
-        <div class="calendar-container">
-            <div class="calendar-header">
-            <button id="prev">←</button>
-            <h2 id="monthYear"></h2>
-            <button id="next">→</button>
+        
+        <section id="calendar-fonctionnality">
+            <div class="border">
+                <h2 class="calendar-title">Calendrier</h2>
+                <div class="separation"></div>
+                <div class="calendar-container">
+                    <div class="calendar-header">
+                    <button id="prev">❮</button>
+                    <h3 id="monthYear"></h3>
+                    <button id="next">❯</button>
+                    </div>
+                    <table class="calendar">
+                    <thead>
+                        <tr>
+                        <th>Lun</th>
+                        <th>Mar</th>
+                        <th>Mer</th>
+                        <th>Jeu</th>
+                        <th>Ven</th>
+                        <th>Sam</th>
+                        <th>Dim</th>
+                        </tr>
+                    </thead>
+                    <tbody id="calendarBody">
+                        <!-- Les jours seront générés par JavaScript -->
+                    </tbody>
+                    </table>
+                </div>
             </div>
-            <table class="calendar">
-            <thead>
-                <tr>
-                <th>Lun</th>
-                <th>Mar</th>
-                <th>Mer</th>
-                <th>Jeu</th>
-                <th>Ven</th>
-                <th>Sam</th>
-                <th>Dim</th>
-                </tr>
-            </thead>
-            <tbody id="calendarBody">
-                <!-- Les jours seront générés par JavaScript -->
-            </tbody>
-            </table>
-        </div>
-    </section>
-    
+        </section>
+    </main>
 
     <footer>
         <a href="contact.html" alt="lien page contact">Contact</a>

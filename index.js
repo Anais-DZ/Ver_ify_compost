@@ -230,84 +230,97 @@ input.addEventListener('focus', resetInput); // Réinitialise l'input seulement 
 
 //fonctions pour que le calendrier soit dynamique
 const monthYear = document.getElementById('monthYear');
-const calendarBody = document.getElementById('calendarBody');
-const prevBtn = document.getElementById('prev');
-const nextBtn = document.getElementById('next');
+    const calendarBody = document.getElementById('calendarBody');
+    const prevBtn = document.getElementById('prev');
+    const nextBtn = document.getElementById('next');
 
-const today = new Date();
-let currentMonth = today.getMonth();
-let currentYear = today.getFullYear();
+    const today = new Date();
+    let currentMonth = today.getMonth();
+    let currentYear = today.getFullYear();
 
-// Noms des mois
-const months = [
-  "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
-  "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"
-];
+    // Noms des mois
+    const months = [
+      "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
+      "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"
+    ];
 
-function generateCalendar(month, year) {
-  // Effacer l'ancien calendrier
-  calendarBody.innerHTML = '';
+    function generateCalendar(month, year) {
+      // Effacer l'ancien calendrier
+      calendarBody.innerHTML = '';
 
-  // Obtenir le premier jour du mois
-  const firstDay = new Date(year, month, 1).getDay();
-  const daysInMonth = new Date(year, month + 1, 0).getDate();
+      // Obtenir les jours dans le mois actuel, précédent et suivant
+      const firstDay = new Date(year, month, 1).getDay(); // Jour de la semaine du 1er
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+      const daysInPrevMonth = new Date(year, month, 0).getDate();
 
-  // Ajustement pour que Lundi soit le premier jour
-  const startDay = firstDay === 0 ? 6 : firstDay - 1;
+      // Ajuster le premier jour (Lundi comme début)
+      const startDay = firstDay === 0 ? 6 : firstDay - 1;
 
-  // Mettre à jour l'en-tête du calendrier
-  monthYear.textContent = `${months[month]} ${year}`;
+      // Mettre à jour l'en-tête
+      monthYear.textContent = `${months[month]} ${year}`;
 
-  // Générer les lignes du calendrier
-  let date = 1;
-  for (let i = 0; i < 6; i++) { // Maximum 6 semaines
-    const row = document.createElement('tr');
+      // Générer les lignes du calendrier
+      let date = 1; // Jour actuel
+      let nextMonthDate = 1; // Jours du mois suivant
 
-    for (let j = 0; j < 7; j++) {
-      const cell = document.createElement('td');
-      if (i === 0 && j < startDay) {
-        cell.classList.add('empty');
-      } else if (date > daysInMonth) {
-        cell.classList.add('empty');
-      } else {
-        cell.textContent = date;
+      for (let i = 0; i < 6; i++) { // Maximum 6 semaines
+        const row = document.createElement('tr');
 
-        // Mettre en surbrillance le jour actuel
-        if (
-          date === today.getDate() &&
-          month === today.getMonth() &&
-          year === today.getFullYear()
-        ) {
-          cell.classList.add('today');
+        for (let j = 0; j < 7; j++) {
+          const cell = document.createElement('td');
+
+          // Ajouter les jours du mois précédent
+          if (i === 0 && j < startDay) {
+            const prevDate = daysInPrevMonth - startDay + j + 1;
+            cell.textContent = prevDate;
+            cell.classList.add('other-month');
+          } 
+          // Ajouter les jours du mois suivant
+          else if (date > daysInMonth) {
+            cell.textContent = nextMonthDate++;
+            cell.classList.add('other-month');
+          } 
+          // Ajouter les jours du mois actuel
+          else {
+            cell.textContent = date;
+
+            // Surligner le jour actuel
+            if (
+              date === today.getDate() &&
+              month === today.getMonth() &&
+              year === today.getFullYear()
+            ) {
+              cell.classList.add('today');
+            }
+
+            date++;
+          }
+          row.appendChild(cell);
         }
-        date++;
+
+        calendarBody.appendChild(row);
+        if (date > daysInMonth && nextMonthDate > 7) break; // Arrêter une fois tout affiché
       }
-      row.appendChild(cell);
     }
 
-    calendarBody.appendChild(row);
-    if (date > daysInMonth) break;
-  }
-}
+    // Navigation entre les mois
+    prevBtn.addEventListener('click', () => {
+      currentMonth--;
+      if (currentMonth < 0) {
+        currentMonth = 11;
+        currentYear--;
+      }
+      generateCalendar(currentMonth, currentYear);
+    });
 
-// Ajouter les événements aux boutons
-prevBtn.addEventListener('click', () => {
-  currentMonth--;
-  if (currentMonth < 0) {
-    currentMonth = 11;
-    currentYear--;
-  }
-  generateCalendar(currentMonth, currentYear);
-});
+    nextBtn.addEventListener('click', () => {
+      currentMonth++;
+      if (currentMonth > 11) {
+        currentMonth = 0;
+        currentYear++;
+      }
+      generateCalendar(currentMonth, currentYear);
+    });
 
-nextBtn.addEventListener('click', () => {
-  currentMonth++;
-  if (currentMonth > 11) {
-    currentMonth = 0;
-    currentYear++;
-  }
-  generateCalendar(currentMonth, currentYear);
-});
-
-// Générer le calendrier actuel
-generateCalendar(currentMonth, currentYear);
+    // Initialiser le calendrier
+    generateCalendar(currentMonth, currentYear);

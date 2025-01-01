@@ -52,26 +52,17 @@ header img {
 
 #entete {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 7px 0;
     background-color: transparent;
-    border: 4px solid #5bc501;
+    border: 2px solid #5bc501;
     border-bottom: none;
 }
 
 #entete img {
     width: 50px;
     height: 50px;
-}
-
-#user_button {
-    margin-right: 10px;
-}
-
-#calendar {
-    position: relative;
-    right: -9%;
 }
 
 /*menu rideau*/
@@ -84,7 +75,14 @@ header img {
     justify-content: space-evenly;
     align-items: center;
     background: transparent;
-    margin-left: 10px;
+}
+
+.menu_toggler {
+    margin-right: 25%;
+}
+
+#user_button {
+    margin-left: 25%;
 }
 
 .line {
@@ -127,7 +125,7 @@ header img {
     align-items: center;
     flex-direction: column;
     background-image: url(./Images/green_menu.jpg);
-    transform: translateX(-102%);
+    transform: translateX(-125%);
     transition: transform 0.8s cubic-bezier(0.18,0.89,0.32,1.27);
     z-index: 9;
     margin-top: 525px;
@@ -137,7 +135,7 @@ header img {
 }
 
 .left_menu.active {
-    transform: translate(0);
+    transform: translate(-40px);
 }
 
 .left_menu a {
@@ -364,7 +362,7 @@ main {
     background: url(./Images/carton_body.png);
     width: 90%;
     height: auto;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.523);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
 
     h2 {
@@ -378,15 +376,6 @@ main {
         margin: 0 40px;
     }
 
-    .separation {
-        width: 30%;
-        height: 1px;
-        background-color: #564E4E;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 25px;
-    }
-
     p {
         font-family: "fredoka";
         color: #564E4E;
@@ -394,14 +383,22 @@ main {
         font-size: 16px;
         margin: 0 20px 25px 20px;
     }
+}
 
-    #border {
-        border: solid 0.5px #564e4e76;
-        border-radius: 8px;
-        margin: 2%;
-        padding: 3%;
-    }
+.separation {
+    width: 30%;
+    height: 1px;
+    background-color: #564E4E;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+}
 
+.border {
+    border: solid 0.5px #564e4e76;
+    border-radius: 8px;
+    margin: 2%;
+    padding: 0 5%;
 }
 
 .search_bar {
@@ -411,6 +408,7 @@ main {
     justify-content: center;
     background-color: rgba(255, 255, 255, 0.46);
     border-radius: 12px;
+    margin-bottom: 10px;
 
     img {
         width: 60px;
@@ -530,7 +528,7 @@ p {
 .down_menu {
     display: flex;
     flex-direction: column;
-    margin: 60px 0 30px 0;
+    margin: 60px 0 10px 0;
     width: 90%;
 
     img {
@@ -573,23 +571,25 @@ p {
     
 }
 
-.calendar-fonctionnality {
+#calendar-fonctionnality {
     font-family: "fredoka";
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px;
+    margin: 20px 0 60px 0;
     background: url(./Images/carton_body.png);
-    padding: 20px 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 0 20px;
 }
 
 .calendar-container {
-    width: 360px;
-    height: 400px;
+    width: 80vw;
+    height: 410px;
     background-color: #fff;
     border-radius: 8px;
     overflow: hidden;
+    margin: 35px 0 25px 0;
   }
 
   .calendar-header {
@@ -597,23 +597,31 @@ p {
     justify-content: space-between;
     align-items: center;
     color: #4e3d28;
-    padding: 10px 20px;
+    padding: 15px;
   }
 
   .calendar-header button {
     background-color: transparent;
     border: none;
     color: #4e3d28;
-    font-size: 20px;
+    font-size: 26px;
     cursor: pointer;
-    font-weight: bold;
   }
 
-  .calendar-header h2 {
+  .calendar-title {
+    font-family: "fredoka";
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 25px;
+    color: #4e3d28;
+  }
+
+  .calendar-header h3 {
     margin: 0;
     color: #4e3d28;
-    font-size: 22px;
-    font-family: "fredoka condensed";
+    font-size: 20px;
+    font-family: "fredoka";
+    font-weight: normal;
   }
 
   .calendar {
@@ -637,17 +645,17 @@ p {
   }
 
   .calendar td {
-    font-size: 14px;
+    font-size: 16px;
     padding: 15px 5px;
   }
 
-  .calendar td.empty {
-    background-color: #e9fada;
+  .calendar td.today {
+    color:#ffffff;
+    font-weight: bolder;
+    background: #5dc5018d;
   }
 
-
-  .calendar td.today {
-    color:#5bc501;
-    font-weight: bolder;
-    font-size: 18px;
+  .calendar td.other-month {
+    color: #aaa;
+    background-color: #f7ffef;
   }
