@@ -375,8 +375,8 @@ main {
     background: url(Images/carton_body.png);
     text-align: center;
     margin: 90px 80px 40px;
-    height: 50%;
-    width: 250px;
+    height: 60%;
+    width: 260px;
     display: flex;
     align-items: center;
     border-radius: 8px;
@@ -387,9 +387,10 @@ main {
     border: solid 0.5px #564e4e76;
     border-radius: 8px;
     margin: 2%;
-    padding: 5%;
+    padding: 9% 5%;
 }
 
 #liste_sites_internet {
     margin-top: 60px;
 }
+
