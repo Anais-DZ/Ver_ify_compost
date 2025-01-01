@@ -374,7 +374,9 @@ main {
     position: relative;
     background: url(Images/carton_body.png);
     text-align: center;
-    margin: 90px 80px 40px;
+    margin: 80px 0 40px;
+    margin-left: auto;
+    margin-right: auto;
     height: 60%;
     width: 260px;
     display: flex;
