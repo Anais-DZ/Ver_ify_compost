@@ -19,8 +19,8 @@
             <a href="#" alt="calendrier_memo">Calendrier & Mémo</a>
             <a href="#" alt="guide_entretien">Guide d'entretien</a>
             <a href="liens.html" alt="liens_ressources">Liens & Ressources</a>
-            <a href="contact.html" alt="contact"> Contact</a>
             <a href="#" alt="profil">Profil</a>
+            <a href="contact.html" alt="contact"> Contact</a>
             <a id="deconnexion" href="#" alt="deconnexion"><img src="./Icones/off.png" alt="deconnexion">Déconnexion</a>
         </div>
         <button type="button" aria-label="toggle left menu" class="menu_toggler">
@@ -115,6 +115,34 @@
             <a id="calendrier" href="#" alt="redirection_page_calendrier"><img src="./Icones/calendrier.png">Calendrier | Mémo</a>
         </div>
     </main>
+
+    <section class="calendar-fonctionnality">
+        <div class="calendar-container">
+            <div class="calendar-header">
+            <button id="prev">←</button>
+            <h2 id="monthYear"></h2>
+            <button id="next">→</button>
+            </div>
+            <table class="calendar">
+            <thead>
+                <tr>
+                <th>Lun</th>
+                <th>Mar</th>
+                <th>Mer</th>
+                <th>Jeu</th>
+                <th>Ven</th>
+                <th>Sam</th>
+                <th>Dim</th>
+                </tr>
+            </thead>
+            <tbody id="calendarBody">
+                <!-- Les jours seront générés par JavaScript -->
+            </tbody>
+            </table>
+        </div>
+    </section>
+    
+
     <footer>
         <a href="contact.html" alt="lien page contact">Contact</a>
         <p>Copyright© 2024 | Design by <a class="attribution" href="https://www.freepik.com/" target="_blank" alt="lien_freepik">Freepik</a> & <a class="attribution" href="https://anais-diez.vercel.app/" target="_blank" alt="lien_page_perso">Anaïs DIEZ</a>

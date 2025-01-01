@@ -227,3 +227,87 @@ verifierButton.addEventListener('click', (event) => {
 // Fonction pour gérer l'input focus et la réinitialisation
 input.addEventListener('focus', resetInput); // Réinitialise l'input seulement lorsqu'il reçoit le focus
 
+
+//fonctions pour que le calendrier soit dynamique
+const monthYear = document.getElementById('monthYear');
+const calendarBody = document.getElementById('calendarBody');
+const prevBtn = document.getElementById('prev');
+const nextBtn = document.getElementById('next');
+
+const today = new Date();
+let currentMonth = today.getMonth();
+let currentYear = today.getFullYear();
+
+// Noms des mois
+const months = [
+  "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
+  "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"
+];
+
+function generateCalendar(month, year) {
+  // Effacer l'ancien calendrier
+  calendarBody.innerHTML = '';
+
+  // Obtenir le premier jour du mois
+  const firstDay = new Date(year, month, 1).getDay();
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+  // Ajustement pour que Lundi soit le premier jour
+  const startDay = firstDay === 0 ? 6 : firstDay - 1;
+
+  // Mettre à jour l'en-tête du calendrier
+  monthYear.textContent = `${months[month]} ${year}`;
+
+  // Générer les lignes du calendrier
+  let date = 1;
+  for (let i = 0; i < 6; i++) { // Maximum 6 semaines
+    const row = document.createElement('tr');
+
+    for (let j = 0; j < 7; j++) {
+      const cell = document.createElement('td');
+      if (i === 0 && j < startDay) {
+        cell.classList.add('empty');
+      } else if (date > daysInMonth) {
+        cell.classList.add('empty');
+      } else {
+        cell.textContent = date;
+
+        // Mettre en surbrillance le jour actuel
+        if (
+          date === today.getDate() &&
+          month === today.getMonth() &&
+          year === today.getFullYear()
+        ) {
+          cell.classList.add('today');
+        }
+        date++;
+      }
+      row.appendChild(cell);
+    }
+
+    calendarBody.appendChild(row);
+    if (date > daysInMonth) break;
+  }
+}
+
+// Ajouter les événements aux boutons
+prevBtn.addEventListener('click', () => {
+  currentMonth--;
+  if (currentMonth < 0) {
+    currentMonth = 11;
+    currentYear--;
+  }
+  generateCalendar(currentMonth, currentYear);
+});
+
+nextBtn.addEventListener('click', () => {
+  currentMonth++;
+  if (currentMonth > 11) {
+    currentMonth = 0;
+    currentYear++;
+  }
+  generateCalendar(currentMonth, currentYear);
+});
+
+// Générer le calendrier actuel
+generateCalendar(currentMonth, currentYear);
