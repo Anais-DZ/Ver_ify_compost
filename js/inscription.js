@@ -8,7 +8,7 @@ function isValidPassword(password) {
 }
 
 // Gestion des événements sur les champs de mot de passe
-document.getElementById("inscription-form").addEventListener("keydown", function () {
+document.getElementById("inscription-form").addEventListener("input", function () {
     const password2 = document.getElementById("password_2").value.trim();
     const password3 = document.getElementById("password_3").value.trim();
     const submitButton = document.getElementById("submit-btn");
@@ -31,18 +31,25 @@ document.getElementById("inscription-form").addEventListener("keydown", function
         isPassword2Valid = true;
     }
 
-     // Validation de la correspondance des mots de passe
-     if (password3.length > 0 && password2 !== password3) { // Validation uniquement si l'utilisateur écrit dans password_3
+    // Validation de la correspondance du mot de passe de confirmation (password_3) seulement si l'utilisateur commence à entrer dedans
+    if (password3.length > 0 && password2 !== password3) {
         errorMessage2.textContent = "Les mots de passe ne correspondent pas.";
-        isValid = false;
+        isPassword3Valid = false;
+    } else if (password3 === "") {
+        errorMessage2.textContent = ""; // Aucun message tant que l'utilisateur n'a pas commencé à saisir
+        isPassword3Valid = false;
     } else {
         errorMessage2.textContent = ""; // Supprimer le message d'erreur
         isPassword3Valid = true;
     }
 
     // Activation/désactivation du bouton de soumission
-    submitButton.disabled = !isPassword3Valid;
+    submitButton.disabled = !(isPassword2Valid && isPassword3Valid);
 });
+
+
+
+
 
 
 
