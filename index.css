@@ -124,7 +124,7 @@ header img {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-image: url(./Images/left_menu.jpg);
+    background-image: url(./Images/green_menu.jpg);
     transform: translateX(-102%);
     transition: transform 0.8s cubic-bezier(0.18,0.89,0.32,1.27);
     z-index: 9;
