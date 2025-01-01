@@ -196,10 +196,10 @@ header img {
 }
 
 .right_menu h2 {
-    font-family: "Cabin sketch";
-    font-size: 28px;
+    font-family: "fredoka";
+    font-size: 32px;
     text-align: center;
-    margin-bottom: 0;
+    margin-bottom: 10px;
     color: #564E4E;
 }
 
@@ -258,6 +258,8 @@ header img {
 
 .right_menu {
     background-image: url(./Images/green_menu.jpg);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
     position: fixed;
     width: 80vw;
     min-height: 50vh;
@@ -272,7 +274,17 @@ header img {
 }
 
 .right_menu.active {
-    transform: translate(-205px);
+    transform: translate(-167px);
+}
+
+.separation {
+    width: 30%;
+    height: 1px;
+    background-color: #564E4E;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+    border-radius: 50%;
 }
 
 footer a {
@@ -381,15 +393,6 @@ main {
         font-size: 16px;
         margin: 0 20px 25px 20px;
     }
-}
-
-.separation {
-    width: 30%;
-    height: 1px;
-    background-color: #564E4E;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 25px;
 }
 
 .border {
