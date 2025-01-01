@@ -377,7 +377,7 @@ const monthYear = document.getElementById('monthYear');
             cell.classList.add('other-month');
           } else {
             // Jours du mois actuel
-            const fullDate = `${year}-${month + 1}-${date}`;
+            const fullDate = `${date}-${month + 1}-${year}`;
             cell.textContent = date;
 
             // Vérifier les notes
