@@ -410,7 +410,7 @@ const monthYear = document.getElementById('monthYear');
     }
 
     function addNoteToDay(date, cell) {
-      const note = prompt(`Entrez une note pour le ${date}:`, notes[date] || '');
+      const note = prompt(`Écrire une note pour le ${date}:`, notes[date] || '');
       if (note) {
         notes[date] = note;
 
