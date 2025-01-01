@@ -416,7 +416,7 @@ main {
 #password-error-message-1, #password-error-message-2  {
     color: red;
     font-family: "fredoka";
-    font-size: 14px;
+    font-size: 15px;
     text-align: center;
     margin-top: 5px;
 }

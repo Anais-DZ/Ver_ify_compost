@@ -130,6 +130,8 @@ header img {
     z-index: 9;
     margin-top: 459px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.307);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
 .left_menu.active {
@@ -137,18 +139,28 @@ header img {
 }
 
 .left_menu a {
+    
+    width: 85%;
     font-family: "fredoka";
     font-size: 22px;
     color: #564E4E;
     text-decoration: none;
-    display: block;
-    margin: 10px 0;
+    margin: 1px 0;
+    background: #ffffff;
+    padding: 10px 0px 10px 20px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
 #deconnexion {
+    width: 85%;
     display: flex;
     align-items: center;
-    margin: 20px 30px 0 0;
+    justify-content: center;
+    margin: 15px 0px 10px 0px;
+    text-align: center;
+    padding-left: 0;
+    border-radius: 8px;
 
     img {
         width: 30px;
