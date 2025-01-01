@@ -229,6 +229,102 @@ input.addEventListener('focus', resetInput); // Réinitialise l'input seulement 
 
 
 //fonctions pour que le calendrier soit dynamique
+// const monthYear = document.getElementById('monthYear');
+//     const calendarBody = document.getElementById('calendarBody');
+//     const prevBtn = document.getElementById('prev');
+//     const nextBtn = document.getElementById('next');
+
+//     const today = new Date();
+//     let currentMonth = today.getMonth();
+//     let currentYear = today.getFullYear();
+
+//     // Noms des mois
+//     const months = [
+//       "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
+//       "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"
+//     ];
+
+//     function generateCalendar(month, year) {
+//       // Effacer l'ancien calendrier
+//       calendarBody.innerHTML = '';
+
+//       // Obtenir les jours dans le mois actuel, précédent et suivant
+//       const firstDay = new Date(year, month, 1).getDay(); // Jour de la semaine du 1er
+//       const daysInMonth = new Date(year, month + 1, 0).getDate();
+//       const daysInPrevMonth = new Date(year, month, 0).getDate();
+
+//       // Ajuster le premier jour (Lundi comme début)
+//       const startDay = firstDay === 0 ? 6 : firstDay - 1;
+
+//       // Mettre à jour l'en-tête
+//       monthYear.textContent = `${months[month]} ${year}`;
+
+//       // Générer les lignes du calendrier
+//       let date = 1; // Jour actuel
+//       let nextMonthDate = 1; // Jours du mois suivant
+
+//       for (let i = 0; i < 6; i++) { // Maximum 6 semaines
+//         const row = document.createElement('tr');
+
+//         for (let j = 0; j < 7; j++) {
+//           const cell = document.createElement('td');
+
+//           // Ajouter les jours du mois précédent
+//           if (i === 0 && j < startDay) {
+//             const prevDate = daysInPrevMonth - startDay + j + 1;
+//             cell.textContent = prevDate;
+//             cell.classList.add('other-month');
+//           } 
+//           // Ajouter les jours du mois suivant
+//           else if (date > daysInMonth) {
+//             cell.textContent = nextMonthDate++;
+//             cell.classList.add('other-month');
+//           } 
+//           // Ajouter les jours du mois actuel
+//           else {
+//             cell.textContent = date;
+
+//             // Surligner le jour actuel
+//             if (
+//               date === today.getDate() &&
+//               month === today.getMonth() &&
+//               year === today.getFullYear()
+//             ) {
+//               cell.classList.add('today');
+//             }
+
+//             date++;
+//           }
+//           row.appendChild(cell);
+//         }
+
+//         calendarBody.appendChild(row);
+//         if (date > daysInMonth && nextMonthDate > 7) break; // Arrêter une fois tout affiché
+//       }
+//     }
+
+//     // Navigation entre les mois
+//     prevBtn.addEventListener('click', () => {
+//       currentMonth--;
+//       if (currentMonth < 0) {
+//         currentMonth = 11;
+//         currentYear--;
+//       }
+//       generateCalendar(currentMonth, currentYear);
+//     });
+
+//     nextBtn.addEventListener('click', () => {
+//       currentMonth++;
+//       if (currentMonth > 11) {
+//         currentMonth = 0;
+//         currentYear++;
+//       }
+//       generateCalendar(currentMonth, currentYear);
+//     });
+
+//     // Initialiser le calendrier
+//     generateCalendar(currentMonth, currentYear);
+
 const monthYear = document.getElementById('monthYear');
     const calendarBody = document.getElementById('calendarBody');
     const prevBtn = document.getElementById('prev');
@@ -244,24 +340,22 @@ const monthYear = document.getElementById('monthYear');
       "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"
     ];
 
+    // Stockage des notes
+    const notes = {};
+
     function generateCalendar(month, year) {
       // Effacer l'ancien calendrier
       calendarBody.innerHTML = '';
 
-      // Obtenir les jours dans le mois actuel, précédent et suivant
-      const firstDay = new Date(year, month, 1).getDay(); // Jour de la semaine du 1er
+      const firstDay = new Date(year, month, 1).getDay(); // Jour du 1er
       const daysInMonth = new Date(year, month + 1, 0).getDate();
       const daysInPrevMonth = new Date(year, month, 0).getDate();
 
-      // Ajuster le premier jour (Lundi comme début)
-      const startDay = firstDay === 0 ? 6 : firstDay - 1;
-
-      // Mettre à jour l'en-tête
+      const startDay = firstDay === 0 ? 6 : firstDay - 1; // Ajuster pour Lundi
       monthYear.textContent = `${months[month]} ${year}`;
 
-      // Générer les lignes du calendrier
       let date = 1; // Jour actuel
-      let nextMonthDate = 1; // Jours du mois suivant
+      let nextMonthDate = 1; // Jour du mois suivant
 
       for (let i = 0; i < 6; i++) { // Maximum 6 semaines
         const row = document.createElement('tr');
@@ -269,22 +363,29 @@ const monthYear = document.getElementById('monthYear');
         for (let j = 0; j < 7; j++) {
           const cell = document.createElement('td');
 
-          // Ajouter les jours du mois précédent
           if (i === 0 && j < startDay) {
+            // Jours du mois précédent
             const prevDate = daysInPrevMonth - startDay + j + 1;
             cell.textContent = prevDate;
             cell.classList.add('other-month');
-          } 
-          // Ajouter les jours du mois suivant
-          else if (date > daysInMonth) {
+          } else if (date > daysInMonth) {
+            // Jours du mois suivant
             cell.textContent = nextMonthDate++;
             cell.classList.add('other-month');
-          } 
-          // Ajouter les jours du mois actuel
-          else {
+          } else {
+            // Jours du mois actuel
+            const fullDate = `${year}-${month + 1}-${date}`;
             cell.textContent = date;
 
-            // Surligner le jour actuel
+            // Vérifier les notes
+            if (notes[fullDate]) {
+              const icon = document.createElement('span');
+              icon.textContent = '📌';
+              icon.classList.add('note-icon');
+              cell.appendChild(icon);
+            }
+
+            // Mettre en surbrillance le jour actuel
             if (
               date === today.getDate() &&
               month === today.getMonth() &&
@@ -293,13 +394,30 @@ const monthYear = document.getElementById('monthYear');
               cell.classList.add('today');
             }
 
+            // Ajouter un événement de clic
+            cell.addEventListener('click', () => addNoteToDay(fullDate, cell));
+
             date++;
           }
           row.appendChild(cell);
         }
-
         calendarBody.appendChild(row);
-        if (date > daysInMonth && nextMonthDate > 7) break; // Arrêter une fois tout affiché
+        if (date > daysInMonth && nextMonthDate > 7) break;
+      }
+    }
+
+    function addNoteToDay(date, cell) {
+      const note = prompt(`Entrez une note pour le ${date}:`, notes[date] || '');
+      if (note) {
+        notes[date] = note;
+
+        // Ajouter un icône si elle n'existe pas
+        if (!cell.querySelector('.note-icon')) {
+          const icon = document.createElement('span');
+          icon.textContent = '📌';
+          icon.classList.add('note-icon');
+          cell.appendChild(icon);
+        }
       }
     }
 
