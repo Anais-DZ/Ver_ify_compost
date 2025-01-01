@@ -47,6 +47,28 @@ document.getElementById("inscription-form").addEventListener("input", function (
     submitButton.disabled = !(isPassword2Valid && isPassword3Valid);
 });
 
+document.getElementById("toggle-password").addEventListener("click", function () {
+    // Toggle password visibility for both fields
+    togglePasswordVisibility("password_2");
+    togglePasswordVisibility("password_3");
+    
+    // Update the event listener for password validation
+    document.getElementById("inscription-form").dispatchEvent(new Event("input"));
+});
+
+function togglePasswordVisibility(passwordFieldId) {
+    const passwordField = document.getElementById(passwordFieldId);
+    const isPasswordVisible = passwordField.type === "text";
+    
+    // Bascule entre type "text" et "password"
+    passwordField.type = isPasswordVisible ? "password" : "text";
+    
+    // Change l'icône ou le texte du bouton
+    document.getElementById("toggle-password").textContent = isPasswordVisible ? "\uD83E\uDEE3" : "\uD83D\uDE42";
+}
+
+
+
 
 
 

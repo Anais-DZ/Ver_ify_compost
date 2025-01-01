@@ -72,14 +72,15 @@
                         <label for="name">Votre identifiant</label>
                         <input type="text" name="prenom_nom" placeholder="Entrez votre identifiant" minlength="2" maxlength="25" id="name" autocomplete="on" required />
                     </div>
-                    <div>
+                    <div class="password-container">
                         <label for="password_2">Votre mot de passe</label>
                         <input type="password" name="password_2" placeholder="Entrer votre mot de passe" id="password_2" autocomplete="on" required />
+                        <button type="button" id="toggle-password">&#129763;</button>
                         <div id="password-error-message-1"></div>
                     </div>
                     <div>
                         <label for="password_3">Confirmez votre mot de passe</label>
-                        <input type="password" name="password_3" placeholder="Confirmez le mot de passe" id="password_3" autocomplete="on" required />
+                        <input type="password" name="password_3" placeholder="Confirmez le mot de passe" id="password_3" autocomplete="on" required/>
                         <div id="password-error-message-2"></div>
                     </div>
                     <button id="submit-btn" type="submit" disabled>Inscription</button>

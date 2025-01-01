@@ -424,3 +424,17 @@ main {
 #password-error-message-1 {
     color: #564E4E;
 }
+
+
+#toggle-password {
+    position: absolute;
+    right: 25px;
+    top: 134px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #555;
+}
+
+
