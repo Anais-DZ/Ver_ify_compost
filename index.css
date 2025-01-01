@@ -571,93 +571,6 @@ p {
     
 }
 
-/* #calendar-fonctionnality {
-    font-family: "fredoka";
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 10px 60px 10px;
-    background: url(./Images/carton_body.png);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    padding: 0 20px;
-}
-
-.calendar-container {
-    width: 85vw;
-    height: 435px;
-    background-color: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    margin: 35px 0;
-  }
-
-  .calendar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #4e3d28;
-    padding: 15px;
-    background-color: #eafbdb;
-  }
-
-  .calendar-header button {
-    background-color: transparent;
-    border: none;
-    color: #4e3d28;
-    font-size: 26px;
-    cursor: pointer;
-  }
-
-  .calendar-title {
-    font-family: "fredoka";
-    font-size: 28px;
-    text-align: center;
-    margin: 30px 0;
-    color: #4e3d28;
-  }
-
-  .calendar-header h3 {
-    margin: 0;
-    color: #4e3d28;
-    font-size: 20px;
-    font-family: "fredoka";
-    font-weight: normal;
-  }
-
-  .calendar {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: center;
-  }
-
-  .calendar th, .calendar td {
-    color: #4e3d28;
-    font-weight: normal;
-    height: 20px;
-  }
-
-  .calendar th { 
-    text-transform: uppercase;
-    font-size: 16px;
-    padding: 20px 5px;
-  }
-
-  .calendar td {
-    font-size: 16px;
-    padding: 15px 5px;
-  }
-
-  .calendar td.today {
-    color:#ffffff;
-    font-weight: bolder;
-    background: #5dc5018d;
-  }
-
-  .calendar td.other-month {
-    color: #aaaaaa51;
-  } */
-
   #calendar-fonctionnality {
     font-family: "fredoka";
     display: flex;
@@ -684,7 +597,7 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #4e3d28;
+    color: #564E4E;
     padding: 15px;
     background-color: #eafbdb;
 }
@@ -692,7 +605,7 @@ p {
 .calendar-header button {
     background-color: transparent;
     border: none;
-    color: #4e3d28;
+    color: #564E4E;
     font-size: 26px;
     cursor: pointer;
 }
@@ -702,12 +615,12 @@ p {
     font-size: 28px;
     text-align: center;
     margin: 30px 0;
-    color: #4e3d28;
+    color: #564E4E;
 }
 
 .calendar-header h3 {
     margin: 0;
-    color: #4e3d28;
+    color: #564E4E;
     font-size: 20px;
     font-family: "fredoka";
     font-weight: normal;
@@ -720,7 +633,7 @@ p {
 }
 
 .calendar th, .calendar td {
-    color: #4e3d28;
+    color: #564E4E;
     font-weight: normal;
     height: 20px;
     vertical-align: middle; /* Centrer le contenu */
@@ -762,5 +675,47 @@ p {
     top: 5px;
     right: 5px;
     font-size: 14px;
-    color: #4e3d28;
+    color: #564E4E;
 }
+
+/* .overlay-calendar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+  
+  .overlay-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  #noteInput {
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 1em;
+  }
+  
+  #saveNote, .close-button-calendar {
+    background: #007BFF;
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+  }
+  
+  #saveNote:hover, .close-button-calendar:hover {
+    background: #0056b3;
+  }
+   */
+

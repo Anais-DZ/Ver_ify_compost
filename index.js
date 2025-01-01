@@ -360,7 +360,7 @@ const monthYear = document.getElementById('monthYear');
       let date = 1; // Jour actuel
       let nextMonthDate = 1; // Jour du mois suivant
 
-      for (let i = 0; i < 5; i++) { // Maximum 6 semaines
+      for (let i = 0; i < 5; i++) { // Maximum 5 semaines
         const row = document.createElement('tr');
 
         for (let j = 0; j < 7; j++) {
@@ -377,7 +377,7 @@ const monthYear = document.getElementById('monthYear');
             cell.classList.add('other-month');
           } else {
             // Jours du mois actuel
-            const fullDate = `${date}-${month + 1}-${year}`;
+            const fullDate = `${date} / ${month + 1} / ${year}`;
             cell.textContent = date;
 
             // Vérifier les notes
@@ -410,7 +410,7 @@ const monthYear = document.getElementById('monthYear');
     }
 
     function addNoteToDay(date, cell) {
-      const note = prompt(`Écrire une note pour le ${date}:`, notes[date] || '');
+      const note = prompt(`Entrez une note pour le ${date}:`, notes[date] || '');
       if (note) {
         notes[date] = note;
 
@@ -445,3 +445,142 @@ const monthYear = document.getElementById('monthYear');
 
     // Initialiser le calendrier
     generateCalendar(currentMonth, currentYear);
+
+
+
+//fonction avec overlay mais bu. A regler plus tard
+// const monthYear = document.getElementById('monthYear');
+// const calendarBody = document.getElementById('calendarBody');
+// const prevBtn = document.getElementById('prev');
+// const nextBtn = document.getElementById('next');
+// const overlayCalendar = document.querySelector('.overlay-calendar');
+
+// const today = new Date();
+// let currentMonth = today.getMonth();
+// let currentYear = today.getFullYear();
+
+// // Noms des mois
+// const months = [
+//   "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
+//   "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"
+// ];
+
+// // Stockage des notes
+// const notes = {};
+
+// function generateCalendar(month, year) {
+//   // Effacer l'ancien calendrier
+//   calendarBody.innerText = '';
+
+//   const firstDay = new Date(year, month, 1).getDay(); // Jour du 1er
+//   const daysInMonth = new Date(year, month + 1, 0).getDate();
+//   const daysInPrevMonth = new Date(year, month, 0).getDate();
+
+//   const startDay = firstDay === 0 ? 6 : firstDay - 1; // Ajuster pour Lundi
+//   monthYear.textContent = `${months[month]} ${year}`;
+
+//   let date = 1; // Jour actuel
+//   let nextMonthDate = 1; // Jour du mois suivant
+
+//   for (let i = 0; i < 5; i++) { // Maximum 5 semaines
+//     const row = document.createElement('tr');
+
+//     for (let j = 0; j < 7; j++) {
+//       const cell = document.createElement('td');
+
+//       if (i === 0 && j < startDay) {
+//         // Jours du mois précédent
+//         const prevDate = daysInPrevMonth - startDay + j + 1;
+//         cell.textContent = prevDate;
+//         cell.classList.add('other-month');
+//       } else if (date > daysInMonth) {
+//         // Jours du mois suivant
+//         cell.textContent = nextMonthDate++;
+//         cell.classList.add('other-month');
+//       } else {
+//         // Jours du mois actuel
+//         const fullDate = `${date} / ${month + 1} / ${year}`;
+//         cell.textContent = date;
+
+//         // Vérifier les notes
+//         if (notes[fullDate]) {
+//           const icon = document.createElement('span');
+//           icon.textContent = '📌';
+//           icon.classList.add('note-icon');
+//           cell.appendChild(icon);
+//         }
+
+//         // Mettre en surbrillance le jour actuel
+//         if (
+//           date === today.getDate() &&
+//           month === today.getMonth() &&
+//           year === today.getFullYear()
+//         ) {
+//           cell.classList.add('today');
+//         }
+
+//         // Ajouter un événement de clic pour ouvrir l'overlay
+//         cell.addEventListener('click', () => openNoteOverlay(fullDate, cell));
+
+//         date++;
+//       }
+//       row.appendChild(cell);
+//     }
+//     calendarBody.appendChild(row);
+//     if (date > daysInMonth && nextMonthDate > 7) break;
+//   }
+// }
+
+// function openNoteOverlay(date, cell) {
+//   overlayCalendar.style.display = 'flex';
+//   document.getElementById('noteDate').textContent = date; // Afficher la date sur l'overlay
+
+//   // Pré-remplir la note si elle existe
+//   const noteInput = document.getElementById('noteInput');
+//   noteInput.value = notes[date] || '';
+  
+//   // Événement pour fermer l'overlay et enregistrer la note
+//   document.getElementById('saveNote').addEventListener('click', () => {
+//     const note = noteInput.value;
+//     if (note) {
+//       notes[date] = note;
+//       closeCalendar();
+      
+//       // Ajouter ou mettre à jour l'icône de note si nécessaire
+//       if (!cell.querySelector('.note-icon')) {
+//         const icon = document.createElement('span');
+//         icon.textContent = '📌';
+//         icon.classList.add('note-icon');
+//         cell.appendChild(icon);
+//       }
+//     }
+//   });
+// }
+
+// // Fonction pour fermer l'overlay
+// function closeCalendar() {
+//   overlayCalendar.style.display = 'none';
+// }
+
+// // Navigation entre les mois
+// prevBtn.addEventListener('click', () => {
+//   currentMonth--;
+//   if (currentMonth < 0) {
+//     currentMonth = 11;
+//     currentYear--;
+//   }
+//   generateCalendar(currentMonth, currentYear);
+// });
+
+// nextBtn.addEventListener('click', () => {
+//   currentMonth++;
+//   if (currentMonth > 11) {
+//     currentMonth = 0;
+//     currentYear++;
+//   }
+//   generateCalendar(currentMonth, currentYear);
+// });
+
+// // Initialiser le calendrier
+// generateCalendar(currentMonth, currentYear);
+
