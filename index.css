@@ -585,11 +585,11 @@ p {
 
 .calendar-container {
     width: 80vw;
-    height: 410px;
+    height: 412px;
     background-color: #fff;
     border-radius: 8px;
     overflow: hidden;
-    margin: 35px 0 25px 0;
+    margin: 35px 0;
   }
 
   .calendar-header {
@@ -598,6 +598,7 @@ p {
     align-items: center;
     color: #4e3d28;
     padding: 15px;
+    background-color: #eafbdb;
   }
 
   .calendar-header button {
@@ -610,9 +611,9 @@ p {
 
   .calendar-title {
     font-family: "fredoka";
-    font-size: 24px;
+    font-size: 28px;
     text-align: center;
-    margin-bottom: 25px;
+    margin: 35px 0;
     color: #4e3d28;
   }
 
@@ -656,6 +657,6 @@ p {
   }
 
   .calendar td.other-month {
-    color: #aaa;
+    color: #aaaaaa51;
     background-color: #f7ffef;
   }
