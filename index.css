@@ -676,7 +676,8 @@ p {
     background-color: #fff;
     border-radius: 8px;
     overflow: hidden;
-    margin: 35px 0;
+    margin: 35px 0 45px 0;
+    padding-bottom: 10px;
 }
 
 .calendar-header {
