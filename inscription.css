@@ -336,7 +336,7 @@ main {
 .inscription label {
     font-family: 'Fredoka';
     display: block;
-    font-size: 15px;
+    font-size: 18px;
     color: #564E4E;
     margin: 25px 0 4px 0;
 }
@@ -354,7 +354,7 @@ main {
     border: 1px solid #ccc;
     width: 100%;
     border-radius: 5px;
-    font-size: 12px;
+    font-size: 16px;
     font-style: italic;
     box-sizing: border-box;
     font-family: 'Fredoka';
@@ -429,11 +429,11 @@ main {
 #toggle-password {
     position: absolute;
     right: 25px;
-    top: 134px;
+    top: 145px;
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 24px;
+    font-size: 28px;
     color: #555;
 }
 
