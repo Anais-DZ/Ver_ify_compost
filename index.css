@@ -398,7 +398,7 @@ main {
     border: solid 0.5px #564e4e76;
     border-radius: 8px;
     margin: 2%;
-    padding: 0 5%;
+    padding: 0 4%;
 }
 
 .search_bar {
@@ -576,7 +576,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px 0 60px 0;
+    margin: 20px 10px 60px 10px;
     background: url(./Images/carton_body.png);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
@@ -584,8 +584,8 @@ p {
 }
 
 .calendar-container {
-    width: 80vw;
-    height: 412px;
+    width: 85vw;
+    height: 435px;
     background-color: #fff;
     border-radius: 8px;
     overflow: hidden;
@@ -613,7 +613,7 @@ p {
     font-family: "fredoka";
     font-size: 28px;
     text-align: center;
-    margin: 35px 0;
+    margin: 30px 0;
     color: #4e3d28;
   }
 
@@ -639,10 +639,8 @@ p {
 
   .calendar th { 
     text-transform: uppercase;
-    border-bottom: 2px solid #ddd;
-    border-top: 2px solid #ddd;
     font-size: 16px;
-    padding: 10px 5px;
+    padding: 20px 5px;
   }
 
   .calendar td {
@@ -658,5 +656,4 @@ p {
 
   .calendar td.other-month {
     color: #aaaaaa51;
-    background-color: #f7ffef;
   }
