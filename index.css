@@ -672,7 +672,7 @@ p {
 
 .calendar-container {
     width: 85vw;
-    height: 435px;
+    height: auto;
     background-color: #fff;
     border-radius: 8px;
     overflow: hidden;

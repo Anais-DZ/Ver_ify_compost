@@ -263,7 +263,7 @@ input.addEventListener('focus', resetInput); // Réinitialise l'input seulement 
 //       let date = 1; // Jour actuel
 //       let nextMonthDate = 1; // Jours du mois suivant
 
-//       for (let i = 0; i < 6; i++) { // Maximum 6 semaines
+//       for (let i = 0; i < 5; i++) { // Maximum 6 semaines
 //         const row = document.createElement('tr');
 
 //         for (let j = 0; j < 7; j++) {
@@ -325,6 +325,9 @@ input.addEventListener('focus', resetInput); // Réinitialise l'input seulement 
 //     // Initialiser le calendrier
 //     generateCalendar(currentMonth, currentYear);
 
+
+
+//fonction avec prise de note dans le calendrier -les notes ne restent pas, en attente de php pour connexion utilisateur
 const monthYear = document.getElementById('monthYear');
     const calendarBody = document.getElementById('calendarBody');
     const prevBtn = document.getElementById('prev');
@@ -357,7 +360,7 @@ const monthYear = document.getElementById('monthYear');
       let date = 1; // Jour actuel
       let nextMonthDate = 1; // Jour du mois suivant
 
-      for (let i = 0; i < 6; i++) { // Maximum 6 semaines
+      for (let i = 0; i < 5; i++) { // Maximum 6 semaines
         const row = document.createElement('tr');
 
         for (let j = 0; j < 7; j++) {
