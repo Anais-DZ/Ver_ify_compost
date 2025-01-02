@@ -1,9 +1,9 @@
 
-html, body {
-  display: flex;
-  flex-direction: column;
-  align-content: space-between;
-  margin: 0;
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
 }
 
 header, footer {
@@ -17,12 +17,12 @@ header, footer {
 
 header {
     height: 148px;
-    width: auto;
+    width: 100%;
 }
 
 footer {
     height: 114px;
-    width: auto;
+    width: 100%;
     justify-content: flex-end;
 }
 
@@ -48,8 +48,9 @@ header img {
 }
 
 #entete {
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 7px 0;
     background-color: transparent;
@@ -70,18 +71,6 @@ header img {
     justify-content: space-evenly;
     align-items: center;
     background: transparent;
-}
-
-.menu_toggler {
-    margin-left: 15px;
-}
-
-#user_button {
-    margin-right: 15px;
-}
-
-#calendar {
-    margin-left: 52px;
 }
 
 .line {
@@ -113,6 +102,14 @@ header img {
 
 .menu_toggler.active .l3 {
     transform: translateY(0) rotate(-135deg);
+}
+
+.menu_toggler {
+    margin-right: 25%;
+}
+
+#user_button {
+    margin-left: 25%;
 }
 
 .left_menu {
