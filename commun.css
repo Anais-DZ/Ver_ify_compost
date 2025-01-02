@@ -131,7 +131,7 @@ header img {
 }
 
 .left_menu.active {
-    transform: translate(0);
+    transform: translate(-45px);
 }
 
 .left_menu a {
@@ -166,9 +166,7 @@ header img {
 }
 
 
-
-/* espace connexion*/
-
+/* menu connexion*/
 .right_menu a {
     font-family: 'Fredoka';
     color: #689e58;
@@ -273,7 +271,7 @@ header img {
 }
 
 .right_menu.active {
-    transform: translate(-232px);
+    transform: translate(-177px);
 }
 
 .separation {
