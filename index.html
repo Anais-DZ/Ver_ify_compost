@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link rel="icon" href="./Images/Logo.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Un site dédié à vous aider à trier facilement et rapidement vos déchets compostables. Découvrez en quelques clics comment simplifier le compostage et adopter des gestes écologiques au quotidien.">
     <link href="index.css" rel="stylesheet">
     <link href="commun.css" rel="stylesheet">
     <script src="index.js" defer></script>
@@ -85,31 +86,19 @@
                 <p>Saisir le nom du déchet dans la barre de recherche, puis cliquer sur la loupe pour découvrir le composteur adapté instantanément.</p>
                 <div class="separation"></div>
 
-                <!-- en attendant cours sur la base de données. L'inconvénient, le liste de suggestion n'est pas dynamique
-                <form class="search_bar">
-                    <input list="suggestions" id="biodéchet" name="biodéchet" placeholder="Le nom du biodéchet, c'est ici !"><img class="button_loupe" src="./Images/loupe_2.png" alt="icone_loupe_pour_recherche"/>
-                    
-                    <datalist id="suggestions">
-                      <option value="Coquilles d'œuf">
-                      <option value="Coquilles de noix">
-                      <option value="Coquilles de moules">
-                      <option value="Coquilles de crustacés">
-                    </datalist>
-                  </form>-->
-
-                  <form class="search_bar" autocomplete="off">
-                    <input id="biodéchet" name="biodéchet" placeholder="Le nom du déchet, c'est ici !"><button id="verifier"><img src="./Images/loupe_2.png" alt="icone loupe pour valider la recherche"/></button>
-                    <div id="resultat-overlay" class="overlay">
-                        <div class="overlay-content">
-                            <button id="close-overlay" class="close-button">&times;</button>
-                            <h1 id="overlay-title"></h1>
-                            <p id="overlay-description"></p>
-                            <p id="overlay-status"></p>
-                            <img id="overlay-image" src="" alt="image_composteur" />   
-                        </div>
+                <form class="search_bar" autocomplete="off">
+                <input id="biodéchet" name="biodéchet" placeholder="Le nom du déchet, c'est ici !"><button id="verifier"><img src="./Images/loupe_2.png" alt="icone loupe pour valider la recherche"/></button>
+                <div id="resultat-overlay" class="overlay">
+                    <div class="overlay-content">
+                        <button id="close-overlay" class="close-button">&times;</button>
+                        <h1 id="overlay-title"></h1>
+                        <p id="overlay-description"></p>
+                        <p id="overlay-status"></p>
+                        <img id="overlay-image" src="" alt="image_composteur" />   
                     </div>
-                    <ul id="suggestions"></ul>
-                  </form>
+                </div>
+                <ul id="suggestions"></ul>
+                </form>
             </div>
         </div>
 
