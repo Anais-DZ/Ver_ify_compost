@@ -29,15 +29,15 @@ footer {
 header h1, footer a, footer p {
     color: white;
     text-shadow:
-      5px 5px 10px #022a08,
-      -5px 5px 10px #022a08,
-      -5px -5px 10px #022a08,
-      5px -5px 10px #022a08;
+      5px 5px 10px #022a0880,
+      -5px 5px 10px #022a0880,
+      -5px -5px 10px #022a0880,
+      5px -5px 10px #022a0880;
     font-family: 'Fredoka';
 }
 
 header h1 {
-  font-size: 36px;
+  font-size: 42px;
   letter-spacing: 2px;
   margin: 25px 0 10px 0;
 }
