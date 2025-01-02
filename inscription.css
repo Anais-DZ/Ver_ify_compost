@@ -1,5 +1,5 @@
 main {
-    background-image: url("./Images/carton_body.png");
+    background-image: url("./Images/carton_body.webp");
     background-size: cover;
     background-position: center;
     margin: 60px 0 50px 0;
@@ -106,7 +106,7 @@ main {
 .inscription form {
     width: 370px;
     height: auto;
-    background: url(./Images/bg_watercolor.jpg);
+    background: url(./Images/bg_watercolor.webp);
     display: flex;
     flex-direction: column;
     align-items: center;

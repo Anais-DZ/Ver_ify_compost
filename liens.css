@@ -1,5 +1,5 @@
 main {
-    background-image: url("./Images/carton_body.png");
+    background-image: url("./Images/carton_body.webp");
     background-size: cover;
     background-position: center;
     margin: 60px 0 50px 0;
@@ -68,7 +68,7 @@ main {
 
 #suggestion {
     position: relative;
-    background: url(Images/carton_body.png);
+    background: url(Images/carton_body.webp);
     text-align: center;
     margin: 80px 0 40px;
     margin-left: auto;

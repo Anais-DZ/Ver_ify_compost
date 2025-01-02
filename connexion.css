@@ -1,5 +1,5 @@
 main {
-    background-image: url("./Images/carton_body.png");
+    background-image: url("./Images/carton_body.webp");
     background-size: cover;
     background-position: center;
     margin: 60px 0 50px 0;
@@ -116,7 +116,7 @@ main {
 .connexion form {
     width: 90%;
     height: auto;
-    background: url(Images/feuilles_header.png);
+    background: url(Images/bg_watercolor.webp);
     display: flex;
     flex-direction: column;
     align-items: center;

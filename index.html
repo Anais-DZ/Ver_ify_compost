@@ -73,7 +73,11 @@
             <img class="carousel_control prev" src="./Icones/arrow_left.png" alt="fleche_gauche">
             <div class="carousel"> <!-- élément contenant que le carousel-->
                 <ul class="carousel_inner"> <!-- élément contenant toutes les slides -->
-                    <img src="./Images/cadre_feuilles.png" id="cadre_feuilles" al="image_cadre_feuilles">                  
+                    <picture>
+                        <source srcset="./Images/cadre_feuilles.webp" type="image/webp" />
+                        <source srcset="./Images/cadre_feuilles.png" type="image/png" />
+                        <img src="./Images/cadre_feuilles.png" id="cadre_feuilles" al="image cadre avec des feuilles">
+                    </picture>                  
                 <!-- Première slide -->
                     <li class="slide">Éviter à 100 kg/an de biodéchets d’être transformés en gaz à effet de serre</li>
                     <li class="slide little_slide">Produire son propre compost, gratuit et sans odeur</li>
@@ -162,6 +166,5 @@
         <p>Copyright© 2024 | Design by <a class="attribution" href="https://www.freepik.com/" target="_blank" alt="lien_freepik">Freepik</a> & <a class="attribution" href="https://anais-diez.vercel.app/" target="_blank" alt="lien_page_perso">Anaïs DIEZ</a>
         </p>
     </footer>
-<!--<script src="./js/common.js"></script> àvoir plus tard-->
 </body>
 </html>
