@@ -24,21 +24,3 @@ textarea.addEventListener("input", function () {
         submitButton.disabled = false; // Activer le bouton si la validation réussit
     }
 });
-
-//supprimer les raccourcis du calendrier sur les autres pages autres que la page d'accueil
-document.addEventListener('DOMContentLoaded', function() {
-    // Récupération de l'élément du logo et du lien du calendrier
-    const calendarElement = document.getElementById('calendar');
-    const calendarLink = document.querySelector('a[href="#calendar-fonctionnality"]');
-
-    // Vérification si la page actuelle est différente de l'index
-    if (window.location.pathname !== '/index.html') {
-        // Supprimer l'élément du logo et le lien
-        if (calendarElement) {
-            calendarElement.remove();
-        }
-        if (calendarLink) {
-            calendarLink.remove();
-        }
-    }
-});
