@@ -208,6 +208,7 @@ function showResult(biodechet) {
 closeOverlayButton.addEventListener('click', function (event) {
     event.preventDefault(); // Empêche le comportement par défaut
     resultatOverlay.style.display = 'none'; // Cache l'overlay
+    
 });
 
 // Événement pour fermer l'overlay

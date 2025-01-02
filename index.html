@@ -11,9 +11,8 @@
     <link href="index.css" rel="stylesheet">
     <link href="commun.css" rel="stylesheet">
     <link
-    rel="preload" as="image"
-    href="./Images/carton_body.webp"
-    media="screen and (max-width: 767px)" />
+    <link rel="preload" href="./Images/carton_body.webp" as="image">
+    <link rel="preload" href="path_to_font.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <script src="./js/index.js" defer></script>
     <script src="./js/commun.js" async></script>
     <title>Page - Accueil</title>
@@ -80,7 +79,7 @@
                         <picture>
                             <source srcset="./Images/cadre_feuilles.webp" type="image/webp" />
                             <source srcset="./Images/cadre_feuilles.png" type="image/png" />
-                            <img src="./Images/cadre_feuilles.png" id="cadre_feuilles" alt="image cadre avec des feuilles">
+                            <img src="./Images/cadre_feuilles.png" id="cadre_feuilles" alt="image cadre avec des feuilles" loading="lazy">
                         </picture>
                     </li>                 
                 <!-- Première slide -->
@@ -115,7 +114,7 @@
                         <h1 id="overlay-title"></h1>
                         <p id="overlay-description"></p>
                         <p id="overlay-status"></p>
-                        <img id="overlay-image" src="" alt="image d'un composteur differente selon la reponse" />   
+                        <img id="overlay-image" src="" alt="image d'un composteur differente selon la reponse" loading="lazy"/>   
                     </div>
                 </div>
                 <ul id="suggestions"></ul>
