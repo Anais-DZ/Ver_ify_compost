@@ -103,3 +103,7 @@ main {
     margin-top: 60px;
 }
 
+.ul_title {
+    list-style-type: none;
+  }
+
