@@ -24,7 +24,3 @@ textarea.addEventListener("input", function () {
         submitButton.disabled = false; // Activer le bouton si la validation réussit
     }
 });
-
-
-
-

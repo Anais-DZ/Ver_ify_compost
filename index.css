@@ -273,7 +273,6 @@ p {
 } */
     
 
-
 /*code du calendrier*/
 #calendar-fonctionnality {
     font-family: "fredoka";
@@ -381,45 +380,4 @@ p {
     font-size: 14px;
     color: #564E4E;
 }
-
-/* .overlay-calendar {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-  }
-  
-  .overlay-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: white;
-    padding: 1em;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  #noteInput {
-    width: 100%;
-    padding: 0.5em;
-    margin-bottom: 1em;
-  }
-  
-  #saveNote, .close-button-calendar {
-    background: #007BFF;
-    color: white;
-    border: none;
-    padding: 0.5em 1em;
-    cursor: pointer;
-  }
-  
-  #saveNote:hover, .close-button-calendar:hover {
-    background: #0056b3;
-  }
-   */
 

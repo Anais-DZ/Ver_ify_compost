@@ -66,16 +66,3 @@ function togglePasswordVisibility(passwordFieldId) {
     // Change l'icône ou le texte du bouton
     document.getElementById("toggle-password").textContent = isPasswordVisible ? "🙈" : "👁️";
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
