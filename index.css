@@ -201,11 +201,12 @@ header img {
     text-align: center;
     margin-bottom: 10px;
     color: #564E4E;
+    font-weight: normal;
 }
 
 #checkbox {
     width: auto;
-    margin-right: 15px; /*changer la couleur avec javascript*/
+    margin-right: 15px; /*changer la couleur avec javascript ?*/
 }
 
 .checkbox_container {
@@ -257,7 +258,9 @@ header img {
 }
 
 .right_menu {
-    background-image: url(./Images/green_menu.jpg);
+    background: #fefffa;
+    border: 10px solid #c0ec59;
+    border-right: none;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
     position: fixed;
@@ -265,7 +268,6 @@ header img {
     min-height: 50vh;
     display: flex;
     flex-direction: column;
-    border: none;
     transform: translateX(100%);
     transition: transform 0.8s cubic-bezier(0.18,0.89,0.32,1.27);
     z-index: 9;
@@ -274,7 +276,7 @@ header img {
 }
 
 .right_menu.active {
-    transform: translate(-167px);
+    transform: translate(-179px);
 }
 
 .separation {
@@ -376,14 +378,15 @@ main {
     border-radius: 8px;
 
     h2 {
-        font-family: "fredoka"; /* "fredoka one" n'apparaît pas sur tous les moteurs de recherche*/
+        font-family: "fredoka"; /* "fredoka one" n'apparaît pas sur tous les navigateurs/
         color: #564E4E;
-        /*-webkit-text-stroke: 0.2px white; /* n'apparaît pas sur tous les moteurs de recherche */
+        /*-webkit-text-stroke: 0.2px white; /* n'apparaît pas sur tous les navigateurs */
         letter-spacing: 2px;
         font-size: 28px;
         padding: 15px 0 25px 0;
         text-align: center;
         margin: 0 40px;
+        color: #564E4E;
     }
 
     p {
@@ -403,7 +406,7 @@ main {
 }
 
 .search_bar {
-    position: relative; /* pour ne pas déformer la barre lors des suggestions*/
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: center;
