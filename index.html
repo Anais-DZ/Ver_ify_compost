@@ -8,13 +8,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400&family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="preload" href="path_to_font.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link href="index.css" rel="stylesheet">
     <link href="commun.css" rel="stylesheet">
     <link
-    <link rel="preload" href="./Images/carton_body.webp" as="image">
-    <link rel="preload" href="path_to_font.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <script src="./js/index.js" defer></script>
-    <script src="./js/commun.js" async></script>
+    rel="preload" as="image"
+    href="./Images/carton_body.webp">
+    <script src="./js/index.js" async></script>
+    <script src="./js/commun.js" defer></script>
     <title>Page - Accueil</title>
 </head>
 <body>
@@ -79,7 +80,7 @@
                         <picture>
                             <source srcset="./Images/cadre_feuilles.webp" type="image/webp" />
                             <source srcset="./Images/cadre_feuilles.png" type="image/png" />
-                            <img src="./Images/cadre_feuilles.png" id="cadre_feuilles" alt="image cadre avec des feuilles" loading="lazy">
+                            <img src="./Images/cadre_feuilles.png" id="cadre_feuilles" alt="image cadre avec des feuilles">
                         </picture>
                     </li>                 
                 <!-- Première slide -->
@@ -114,7 +115,7 @@
                         <h1 id="overlay-title"></h1>
                         <p id="overlay-description"></p>
                         <p id="overlay-status"></p>
-                        <img id="overlay-image" src="" alt="image d'un composteur differente selon la reponse" loading="lazy"/>   
+                        <img id="overlay-image" src="" alt="image d'un composteur differente selon la reponse" />   
                     </div>
                 </div>
                 <ul id="suggestions"></ul>
