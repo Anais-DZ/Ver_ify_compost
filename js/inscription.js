@@ -4,14 +4,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const calendarElement = document.getElementById('calendar');
     const calendarLink = document.querySelector('a[href="#calendar-fonctionnality"]');
 
-    // Vérification si la page actuelle n'est pas index.html
+    // Vérification si la page actuelle est différente de l'index
     if (window.location.pathname !== '/index.html') {
         // Supprimer l'élément du logo et le lien
         if (calendarElement) {
-            calendarElement.style.display = 'none'; // Cachons simplement l'élément
+            calendarElement.remove();
         }
         if (calendarLink) {
-            calendarLink.style.display = 'none'; // Cachons le lien
+            calendarLink.remove();
         }
     }
 });
