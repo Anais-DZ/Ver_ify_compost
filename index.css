@@ -219,7 +219,7 @@ header img {
 }
 
 .right_menu input {
-    border: 1px solid #c0ec59;
+    border: 1px solid #ccc;
     width: 100%;
     height: 45px;
     border-radius: 5px;
@@ -276,7 +276,7 @@ header img {
 }
 
 .right_menu.active {
-    transform: translate(-180px);
+    transform: translate(-179px);
 }
 
 .separation {
