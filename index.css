@@ -145,10 +145,10 @@ main {
     color: #564E4E;
     font-size: 18px;
     position: absolute;
-    top: 80%; /* Juste sous l'input */
-    left: 0;
+    top: 125%; /* Juste sous l'input */
+    left: 40px;
     list-style-type: none;
-    width: 100%;
+    width: 80%;
     border-radius: 8px;
     background-color: white;
     z-index: 9;
