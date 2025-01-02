@@ -65,7 +65,7 @@ header img {
 
 /*menu rideau*/
 .menu_toggler {  /*le bouton du menu */
-    height: 45px;
+    height: 50px;
     width: 50px;
     border: none;
     cursor: pointer;
@@ -81,13 +81,15 @@ header img {
 
 #user_button {
     margin-left: 25%;
+    width: 45px;
+    height: 45px;
 }
 
 .line {
     position: absolute;
     display: block;
     width: 40px;
-    height: 3px;
+    height: 2px;
     border-radius: 5px;
     background: #5bc501;
     transition: transform 0.3s ease-out;
