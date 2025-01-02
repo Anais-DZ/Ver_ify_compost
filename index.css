@@ -64,10 +64,7 @@
 .carousel_control.next { right: 8px; }
 
 .search {
-    background-image: url('./Images/carton_body.webp');
-}
-
-.search {
+    background: url(./Images/carton_body.webp);
     width: 90%;
     height: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
