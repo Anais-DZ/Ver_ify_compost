@@ -10,23 +10,34 @@ main {
     background-size: cover;
     background-position: center;
     margin: 50px 0;
-    padding: 20px 0;
+    padding: 40px 0;
 }
 
 .links h2 {
-    font-family: 'Fredoka semicondensed';
+    font-family: "Cabin sketch";
     font-size: 30px;
     font-weight:normal;
     color: #564E4E;
     text-align: center;
-    border-top: double 10px #564E4E;
-    border-bottom: double 10px #564E4E;
-    padding: 25px 0;
+    padding: 15px 0;
     margin: 15px 0;
 }
 
+.separation_links_min, .separation_links_max {
+    width: 90%;
+    height: 1px;
+    background-color: #564E4E;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2px;
+}
+
+.separation_links_max {
+    height: 3px;
+}
+
 .links_list {
-    font-family: 'Fredoka semicondensed';
+    font-family: "Cabin sketch";
     font-size: 22px;
     font-weight:normal;
     color: #564E4E;

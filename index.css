@@ -27,6 +27,7 @@ main {
     padding: 5px 0 0 0;
     height: 90%;
     margin: 0;
+    list-style-type: none;
 }
 
 .slide {
@@ -49,8 +50,11 @@ main {
     top: 365px;
 }
 
-#cadre_feuilles, #cadre_feuilles img {
+#cadre_feuilles {
     position: relative;
+}
+
+#cadre_feuilles, .carousel_inner img {
     width: 260px;
     height: 150px;
 }
