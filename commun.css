@@ -9,8 +9,7 @@ html, body {
 }
 
 header, footer {
-  background-image: url("./Images/feuilles_header.png");
-  /* background-image: url("./Images/header.png"); */
+  background-image: url("./Images/header.webp");
   background-size: cover;
   background-position: center;
   display: flex;
