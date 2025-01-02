@@ -1,3 +1,21 @@
+//supprimer les raccourcis du calendrier sur les autres pages autres que la page d'accueil
+document.addEventListener('DOMContentLoaded', function() {
+    // Récupération de l'élément du logo et du lien du calendrier
+    const calendarElement = document.getElementById('calendar');
+    const calendarLink = document.querySelector('a[href="#calendar-fonctionnality"]');
+
+    // Vérification si la page actuelle n'est pas index.html
+    if (window.location.pathname !== '/index.html') {
+        // Supprimer l'élément du logo et le lien
+        if (calendarElement) {
+            calendarElement.style.display = 'none'; // Cachons simplement l'élément
+        }
+        if (calendarLink) {
+            calendarLink.style.display = 'none'; // Cachons le lien
+        }
+    }
+});
+
 // Fonction de validation du mot de passe principal
 function isValidPassword(password) {
     const minLength = 8;

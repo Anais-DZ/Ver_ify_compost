@@ -49,7 +49,7 @@ header img {
 
 #entete {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding: 7px 0;
     background-color: transparent;
@@ -73,13 +73,15 @@ header img {
 }
 
 .menu_toggler {
-    margin-right: 25%;
+    margin-left: 15px;
 }
 
 #user_button {
-    margin-left: 25%;
-    width: 45px;
-    height: 45px;
+    margin-right: 15px;
+}
+
+#calendar {
+    margin-left: 52px;
 }
 
 .line {
@@ -123,7 +125,7 @@ header img {
     flex-direction: column;
     background-image: url(./Images/green_menu.webp);
     transform: translateX(-125%);
-    transition: transform 0.8s cubic-bezier(0.18,0.89,0.32,1.27);
+    transition: transform 0.7s cubic-bezier(0.18,0.89,0.32,1.27);
     z-index: 9;
     margin-top: 525px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.307);
@@ -132,7 +134,7 @@ header img {
 }
 
 .left_menu.active {
-    transform: translate(-40px);
+    transform: translate(0);
 }
 
 .left_menu a {
@@ -274,7 +276,7 @@ header img {
 }
 
 .right_menu.active {
-    transform: translate(-179px);
+    transform: translate(-240px);
 }
 
 .separation {
