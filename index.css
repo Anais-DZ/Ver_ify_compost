@@ -73,7 +73,7 @@ main {
     border-radius: 8px;
 
     h2 {
-        font-family: "fredoka"; /* "fredoka one" n'apparaît pas sur tous les navigateurs/
+        font-family: "Cabin sketch"; /* "fredoka one" n'apparaît pas sur tous les navigateurs/
         color: #564E4E;
         /*-webkit-text-stroke: 0.2px white; /* n'apparaît pas sur tous les navigateurs */
         letter-spacing: 2px;
@@ -310,7 +310,7 @@ p {
 }
 
 .calendar-title {
-    font-family: "fredoka";
+    font-family: "Cabin sketch";
     font-size: 28px;
     text-align: center;
     margin: 30px 0;
