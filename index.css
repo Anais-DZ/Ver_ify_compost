@@ -105,6 +105,7 @@ main {
 }
 
 .search_bar {
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -132,10 +133,10 @@ main {
 }
 
 .search_bar button {
-        border: none;
-        background: none;
-        cursor: pointer;
-        margin-top: 2px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin-top: 2px;
 }
 
 
