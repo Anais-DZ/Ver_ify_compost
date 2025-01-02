@@ -7,7 +7,7 @@
     <meta name="description" content="Un site dédié à vous aider à trier facilement et rapidement vos déchets compostables. Découvrez en quelques clics comment simplifier le compostage et adopter des gestes écologiques au quotidien.">
     <link href="index.css" rel="stylesheet">
     <link href="commun.css" rel="stylesheet">
-    <script src="index.js" defer></script>
+    <script src="./js/index.js" defer></script>
     <script src="./js/commun.js" async></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -97,14 +97,20 @@
                 <div class="separation"></div>
 
                 <form class="search_bar" autocomplete="off">
-                <input id="biodéchet" name="biodéchet" placeholder="Le nom du déchet, c'est ici !"><button id="verifier"><img src="./Images/loupe.png" alt="icone loupe pour valider la recherche"/></button>
+                <input id="biodéchet" name="biodéchet" placeholder="Le nom du déchet, c'est ici !"><button id="verifier">
+                        <picture>
+                            <source srcset="./Images/loupe.webp" type="image/webp" />
+                            <source srcset="./Images/loupe.png" type="image/png" /> 
+                            <img src="./Images/loupe.png" alt="icone loupe pour valider la recherche"/>
+                        </picture>
+                    </button>
                 <div id="resultat-overlay" class="overlay">
                     <div class="overlay-content">
                         <button id="close-overlay" class="close-button">&times;</button>
                         <h1 id="overlay-title"></h1>
                         <p id="overlay-description"></p>
                         <p id="overlay-status"></p>
-                        <img id="overlay-image" src="" alt="image_composteur" />   
+                        <img id="overlay-image" src="" alt="image d'un composteur differente selon la reponse" />   
                     </div>
                 </div>
                 <ul id="suggestions"></ul>

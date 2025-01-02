@@ -17,11 +17,11 @@
     <nav id="entete">
         <div class="left_menu">
             <a href="index.html" alt="accueil">Accueil</a>
-            <a href="#" alt="calendrier_memo">Calendrier & Mémo</a>
+            <a href="#calendar-fonctionnality" alt="calendrier_memo">Calendrier</a>
             <a href="#" alt="guide_entretien">Guide d'entretien</a>
             <a href="liens.html" alt="liens_ressources">Liens & Ressources</a>
-            <a href="contact.html" alt="contact"> Contact</a>
             <a href="#" alt="profil">Profil</a>
+            <a href="contact.html" alt="contact"> Contact</a>
             <a id="deconnexion" href="#" alt="deconnexion"><img src="./Icones/off.png" alt="deconnexion">Déconnexion</a>
         </div>
         <button type="button" aria-label="toggle left menu" class="menu_toggler">
@@ -29,9 +29,10 @@
             <span class="line l2"></span>
             <span class="line l3"></span>
         </button>
-        <img id="calendar" src="./Icones/calendar.png" title="Calendrier" alt="Logo calendrier">
-        <form method="post" action="monProgramme.php">
+        <a href="#calendar-fonctionnality" alt="calendrier_memo"><img id="calendar" src="./Icones/calendar.png" title="Calendrier" alt="Logo calendrier"></a>
+        <form method="post" action="monProgramme.php" autocomplete="on">
             <fieldset class="right_menu">
+                
                 <h2>Connexion</h2>
                 <div class="separation"></div>
                 <div>
@@ -56,10 +57,14 @@
     </nav>
     <header>
         <h1>Ver'ify Compost</h1>
-        <a href="index.html" alt="Retour à la page d'accueil" ><img src="./Images/Logo.png" alt="Logo"></a>
+        <a href="index.html" alt="Retour à la page d'accueil" >
+            <picture>
+                <source srcset="./Images/Logo.webp" type="image/webp" />
+                <source srcset="./Images/Logo.png" type="image/png" /> 
+                <img src="./Images/Logo.png" alt="logo du site permettant de retourner à l'accueil">
+            </picture>
+        </a>
     </header>
-
-
     <main>
         <div class="contact">
             <div class="bande_horizontale_1"></div>
