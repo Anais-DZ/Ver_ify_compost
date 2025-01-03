@@ -78,21 +78,33 @@
     font-family: "fredoka";
     font-size: 15px;
     text-align: center;
-    margin-top: 5px;
 }
 
 #password-error-message-1 {
     color: #564E4E;
+    position: absolute;
+    z-index: 100;
+    top: 95px;
 }
 
-
 #toggle-password {
-    position: absolute;
-    right: 25px;
-    top: 185px;
-    background: none;
-    border: none;
+    position: relative;
+    bottom: -45px;
+    right: -235px;
+    background: none; /* Pas de fond */
+    border: none; /* Pas de bordure */
     cursor: pointer;
-    font-size: 28px;
-    color: #555;
+}
+
+#toggle-password img {
+    width: 30px; 
+    height: auto;
+    opacity: 60%;
+    display: inline-block; /* Aligne correctement l'image à l'intérieur du bouton */
+    vertical-align: middle;
+}
+
+.password-container {
+    margin: 20px 0 5px;
+    position: relative;
 }
