@@ -1,0 +1,158 @@
+main {
+    background-image: url("../images/carton-body.webp");
+    background-size: cover;
+    background-position: center;
+    margin: 60px 0 50px 0;
+}
+
+
+/* code page contact */
+
+.contact {
+    background-color: white;
+    background-size: cover;
+    background-position: center;
+    margin: 50px 0;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bande_horizontale_1 {
+    height: 4px;
+    margin: 5px 0;
+    background-color: #564E4E;
+    width: 90%;
+}
+
+.bande_horizontale_2 {
+    height: 2px;
+    background-color: #564E4E;
+    width: 80%;
+}
+
+.contact h2 {
+    font-family: "Cabin sketch";
+    font-size: 24px;
+    font-weight: bolder;
+    color: #564E4E;
+    text-align: center;
+    border-bottom: solid 0.5px #564E4E;
+    margin: 0;
+    padding: 20px 0 10px 0;
+}
+
+.contact p {
+    font-family: "Fredoka condensed";
+    font-size: 20px;
+    font-weight:normal;
+    color: #564E4E;
+    text-align: center;
+    margin: 0;
+    padding: 15px 30px 0 30px;
+}
+
+.contact label {
+    font-family: "Fredoka";
+    display: block;
+    font-size: 18px;
+    color: #564E4E;
+    margin: 25px 0 4px 0;
+}
+
+.contact img {
+    width: 40%;
+    height: auto;
+    position: relative;
+    left: 90px;
+    top: -15px;
+}
+
+.contact input {
+    border: 1px solid #ccc;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 16px;
+    font-style: italic;
+    box-sizing: border-box;
+    font-family: "Fredoka";
+    padding: 10px 10px;
+}
+
+.contact textarea {
+    resize: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    font-style: italic;
+    box-sizing: border-box;
+    font-family: "Fredoka";
+    width: 100%;
+    padding: 10px 10px;
+}
+
+#charCount {
+    font-family: "Fredoka";
+    text-align: right;
+    font-size: 12px;
+    margin-top: 5px;
+    color: #555;
+}
+
+#error-message {
+    color: red;
+    font-family: "Fredoka";
+    font-size: 14px;
+    text-align: center;
+    position: absolute;
+    bottom: 95px ;
+}
+
+#submit-button {
+    background-color: #564E4E;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor:pointer;
+    font-size: 28px;
+    font-family: 'Cabin Sketch';
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.35);
+    text-align: center;
+    margin: 50px 40px 40px;
+    padding: 5px 20px;
+}
+
+#submit-button:hover {
+    background-color: #278a20;
+}
+
+#submit-button:disabled {
+    background-color: rgba(255, 0, 0, 0.162);
+    cursor: not-allowed;
+}
+
+.contact form {
+    width: 370px;
+    height: auto;
+    background: #c0ec59;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
+
+.contact fieldset {
+    background-color: #fefffa;
+    width: 290px;
+    height: auto;
+    position: relative;
+    bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    border: none;
+    padding: 0 20px;
+}

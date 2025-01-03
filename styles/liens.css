@@ -1,0 +1,110 @@
+main {
+    background-image: url("../images/carton-body.webp");
+    background-size: cover;
+    background-position: center;
+    margin: 60px 0 50px 0;
+}
+
+.links {
+    background-color: white;
+    background-size: cover;
+    background-position: center;
+    margin: 50px 0;
+    padding: 40px 0;
+}
+
+.links h2 {
+    font-family: "Cabin sketch";
+    font-size: 30px;
+    font-weight:normal;
+    color: #564E4E;
+    text-align: center;
+    padding: 15px 0;
+    margin: 15px 0;
+}
+
+.separation_links_min, .separation_links_max {
+    width: 90%;
+    height: 1px;
+    background-color: #564E4E;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2px;
+}
+
+.separation_links_max {
+    height: 3px;
+}
+
+.links_list {
+    font-family: "Cabin sketch";
+    font-size: 22px;
+    font-weight:normal;
+    color: #564E4E;
+    list-style-type: "\01F331";
+    margin: 45px 20px;
+}
+
+.links_list a {
+    margin-left: 5px;
+};
+
+.links_list a:hover { 
+    background-color: #3ab14c4e;
+}
+
+.links_list a:visited {
+    color: #42cf54;
+}
+
+.links_list a, #suggestion-button a {
+    font-family: 'Fredoka';
+    text-decoration: none;
+    color: #564E4E;
+    font-size: 18px; 
+}
+
+.links_list li {
+    margin: 15px 0;
+}
+
+.links img {
+    width: 70px;
+    height: auto;
+    position: absolute;
+    right: 70px;
+    bottom: -533px;
+}
+
+#suggestion-button {
+    position: relative;
+    background: url(../images/carton-body.webp);
+    text-align: center;
+    margin: 80px 0 40px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 60%;
+    width: 260px;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    padding: 0;
+    border: none;
+    box-shadow: 0 0 5px 2px #564e4e76;
+}
+
+#suggestion-button a {
+    border: solid 0.5px #564e4e76;
+    border-radius: 8px;
+    margin: 2%;
+    padding: 9% 5%;
+}
+
+#liste_sites_internet {
+    margin-top: 60px;
+}
+
+.ul_title {
+    list-style-type: none;
+    font-size: 24px;
+  }

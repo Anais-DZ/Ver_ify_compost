@@ -8,33 +8,29 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400&family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
-    <link href="contact.css" rel="stylesheet">
-    <link href="commun.css" rel="stylesheet">
-    <script src="./js/commun.js" async></script>
-    <script src="./js/contact.js" defer></script>
-    <link
-    rel="preload" as="image"
-    href="./Images/carton_body.webp"
-    media="screen and (max-width: 767px)" />
+    <link href="./styles/contact.css" rel="stylesheet">
+    <link href="./styles/commun.css" rel="stylesheet">
+    <script src="./scripts/commun.js" async></script>
+    <script src="./scripts/contact.js" defer></script>
     <title>Page - Contact</title>
 </head>
 <body>
     <nav id="entete">
         <div class="left_menu">
             <a href="index.html" alt="accueil">Accueil</a>
-            <a href="#calendar-fonctionnality" alt="calendrier_memo">Calendrier</a>
+            <a href="#calendar-fonctionnality" alt="calendrier-memo">Calendrier</a>
             <a href="#" alt="guide_entretien">Guide d'entretien</a>
-            <a href="liens.html" alt="liens_ressources">Liens & Ressources</a>
+            <a href="liens.html" alt="liens-ressources">Liens & Ressources</a>
             <a href="#" alt="profil">Profil</a>
             <a href="contact.html" alt="contact"> Contact</a>
-            <a id="deconnexion" href="#" alt="deconnexion"><img src="./Icones/off.png" alt="deconnexion">Déconnexion</a>
+            <a id="deconnexion" href="#" alt="deconnexion"><img src="./icones/off.png" alt="deconnexion">Déconnexion</a>
         </div>
         <button type="button" aria-label="toggle left menu" class="menu_toggler">
             <span class="line l1"></span> <!--span dans un bouton, oui mais div dans un bouton, non-->
             <span class="line l2"></span>
             <span class="line l3"></span>
         </button>
-        <a href="#calendar-fonctionnality" alt="calendrier_memo"><img id="calendar" src="./Icones/calendar.png" title="Calendrier" alt="Logo calendrier"></a>
+        <a href="#calendar-fonctionnality" alt="calendrier-memo"><img id="calendar" src="./icones/calendar.png" title="Calendrier" alt="Logo calendrier"></a>
         <form method="post" action="monProgramme.php" autocomplete="on">
             <fieldset class="right_menu">
                 
@@ -42,11 +38,11 @@
                 <div class="separation"></div>
                 <div>
                     <label for="name">Votre identifiant</label>
-                    <input type="text" name="identifiant" placeholder="Entrez votre identifiant" minlength="2" maxlength="25" id="name" required>
+                    <input type="text" name="identifiant" placeholder="Entrez votre identifiant" minlength="2" maxlength="25" id="name" required autocomplete="on">
                 </div>
                 <div>
                     <label for="password_1">Votre mot de passe</label>
-                    <input type="password" name="password" placeholder="(8 caractères minimum)" minlength="2" maxlength="25" id="password_1" required>
+                    <input type="password" name="password" placeholder="(8 caractères minimum)" minlength="2" maxlength="25" id="password_1" autocomplete="on" required>
                 </div>
                 <div class="checkbox_container">
                     <input type="checkbox" id="checkbox" checked />
@@ -55,18 +51,18 @@
                 <button type="submit">Se connecter</button>
                 <p>Nouvel·le arrivant·e ?
                     Par <a href="inscription.html" alt="lien_page_inscription">ici !</a></p>
-                <a id="forgetten_password" href="initialisation.html" alt="reinitialisation_mot_de_passe">Mot de passe oublié ?</a>
+                <a id="forgetten_password" href="initialisation.html" alt="reinitialisation-mot-de-passe">Mot de passe oublié ?</a>
             </fieldset>
         </form>
-        <img id="user_button" src="./Icones/user.png" title="Connexion" alt="Logo utilisateur">
+        <img id="user_button" src="./icones/user.png" title="Connexion" alt="logo utilisateur">
     </nav>
     <header>
         <h1>Ver'ify Compost</h1>
         <a href="index.html" alt="Retour à la page d'accueil" >
             <picture>
-                <source srcset="./Images/Logo.webp" type="image/webp" />
-                <source srcset="./Images/Logo.png" type="image/png" /> 
-                <img src="./Images/Logo.png" alt="logo du site permettant de retourner à l'accueil">
+                <source srcset="./images/logo-site.webp" type="image/webp" />
+                <source srcset="./images/logo-site.png" type="image/png" /> 
+                <img src="./images/logo-site.png" alt="logo du site permettant de retourner à l'accueil">
             </picture>
         </a>
     </header>
@@ -83,18 +79,18 @@
                 <fieldset>
                     <legend>
                         <picture>
-                            <source srcset="./Images/ver_contact.webp" type="image/webp" />
-                            <source srcset="./Images/ver_contact.png" type="image/png" /> 
-                            <img src="./Images/ver_contact.png" alt="ver qui écrit"/>
+                            <source srcset="./images/ver-contact.webp" type="image/webp" />
+                            <source srcset="./images/ver-contact.png" type="image/png" /> 
+                            <img src="./images/ver-contact.png" alt="ver avec un stylo"/>
                         </picture>
                     </legend>
                     <div>
-                        <label for="name_firstname">Prénom NOM</label>
-                        <input type="text" name="prenom_nom" placeholder="Entrez votre prénom et votre nom" minlength="2" maxlength="25" id="name_firstname" required>
+                        <label for="name_firstname">Prénom NOM *</label>
+                        <input type="text" name="prenom_nom" placeholder="Entrez votre prénom et votre nom" minlength="2" maxlength="25" id="name_firstname" autocomplete="on" required >
                     </div>
                     <div>
-                        <label for="mail">Adresse mail</label>
-                        <input type="email" name="email" placeholder="Entrez votre adresse mail" minlength="2" maxlength="25" id="mail" required>
+                        <label for="mail">Adresse mail *</label>
+                        <input type="email" name="email" placeholder="Entrez votre adresse mail" minlength="2" maxlength="25" id="mail" autocomplete="on" required>
                     </div>
                     <div>
                         <label for="message">Message</label>
