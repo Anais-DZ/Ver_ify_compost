@@ -55,7 +55,6 @@ const compostables = [
     { name: "Feuilles mortes", types: ["composteur"] },
     { name: "Fleurs fanées", types: ["composteur"]},
     { name: "Sciure de bois (non traité)", types: ["composteur"] },
-    { name: "Cendres de bois (en petites quantités)", types: ["composteur"] },
     { name: "Fanes de carottes", types: ["composteur", "lombricomposteur"] },
     { name: "Épluchures de pommes de terre", types: ["composteur", "lombricomposteur"] },
     { name: "Épluchures de courgettes", types: ["composteur", "lombricomposteur"] },
@@ -97,9 +96,6 @@ const compostables = [
     { name: "Noyau de cerise", types: ["composteur"] },
     { name: "Restes de pain", types: ["composteur"] },
     { name: "Céréales non sucrées", types: ["composteur"] },
-    { name: "Pâtes cuites (sans sauce)", types: ["composteur"] },
-    { name: "Riz cuit (sans sauce)", types: ["composteur"] },
-    { name: "Condiments (sel modéré)", types: ["composteur"] },
     { name: "Épices", types: ["composteur"] },
     { name: "Herbes aromatiques", types: ["composteur"] },
     { name: "Feuilles de laurier", types: ["composteur"] },
@@ -128,15 +124,26 @@ const compostables = [
 const nonCompostables = [
     "Coquilles de moules",
     "Coquilles de crustacés",
+    "Coquilles d'huîtres",
     "Viande",
-    "Restes de repas",
+    "Poisson",
+    "Œufs",
+    "Riz",
+    "Pâtes",
+    "Pain",
+    "Couches jetables",
+    "Tampons, serviettes hygiéniques",
+    "Coton-tiges",
+    "Cendres de cheminée",
+    "Charbons de barbecue",
+    "Plastiques",
+    "Métal non recyclé",
     "Verre",
     "Papier journal",
     "Papier glacé",
     "Croûtes de fromage",
-    "Produit laitier",
     "Os",
-    "Plastiques",
+    "Produits laitiers (fromage, beurre, etc.)",
     "Mégots de cigarette",
     "Piles",
     "Couches jetables",
@@ -146,8 +153,12 @@ const nonCompostables = [
     "Tissus",
     "Sacs plastiques",
     "Feuilles plastifiées",
-    "Vaisselle cassée"
+    "Vaisselle cassée",
+    "Produits chimiques (lessives, détergents, solvants)",
+    "Peintures, solvants, produits chimiques",
+    "Litière non compostable (silice, bentonite, litière agglomérante)"
 ];
+
 
 // Récupération des éléments DOM
 const input = document.getElementById('biodéchet');
