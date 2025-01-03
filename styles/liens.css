@@ -58,7 +58,7 @@
 }
 
 #suggestion-button a {
-    font-size: 20px;
+    font-size: 21px;
 }
 
 .links_list li {
@@ -71,14 +71,14 @@
     height: auto;
     position: absolute;
     right: 70px;
-    bottom: -430px;
+    bottom: -480px;
 }
 
 #suggestion-button {
     position: relative;
     background: url(../Images/carton-body.webp);
     text-align: center;
-    margin-top: 70px;
+    margin-top: 90px;
     margin-left: auto;
     margin-right: auto;
     height: 60%;
