@@ -20,7 +20,7 @@ function validateForm() {
 
     // Validation du mot de passe principal (password_2)
     if (!isValidPassword(password2)) {
-        errorMessage1.textContent = "Le mot de passe doit contenir au moins 8 caractères, un chiffre et une majuscule.";
+        errorMessage1.textContent = "Le mot de passe doit contenir au moins 8 caractères dont un chiffre et une majuscule.";
     } else {
         errorMessage1.textContent = "";
     }
