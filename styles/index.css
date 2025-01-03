@@ -31,27 +31,27 @@
 
 .slide {
     position: absolute;
-    width: 190px;
+    width: 200px;
     height: 90px;
     font-family: "fredoka";
-    font-size: 20px;
+    font-size: 22px;
     text-align: center;
     color: #564E4E;
-    top: 405px;
+    top: 347px;
 }
 
 .slide p {
-    font-size: 24px;
-    margin-top: 3px;
+    font-size: 28px;
+    margin-bottom: 8px;
 }
 
 #slide_economy {
-    width: 210px;
-    top: 405px;
+    width: 230px;
+    top: 342px;
 }
 
 .little_slide {
-    top: 418px;
+    top: 360px;
 }
 
 #cadre_feuilles {

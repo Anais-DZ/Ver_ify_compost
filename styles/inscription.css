@@ -55,16 +55,17 @@
 
 
 #password-error-message-1, #password-error-message-2  {
-    color: red;
+    color: rgb(210, 19, 19);
     font-family: "fredoka";
-    font-size: 15px;
+    font-size: 14px;
     text-align: center;
+    margin-top: 5px;
 }
 
 #password-error-message-1 {
     position: absolute;
     z-index: 100;
-    top: 95px;
+    top: 96px;
 }
 
 #toggle-password {
@@ -85,6 +86,6 @@
 }
 
 .password-container {
-    margin: 20px 0 5px;
+    margin: 35px 0 20px;
     position: relative;
 }
