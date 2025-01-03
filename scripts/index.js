@@ -156,7 +156,7 @@ function showResultOverlay(title, description, status, iconPath) {
     overlayTitle.textContent = title;
     overlayDescription.textContent = description;
     overlayStatus.textContent = status;
-    overlayIcon.src = `./Images/${iconPath}`; // Met à jour l'image
+    overlayIcon.src = `./images/${iconPath}`; // Met à jour l'image
 
     // Affiche l'overlay
     resultatOverlay.style.display = 'flex';
@@ -173,7 +173,7 @@ function showResult(biodechet) {
                 `${biodechet}`,
                 'Ne convient pas au lombricomposteur',
                 'Convient uniquement au composteur',
-                'Composteur_okay.webp' // Icône pour composteur   
+                'compost-okay.webp' // Icône pour composteur   
             );
 
         } else {
@@ -182,7 +182,7 @@ function showResult(biodechet) {
                 `${biodechet}`,
                 '(en petits morceaux et/ou humidifiés pour nos amis les vers)',
                 `Convient au ${types.toLowerCase()}`,
-                'Compost_coeurs.webp' // Icône pour lombricomposteur   
+                'compost-coeur.webp' // Icône pour lombricomposteur   
             );
         }
         
@@ -191,7 +191,7 @@ function showResult(biodechet) {
             `${biodechet}`,
             "Ce déchet doit être jeté avec les ordures ménagères ou au recyclage s'il se recycle",
             'Ne convient ni au composteur, ni au lombricomposteur',
-            'Composte_triste.webp' // Icône pour non compostable 
+            'compost-triste.webp' // Icône pour non compostable 
         );
 
     } else {
@@ -199,7 +199,7 @@ function showResult(biodechet) {
             `${biodechet}`,
             "",
             "Ce déchet va me demander quelques recherches plus approfondies. En attendant, le mieux est de le jeter dans la poubelle ordinaire ou au recyclage s'il se recycle.",
-            'ver_perplexe.webp' // Icône pour déchet inconnu 
+            'ver-perplexe.webp' // Icône pour déchet inconnu 
         );
     }
 }
