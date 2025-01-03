@@ -133,15 +133,14 @@ header img {
     transform: translate(-42px);
 }
 
-.left_menu a {
-    
+.left_menu a { 
     width: 85%;
     font-family: "fredoka";
     font-size: 22px;
     color: #564E4E;
     text-decoration: none;
     margin: 1px 0;
-    background: #ffffff;
+    background: #fefffa;
     padding: 10px 0px 10px 20px;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;

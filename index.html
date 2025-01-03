@@ -92,39 +92,37 @@
             </div>
         </div>
         <div class="search border">
-                <h2>Prêt·e à composter ?</h2>
-                <div class="separation"></div>
-                <p>Saisir le nom du déchet dans la barre de recherche, puis cliquer sur la loupe pour découvrir le composteur adapté instantanément.</p>
-                <div class="separation"></div>
+            <h2>Prêt·e à composter ?</h2>
+            <div class="separation"></div>
+            <p>Saisir le nom du déchet dans la barre de recherche, puis cliquer sur la loupe pour découvrir le composteur adapté instantanément.</p>
+            <div class="separation"></div>
 
-                <form class="search_bar" autocomplete="off">
-                <input id="biodéchet" name="biodéchet" placeholder="Le nom du déchet, c'est ici !">
-                <button id="verifier">
-                        <picture>
-                            <source srcset="./Images/loupe.webp" type="image/webp" />
-                            <source srcset="./Images/loupe.png" type="image/png" /> 
-                            <img src="./Images/loupe.png" alt="icone loupe pour valider la recherche"/>
-                        </picture>
-                </button>
-                <div id="resultat-overlay" class="overlay">
-                    <div class="overlay-content">
-                        <button id="close-overlay" class="close-button">&times;</button>
-                        <h1 id="overlay-title"></h1>
-                        <p id="overlay-description"></p>
-                        <p id="overlay-status"></p>
-                        <img id="overlay-image" src="" alt="image d'un composteur differente selon la reponse" />   
-                    </div>
+            <form class="search_bar" autocomplete="off">
+            <input id="biodéchet" name="biodéchet" placeholder="Le nom du déchet, c'est ici !">
+            <button id="verifier">
+                    <picture>
+                        <source srcset="./Images/loupe.webp" type="image/webp" />
+                        <source srcset="./Images/loupe.png" type="image/png" /> 
+                        <img src="./Images/loupe.png" alt="icone loupe pour valider la recherche"/>
+                    </picture>
+            </button>
+            <div id="resultat-overlay" class="overlay">
+                <div class="overlay-content">
+                    <button id="close-overlay" class="close-button">&times;</button>
+                    <h1 id="overlay-title"></h1>
+                    <p id="overlay-description"></p>
+                    <p id="overlay-status"></p>
+                    <img id="overlay-image" src="" alt="image d'un composteur differente selon la reponse" />   
                 </div>
-                <ul id="suggestions"></ul>
-                </form>
+            </div>
+            <ul id="suggestions"></ul>
+            </form>
         </div>
-
         <div class="down_menu">
             <a id="liens" href="liens.html" alt="redirection_page_liens"><img src="./Icones/liens.png" alt="image d'un livret redirigeant vers la page Liens">Liens | Ressources</a>
             <a id="guide" href="#" alt="redirection_page_guide"><img src="./Icones/guide.png" alt="image d'un livre redirigeant vers la page Guide">Guide d'entretien</a>
             <!--<a id="calendrier" href="#" alt="redirection_page_calendrier"><img src="./Icones/calendrier.png">Calendrier | Mémo</a>-->
         </div>
-
         <section id="calendar-fonctionnality" class="calendar-fonctionnality">
                 <h2 class="calendar-title">Calendrier</h2>
                 <div class="separation"></div>

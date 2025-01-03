@@ -172,7 +172,7 @@ function showResult(biodechet) {
             showResultOverlay(
                 `${biodechet}`,
                 'Ne convient pas au lombricomposteur',
-                'Convient uniquement au composteur',
+                '⚠️ Convient uniquement au composteur',
                 'compost-okay.webp' // Icône pour composteur   
             );
 
@@ -181,7 +181,7 @@ function showResult(biodechet) {
             showResultOverlay(
                 `${biodechet}`,
                 '(en petits morceaux et/ou humidifiés pour nos amis les vers)',
-                `Convient au ${types.toLowerCase()}`,
+                `✅ Convient au ${types.toLowerCase()}`,
                 'compost-coeur.webp' // Icône pour lombricomposteur   
             );
         }
@@ -190,14 +190,14 @@ function showResult(biodechet) {
         showResultOverlay(
             `${biodechet}`,
             "Ce déchet doit être jeté avec les ordures ménagères ou au recyclage s'il se recycle",
-            'Ne convient ni au composteur, ni au lombricomposteur',
+            '❌ Ne convient ni au composteur, ni au lombricomposteur',
             'compost-triste.webp' // Icône pour non compostable 
         );
 
     } else {
         showResultOverlay(
             `${biodechet}`,
-            "",
+            "❓",
             "Ce déchet va me demander quelques recherches plus approfondies. En attendant, le mieux est de le jeter dans la poubelle ordinaire ou au recyclage s'il se recycle.",
             'ver-perplexe.webp' // Icône pour déchet inconnu 
         );

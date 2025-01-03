@@ -51,7 +51,7 @@
 }
 
 .little_slide {
-    top: 422px;
+    top: 418px;
 }
 
 #cadre_feuilles {
@@ -76,8 +76,10 @@
 
 .search {
     width: 80vw;
-    margin: 40px 0 60px;
+    margin: 60px 0 60px;
     max-width: 400px;
+    outline: 0.5px solid #564e4e76;
+    outline-offset: -6px
 }
 
 .search h2 {
@@ -85,10 +87,10 @@
     color: #564E4E;
     /*-webkit-text-stroke: 0.2px white; /* n'apparaît pas sur tous les navigateurs */
     letter-spacing: 2px;
-    font-size: 28px;
+    font-size: 32px;
     padding: 15px 0;
     text-align: center;
-    margin: 25px 0;
+    margin: 25px 25px 10px 25px;
     color: #564E4E;
 }
 
@@ -181,7 +183,7 @@
 }
 
 .overlay-content {
-    background-color: #FDEED1;
+    background-color: #fffefd;
     width: 330px;
     height: auto;
     padding: 40px 20px 20px 20px;
@@ -190,11 +192,12 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     position: relative;
     font-family: "Fredoka";
+    border: #bfe8b5 solid 10px;
 }
 
 .close-button {
     position: absolute;
-    top: 10px;
+    top: 0px;
     right: 10px;
     background: none;
     border: none;
@@ -211,7 +214,7 @@
 
 .overlay-content p {
     color: #4e3d28;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 #overlay-image {
@@ -284,6 +287,8 @@
     border-radius: 8px;
     padding: 0 20px;
     max-width: 500px;
+    outline: 0.5px solid #4f3e2776;
+    outline-offset: -7px;
 }
 
 #calendar-fonctionnality {
