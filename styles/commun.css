@@ -5,11 +5,6 @@ body {
     margin: 0;
 }
 
-main {
-    margin: 20px 0;
-    padding: 0;
-}
-
 header, footer {
   background-image: url("../Images/header.webp");
   background-size: cover;
@@ -197,7 +192,7 @@ header img {
 
 .right_menu h2 {
     font-family: "Cabin sketch";
-    font-size: 32px;
+    font-size: 34px;
     text-align: center;
     margin-bottom: 10px;
     color: #564E4E;
@@ -235,7 +230,7 @@ header img {
     border: none;
     border-radius: 5px;
     cursor:pointer;
-    font-size: 24px;
+    font-size: 28px;
     font-family: "Cabin Sketch";
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.523);
     text-align: center;

@@ -1,5 +1,12 @@
+.index-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .carousel_container {
-    margin: 60px 0 40px 0;
+    margin: 60px 0 20px 0;
     width: 100%;
     overflow: hidden;
 }
@@ -10,15 +17,15 @@
     font-size: 30px;
     color: #564E4E;
     text-align: center;
-    margin: 20px 0 10px;
+    margin: 40px 0 10px;
 }
 
 .carousel_inner {
     display: flex;
     justify-content: center;
-    padding: 5px 0 0 0;
     height: 90%;
-    margin: 0;
+    margin: 10px 0 0 0;
+    padding: 0;
     list-style-type: none;
 }
 
@@ -30,7 +37,7 @@
     font-size: 20px;
     text-align: center;
     color: #564E4E;
-    top: 410px;
+    top: 405px;
 }
 
 .slide p {
@@ -67,6 +74,12 @@
 
 .carousel_control.next { right: 8px; }
 
+.search {
+    width: 80vw;
+    margin: 40px 0 60px;
+    max-width: 400px;
+}
+
 .search h2 {
     font-family: "Cabin sketch"; /* "fredoka one" n'apparaît pas sur tous les navigateurs/
     color: #564E4E;
@@ -75,7 +88,7 @@
     font-size: 28px;
     padding: 15px 0;
     text-align: center;
-    margin: 25px 10px;
+    margin: 25px 0;
     color: #564E4E;
 }
 
@@ -84,7 +97,7 @@
     color: #564E4E;
     text-align: center;
     font-size: 18px;
-    margin: 0 0 20px 0;
+    margin: 0 0 25px 0;
 }
 
 .search_bar {
@@ -94,7 +107,7 @@
     justify-content: center;
     background-color: rgba(255, 255, 255, 0.46);
     border-radius: 12px;
-    margin: 20px 0 30px;
+    margin: 20px 0;
     width: 100%;
 }
 
@@ -215,7 +228,9 @@
 .down_menu {
     display: flex;
     flex-direction: column;
-    width: 90%;
+    width: 85%;
+    height: auto;
+    max-width: 350px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -264,13 +279,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 60px 0;
     background: url(../Images/carton-body.webp);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
     padding: 0 20px;
+    max-width: 500px;
+}
+
+#calendar-fonctionnality {
+    margin: 50px 0 80px;
     width: 85vw;
-    max-width: 600px;
 }
 
 .calendar-container {
@@ -281,7 +299,7 @@
     overflow: hidden;
     margin: 15px 0 35px;
     padding-bottom: 10px;
-    max-width: 550px;
+    max-width: 400px;
     max-height: 750px;
     padding: 0 15px;
 }

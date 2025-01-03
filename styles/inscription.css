@@ -23,10 +23,10 @@
 }
 
 .inscription img {
-    width: 180px;
+    width: 200px;
     height: auto;
-    left: 13px;
-    top: -95px;
+    left: 2px;
+    top: -97px;
     position: absolute;
 }
 
@@ -36,12 +36,12 @@
     border: none;
     border-radius: 5px;
     cursor:pointer;
-    font-size: 28px;
+    font-size: 30px;
     font-family: 'Cabin Sketch';
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.523);
     text-align: center;
-    margin: 40px 40px;
-    padding: 5px 20px;
+    margin: 45px 20px;
+    padding: 10px 25px;
 }
 
 #submit-btn:hover {
@@ -69,8 +69,8 @@
 
 #toggle-password {
     position: relative;
-    bottom: -45px;
-    right: -235px;
+    bottom: -47px;
+    right: -247px;
     background: none; /* Pas de fond */
     border: none; /* Pas de bordure */
     cursor: pointer;
