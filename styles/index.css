@@ -362,9 +362,10 @@ p {
 }
 
 .calendar td.other-month {
-    color: #aaaaaa51;
+    color: #b4b4b4;
     cursor: default; /* Pas interactif */
     background: none;
+    font-size: 14px;
 }
 
 .note-icon {

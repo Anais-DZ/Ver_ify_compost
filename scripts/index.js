@@ -261,7 +261,7 @@ monthYear.textContent = `${months[month]} ${year}`;
 let date = 1; // Jour actuel
 let nextMonthDate = 1; // Jour du mois suivant
 
-    for (let i = 0; i < 5; i++) { // Maximum 5 semaines
+    for (let i = 0; i < 6; i++) { // Maximum 6 semaines
     const row = document.createElement('tr');
 
     for (let j = 0; j < 7; j++) {
