@@ -127,7 +127,7 @@ const nonCompostables = [
     "Coquilles d'huîtres",
     "Viande",
     "Poisson",
-    "Œufs",
+    "Oeufs",
     "Riz",
     "Pâtes",
     "Pain",
