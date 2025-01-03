@@ -34,7 +34,7 @@
     font-size: 22px;
     font-weight:normal;
     color: #564E4E;
-    margin: 45px 10px 45px 10px;
+    margin: 45px 10px 45px 0;
 }
 
 .links_list a {
@@ -69,7 +69,7 @@
     height: auto;
     position: absolute;
     right: 12vw;
-    bottom: -59.5vh;
+    bottom: -56.5vh;
 }
 
 #suggestion-button {
