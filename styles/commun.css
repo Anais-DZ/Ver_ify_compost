@@ -6,7 +6,7 @@ body {
 }
 
 header, footer {
-  background-image: url("../images/header.webp");
+  background-image: url("../Images/header.webp");
   background-size: cover;
   background-position: center;
   display: flex;

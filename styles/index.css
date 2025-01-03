@@ -62,7 +62,7 @@
 .carousel_control.next { right: 8px; }
 
 .search {
-    background: url(../images/carton-body.webp);
+    background: url(../Images/carton-body.webp);
     width: 90%;
     height: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -273,7 +273,7 @@ p {
     justify-content: center;
     align-items: center;
     margin: 20px 10px 60px 10px;
-    background: url(../images/carton-body.webp);
+    background: url(../Images/carton-body.webp);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
     padding: 0 20px;

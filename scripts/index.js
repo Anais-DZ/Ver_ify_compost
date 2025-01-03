@@ -156,7 +156,7 @@ function showResultOverlay(title, description, status, iconPath) {
     overlayTitle.textContent = title;
     overlayDescription.textContent = description;
     overlayStatus.textContent = status;
-    overlayIcon.src = `./images/${iconPath}`; // Met à jour l'image
+    overlayIcon.src = `./Images/${iconPath}`; // Met à jour l'image
 
     // Affiche l'overlay
     resultatOverlay.style.display = 'flex';
