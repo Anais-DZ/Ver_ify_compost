@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <link rel="icon" href="./Images/logo-site.webp" type="image/x-icon">
@@ -8,12 +8,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400&family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
-    <link href="./styles/contact.css" rel="stylesheet">
-    <link href="./styles/formulaire.css" rel="stylesheet">
+    <link href="./styles/index.css" rel="stylesheet">
     <link href="./styles/commun.css" rel="stylesheet">
+    <link href="./styles/construction.css" rel="stylesheet">
+    <script src="./scripts/index.js" defer></script>
     <script src="./scripts/commun.js" async></script>
-    <script src="./scripts/contact.js" defer></script>
-    <title>Page - Contact</title>
+    <title>Page - En construction</title>
 </head>
 <body>
     <nav id="entete">
@@ -67,51 +67,15 @@
             </picture>
         </a>
     </header>
-    <main>
-        <div class="contact">
-            <div class="bande_horizontale_1"></div>
-            <div class="bande_horizontale_2"></div>
 
-            <h2>Contact</h2>
-
-            <p>Besoin d’aide ? Une question ? Une suggestion ? Ou simplement l’envie de me laisser un petit mot ?</p>
-
-            <form method="post" action="monProgramme.php" id="contact-form">
-                <fieldset>
-                    <legend>Formulaire de contact
-                        <picture>
-                            <source srcset="./Images/ver-contact.webp" type="image/webp" />
-                            <source srcset="./Images/ver-contact.png" type="image/png" /> 
-                            <img src="./Images/ver-contact.png" alt="ver avec un stylo"/>
-                        </picture>
-                    </legend>
-                    <div>
-                        <label for="name_firstname">Prénom NOM *</label>
-                        <input type="text" name="prenom_nom" placeholder="Entrez votre prénom et votre nom" minlength="2" maxlength="25" id="name_firstname" autocomplete="on" required >
-                    </div>
-                    <div>
-                        <label for="mail">Adresse mail *</label>
-                        <input type="email" name="email" placeholder="Entrez votre adresse mail" minlength="2" maxlength="25" id="mail" autocomplete="on" required>
-                    </div>
-                    <div>
-                        <label for="message">Message *</label>
-                        <textarea name="message" placeholder="✏️  Écrivez votre message (entre 5 et 500 caractères)" 
-                            maxlength="500" cols="50" rows="18" id="message" required></textarea>
-                        <div id="charCount">500 caractères restants</div>
-                        <div id="error-message"></div>
-                    </div>
-                    <button type="submit" id="submit-button" disabled>Envoyer</button>
-                </fieldset>
-            </form>
-            <div class="bande_horizontale_2"></div>
-            <div class="bande_horizontale_1"></div>
-        </div>
+    <main class="construction">
+        <h2>Cette page n'est pas encore prête à être dévoilée mais ce n'est qu'une question de temps ! 😁</h2>
+        <img class="construction" src="./Images/construction.webp" alt=" image annonçant que cette page est en contruction">
     </main>
-
 
     <footer>
         <a href="contact.html" alt="lien page contact">Contact</a>
-        <p>Copyright© 2024 | Design by <a class="attribution" href="https://www.freepik.com/" target="_blank" alt="lien_freepik">Freepik</a> & <a class="attribution" href="https://anais-diez.vercel.app/" target="_blank" alt="lien_page_perso">Anaïs DIEZ</a>
+        <p>Copyright© 2024 | Design by <a class="attribution" href="https://www.freepik.com/" target="_blank" alt="lien_freepik">Freepik</a> & <a class="attribution" href="https://anais-diez.vercel.app/" target="_blank" alt="lien-page-perso">Anaïs DIEZ</a>
         </p>
     </footer>
 </body>
