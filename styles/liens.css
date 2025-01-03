@@ -1,10 +1,3 @@
-main {
-    background-image: url("../Images/carton-body.webp");
-    background-size: cover;
-    background-position: center;
-    margin: 60px 0 50px 0;
-}
-
 .links {
     background-color: white;
     background-size: cover;

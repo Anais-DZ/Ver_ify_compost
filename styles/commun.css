@@ -5,6 +5,11 @@ body {
     margin: 0;
 }
 
+main {
+    margin: 20px 0;
+    padding: 0;
+}
+
 header, footer {
   background-image: url("../Images/header.webp");
   background-size: cover;
