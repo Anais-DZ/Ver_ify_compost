@@ -67,18 +67,18 @@
 }
 
 .links img {
-    width: 90px;
+    width: 80px;
     height: auto;
     position: absolute;
-    right: 10vw;
-    bottom: auto;
+    right: 12vw;
+    bottom: -54.5vh;
 }
 
 #suggestion-button {
     position: relative;
     background: url(../Images/carton-body.webp);
     text-align: center;
-    margin: 90px 35px 0;
+    margin: 80px 35px 0;
     height: auto;
     width: 70%px;
     display: flex;
