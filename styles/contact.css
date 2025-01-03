@@ -22,27 +22,6 @@
     width: 80%;
 }
 
-.contact h2 {
-    font-family: "Cabin sketch";
-    font-size: 24px;
-    font-weight: bolder;
-    color: #564E4E;
-    text-align: center;
-    border-bottom: solid 0.5px #564E4E;
-    margin: 0;
-    padding: 20px 0 10px 0;
-}
-
-.contact p {
-    font-family: "Fredoka condensed";
-    font-size: 20px;
-    font-weight:normal;
-    color: #564E4E;
-    text-align: center;
-    margin: 0;
-    padding: 15px 30px 0 30px;
-}
-
 .contact label {
     font-family: "Fredoka";
     display: block;
@@ -52,11 +31,11 @@
 }
 
 .contact img {
-    width: 40%;
+    width: 130px;
     height: auto;
-    position: relative;
-    left: 90px;
-    top: -15px;
+    left: 35px;
+    top: -70px;
+    position: absolute;
 }
 
 .contact input {
@@ -120,29 +99,4 @@
 #submit-button:disabled {
     background-color: rgba(255, 0, 0, 0.162);
     cursor: not-allowed;
-}
-
-.contact form {
-    width: 370px;
-    height: auto;
-    background: #c0ec59;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 70px;
-    margin-bottom: 50px;
-}
-
-.contact fieldset {
-    background-color: #fefffa;
-    width: 290px;
-    height: auto;
-    position: relative;
-    bottom: 25px;
-    display: flex;
-    flex-direction: column;
-    border: none;
-    padding: 0 20px;
 }

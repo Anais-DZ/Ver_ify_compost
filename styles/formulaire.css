@@ -1,0 +1,47 @@
+.inscription form, .contact form, .initialisation form {
+    width: 90%;
+    height: auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 135px 0 50px 0;
+}
+
+.inscription legend, .contact legend, .initialisation legend {
+    position: relative;
+    width: 200px;
+    padding: 0;
+    margin-left: 45px;
+    color: rgba(0, 0, 0, 0);
+}
+
+.inscription fieldset, .contact fieldset, .initialisation fieldset {
+    position: relative;
+    background-color: #fefffa;
+    border: 10px solid #c0ec59;
+    border-radius: 8px;
+    width: 290px;
+    height: auto;
+    position: relative;
+    bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 20px 0;
+}
+
+.inscription h2, .contact h2, .initialisation h2 {
+    font-family: "Cabin sketch";
+    font-size: 24px;
+    color: #564E4E;
+    text-align: center;
+    margin: 30px 40px;
+}
+
+.inscription p, .contact p, .initialisation p {
+    font-family: 'Fredoka condensed';
+    font-size: 20px;
+    font-weight:normal;
+    color: #564E4E;
+    text-align: center;
+    margin: 0 20px 10px;
+}

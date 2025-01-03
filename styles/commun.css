@@ -135,7 +135,7 @@ header img {
 }
 
 .left_menu.active {
-    transform: translate(-45px);
+    transform: translate(-42px);
 }
 
 .left_menu a {

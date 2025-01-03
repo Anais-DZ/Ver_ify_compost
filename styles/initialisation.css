@@ -1,4 +1,4 @@
-.connexion {
+.initialisation {
     background-color: white;
     background-size: cover;
     background-position: center;
@@ -22,29 +22,13 @@
     width: 80%;
 }
 
-.connexion h2 {
-    font-family: "Cabin sketch";
-    font-size: 24px;
-    color: #564E4E;
-    text-align: center;
-    margin: 30px 40px;
-}
 
-.connexion p {
-    font-family: 'Fredoka condensed';
-    font-size: 20px;
-    font-weight:normal;
-    color: #564E4E;
-    text-align: center;
-    margin: 0 20px 10px;
-}
-
-.connexion a {
+.initialisation a {
     color: #8CC37C;
     text-decoration: underline;
 }
 
-.connexion label {
+.initialisation label {
     font-family: "Fredoka";
     display: inline-block;
     font-size: 15px;
@@ -52,15 +36,15 @@
     margin: 25px 0 4px 0;
 }
 
-.connexion img {
-    width: 70%;
+.initialisation img {
+    width: 180px;
     height: auto;
-    left: 45px;
-    top: -25px;
-    position: relative;
+    left: 13px;
+    top: -95px;
+    position: absolute;
 }
 
-.connexion input {
+.initialisation input {
     border: 1px solid #ccc;
     width: 100%;
     border-radius: 5px;
@@ -71,7 +55,7 @@
     padding: 10px 10px;
 }
 
-.connexion button {
+.initialisation button {
     background-color: #564E4E;
     color: white;
     border: none;
@@ -85,7 +69,7 @@
     padding: 5px 20px;
 }
 
-.connexion button:hover {
+.initialisation button:hover {
     background-color: #221b1b;
 }
 
@@ -96,30 +80,4 @@
     color: #564E4E;
     text-align: center;
     margin-bottom: 11px;
-}
-
-.connexion form {
-    width: 90%;
-    height: auto;
-    background: #c0ec59;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 60px;
-    margin-bottom: 60px;
-}
-
-.connexion fieldset {
-    background-color: #fefffa;
-    width: 80%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    border: none;
-    margin: 25px;
-    position: relative;
-    bottom: 40px;
-    padding: 0 20px;
 }

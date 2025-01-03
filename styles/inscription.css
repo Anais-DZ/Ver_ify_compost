@@ -22,24 +22,6 @@
     width: 80%;
 }
 
-.inscription h2 {
-    font-family: "Cabin sketch";
-    font-size: 24px;
-    font-weight: bolder;
-    color: #564E4E;
-    text-align: center;
-    margin: 30px 40px;
-}
-
-.inscription p {
-    font-family: 'Fredoka condensed';
-    font-size: 20px;
-    font-weight:normal;
-    color: #564E4E;
-    text-align: center;
-    margin: 0 20px 10px;
-}
-
 .inscription label {
     font-family: 'Fredoka';
     display: block;
@@ -49,11 +31,11 @@
 }
 
 .inscription img {
-    width: 65%;
+    width: 180px;
     height: auto;
-    left: 50px;
-    top: -25px;
-    position: relative;
+    left: 13px;
+    top: -95px;
+    position: absolute;
 }
 
 .inscription input {
@@ -91,34 +73,6 @@
 }
 
 
-.inscription form {
-    width: 370px;
-    height: auto; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 70px;
-    margin-bottom: 50px;
-}
-
-.inscription legend {
-    padding: 0;
-}
-
-.inscription fieldset {
-    position: relative;
-    background-color: #fefffa;
-    border: 8px solid #c0ec59;
-    border-radius: 8px;
-    width: 290px;
-    height: auto;
-    position: relative;
-    bottom: 25px;
-    display: flex;
-    flex-direction: column;
-    padding: 0 30px;
-}
-
 #password-error-message-1, #password-error-message-2  {
     color: red;
     font-family: "fredoka";
@@ -135,7 +89,7 @@
 #toggle-password {
     position: absolute;
     right: 25px;
-    top: 145px;
+    top: 185px;
     background: none;
     border: none;
     cursor: pointer;
