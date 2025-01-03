@@ -184,9 +184,9 @@
 
 .overlay-content {
     background-color: #fffefd;
-    width: 330px;
+    width: 310px;
     height: auto;
-    padding: 40px 20px 20px 20px;
+    padding: 40px 10px 20px 20px;
     text-align: center;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -197,8 +197,8 @@
 
 .close-button {
     position: absolute;
-    top: 0px;
-    right: 10px;
+    top: -5px;
+    right: 5px;
     background: none;
     border: none;
     font-size: 45px;
@@ -207,7 +207,7 @@
 }
 
 .overlay-content h1 {
-    font-size: 40px;
+    font-size: 34px;
     color: #4e3d28;
     font-family: "Cabin sketch";
 }
