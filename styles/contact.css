@@ -22,31 +22,12 @@
     width: 80%;
 }
 
-.contact label {
-    font-family: "Fredoka";
-    display: block;
-    font-size: 18px;
-    color: #564E4E;
-    margin: 25px 0 4px 0;
-}
-
 .contact img {
     width: 130px;
     height: auto;
     left: 35px;
     top: -70px;
     position: absolute;
-}
-
-.contact input {
-    border: 1px solid #ccc;
-    width: 100%;
-    border-radius: 5px;
-    font-size: 16px;
-    font-style: italic;
-    box-sizing: border-box;
-    font-family: "Fredoka";
-    padding: 10px 10px;
 }
 
 .contact textarea {

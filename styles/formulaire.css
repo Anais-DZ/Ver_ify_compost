@@ -31,17 +31,40 @@
 
 .inscription h2, .contact h2, .initialisation h2 {
     font-family: "Cabin sketch";
-    font-size: 24px;
+    font-size: 26px;
     color: #564E4E;
     text-align: center;
     margin: 30px 40px;
 }
 
+.inscription h2 {
+    font-size: 23px;
+}
+
 .inscription p, .contact p, .initialisation p {
     font-family: 'Fredoka condensed';
-    font-size: 20px;
+    font-size: 18px;
     font-weight:normal;
     color: #564E4E;
     text-align: center;
     margin: 0 20px 10px;
+}
+
+.initialisation input, .contact input, .inscription input {
+    border: 1px solid #ccc;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 16px;
+    font-style: italic;
+    box-sizing: border-box;
+    font-family: 'Fredoka';
+    padding: 10px 10px;
+}
+
+.inscription label, .contact label, .initialisation label {
+    font-family: 'Fredoka';
+    display: block;
+    font-size: 18px;
+    color: #564E4E;
+    margin: 25px 0 5px 0;
 }

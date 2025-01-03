@@ -22,31 +22,12 @@
     width: 80%;
 }
 
-.inscription label {
-    font-family: 'Fredoka';
-    display: block;
-    font-size: 18px;
-    color: #564E4E;
-    margin: 25px 0 4px 0;
-}
-
 .inscription img {
     width: 180px;
     height: auto;
     left: 13px;
     top: -95px;
     position: absolute;
-}
-
-.inscription input {
-    border: 1px solid #ccc;
-    width: 100%;
-    border-radius: 5px;
-    font-size: 16px;
-    font-style: italic;
-    box-sizing: border-box;
-    font-family: 'Fredoka';
-    padding: 10px 10px;
 }
 
 #submit-btn {

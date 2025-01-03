@@ -31,7 +31,7 @@
 .initialisation label {
     font-family: "Fredoka";
     display: inline-block;
-    font-size: 15px;
+    font-size: 18px;
     color: #564E4E;
     margin: 25px 0 4px 0;
 }
@@ -44,15 +44,8 @@
     position: absolute;
 }
 
-.initialisation input {
-    border: 1px solid #ccc;
-    width: 100%;
-    border-radius: 5px;
-    font-size: 12px;
-    font-style: italic;
-    box-sizing: border-box;
-    font-family: 'Fredoka';
-    padding: 10px 10px;
+#password_5_container {
+    margin-top: 35px;
 }
 
 .initialisation button {
