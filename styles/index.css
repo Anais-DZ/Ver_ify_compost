@@ -37,7 +37,7 @@
     font-size: 22px;
     text-align: center;
     color: #564E4E;
-    top: 347px;
+    top: 350px;
 }
 
 .slide p {
@@ -46,8 +46,8 @@
 }
 
 #slide_economy {
-    width: 230px;
-    top: 342px;
+    width: 233px;
+    top: 347px;
 }
 
 .little_slide {
@@ -99,7 +99,7 @@
     color: #564E4E;
     text-align: center;
     font-size: 18px;
-    margin: 0 0 25px 0;
+    margin: 0 10px 25px 10px;
 }
 
 .search_bar {
