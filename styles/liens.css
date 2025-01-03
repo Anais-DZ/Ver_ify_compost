@@ -70,7 +70,7 @@
     width: 70px;
     height: auto;
     position: absolute;
-    right: 85px;
+    right: 20px;
     bottom: -488px;
 }
 
@@ -78,11 +78,9 @@
     position: relative;
     background: url(../Images/carton-body.webp);
     text-align: center;
-    margin-top: 90px;
-    margin-left: auto;
-    margin-right: auto;
-    height: 60%;
-    width: 290px;
+    margin: 90px 20px 0;
+    height: auto;
+    width: 70%px;
     display: flex;
     align-items: center;
     border-radius: 8px;
