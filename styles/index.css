@@ -79,13 +79,12 @@
     margin: 60px 0 60px;
     max-width: 400px;
     outline: 0.5px solid #564e4e76;
-    outline-offset: -6px
+    outline-offset: -6px;
+    padding: 0 15px;
 }
 
 .search h2 {
-    font-family: "Cabin sketch"; /* "fredoka one" n'apparaît pas sur tous les navigateurs/
-    color: #564E4E;
-    /*-webkit-text-stroke: 0.2px white; /* n'apparaît pas sur tous les navigateurs */
+    font-family: "Cabin sketch";
     letter-spacing: 2px;
     font-size: 32px;
     padding: 15px 0;
@@ -117,19 +116,6 @@
     width: 60px;
     height: 60px;
 }
-
-/* .search_bar input {
-    border: none;
-    width: 100%;
-    border-radius: 12px;
-    font-size: 14px;
-    font-style: italic;
-    font-family: 'Fredoka';
-    padding: 20px 5px;
-    margin: 10px 5px 10px 10px;
-    box-sizing: border-box;
-    text-align: center;  
-} */
 
 .search_bar textarea {
     resize: none;
@@ -289,7 +275,6 @@
     top: -30px;
 } */
     
-/*code du calendrier*/
 #calendar-fonctionnality, .search {
     font-family: "fredoka";
     display: flex;
@@ -298,7 +283,6 @@
     background: url(../Images/carton-body.webp);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
-    padding: 0 20px;
     max-width: 500px;
     outline: 0.5px solid #4f3e2776;
     outline-offset: -7px;
@@ -307,6 +291,7 @@
 #calendar-fonctionnality {
     margin: 50px 0 80px;
     width: 85vw;
+    padding: 0 20px;
 }
 
 .calendar-container {

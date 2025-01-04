@@ -85,12 +85,11 @@
     padding: 0;
     border: none;
     box-shadow: 0 0 5px 2px #564e4e76;
+    outline: 0.5px solid #564e4e76;
+    outline-offset: -6px;
 }
 
 #suggestion-button a {
-    border: solid 0.5px #564e4e76;
-    border-radius: 8px;
-    margin: 2%;
     padding: 9% 5%;
 }
 
