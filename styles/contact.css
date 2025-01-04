@@ -51,12 +51,14 @@
 }
 
 #error-message {
-    color: red;
+    color: rgb(210, 43, 43);
     font-family: "Fredoka";
     font-size: 14px;
     text-align: center;
     position: absolute;
-    bottom: 95px ;
+    bottom: 127px ;
+    left: 0;
+    margin: 0 20px;
 }
 
 #submit-button {
@@ -69,7 +71,7 @@
     font-family: 'Cabin Sketch';
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.35);
     text-align: center;
-    margin: 45px 20px;
+    margin: 55px 20px;
     padding: 10px 25px;
 }
 

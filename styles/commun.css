@@ -186,7 +186,7 @@ header img {
     display: inline-block;
     font-size: 18px;
     color: #564E4E;
-    margin: 25px 0 4px 0;
+    margin: 35px 0 4px 0;
 }
 
 .right_menu h2 {
@@ -295,4 +295,11 @@ footer p {
     font-size: 15px;
     text-decoration: underline;
     text-underline-offset: 2px;
+}
+
+.construction-button {
+    font-size: 12px !important;
+    color: rgb(210, 43, 43) !important;
+    font-style: italic;
+    margin: 10px 20px 0 !important;
 }
