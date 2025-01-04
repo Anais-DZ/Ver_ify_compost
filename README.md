@@ -10,6 +10,6 @@ Ce projet est une opportunité idéale pour concilier mes préoccupations enviro
 
 Le site est maintenant accessible en ligne (en mobile first pour le moment), [Ver'ify Compost](https://ver-ify-compost.vercel.app/) , en étant toujours en cours de développement. Il me sert principalement à avoir une vision concrète de l'avancement et des fonctionnalités à venir. Certaines pages peuvent être incomplètes ou en travaux. Merci pour votre compréhension et n'hésitez pas à revenir régulièrement pour suivre les avancés ! :blush:
 
-<br/>Update ! 28 décembre 2024 --> ajout de menus rideaux avec JavaScript
+<br/>Update ! 04 janvier 2025 --> La liste des déchets est plus complète. Ajout d'un calendrier où il est possible d'entrer une note pour un jour particulier (l'enregistrement de cette note n'est pas encore fonctionnelle). Le site est utilisable sauf pour l'inscription, la connexion et l'envoi de message (en développement)
 <br/>Update ! 30 décembre 2024 --> ajout suggestions de déchets et aide au tri avec du JavaScript. La fonction principale du site est en place ! :) (toujours en mobile first)
-
+<br/>Update ! 28 décembre 2024 --> ajout de menus rideaux avec JavaScript
