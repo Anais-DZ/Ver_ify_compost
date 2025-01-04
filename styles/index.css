@@ -17,14 +17,14 @@
     font-size: 30px;
     color: #564E4E;
     text-align: center;
-    margin: 40px 0 10px;
+    margin: 30px 0 15px;
 }
 
 .carousel_inner {
     display: flex;
     justify-content: center;
     height: 90%;
-    margin: 10px 0 0 0;
+    margin: 0;
     padding: 0;
     list-style-type: none;
 }
@@ -37,7 +37,7 @@
     font-size: 22px;
     text-align: center;
     color: #564E4E;
-    top: 352px;
+    top: 380px;
 }
 
 .slide p {
@@ -47,11 +47,11 @@
 
 #slide_economy {
     width: 233px;
-    top: 350px;
+    top: 380px;
 }
 
 .little_slide {
-    top: 360px;
+    top: 395px;
 }
 
 #cadre_feuilles {
@@ -65,7 +65,7 @@
 
 .carousel_control {
     position: absolute;
-    top: 440px;
+    top: 475px;
     cursor: pointer;
     width: 40px;
 }
@@ -267,7 +267,7 @@
 
 #guide {
     z-index: 1; 
-    top: -15px; 
+    top: -8px; 
 }
 
 /* #calendrier {
