@@ -27,11 +27,11 @@ footer {
 
 header h1 {
     color: white;
-    font-family: "fredoka condensed";
+    font-family: "fredoka";
 }
 
 header h1 {
-  font-size: 54px;
+  font-size: 50px;
   letter-spacing: 2px;
   margin: 12px 0;
   padding: 11px 33px 64px;
@@ -247,7 +247,7 @@ header img {
 }
 
 #forgetten_password {
-    font-family: "Fredoka condensed";
+    font-family: "Fredoka";
     font-size: 15px;
     font-weight:normal;
     color: #564E4E;
