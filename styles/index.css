@@ -91,6 +91,11 @@
     text-align: center;
     margin: 25px 25px 10px 25px;
     color: #564E4E;
+    text-shadow:
+      0.5px 0.5px 1px #ffffff,
+      -0.5px 0.5px 1px #ffffff,
+      -0.5px -0.5px 1px #ffffff,
+      0.5px -0.5px 1px #ffffff;
 }
 
 .search p {
@@ -295,7 +300,7 @@
 }
 
 .calendar-container {
-    width: 80vw;
+    width: 85vw;
     height: auto;
     background-color: #fff;
     border-radius: 8px;
@@ -304,7 +309,6 @@
     padding-bottom: 10px;
     max-width: 400px;
     max-height: 750px;
-    padding: 0 15px;
 }
 
 .calendar-header {
@@ -313,7 +317,7 @@
     align-items: center;
     color: #564E4E;
     padding: 15px 0;
-    background-color: #eafbdb;
+    background-color: #e4ffcb;
 }
 
 .calendar-header button {
@@ -322,6 +326,7 @@
     color: #564E4E;
     font-size: 26px;
     cursor: pointer;
+    margin: 0 15px;
 }
 
 .calendar-title {
@@ -330,6 +335,11 @@
     text-align: center;
     margin: 40px 0 20px;
     color: #564E4E;
+    text-shadow:
+      0.5px 0.5px 1px #ffffff,
+      -0.5px 0.5px 1px #ffffff,
+      -0.5px -0.5px 1px #ffffff,
+      0.5px -0.5px 1px #ffffff;
 }
 
 .calendar-header h3 {
@@ -341,9 +351,10 @@
 }
 
 .calendar {
-    width: 100%;
+    width: 90%;
     border-collapse: collapse;
     text-align: center;
+    margin: 0 15px;
 }
 
 .calendar th, .calendar td {
