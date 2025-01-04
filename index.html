@@ -97,8 +97,9 @@
             <p>Saisir le nom du déchet dans la barre de recherche, puis cliquer sur la loupe pour découvrir le composteur adapté instantanément.</p>
             <div class="separation"></div>
 
-            <form class="search_bar" autocomplete="off">
-            <input id="biodéchet" name="biodéchet" placeholder="Le nom du déchet, c'est ici !">
+            <form class="search_bar">
+                <textarea id="biodéchet" name="biodéchet" placeholder="Le nom du déchet, c'est ici !" 
+                    maxlength="20" cols="1" rows="1" required></textarea>
             <button id="verifier">
                     <picture>
                         <source srcset="./Images/loupe.webp" type="image/webp" />
