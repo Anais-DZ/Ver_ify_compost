@@ -1,9 +1,4 @@
 .inscription {
-    background-color: white;
-    background-size: cover;
-    background-position: center;
-    margin: 50px 0;
-    padding: 20px 0;
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -5,12 +5,6 @@ body {
     margin: 0;
 }
 
-main {
-    background: url(../Images/bg-body.webp);
-    background-size:cover;
-    background-repeat: no-repeat;
-}
-
 header, footer {
   background: url(../Images/header2.webp);
   background-size: cover;

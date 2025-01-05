@@ -1,9 +1,10 @@
 .links {
-    background-color: white;
     background-size: cover;
     background-position: center;
-    margin: 50px 0;
-    padding: 20px 0 0;
+    padding: 80px 0 60px;
+    background: url(../Images/bg-body.webp);
+    background-size:cover;
+    background-repeat: no-repeat;
 }
 
 .links h2 {
@@ -69,7 +70,7 @@
     height: auto;
     position: absolute;
     right: 12vw;
-    bottom: -55.9vh;
+    bottom: -40.9vh;
 }
 
 #suggestion-button {
@@ -101,10 +102,4 @@
     list-style-type: none;
     font-size: 24px;
     padding: 20px 0 10px;
-}
-
-.links {
-    background: url(../Images/bg-body.webp);
-    background-size:cover;
-    background-repeat: no-repeat;
 }
