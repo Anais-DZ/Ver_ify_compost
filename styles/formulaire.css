@@ -27,6 +27,7 @@
     display: flex;
     flex-direction: column;
     padding: 40px 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .inscription h2, .contact h2, .initialisation h2 {
