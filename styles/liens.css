@@ -101,4 +101,11 @@
     list-style-type: none;
     font-size: 24px;
     padding: 20px 0 10px;
-  }
+}
+
+.links {
+    background: url(../Images/bg-body.webp);
+    background-size:cover;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+}
