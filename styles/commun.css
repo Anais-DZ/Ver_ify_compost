@@ -6,8 +6,9 @@ body {
 }
 
 main {
-    background: url(../Images/bg-main.jpg);
-    background-size: cover;
+    background: url(../Images/bg-body.webp);
+    background-size:cover;
+    background-repeat: no-repeat;
 }
 
 header, footer {

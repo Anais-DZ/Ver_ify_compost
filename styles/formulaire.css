@@ -68,3 +68,10 @@
     color: #564E4E;
     margin: 25px 0 5px 0;
 }
+
+.inscription, .contact, .initialisation {
+    background: url(../Images/bg-body.webp);
+    background-size:cover;
+    background-repeat: no-repeat;
+    border: none;
+}
