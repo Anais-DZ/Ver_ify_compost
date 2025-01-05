@@ -186,7 +186,7 @@
 }
 
 .overlay-content {
-    background-color: #fffefd;
+    background-color: #fff4e7;
     width: 310px;
     height: auto;
     padding: 40px 10px 20px 20px;
@@ -195,7 +195,6 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     position: relative;
     font-family: "Fredoka";
-    border: #bfe8b5 solid 10px;
 }
 
 .close-button {
