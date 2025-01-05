@@ -126,6 +126,7 @@
     border: none;
     border-radius: 12px;
     font-size: 16px;
+    color: #564E4E;
     font-style: italic;
     box-sizing: border-box;
     font-family: "Fredoka";
@@ -187,7 +188,7 @@
 
 .overlay-content {
     background-color: #fff4e7;
-    width: 310px;
+    width: 330px;
     height: auto;
     padding: 40px 10px 20px 20px;
     text-align: center;

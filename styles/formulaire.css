@@ -17,7 +17,7 @@
 
 .inscription fieldset, .contact fieldset, .initialisation fieldset {
     position: relative;
-    background-color: #fefffa;
+    background-color: #fefffac4;
     border: 10px solid #c0ec59;
     border-radius: 8px;
     width: 300px;
@@ -54,6 +54,7 @@
     border: 1px solid #ccc;
     width: 100%;
     border-radius: 5px;
+    color: #564E4E;
     font-size: 16px;
     font-style: italic;
     box-sizing: border-box;
