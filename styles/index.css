@@ -6,11 +6,11 @@
 }
 
 .carousel_container {
-    margin: 60px 0 20px 0;
+    margin: 60px 0 20px;
     width: 100%;
+    max-width: 410px;
     overflow: hidden;
 }
-
 
 .carousel_container h2 {
     font-family: "cabin sketch";
@@ -294,7 +294,7 @@
 
 #calendar-fonctionnality {
     margin: 50px 0 80px;
-    width: 85vw;
+    width: 95vw;
     padding: 0 20px;
 }
 
@@ -402,4 +402,133 @@
     right: 5px;
     font-size: 14px;
     color: #564E4E;
+}
+
+/* memo*/
+  
+/* Style the header */
+#memo {
+    background-color: #0c4920;
+    border: sienna solid 8px;
+    border-radius: 8px;
+    padding: 10px 10px 20px;
+    text-align: center;
+    margin: 0 5px 60px;
+    width: 70%;
+    height: auto;
+}
+
+#memo img {
+    width: 50px;
+    height: 50px;
+}
+
+#memo h2 {
+    color: white;
+    font-family: "cabin sketch";
+    font-size: 20px;
+    margin: 0 0 20px 25px;
+}
+
+
+/* Clear floats after the header */
+.header-memo:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Style the input */
+#memo input {
+    margin: 0 10px 10px 5px;
+    border: none;
+    border-radius: 0;
+    width: 60%;
+    padding: 10px;
+    float: left;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+/* Remove margins and padding from the list */
+#note-list {
+    margin: 5px 0 40px;
+    padding: 0;
+    list-style-type: none;
+}
+
+/* Style the list items */
+#note-list li {
+    cursor: pointer;
+    padding: 5px 8px;
+    font-size: 18px;
+    transition: 0.2s;
+    color: #fff;
+    font-family: "fredoka";
+
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Darker background-color on hover */
+#note-list li:hover {
+    color: cadetblue;
+}
+
+/* When clicked on, add a background color and strike out text */
+#note-list li.checked {
+    color: #b3b3b3;
+    text-decoration: line-through;
+}
+
+/* Add a "checked" mark when clicked on */
+#note-list li.checked::before {
+    content: '';
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+}
+
+/* Style the close button */
+.close-memo {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px 16px 12px 16px;
+}
+
+.close-memo:hover {
+    background-color: #f44336;
+    color: white;
+}
+
+
+/* Style the "Add" button */
+.addBtn {
+    padding: 10px;
+    width: 20%;
+    background-color: #564E4E;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor:pointer;
+    font-family: "fredoka";
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.addBtn:hover {
+    background-color: #bbb;
 }

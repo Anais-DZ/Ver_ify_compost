@@ -37,15 +37,13 @@
                 <h2>Connexion</h2>
                 <div class="separation"></div>
                 <p class="construction-button">(Le site étant actuellement en développement, il n'est pas encore possible de se connecter, s'inscrire ou envoyer un message).</p>
-                <div id="cont-identifiant-mdp">
-                    <div>
-                        <label for="name">Votre identifiant</label>
-                        <input type="text" name="identifiant" placeholder="Entrez votre identifiant" minlength="2" maxlength="25" id="name" required autocomplete="on">
-                    </div>
-                    <div>
-                        <label for="password_1">Votre mot de passe</label>
-                        <input type="password" name="password" placeholder="Entrez votre mot de passe" minlength="2" maxlength="25" id="password_1" autocomplete="on" required>
-                    </div>
+                <div>
+                    <label for="name">Votre identifiant</label>
+                    <input type="text" name="identifiant" placeholder="Entrez votre identifiant" minlength="2" maxlength="25" id="name" required autocomplete="on">
+                </div>
+                <div>
+                    <label for="password_1">Votre mot de passe</label>
+                    <input type="password" name="password" placeholder="Entrez votre mot de passe" minlength="2" maxlength="25" id="password_1" autocomplete="on" required>
                 </div>
                 <div class="checkbox_container">
                     <input type="checkbox" id="checkbox" checked />
@@ -154,6 +152,16 @@
                     </table>
                 </div>
         </section>
+        <div id="memo" class="header-memo">
+            <h2>Mon mémo<img src="./Icones/crayon.png" alt="icone d'un crayon"></h2>    
+            <ul id="note-list">
+                <li>Ajouter déchets humides</li>
+                <li class="checked">Retourner le compost</li>
+                <li>Récupérer le compost</li>
+            </ul>
+            <input type="text" id="note-input" placeholder="Ajouter une note">
+            <span onclick="newElement()" class="addBtn">Ajouter</span> 
+        </div> 
     </main>
     <footer>
         <a href="contact.html" alt="lien page contact">Contact</a>
