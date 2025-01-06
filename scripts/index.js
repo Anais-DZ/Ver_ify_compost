@@ -501,16 +501,6 @@ function loadNotes() {
     }
   }
   
-  // Ajouter le "checked" toggle aux éléments existants
-  function addCheckedToggleToExistingItems() {
-    const list = document.querySelector('#note-list');
-    list.addEventListener('tap', function(event) {
-      if (event.target.tagName === 'LI') {
-        event.target.classList.toggle('checked');
-        saveNotes();
-      }
-    }, false);
-  }
   
   // Sauvegarder les notes dans localStorage
   function saveNotes() {
