@@ -438,11 +438,6 @@
 
 
 /* Clear floats after the header */
-.header-memo:after {
-    content: "";
-    display: table;
-    clear: both;
-}
 
 #ajout-note {
     background: rgba(255, 255, 255, 0.5);
@@ -455,7 +450,6 @@
     font-family: "fredoka";
 }
 
-/* Style the input */
 #note-input {
     border: none;
     border-radius: 0;
@@ -464,18 +458,15 @@
     padding: 10px;
     font-size: 16px;
     border-radius: 8px;
-    float: left;
     font-family: "fredoka";
 }
 
-/* Remove margins and padding from the list */
 #note-list {
     margin: 5px 0 40px;
     padding: 0;
     list-style-type: none;
 }
 
-/* Style the list items */
 #note-list li {
     cursor: pointer;
     padding: 2px 8px;
@@ -486,7 +477,6 @@
     position: relative;
 }
 
-/* When clicked on, add a background color and strike out text */
 #note-list li.checked {
     color: #b3b3b3;
     text-decoration: line-through;
@@ -507,7 +497,6 @@
     margin: 5px;
 }
 
-/* Style the close button */
 .close-memo {
     position: absolute;
     right: -5px;
@@ -522,7 +511,6 @@
 }
 
 
-/* Style the "Add" button */
 .addBtn {
     padding: 10px;
     width: 20%;
@@ -531,8 +519,7 @@
     color: white;
     border: none;
     border-radius: 5px;
-    cursor:pointer;
-    float: left;
+    cursor:pointer; 
     text-align: center;
     font-size: 16px;
     cursor: pointer;
