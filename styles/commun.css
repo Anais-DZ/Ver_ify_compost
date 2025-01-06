@@ -5,6 +5,14 @@ body {
     margin: 0;
 }
 
+main {
+    width: 100%;
+    background: url(../Images/bg-body.webp);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 header, footer {
   background: url(../Images/header.webp);
   background-size: cover;
@@ -12,11 +20,13 @@ header, footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow: 0 0 6px 2px rgba(0,0,0,0.3)
 }
 
 header {
     height: 160px;
     width: 100%;
+    z-index: 25;
 }
 
 footer {
@@ -30,7 +40,7 @@ header h1 {
     font-family: "fredoka";
     font-size: 42px;
     letter-spacing: 1px;
-    margin: 13px 0;
+    margin: 13px 0 11px;
     padding: 20px 25px 65px;
     outline: 3px solid #ffffff;
     outline-offset: -2px;

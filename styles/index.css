@@ -403,10 +403,3 @@
     font-size: 14px;
     color: #564E4E;
 }
-
-main {
-    background: url(../Images/bg-body.webp);
-    background-size:cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
