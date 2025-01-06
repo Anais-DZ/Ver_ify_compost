@@ -417,3 +417,136 @@ nextBtn.addEventListener('click', () => {
 
 // Initialiser le calendrier
 generateCalendar(currentMonth, currentYear);
+
+
+//code memo
+// // bouton close
+// const myNodelist = document.getElementsByTagName("LI"); //retourne toujours le nom de la balise en majuscule, même si en minuscule dans html donc si comparé, doit l'être en majuscule (cf plus bas)
+// for (let i = 0; i < myNodelist.length; i++) {
+//   const span = document.createElement("span");
+//   const txt = document.createTextNode("\u00D7");
+//   span.className = "close-memo";
+//   span.appendChild(txt);
+//   myNodelist[i].appendChild(span);
+// }
+
+// // ferme l'item en cliquand sur la croix
+// const close = document.getElementsByClassName("close-memo");
+// for (let j = 0; j < close.length; j++) {
+//   close[j].onclick = function() {
+//     let div = this.parentElement;
+//     div.style.display = "none";
+//   };
+// }
+
+// // ajout du check quand on clique sur l'item
+// const list = document.querySelector('#note-list');
+// list.addEventListener('click', function(event) {
+//   if (event.target.tagName === 'LI') {
+//     event.target.classList.toggle('checked');
+//   }
+// }, false);
+
+// // ajout d'un item
+// function newElement() {
+//   const li = document.createElement("li");
+//   const inputValue = document.getElementById("note-input").value;
+//   const t = document.createTextNode(inputValue);
+//   li.appendChild(t);
+
+//   if (inputValue === '') {
+//     alert("Vous devez entrer une note!");
+//   } else {
+//     document.getElementById("note-list").appendChild(li);
+//   }
+//   document.getElementById("note-input").value = "";
+
+//   const span = document.createElement("span");
+//   const txt = document.createTextNode("\u00D7");
+//   span.className = "close-memo";
+//   span.appendChild(txt);
+//   li.appendChild(span);
+
+//   span.onclick = function() {
+//     let div = this.parentElement;
+//     div.style.display = "none";
+//   };
+// }
+
+// Charger les notes depuis localStorage au démarrage
+function loadNotes() {
+    const savedNotes = localStorage.getItem('notes');
+    if (savedNotes) {
+      document.getElementById('note-list').innerHTML = savedNotes;
+      addCloseButtonToExistingItems();
+      addCheckedToggleToExistingItems();
+    }
+  }
+  
+  // Ajouter les boutons "close" aux éléments existants
+  function addCloseButtonToExistingItems() {
+    const myNodelist = document.getElementsByTagName("LI");
+    for (let i = 0; i < myNodelist.length; i++) {
+      const span = document.createElement("span");
+      const txt = document.createTextNode("\u00D7");
+      span.className = "close-memo";
+      span.appendChild(txt);
+      myNodelist[i].appendChild(span);
+  
+      span.onclick = function() {
+        let div = this.parentElement;
+        div.style.display = "none";
+        saveNotes();
+      };
+    }
+  }
+  
+  // Ajouter le "checked" toggle aux éléments existants
+  function addCheckedToggleToExistingItems() {
+    const list = document.querySelector('#note-list');
+    list.addEventListener('click', function(event) {
+      if (event.target.tagName === 'LI') {
+        event.target.classList.toggle('checked');
+        saveNotes();
+      }
+    }, false);
+  }
+  
+  // Sauvegarder les notes dans localStorage
+  function saveNotes() {
+    const listContent = document.getElementById('note-list').innerHTML;
+    localStorage.setItem('notes', listContent);
+  }
+  
+  // Créer un nouvel élément
+  function newElement() {
+    const li = document.createElement("li");
+    const inputValue = document.getElementById("note-input").value;
+    const t = document.createTextNode(inputValue);
+    li.appendChild(t);
+  
+    if (inputValue === '') {
+      alert("Vous devez entrer une note!");
+    } else {
+      document.getElementById("note-list").appendChild(li);
+    }
+    document.getElementById("note-input").value = "";
+  
+    const span = document.createElement("span");
+    const txt = document.createTextNode("\u00D7");
+    span.className = "close-memo";
+    span.appendChild(txt);
+    li.appendChild(span);
+  
+    span.onclick = function() {
+      let div = this.parentElement;
+      div.style.display = "none";
+      saveNotes();
+    };
+  
+    saveNotes();
+  }
+  
+  // Charger les notes lorsque la page est prête
+  loadNotes();
+  
