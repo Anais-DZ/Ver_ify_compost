@@ -7,7 +7,6 @@
 
 .carousel_container {
     margin: 60px 0 20px;
-    width: 100%;
     max-width: 410px;
     overflow: hidden;
 }
@@ -294,8 +293,8 @@
 
 #calendar-fonctionnality {
     margin: 50px 0 80px;
-    width: 95vw;
-    padding: 0 20px;
+    width: 90vw;
+    padding: 0 10px;
 }
 
 .calendar-container {
