@@ -430,6 +430,16 @@ generateCalendar(currentMonth, currentYear);
 //   myNodelist[i].appendChild(span);
 // }
 
+// Create a "close" button and append it to each list item
+// const myNodelist = document.getElementsByTagName("li");
+// let i;
+// for (i = 0; i < myNodelist.length; i++) {
+//   const span = document.createElement("span");
+//   const txt = document.createTextNode("\u00D7");
+//   span.className = "close-memo";
+//   span.appendChild(txt);
+//   myNodelist[i].appendChild(span);
+// }
 // // ferme l'item en cliquand sur la croix
 // const close = document.getElementsByClassName("close-memo");
 // for (let j = 0; j < close.length; j++) {
@@ -439,13 +449,6 @@ generateCalendar(currentMonth, currentYear);
 //   };
 // }
 
-// // ajout du check quand on clique sur l'item
-// const list = document.querySelector('#note-list');
-// list.addEventListener('click', function(event) {
-//   if (event.target.tagName === 'LI') {
-//     event.target.classList.toggle('checked');
-//   }
-// }, false);
 
 // // ajout d'un item
 // function newElement() {
@@ -523,17 +526,6 @@ function loadNotes() {
   // Charger les notes lorsque la page est prête
   loadNotes();
 
-
-// Create a "close" button and append it to each list item
-// const myNodelist = document.getElementsByTagName("li");
-// let i;
-// for (i = 0; i < myNodelist.length; i++) {
-//   const span = document.createElement("span");
-//   const txt = document.createTextNode("\u00D7");
-//   span.className = "close-memo";
-//   span.appendChild(txt);
-//   myNodelist[i].appendChild(span);
-// }
 
 
   // Ajouter les boutons "close" aux éléments existants
