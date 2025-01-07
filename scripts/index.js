@@ -473,6 +473,8 @@ generateCalendar(currentMonth, currentYear);
 //   };
 // }
 
+
+
 // Charger les notes depuis localStorage au démarrage
 function loadNotes() {
     const savedNotes = localStorage.getItem('notes');
@@ -483,28 +485,9 @@ function loadNotes() {
     }
   }
   
-  // Ajouter les boutons "close" aux éléments existants
-  function addCloseButtonToExistingItems() {
-    const myNodelist = document.getElementsByTagName("LI");
-    for (let i = 0; i < myNodelist.length; i++) {
-      const span = document.createElement("span");
-      const txt = document.createTextNode("\u00D7");
-      span.className = "close-memo";
-      span.appendChild(txt);
-      myNodelist[i].appendChild(span);
-  
-      span.onclick = function() {
-        let div = this.parentElement;
-        div.style.display = "none";
-        saveNotes();
-      };
-    }
-  }
-  
-  
   // Sauvegarder les notes dans localStorage
   function saveNotes() {
-    const listContent = document.getElementById('note-list').innerHTML;
+    const listContent = document.getElementById('note-list').innerText;
     localStorage.setItem('notes', listContent);
   }
   
@@ -542,15 +525,34 @@ function loadNotes() {
 
 
 // Create a "close" button and append it to each list item
-const myNodelist = document.getElementsByTagName("li");
-let i;
-for (i = 0; i < myNodelist.length; i++) {
-  const span = document.createElement("span");
-  const txt = document.createTextNode("\u00D7");
-  span.className = "close-memo";
-  span.appendChild(txt);
-  myNodelist[i].appendChild(span);
-}
+// const myNodelist = document.getElementsByTagName("li");
+// let i;
+// for (i = 0; i < myNodelist.length; i++) {
+//   const span = document.createElement("span");
+//   const txt = document.createTextNode("\u00D7");
+//   span.className = "close-memo";
+//   span.appendChild(txt);
+//   myNodelist[i].appendChild(span);
+// }
+
+
+  // Ajouter les boutons "close" aux éléments existants
+  function addCloseButtonToExistingItems() {
+    const myNodelist = document.getElementsByTagName("LI");
+    for (let i = 0; i < myNodelist.length; i++) {
+      const span = document.createElement("span");
+      const txt = document.createTextNode("\u00D7");
+      span.className = "close-memo";
+      span.appendChild(txt);
+      myNodelist[i].appendChild(span);
+  
+      span.onclick = function() {
+        let div = this.parentElement;
+        div.style.display = "none";
+        saveNotes();
+      };
+    }
+  }
 
 // Click on a close button to hide the current list item
 const close = document.getElementsByClassName("close-memo");
