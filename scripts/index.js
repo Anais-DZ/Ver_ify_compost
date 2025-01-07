@@ -419,46 +419,37 @@ nextBtn.addEventListener('click', () => {
 generateCalendar(currentMonth, currentYear);
 
 
+//memo
 //code memo
-// // bouton close
-// const myNodelist = document.getElementsByTagName("LI"); //retourne toujours le nom de la balise en majuscule, même si en minuscule dans html donc si comparé, doit l'être en majuscule (cf plus bas)
-// for (let i = 0; i < myNodelist.length; i++) {
-//   const span = document.createElement("span");
-//   const txt = document.createTextNode("\u00D7");
-//   span.className = "close-memo";
-//   span.appendChild(txt);
-//   myNodelist[i].appendChild(span);
-// }
-
 // Create a "close" button and append it to each list item
-// const myNodelist = document.getElementsByTagName("li");
+// const myNodelist = document.querySelectorAll("li");
 // let i;
 // for (i = 0; i < myNodelist.length; i++) {
 //   const span = document.createElement("span");
 //   const txt = document.createTextNode("\u00D7");
-//   span.className = "close-memo";
+//   span.className = "close-menu";
 //   span.appendChild(txt);
 //   myNodelist[i].appendChild(span);
 // }
-// // ferme l'item en cliquand sur la croix
-// const close = document.getElementsByClassName("close-memo");
-// for (let j = 0; j < close.length; j++) {
+
+// // Click on a close button to hide the current list item
+// const close = document.getElementsByClassName("close-menu");
+// let j;
+// for (j = 0; j < close.length; j++) {
 //   close[j].onclick = function() {
-//     let div = this.parentElement;
+//     const div = this.parentElement;
 //     div.style.display = "none";
-//   };
+//   }
 // }
 
-
-// // ajout d'un item
+// // Create a new list item when clicking on the "Add" button
 // function newElement() {
 //   const li = document.createElement("li");
-//   const inputValue = document.getElementById("note-input").value;
+//   const inputValue = document.getElementById("myInput").value;
 //   const t = document.createTextNode(inputValue);
 //   li.appendChild(t);
-
 //   if (inputValue === '') {
-//     alert("Vous devez entrer une note!");
+//     alert("Vous devez rentrer une note !");
 //   } else {
 //     document.getElementById("note-list").appendChild(li);
 //   }
@@ -466,112 +457,7 @@ generateCalendar(currentMonth, currentYear);
 
 //   const span = document.createElement("span");
 //   const txt = document.createTextNode("\u00D7");
-//   span.className = "close-memo";
-//   span.appendChild(txt);
-//   li.appendChild(span);
-
-//   span.onclick = function() {
-//     let div = this.parentElement;
-//     div.style.display = "none";
-//   };
-// }
-
-
-
-// Charger les notes depuis localStorage au démarrage
-function loadNotes() {
-    const savedNotes = localStorage.getItem('notes');
-    if (savedNotes) {
-      document.getElementById('note-list').innerHTML = savedNotes;
-      addCloseButtonToExistingItems();
-      addCheckedToggleToExistingItems();
-    }
-  }
-  
-  // Sauvegarder les notes dans localStorage
-  function saveNotes() {
-    const listContent = document.getElementById('note-list').innerText;
-    localStorage.setItem('notes', listContent);
-  }
-  
-  // Créer un nouvel élément
-  function newElement() {
-    const li = document.createElement("li");
-    const inputValue = document.getElementById("note-input").value;
-    const t = document.createTextNode(inputValue);
-    li.appendChild(t);
-  
-    if (inputValue === '') {
-      alert("Vous devez entrer une note!");
-    } else {
-      document.getElementById("note-list").appendChild(li);
-    }
-    document.getElementById("note-input").value = "";
-  
-    const span = document.createElement("span");
-    const txt = document.createTextNode("\u00D7");
-    span.className = "close-memo";
-    span.appendChild(txt);
-    li.appendChild(span);
-  
-    span.onclick = function() {
-      let div = this.parentElement;
-      div.style.display = "none";
-      saveNotes();
-    };
-  
-    saveNotes();
-  }
-  
-  // Charger les notes lorsque la page est prête
-  loadNotes();
-
-
-
-  // Ajouter les boutons "close" aux éléments existants
-  function addCloseButtonToExistingItems() {
-    const myNodelist = document.getElementsByTagName("LI");
-    for (let i = 0; i < myNodelist.length; i++) {
-      const span = document.createElement("span");
-      const txt = document.createTextNode("\u00D7");
-      span.className = "close-memo";
-      span.appendChild(txt);
-      myNodelist[i].appendChild(span);
-  
-      span.onclick = function() {
-        let div = this.parentElement;
-        div.style.display = "none";
-        saveNotes();
-      };
-    }
-  }
-
-// Click on a close button to hide the current list item
-const close = document.getElementsByClassName("close-memo");
-let j;
-for (j = 0; j < close.length; j++) {
-  close[j].onclick = function() {
-    const div = this.parentElement;
-    div.style.display = "none";
-  }
-}
-
-// Create a new list item when clicking on the "Add" button
-// function newElement() {
-//   const li = document.createElement("li");
-//   const inputValue = document.getElementById("note-list").value;
-//   const t = document.createTextNode(inputValue);
-//   li.appendChild(t);
-//   if (inputValue === '') {
-//     alert("You must write something!");
-//   } else {
-//     document.getElementById("myUL").appendChild(li);
-//   }
-//   document.getElementById("note-list").value = "";
-
-//   const span = document.createElement("span");
-//   const txt = document.createTextNode("\u00D7");
-//   span.className = "close-memo";
+//   span.className = "close-menu";
 //   span.appendChild(txt);
 //   li.appendChild(span);
 
@@ -582,4 +468,3 @@ for (j = 0; j < close.length; j++) {
 //     }
 //   }
 // }
-  
