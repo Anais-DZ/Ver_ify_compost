@@ -405,8 +405,6 @@
 }
 
 /* memo*/
-  
-/* Style the header */
 #memo {
     background-color: #0c4920;
     border: sienna solid 8px;
@@ -436,8 +434,6 @@
     margin: 0 0 20px;
 }
 
-
-/* Clear floats after the header */
 
 #ajout-note {
     background: rgba(255, 255, 255, 0.5);
