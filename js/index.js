@@ -348,6 +348,3 @@ nextBtn.addEventListener('click', () => {
 generateCalendar(currentMonth, currentYear);
 
 
-//memo
-
-
