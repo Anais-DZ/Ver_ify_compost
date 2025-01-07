@@ -10,6 +10,9 @@ Ce projet est une opportunité idéale pour concilier mes préoccupations enviro
 
 Le site est maintenant accessible en ligne (en mobile first pour le moment), [Ver'ify Compost](https://ver-ify-compost.vercel.app/) , en étant toujours en cours de développement. Il me sert principalement à avoir une vision concrète de l'avancement et des fonctionnalités à venir. Certaines pages peuvent être incomplètes ou en travaux. Merci pour votre compréhension et n'hésitez pas à revenir régulièrement pour suivre les avancés ! :blush:
 
+<br/>Update ! 06 janvier 2025 --> Le mémo fonctionne mais il y a conflit avec le carrousel : une croix apparaît aussi pour le carrousel et supprime les slides, ce qui n'est pas voulu 😅 À rectifier prochainement.
+
+
 <br/>Update ! 04 janvier 2025 --> La liste des déchets est plus complète. Ajout d'un calendrier où il est possible d'entrer une note pour un jour particulier (l'enregistrement de cette note n'est pas encore fonctionnelle). Le site est utilisable sauf pour l'inscription, la connexion et l'envoi de message (en développement)
 
 
