@@ -53,27 +53,27 @@ passwordInput2.addEventListener("input", formulaireValide);
 
 
 
-// Gestion de la visibilité des mots de passe
-document.getElementById("togglePassword").addEventListener("click", (event) => {
-    // Empêche la propagation de l'événement et évite les messages d'erreur
-    event.preventDefault();
-    event.stopPropagation();
+// Gestion de la visibilité des mots de passe //! soucis avec l'image
+// document.getElementById("togglePassword").addEventListener("click", (event) => {
+//     // Empêche la propagation de l'événement et évite les messages d'erreur
+//     event.preventDefault();
+//     event.stopPropagation();
 
-    // Bascule la visibilité des mots de passe
-    togglePasswordVisibility("passwordInscription");
-    togglePasswordVisibility("passwordInscription2");
-});
+//     // Bascule la visibilité des mots de passe
+//     togglePasswordVisibility("passwordInscription");
+//     togglePasswordVisibility("passwordInscription2");
+// });
 
-function togglePasswordVisibility(passwordFieldId) {
-    const passwordField = document.getElementById(passwordFieldId);
-    const PasswordVisible = passwordField.type === "text";
+// function togglePasswordVisibility(passwordFieldId) {
+//     const passwordField = document.getElementById(passwordFieldId);
+//     const PasswordVisible = passwordField.type === "text";
 
-    // Bascule entre type "text" et "password"
-    passwordField.type = PasswordVisible ? "password" : "text";
+//     // Bascule entre type "text" et "password"
+//     passwordField.type = PasswordVisible ? "password" : "text";
 
-    // Change l'icône ou le texte du bouton
-    const toggleButton = document.getElementById("togglePassword");
-    toggleButton.innerText = PasswordVisible
-        ? '<img src="./Icones/closed-eye.png" alt="oeil fermé pour cacher le mot de passe">'
-        : '<img src="./Icones/opened-eye.png" alt="oeil ouvert pour montrer le mot de passe">';
-};
+//     // Change l'icône ou le texte du bouton
+//     const toggleButton = document.getElementById("togglePassword");
+//     toggleButton.innerText = PasswordVisible
+//         ? '<img src="./Icones/closed-eye.png" alt="oeil fermé pour cacher le mot de passe">'
+//         : '<img src="./Icones/opened-eye.png" alt="oeil ouvert pour montrer le mot de passe">';
+// };
