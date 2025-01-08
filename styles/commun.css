@@ -73,7 +73,7 @@ header img {
 }
 
 /*menu rideau*/
-.menu_toggler {  /*le bouton du menu */
+.menuToggler {  /*le bouton du menu */
     height: 50px;
     width: 50px;
     border: none;
@@ -95,35 +95,35 @@ header img {
     opacity: 0.1s ease-out;
 }
 
-.l1 {
+.line1 {
     transform: translateY(-10px);
 }
 
-.l3 {
+.line3 {
     transform: translateY(10px);
 }
 
-.menu_toggler.active .l1 {
+.menuToggler.active .line1 {
     transform: translateY(0) rotate(135deg);
 }
 
-.menu_toggler.active .l2 {
+.menuToggler.active .line2 {
     opacity: 0;
 }
 
-.menu_toggler.active .l3 {
+.menuToggler.active .line3 {
     transform: translateY(0) rotate(-135deg);
 }
 
-.menu_toggler {
+.menuToggler {
     margin-right: 25%;
 }
 
-#user_button {
+#userButton {
     margin-left: 25%;
 }
 
-.left_menu {
+.leftMenu {
     position: fixed;
     width: 80vw; /*80% de l'écran*/
     max-width: 390px;
@@ -142,11 +142,11 @@ header img {
     border-bottom-right-radius: 8px;
 }
 
-.left_menu.active {
+.leftMenu.active {
     transform: translate(-42px);
 }
 
-.left_menu a { 
+.leftMenu a { 
     width: 85%;
     font-family: "fredoka";
     font-size: 22px;
@@ -178,7 +178,7 @@ header img {
 
 
 /* menu connexion*/
-.right_menu a {
+.rightMenu a {
     font-family: "Fredoka";
     color: #689e58;
     text-decoration: underline;
@@ -186,7 +186,7 @@ header img {
     font-size: 18px;
 }
 
-.right_menu p {
+.rightMenu p {
     font-family: "Fredoka";
     color: #564E4E;
     text-align: center;
@@ -194,7 +194,7 @@ header img {
     font-size: 18px;
 }
 
-.right_menu label {
+.rightMenu label {
     font-family: "Fredoka";
     display: inline-block;
     font-size: 18px;
@@ -202,7 +202,7 @@ header img {
     margin: 35px 0 4px 0;
 }
 
-.right_menu h2 {
+.rightMenu h2 {
     font-family: "Cabin sketch";
     font-size: 34px;
     text-align: center;
@@ -224,7 +224,7 @@ header img {
     margin: 10px 0 !important;
 }
 
-.right_menu input {
+.rightMenu input {
     border: 1px solid #ccc;
     width: 90%;
     height: 45px;
@@ -236,11 +236,11 @@ header img {
     padding: 10px 10px;
 }
 
-.right_menu label {
+.rightMenu label {
     margin-top: 20px;
 }
 
-.right_menu button {
+.rightMenu button {
     background-color: #564E4E;
     color: white;
     border: none;
@@ -255,11 +255,11 @@ header img {
     width: 75%;
 }
 
-.right_menu button:hover {
+.rightMenu button:hover {
     background-color: #221b1b;
 }
 
-#forgetten_password {
+#forgettenPassword {
     font-family: "Fredoka";
     font-size: 15px;
     font-weight:normal;
@@ -268,7 +268,7 @@ header img {
     margin: 20px 0 0;
 }
 
-.right_menu {
+.rightMenu {
     background: #fefffa;
     border: 14px solid #c0ec59;
     border-right: none;
@@ -287,7 +287,7 @@ header img {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.307);
 }
 
-.right_menu.active {
+.rightMenu.active {
     transform: translate(-162px);
 }
 
@@ -321,7 +321,7 @@ footer p {
     text-underline-offset: 2px;
 }
 
-.construction-button {
+.constructionButton {
     font-size: 12px !important;
     color: rgb(210, 43, 43) !important;
     font-style: italic;
@@ -329,7 +329,7 @@ footer p {
 }
 
 /* @media screen and (min-width: 800px) {
-    .right_menu {
+    .rightMenu {
         display: none;
     }
 } */

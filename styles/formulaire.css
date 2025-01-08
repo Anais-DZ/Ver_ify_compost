@@ -55,7 +55,7 @@
     margin: 0 20px 10px;
 }
 
-.initialisation input, .contact input, .inscription input {
+.initialisation input, .contact input, .inscription input, .contact textarea {
     border: 1px solid #ccc;
     width: 100%;
     border-radius: 5px;

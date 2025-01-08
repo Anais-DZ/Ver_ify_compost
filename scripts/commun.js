@@ -1,9 +1,9 @@
 //menu en rideau
-const burgerButton = document.querySelector(".menu_toggler");
-const leftMenu = document.querySelector(".left_menu");
+const burgerButton = document.querySelector(".menuToggler");
+const leftMenu = document.querySelector(".leftMenu");
 
-const userButton = document.querySelector("#user_button");
-const connexion = document.querySelector(".right_menu");
+const userButton = document.querySelector("#userButton");
+const connexion = document.querySelector(".rightMenu");
 
 burgerButton.addEventListener("click", (event) => {
     event.stopPropagation(); // Empêche la propagation pour éviter la fermeture immédiate

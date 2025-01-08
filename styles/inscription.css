@@ -4,14 +4,14 @@
     align-items: center;
 }
 
-.bande_horizontale_1 {
+.bandeHorizontale1 {
     height: 4px;
     margin: 5px 0;
     background-color: #564E4E;
     width: 90%;
 }
 
-.bande_horizontale_2 {
+.bandeHorizontale2 {
     height: 2px;
     background-color: #564E4E;
     width: 80%;
@@ -25,7 +25,7 @@
     position: absolute;
 }
 
-#submit-btn {
+#submitButtonInscription {
     background-color: #564E4E;
     color: white;
     border: none;
@@ -39,17 +39,17 @@
     padding: 10px 25px;
 }
 
-#submit-btn:hover {
+#submitButtonInscription:hover {
     background-color: #278a20;
 }
 
-#submit-btn:disabled {
+#submitButtonInscription:disabled {
     background-color: rgba(255, 0, 0, 0.162);
     cursor: not-allowed;
 }
 
 
-#password-error-message-1, #password-error-message-2  {
+#passwordErrorMessage1, #passwordErrorMessage2  {
     color: rgb(210, 19, 19);
     font-family: "fredoka";
     font-size: 14px;
@@ -57,13 +57,13 @@
     margin-top: 5px;
 }
 
-#password-error-message-1 {
+#passwordErrorMessage1 {
     position: absolute;
     z-index: 100;
     top: 96px;
 }
 
-#toggle-password {
+#togglePassword {
     position: relative;
     bottom: -47px;
     right: -247px;
@@ -72,7 +72,7 @@
     cursor: pointer;
 }
 
-#toggle-password img {
+#togglePassword img {
     width: 30px; 
     height: auto;
     opacity: 60%;
@@ -80,7 +80,7 @@
     vertical-align: middle;
 }
 
-.password-container {
+.inscriptionContainer {
     margin: 35px 0 20px;
     position: relative;
 }

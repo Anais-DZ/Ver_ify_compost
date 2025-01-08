@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () { /* permet d'afficher une slide */
-    const slides = document.querySelectorAll(".carousel_inner .slide");
-    const prevButton = document.querySelector(".carousel_control.prev");
-    const nextButton = document.querySelector(".carousel_control.next");
+    const slides = document.querySelectorAll(".carouselInner .slide");
+    const prevButton = document.querySelector(".carouselControl.prev");
+    const nextButton = document.querySelector(".carouselControl.next");
     const totalSlides = slides.length;
 
     let currentIndex = 0; // Index de la slide actuellement affichée
@@ -156,28 +156,28 @@ const nonCompostables = [
     "Vaisselle cassée",
     "Produits chimiques (lessives, détergents, solvants)",
     "Peintures, solvants, produits chimiques",
-    "Litière non compostable (silice, bentonite, litière agglomérante)"
+    "Litière non compostable (silice, bentonite, litière agglomérante)",
+    "chewing-gum"
 ];
 
 
 // Récupération des éléments DOM
-const input = document.getElementById('biodéchet');
-const suggestionsList = document.getElementById('suggestions');
-const verifierButton = document.getElementById('verifier');
-const resultatOverlay = document.getElementById('resultat-overlay');
-const resultat = document.getElementById('resultat');
-const closeOverlayButton = document.getElementById('close-overlay');
+const input = document.getElementById('biodechet');
+const suggestionsListeDechets = document.getElementById('suggestionsDechets');
+const verifierButton = document.getElementById('boutonVerifier');
+const resultatOverlay = document.getElementById('resultatOverlay');
+// const resultat = document.getElementById('resultat');
+const closeOverlayButton = document.getElementById('closeOverlay');
 
 
 // Fonction pour réinitialiser l'input
 function resetInput() {
     input.value = ''; // Vide le champ de l'input
-    suggestionsList.style.display = 'none'; // Cache les suggestions
+    suggestionsListeDechets.style.display = 'none'; // Cache les suggestions
 }
 
-input.addEventListener('focus', function () {
-    resetInput(); // Réinitialise l'input quand il reçoit le focus
-});
+input.addEventListener('focus', resetInput); 
+// Réinitialise l'input quand il reçoit le focus
 
 // Événement pour afficher les suggestions pendant que l'utilisateur tape
 input.addEventListener('input', function () {
@@ -187,7 +187,7 @@ input.addEventListener('input', function () {
 
 // Fonction pour afficher les suggestions dynamiques
 function afficherSuggestions(query) {
-    suggestionsList.innerText = ''; // Réinitialise la liste avant de générer les nouvelles suggestions
+    suggestionsListeDechets.innerText = ''; // Réinitialise la liste avant de générer les nouvelles suggestions
 
     if (query) {
         // Filtrer les suggestions compostables et non compostables
@@ -199,28 +199,28 @@ function afficherSuggestions(query) {
         });
 
         if (matches.length > 0) {
-            suggestionsList.style.display = 'block';
+            suggestionsListeDechets.style.display = 'block';
             matches.forEach(match => {
                 const li = document.createElement('li');
                 li.textContent = typeof match === 'object' ? match.name : match; // Affiche le nom si compostable, le texte sinon
                 li.addEventListener('click', function () {
                     input.value = typeof match === 'object' ? match.name : match; // Remplit le champ avec la suggestion cliquée
-                    suggestionsList.style.display = 'none'; // Masque les suggestions après sélection
+                    suggestionsListeDechets.style.display = 'none'; // Masque les suggestions après sélection
                 });
-                suggestionsList.appendChild(li);
+                suggestionsListeDechets.appendChild(li);
             });
         } else {
-            suggestionsList.style.display = 'none';
+            suggestionsListeDechets.style.display = 'none';
         }
     }
 }
 
 // Fonction pour afficher l'overlay avec les détails dynamiques
 function showResultOverlay(title, description, status, iconPath) {
-    const overlayTitle = document.getElementById('overlay-title');
-    const overlayDescription = document.getElementById('overlay-description');
-    const overlayStatus = document.getElementById('overlay-status');
-    const overlayIcon = document.getElementById('overlay-image');
+    const overlayTitle = document.getElementById('overlayTitle');
+    const overlayDescription = document.getElementById('overlayDescription');
+    const overlayStatus = document.getElementById('overlayStatus');
+    const overlayIcon = document.getElementById('overlayImage');
     
 
     // Met à jour les contenus dynamiques de l'overlay
@@ -302,8 +302,8 @@ input.addEventListener('focus', resetInput); // Réinitialise l'input seulement 
 //fonction avec prise de note dans le calendrier -les notes ne restent pas, en attente de php pour connexion utilisateur
 const monthYear = document.getElementById('monthYear');
 const calendarBody = document.getElementById('calendarBody');
-const prevBtn = document.getElementById('prev');
-const nextBtn = document.getElementById('next');
+const prevBtn = document.getElementById('calendarPrev');
+const nextBtn = document.getElementById('calendarNext');
 
 const today = new Date();
 let currentMonth = today.getMonth();

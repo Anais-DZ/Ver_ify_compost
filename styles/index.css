@@ -1,17 +1,17 @@
-.index-container {
+.indexContainer {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.carousel_container {
+.carouselContainer {
     margin: 60px 0 20px;
     max-width: 410px;
     overflow: hidden;
 }
 
-.carousel_container h2 {
+.carouselContainer h2 {
     font-family: "cabin sketch";
     font-size: 30px;
     color: #564E4E;
@@ -19,7 +19,7 @@
     margin: 25px 0 15px;
 }
 
-.carousel_inner {
+.carouselInner {
     display: flex;
     justify-content: center;
     height: 90%;
@@ -44,36 +44,36 @@
     margin-bottom: 8px;
 }
 
-#slide_economy {
+#slideEconomy {
     width: 233px;
     top: 352px;
 }
 
-.little_slide {
+.littleSlide {
     top: 367px;
 }
 
-#cadre_feuilles {
+#cadreFeuilles {
     position: relative;
 }
 
-#cadre_feuilles, .carousel_inner img {
+#cadreFeuilles, .carouselInner img {
     width: 290px;
     height: 200px;
 }
 
-.carousel_control {
+.carouselControl {
     position: absolute;
     top: 440px;
     cursor: pointer;
     width: 40px;
 }
 
-.carousel_control.prev { left: 8px; }
+.carouselControl.prev { left: 8px; }
 
-.carousel_control.next { right: 8px; }
+.carouselControl.next { right: 8px; }
 
-.search {
+.rechercheDechets {
     width: 80vw;
     margin: 55px 0 60px;
     max-width: 400px;
@@ -82,7 +82,7 @@
     padding: 0 15px;
 }
 
-.search h2 {
+.rechercheDechets h2 {
     font-family: "Cabin sketch";
     font-size: 32px;
     padding: 15px 0;
@@ -96,7 +96,7 @@
       0.5px -0.5px 1px #ffffff;
 }
 
-.search p {
+.rechercheDechets p {
     font-family: "fredoka";
     color: #564E4E;
     text-align: center;
@@ -104,7 +104,7 @@
     margin: 15px 10px 30px;
 }
 
-.search_bar {
+.searchBar {
     position: relative;
     display: flex;
     flex-direction: row;
@@ -115,12 +115,12 @@
     width: 100%;
 }
 
-.search_bar img {
+.searchBar img {
     width: 60px;
     height: 60px;
 }
 
-.search_bar textarea {
+.searchBar textarea {
     resize: none;
     border: none;
     border-radius: 12px;
@@ -134,14 +134,14 @@
     margin: 10px 5px 10px 10px;
 }
 
-.search_bar button {
+.searchBar button {
     border: none;
     background: none;
     cursor: pointer;
     margin-top: 2px;
 }
 
-#suggestions {
+#suggestionsDechets {
     font-family: "fredoka";
     font-style: italic;
     color: #564E4E;
@@ -161,13 +161,13 @@
     padding: 0;
   }
 
-#suggestions li {
+#suggestionsDechets li {
     padding: 10px;
     cursor: pointer;
 }
 
 /*à mettre pour desktop*/
-/*#suggestions li:hover {
+/*#suggestionsDechets li:hover {
     background-color: #f0f0f0;
 }*/
 
@@ -185,7 +185,7 @@
     z-index: 10;
 }
 
-.overlay-content {
+.overlayContent {
     background-color: #fff4e7;
     width: 330px;
     height: auto;
@@ -197,7 +197,7 @@
     font-family: "Fredoka";
 }
 
-.close-button {
+.boutonCloseOverlay {
     position: absolute;
     top: -5px;
     right: 5px;
@@ -208,29 +208,29 @@
     color: #4e3d28;
 }
 
-.overlay-content h1 {
+.overlayContent h1 {
     font-size: 34px;
     color: #4e3d28;
     font-family: "Cabin sketch";
 }
 
-.overlay-content p {
+.overlayContent p {
     color: #4e3d28;
     font-size: 16px;
 }
 
-#overlay-image {
+#overlayImage {
     width: 250px;
     height: auto;
     margin: 0;
 }
 
-#overlay-status {
+#overlayStatus {
     font-size: 20px;
     color: #4e3d28;
 }
 
-.down_menu {
+.downMenu {
     display: flex;
     flex-direction: column;
     width: 85%;
@@ -240,13 +240,13 @@
     margin-right: auto;
 }
 
-.down_menu  img {
+.downMenu  img {
     width: 40px;
     height: 40px;
     margin: 5px 0 10px 0;
 }
 
-.down_menu  a {
+.downMenu  a {
     border: solid 8px #5bc501;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
@@ -278,7 +278,7 @@
     top: -30px;
 } */
     
-#calendar-fonctionnality, .search {
+#calendarFonctionnality, .rechercheDechets {
     font-family: "fredoka";
     display: flex;
     flex-direction: column;
@@ -291,14 +291,14 @@
     outline-offset: -7px;
 }
 
-#calendar-fonctionnality {
+#calendarFonctionnality {
     margin: 50px 0;
     width: 90vw;
     height: auto;
     padding: 0 10px 50px;
 }
 
-.calendar-container {
+.calendarContainer {
     width: 88vw;
     height: auto;
     background-color: #fff;
@@ -310,7 +310,7 @@
     max-height: 750px;
 }
 
-.calendar-header {
+.calendarHeader {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -319,7 +319,7 @@
     background-color: #edffdc;
 }
 
-.calendar-header button {
+.calendarHeader button {
     background-color: transparent;
     border: none;
     color: #564E4E;
@@ -328,7 +328,7 @@
     margin: 0 15px;
 }
 
-.calendar-title {
+.calendarTitle {
     font-family: "Cabin sketch";
     font-size: 28px;
     text-align: center;
@@ -341,7 +341,7 @@
       0.5px -0.5px 1px #ffffff;
 }
 
-.calendar-header h3 {
+.calendarHeader h3 {
     margin: 0;
     color: #564E4E;
     font-size: 20px;
@@ -389,14 +389,14 @@
     border-radius: 50%;
 }
 
-.calendar td.other-month {
+.calendar td.autreMois {
     color: #b4b4b4;
     cursor: default; /* Pas interactif */
     background: none;
     font-size: 14px;
 }
 
-.note-icon {
+.noteIcon {
     position: absolute;
     top: 5px;
     right: 5px;
@@ -436,7 +436,7 @@
 }
 
 
-#ajout-note {
+#ajoutNote {
     background: rgba(255, 255, 255, 0.5);
     display: flex;
     flex-direction: row;
@@ -447,7 +447,7 @@
     font-family: "fredoka";
 }
 
-#note-input {
+#noteInput {
     border: none;
     border-radius: 0;
     width: 55%;
@@ -458,13 +458,13 @@
     font-family: "fredoka";
 }
 
-#note-list {
+#noteList {
     margin: 5px 0 40px;
     padding: 0;
     list-style-type: none;
 }
 
-#note-list li {
+#noteList li {
     cursor: pointer;
     padding: 2px 8px;
     font-size: 18px;
@@ -475,7 +475,7 @@
 }
 
 
-.close-memo {
+.closeMemo {
     position: absolute;
     right: -5px;
     top: -15px;
@@ -490,7 +490,7 @@
 
 
 /* Style the "Add" button */
-.addBtn {
+.boutonAjout {
     padding: 10px;
     width: 20%;
     height: 20px;
@@ -506,6 +506,6 @@
     transition: 0.3s;
 }
 
-.addBtn:hover {
+.boutonAjout:hover {
     background-color: #bbb;
 }

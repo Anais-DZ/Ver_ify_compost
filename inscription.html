@@ -17,46 +17,46 @@
 </head>
 <body>
     <nav id="entete">
-        <div class="left_menu">
+        <div class="leftMenu">
             <a href="index.html" alt="accueil">Accueil</a>
-            <a href="https://ver-ify-compost.vercel.app/#calendar-fonctionnality" alt="calendrier_memo">Calendrier</a>
-            <a href="construction.html" alt="guide_entretien">Guide d'entretien</a>
-            <a href="liens.html" alt="liens_ressources">Liens & Ressources</a>
-            <a href="construction.html" alt="profil">Mon compte</a>
+            <a href="https://ver-ify-compost.vercel.app/#calendar-fonctionnality" alt="calendrier memo">Calendrier</a>
+            <a href="construction.html" alt="guide entretien">Guide d'entretien</a>
+            <a href="liens.html" alt="liens ressources">Liens & Ressources</a>
+            <a href="construction.html" alt="mon compte">Mon compte</a>
             <a href="contact.html" alt="contact"> Contact</a>
             <a id="deconnexion" href="construction.html" alt="deconnexion"><img src="./Icones/off.png" alt="bouton deconnexion">Déconnexion</a>
         </div>
-        <button type="button" aria-label="toggle left menu" class="menu_toggler">
-            <span class="line l1"></span> <!--span dans un bouton, oui mais div dans un bouton, non-->
-            <span class="line l2"></span>
-            <span class="line l3"></span>
+        <button type="button" aria-label="ouvre ferme menu gauche" class="menuToggler">
+            <span class="line line1"></span> <!--span dans un bouton, oui mais div dans un bouton, non-->
+            <span class="line line2"></span>
+            <span class="line line3"></span>
         </button>
-        <a href="https://ver-ify-compost.vercel.app/#calendar-fonctionnality" alt="calendrier_memo"><img id="calendar" src="./Icones/calendar.png" title="Calendrier" alt="Logo calendrier"></a>
+        <a href="https://ver-ify-compost.vercel.app/#calendar-fonctionnality" alt="calendrier memo"><img id="calendar" src="./Icones/calendar.png" alt="Logo calendrier"></a>
         <form method="post" action="monProgramme.php" autocomplete="on">
-            <fieldset class="right_menu">
+            <fieldset class="rightMenu">
                 
                 <h2>Connexion</h2>
                 <div class="separation"></div>
-                <p class="construction-button">(Le site étant actuellement en développement, il n'est pas encore possible de se connecter, s'inscrire ou envoyer un message).</p>
+                <p class="constructionButton">(Le site étant actuellement en développement, il n'est pas encore possible de se connecter, s'inscrire ou envoyer un message).</p>
                 <div>
                     <label for="name">Votre identifiant</label>
                     <input type="text" name="identifiant" placeholder="Entrez votre identifiant" minlength="2" maxlength="25" id="name" required autocomplete="on">
                 </div>
                 <div>
-                    <label for="password_1">Votre mot de passe</label>
-                    <input type="password" name="password" placeholder="Entrez votre mot de passe" minlength="2" maxlength="25" id="password_1" autocomplete="on" required>
+                    <label for="passwordMenu">Votre mot de passe</label>
+                    <input type="password" name="password" placeholder="Entrez votre mot de passe" minlength="2" maxlength="25" id="passwordMenu" autocomplete="on" required>
                 </div>
-                <div class="checkbox_container">
+                <div class="checkboxContainer">
                     <input type="checkbox" id="checkbox" checked />
-                    <label for="checkbox">Rester connecté·e</label>
+                    <label for="checkbox">Se souvenir de moi</label>
                 </div>
                 <button type="submit">Se connecter</button>
                 <p>Nouvel·le arrivant·e ?
-                    Par <a href="inscription.html" alt="lien_page_inscription">ici !</a></p>
-                <a id="forgetten_password" href="initialisation.html" alt="reinitialisation_mot_de_passe">Mot de passe oublié ?</a>
+                    Par <a href="inscription.html" alt="lien page inscription">ici !</a></p>
+                <a id="forgettenPassword" href="initialisation.html" alt="réinitialisation du mot de passe">Mot de passe oublié ?</a>
             </fieldset>
         </form>
-        <img id="user_button" src="./Icones/user.png" title="Connexion" alt="Logo utilisateur">
+        <img id="userButton" src="./Icones/user.png" title="Connexion" alt="Logo utilisateur">
     </nav>
     <header>
         <h1>Ver'ify Compost</h1>
@@ -70,11 +70,11 @@
     </header>
     <main>
         <div class="inscription">
-            <div class="bande_horizontale_1"></div>
-            <div class="bande_horizontale_2"></div>
+            <div class="bandeHorizontale1"></div>
+            <div class="bandeHorizontale2"></div>
             <h2>Bienvenue futur·e lombric-addict·e ou simple curieux·e !</h2>
             <p>Vous êtes à quelques clics de votre inscription !</p>
-            <p class="construction-button">(Le site étant actuellement en développement, il n'est pas encore possible de se connecter, s'inscrire ou envoyer un message).</p>
+            <p class="constructionButton">(Le site étant actuellement en développement, il n'est pas encore possible de se connecter, s'inscrire ou envoyer un message).</p>
             <form method="post" action="monProgramme.php" id="inscription-form">
                 <fieldset>
                     <legend>formulaire d'inscription
@@ -88,25 +88,25 @@
                         <label for="identifiant">Votre identifiant</label>
                         <input type="text" name="identifiant" placeholder="Entrez un identifiant" minlength="2" maxlength="15" id="identifiant" autocomplete="off" required />
                     </div>
-                    <div class="password-container">
-                        <label for="password_2">Votre mot de passe</label>
-                        <input type="password" name="password_2" placeholder="(8 caractères minimum)" id="password_2" autocomplete="off" required />
-                        <button type="button" id="toggle-password">
+                    <div class="inscriptionContainer">
+                        <label for="passwordInscription">Votre mot de passe</label>
+                        <input type="password" name="password" placeholder="(8 caractères minimum)" id="passwordInscription" autocomplete="off" required />
+                        <button type="button" id="togglePassword">
                                 <img src="./Icones/closed-eye.png" alt="oeil fermé pour cacher le mot de passe">
                         </button>
-                        <div id="password-error-message-1"></div>
+                        <div id="passwordErrorMessage1"></div>
                     </div>
                     <div>
-                        <label for="password_3">Confirmez votre mot de passe</label>
-                        <input type="password" name="password_3" placeholder="Entrez à nouveau ce mot de passe" id="password_3" autocomplete="off" required/>
-                        <div id="password-error-message-2"></div>
+                        <label for="passwordInscription2">Confirmez votre mot de passe</label>
+                        <input type="password" name="password" placeholder="Entrez à nouveau ce mot de passe" id="passwordInscription2" autocomplete="off" required/>
+                        <div id="passwordErrorMessage2"></div>
                     </div>
-                    <button id="submit-btn" type="submit" disabled>Inscription</button>
+                    <button id="submitButtonInscription" type="submit" disabled>Inscription</button>
                 </fieldset>
             </form>
 
-            <div class="bande_horizontale_2"></div>
-            <div class="bande_horizontale_1"></div>
+            <div class="bandeHorizontale2"></div>
+            <div class="bandeHorizontale1"></div>
         </div>
     </main>
     <footer>

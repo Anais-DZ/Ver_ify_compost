@@ -12,51 +12,50 @@
     <link href="./styles/commun.css" rel="stylesheet">
     <script src="./scripts/index.js" defer></script>
     <script src="./scripts/commun.js" defer></script>
-    <script src="https://rawgit.com/WeiChiaChang/Easter-egg/master/easter-eggs-collection.js" defer></script>
     <title>Page - Accueil</title>
 </head>
 <body>
     <nav id="entete">
-        <div class="left_menu">
+        <div class="leftMenu">
             <a href="index.html" alt="accueil">Accueil</a>
-            <a href="#calendar-fonctionnality" alt="calendrier_memo">Calendrier</a>
-            <a href="construction.html" alt="guide_entretien">Guide d'entretien</a>
-            <a href="liens.html" alt="liens_ressources">Liens & Ressources</a>
-            <a href="construction.html" alt="profil">Mon compte</a>
+            <a href="#calendarFonctionnality" alt="calendrier memo">Calendrier</a>
+            <a href="construction.html" alt="guide entretien">Guide d'entretien</a>
+            <a href="liens.html" alt="liens ressources">Liens & Ressources</a>
+            <a href="construction.html" alt="mon compte">Mon compte</a>
             <a href="contact.html" alt="contact"> Contact</a>
             <a id="deconnexion" href="construction.html" alt="deconnexion"><img src="./Icones/off.png" alt="bouton deconnexion">Déconnexion</a>
         </div>
-        <button type="button" aria-label="toggle left menu" class="menu_toggler">
-            <span class="line l1"></span> <!--span dans un bouton, oui mais div dans un bouton, non-->
-            <span class="line l2"></span>
-            <span class="line l3"></span>
+        <button type="button" aria-label="ouvre ferme menu gauche" class="menuToggler">
+            <span class="line line1"></span> <!--span dans un bouton, oui mais div dans un bouton, non-->
+            <span class="line line2"></span>
+            <span class="line line3"></span>
         </button>
-        <a href="#calendar-fonctionnality" alt="calendrier_memo"><img id="calendar" src="./Icones/calendar.png" title="Calendrier" alt="Logo calendrier"></a>
+        <a href="#calendarFonctionnality" alt="calendrier memo"><img id="calendar" src="./Icones/calendar.png" alt="Logo calendrier"></a>
         <form method="post" action="monProgramme.php" autocomplete="on">
-            <fieldset class="right_menu">
+            <fieldset class="rightMenu">
                 
                 <h2>Connexion</h2>
                 <div class="separation"></div>
-                <p class="construction-button">(Le site étant actuellement en développement, il n'est pas encore possible de se connecter, s'inscrire ou envoyer un message).</p>
+                <p class="constructionButton">(Le site étant actuellement en développement, il n'est pas encore possible de se connecter, s'inscrire ou envoyer un message).</p>
                 <div>
                     <label for="name">Votre identifiant</label>
                     <input type="text" name="identifiant" placeholder="Entrez votre identifiant" minlength="2" maxlength="25" id="name" required autocomplete="on">
                 </div>
                 <div>
-                    <label for="password_1">Votre mot de passe</label>
-                    <input type="password" name="password" placeholder="Entrez votre mot de passe" minlength="2" maxlength="25" id="password_1" autocomplete="on" required>
+                    <label for="passwordMenu">Votre mot de passe</label>
+                    <input type="password" name="password" placeholder="Entrez votre mot de passe" minlength="2" maxlength="25" id="passwordMenu" autocomplete="on" required>
                 </div>
-                <div class="checkbox_container">
+                <div class="checkboxContainer">
                     <input type="checkbox" id="checkbox" checked />
-                    <label for="checkbox">Rester connecté·e</label>
+                    <label for="checkbox">Se souvenir de moi</label>
                 </div>
                 <button type="submit">Se connecter</button>
                 <p>Nouvel·le arrivant·e ?
-                    Par <a href="inscription.html" alt="lien_page_inscription">ici !</a></p>
-                <a id="forgetten_password" href="initialisation.html" alt="reinitialisation_mot_de_passe">Mot de passe oublié ?</a>
+                    Par <a href="inscription.html" alt="lien page inscription">ici !</a></p>
+                <a id="forgettenPassword" href="initialisation.html" alt="réinitialisation du mot de passe">Mot de passe oublié ?</a>
             </fieldset>
         </form>
-        <img id="user_button" src="./Icones/user.png" title="Connexion" alt="Logo utilisateur">
+        <img id="userButton" src="./Icones/user.png" title="Connexion" alt="Logo utilisateur">
     </nav>
     <header>
         <h1>Ver'ify Compost</h1>
@@ -68,72 +67,72 @@
             </picture>
         </a>
     </header>
-    <main class="index-container">
-        <div class="carousel_container"> <!-- élément contenant le carousel + titre + fleche -->
+    <main class="indexContainer">
+        <div class="carouselContainer"> <!-- élément contenant le carousel + titre + fleche -->
             <h2>Composter, c'est aussi :</h2>
             <!-- Bouton gauche-->
-            <img class="carousel_control prev" src="./Icones/arrow-left.png" alt="fleche_gauche">
+            <img class="carouselControl prev" src="./Icones/arrow-left.png" alt="fleche gauche">
             <div class="carousel"> <!-- élément contenant que le carousel-->
-                <ul class="carousel_inner"> <!-- élément contenant toutes les slides -->
+                <ul class="carouselInner"> <!-- élément contenant toutes les slides -->
                     <li>
                         <picture>
                             <source srcset="./Images/cadre-feuilles.webp" type="image/webp" />
                             <source srcset="./Images/cadre-feuilles.png" type="image/png" />
-                            <img src="./Images/cadre-feuilles.png" id="cadre_feuilles" alt="image cadre avec des feuilles">
+                            <img src="./Images/cadre-feuilles.png" id="cadreFeuilles" alt="image cadre avec des feuilles">
                         </picture>
                     </li>                 
                 <!-- Première slide -->
                     <li class="slide"><p>🌍</p>Éviter à 100 kg/an de biodéchets d’être transformés en gaz à effet de serre</li>
-                    <li class="slide little_slide"><p>🌱</p>Produire son propre compost, gratuit et sans odeur</li>
-                    <li class="slide little_slide"><p>🪶</p>Diminuer de plus d’1/3 le poids de sa poubelle</li>
-                    <li class="slide" id="slide_economy"><p>💰</p>Faire faire des économies à sa collectivité et, à terme, à soi-même</li>
+                    <li class="slide littleSlide"><p>🌱</p>Produire son propre compost, gratuit et sans odeur</li>
+                    <li class="slide littleSlide"><p>🪶</p>Diminuer de plus d’1/3 le poids de sa poubelle</li>
+                    <li class="slide" id="slideEconomy"><p>💰</p>Faire faire des économies à sa collectivité et, à terme, à soi-même</li>
                 </ul>
             <!-- Bouton droite -->
-            <img class="carousel_control next" src="./Icones/arrow-right.png" alt="fleche-droite">
+            <img class="carouselControl next" src="./Icones/arrow-right.png" alt="fleche droite">
                 </div>
             </div>
         </div>
-        <div class="search border">
+        <div class="rechercheDechets">
             <h2>Prêt·e<br/>à composter ?</h2>
             <div class="separation"></div>
             <p>Saisissez le nom du déchet dans la barre de recherche, puis cliquez sur la loupe pour découvrir le composteur adapté instantanément.</p>
             <div class="separation"></div>
 
-            <form class="search_bar">
-                <textarea id="biodéchet" name="biodéchet" placeholder="Le nom du déchet, c'est ici !"
+            <form class="searchBar">
+                <textarea id="biodechet" name="biodéchet" placeholder="Le nom du déchet, c'est ici !"
                     maxlength="20" cols="1" rows="1" required></textarea>
-            <button id="verifier">
+            <button id="boutonVerifier">
                     <picture>
                         <source srcset="./Images/loupe.webp" type="image/webp" />
                         <source srcset="./Images/loupe.png" type="image/png" /> 
                         <img src="./Images/loupe.png" alt="icone loupe pour valider la recherche"/>
                     </picture>
             </button>
-            <div id="resultat-overlay" class="overlay">
-                <div class="overlay-content">
-                    <button id="close-overlay" class="close-button">&times;</button>
-                    <h1 id="overlay-title"></h1>
-                    <p id="overlay-description"></p>
-                    <p id="overlay-status"></p>
-                    <img id="overlay-image" src="" alt="image d'un composteur differente selon la reponse" />   
+            <div id="resultatOverlay" class="overlay">
+                <div class="overlayContent">
+                    <button id="closeOverlay" class="boutonCloseOverlay">&times;</button>
+                    <h1 id="overlayTitle"></h1>
+                    <p id="overlayDescription"></p>
+                    <p id="overlayStatus"></p>
+                    <img id="overlayImage" src="" alt="image d'un composteur differente selon la reponse" />   
                 </div>
             </div>
-            <ul id="suggestions"></ul>
+            <ul id="suggestionsDechets"></ul>
             </form>
         </div>
-        <div class="down_menu">
-            <a id="liens" href="liens.html" alt="redirection_page_liens"><img src="./Icones/liens.png" alt="image d'un livret redirigeant vers la page Liens">Liens | Ressources</a>
-            <a id="guide" href="construction.html" alt="redirection_page_guide"><img src="./Icones/guide.png" alt="image d'un livre redirigeant vers la page Guide">Guide d'entretien</a>
+        <div class="downMenu">
+            <a id="liens" href="liens.html" alt="redirection page liens"><img src="./Icones/liens.png" alt="image d'un livret redirigeant vers la page Liens">Liens | Ressources</a>
+            <a id="guide" href="construction.html" alt="redirection page guide"><img src="./Icones/guide.png" alt="image d'un livre redirigeant vers la page Guide">Guide d'entretien</a>
             <!--<a id="calendrier" href="#" alt="redirection_page_calendrier"><img src="./Icones/calendrier.png">Calendrier | Mémo</a>-->
         </div>
-        <section id="calendar-fonctionnality" class="calendar-fonctionnality">
-                <h2 class="calendar-title">Calendrier</h2>
+        <section id="calendarFonctionnality" class="calendarFonctionnality">
+                <h2 class="calendarTitle">Calendrier</h2>
                 <div class="separation"></div>
-                <div class="calendar-container">
-                    <div class="calendar-header">
-                    <button id="prev">❮</button>
+                <div class="calendarContainer">
+                    <div class="calendarHeader">
+                    <button id="calendarPrev">❮</button>
                     <h3 id="monthYear"></h3>
-                    <button id="next">❯</button>
+                    <button id="calendarNext">❯</button>
                     </div>
                     <table class="calendar">
                     <thead>
@@ -148,26 +147,26 @@
                         </tr>
                     </thead>
                     <tbody id="calendarBody">
-                        <!-- Les jours seront générés par JavaScript -->
+                        <!-- Les jours créés en JS -->
                     </tbody>
                     </table>
                 </div>
                 <div id="memo">
                     <h2>Mon mémo<img src="./Icones/crayon.png" alt="icone d'un crayon"></h2>
                     <p>(Écrivez, ajoutez, supprimez et recommencez !)</p>    
-                    <ul id="note-list">
+                    <ul id="noteList">
                         <li></li>
                     </ul>
                 </div>
-                <div id="ajout-note">
-                    <input type="text" id="note-input" placeholder="Ajouter une note">
-                    <span onclick="newElement()" class="addBtn">Ajouter</span>
+                <div id="ajoutNote">
+                    <input type="text" id="noteInput" placeholder="Ajouter une note">
+                    <span onclick="newElement()" class="boutonAjout">Ajouter</span>
                 </div> 
         </section>
     </main>
     <footer>
         <a href="contact.html" alt="lien page contact">Contact</a>
-        <p>Copyright© 2024 | Design by <a class="attribution" href="https://www.freepik.com/" target="_blank" alt="lien_freepik">Freepik</a> & <a class="attribution" href="https://anais-diez.vercel.app/" target="_blank" alt="lien-page-perso">Anaïs DIEZ</a>
+        <p>Copyright© 2024 | Design by <a class="attribution" href="https://www.freepik.com/" target="_blank" alt="lien page freepik">Freepik</a> & <a class="attribution" href="https://anais-diez.vercel.app/" target="_blank" alt="lien page perso">Anaïs DIEZ</a>
         </p>
     </footer>
 </body>

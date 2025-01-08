@@ -4,14 +4,14 @@
     align-items: center;
 }
 
-.bande_horizontale_1 {
+.bandeHorizontale1 {
     height: 4px;
     margin: 5px 0;
     background-color: #564E4E;
     width: 90%;
 }
 
-.bande_horizontale_2 {
+.bandeHorizontale2 {
     height: 2px;
     background-color: #564E4E;
     width: 80%;
@@ -45,7 +45,7 @@
     color: #555;
 }
 
-#error-message {
+#errorMessage {
     color: rgb(210, 43, 43);
     font-family: "Fredoka";
     font-size: 14px;
@@ -56,7 +56,7 @@
     margin: 0 20px;
 }
 
-#submit-button {
+#submitButtonContact {
     background-color: #564E4E;
     color: white;
     border: none;
@@ -70,11 +70,11 @@
     padding: 10px 25px;
 }
 
-#submit-button:hover {
+#submitButtonContact:hover {
     background-color: #278a20;
 }
 
-#submit-button:disabled {
+#submitButtonContact:disabled {
     background-color: rgba(255, 0, 0, 0.162);
     cursor: not-allowed;
 }

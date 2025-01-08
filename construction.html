@@ -12,51 +12,51 @@
     <link href="./styles/commun.css" rel="stylesheet">
     <link href="./styles/construction.css" rel="stylesheet">
     <script src="./scripts/index.js" defer></script>
-    <script src="./scripts/commun.js" async></script>
+    <script src="./scripts/commun.js" defer></script>
     <title>Page - En construction</title>
 </head>
 <body>
     <nav id="entete">
-        <div class="left_menu">
+        <div class="leftMenu">
             <a href="index.html" alt="accueil">Accueil</a>
-            <a href="https://ver-ify-compost.vercel.app/#calendar-fonctionnality" alt="calendrier_memo">Calendrier</a>
-            <a href="construction.html" alt="guide_entretien">Guide d'entretien</a>
-            <a href="liens.html" alt="liens_ressources">Liens & Ressources</a>
-            <a href="construction.html" alt="profil">Mon compte</a>
+            <a href="https://ver-ify-compost.vercel.app/#calendar-fonctionnality" alt="calendrier memo">Calendrier</a>
+            <a href="construction.html" alt="guide entretien">Guide d'entretien</a>
+            <a href="liens.html" alt="liens ressources">Liens & Ressources</a>
+            <a href="construction.html" alt="mon compte">Mon compte</a>
             <a href="contact.html" alt="contact"> Contact</a>
             <a id="deconnexion" href="construction.html" alt="deconnexion"><img src="./Icones/off.png" alt="bouton deconnexion">Déconnexion</a>
         </div>
-        <button type="button" aria-label="toggle left menu" class="menu_toggler">
-            <span class="line l1"></span> <!--span dans un bouton, oui mais div dans un bouton, non-->
-            <span class="line l2"></span>
-            <span class="line l3"></span>
+        <button type="button" aria-label="ouvre ferme menu gauche" class="menuToggler">
+            <span class="line line1"></span> <!--span dans un bouton, oui mais div dans un bouton, non-->
+            <span class="line line2"></span>
+            <span class="line line3"></span>
         </button>
-        <a href="https://ver-ify-compost.vercel.app/#calendar-fonctionnality" alt="calendrier_memo"><img id="calendar" src="./Icones/calendar.png" title="Calendrier" alt="Logo calendrier"></a>
+        <a href="https://ver-ify-compost.vercel.app/#calendar-fonctionnality" alt="calendrier memo"><img id="calendar" src="./Icones/calendar.png" alt="Logo calendrier"></a>
         <form method="post" action="monProgramme.php" autocomplete="on">
-            <fieldset class="right_menu">
+            <fieldset class="rightMenu">
                 
                 <h2>Connexion</h2>
                 <div class="separation"></div>
-                <p class="construction-button">(Le site étant actuellement en développement, il n'est pas encore possible de se connecter, s'inscrire ou envoyer un message).</p>
+                <p class="constructionButton">(Le site étant actuellement en développement, il n'est pas encore possible de se connecter, s'inscrire ou envoyer un message).</p>
                 <div>
                     <label for="name">Votre identifiant</label>
                     <input type="text" name="identifiant" placeholder="Entrez votre identifiant" minlength="2" maxlength="25" id="name" required autocomplete="on">
                 </div>
                 <div>
-                    <label for="password_1">Votre mot de passe</label>
-                    <input type="password" name="password" placeholder="Entrez votre mot de passe" minlength="2" maxlength="25" id="password_1" autocomplete="on" required>
+                    <label for="passwordMenu">Votre mot de passe</label>
+                    <input type="password" name="password" placeholder="Entrez votre mot de passe" minlength="2" maxlength="25" id="passwordMenu" autocomplete="on" required>
                 </div>
-                <div class="checkbox_container">
+                <div class="checkboxContainer">
                     <input type="checkbox" id="checkbox" checked />
-                    <label for="checkbox">Rester connecté·e</label>
+                    <label for="checkbox">Se souvenir de moi</label>
                 </div>
                 <button type="submit">Se connecter</button>
                 <p>Nouvel·le arrivant·e ?
-                    Par <a href="inscription.html" alt="lien_page_inscription">ici !</a></p>
-                <a id="forgetten_password" href="initialisation.html" alt="reinitialisation_mot_de_passe">Mot de passe oublié ?</a>
+                    Par <a href="inscription.html" alt="lien page inscription">ici !</a></p>
+                <a id="forgettenPassword" href="initialisation.html" alt="réinitialisation du mot de passe">Mot de passe oublié ?</a>
             </fieldset>
         </form>
-        <img id="user_button" src="./Icones/user.png" title="Connexion" alt="Logo utilisateur">
+        <img id="userButton" src="./Icones/user.png" title="Connexion" alt="Logo utilisateur">
     </nav>
     <header>
         <h1>Ver'ify Compost</h1>
