@@ -5,12 +5,14 @@ const textareaMessage = document.getElementById("message");
 const counter = document.getElementById("charCount");
 const maxLength = textareaMessage.getAttribute("maxlength");
 
-// Écoute des changements dans textarea
-textareaMessage.addEventListener("input", function () {
+
+
+
+function messageValide() {
     const message = textareaMessage.value.trim();
 // Mise à jour du nombre de caractères restants
-    const remainingChars = maxLength - textareaMessage.value.length;
-    charCount.textContent = `${remainingChars} caractères restants`;
+    const charRestant = maxLength - textareaMessage.value.length;
+    counter.textContent = `${charRestant} caractères restants`;
 
     // Validation de la longueur du message
     if (message.length < 5) {
@@ -23,4 +25,6 @@ textareaMessage.addEventListener("input", function () {
         errorMessage.textContent = ""; // Effacer le message d'erreur
         submitButtonContact.disabled = false; // Activer le bouton si la validation réussit
     }
-});
+};
+
+textareaMessage.addEventListener("input", messageValide);

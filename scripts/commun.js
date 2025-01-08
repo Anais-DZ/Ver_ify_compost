@@ -1,7 +1,6 @@
 //menu en rideau
 const burgerButton = document.querySelector(".menuToggler");
 const leftMenu = document.querySelector(".leftMenu");
-
 const userButton = document.querySelector("#userButton");
 const connexion = document.querySelector(".rightMenu");
 
