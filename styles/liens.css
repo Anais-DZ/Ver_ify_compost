@@ -12,7 +12,7 @@
     margin: 15px 0;
 }
 
-.separation_links_min, .separation_links_max {
+.separationLinksMin, .separationLinksMax {
     width: 90%;
     height: 1px;
     background-color: #564E4E;
@@ -21,42 +21,45 @@
     margin-bottom: 2px;
 }
 
-.separation_links_max {
+.separationLinksMax {
     height: 3px;
 }
 
-.links_list {
+.listSites {
     font-family: "Cabin sketch";
     font-size: 22px;
     font-weight:normal;
     color: #564E4E;
     margin: 45px 10px 45px 0;
+    list-style-type: none;
+    font-size: 24px;
+    padding: 20px 0 10px;
 }
 
-.links_list a {
+.linksList a {
     margin-left: 5px;
 }
 
-.links_list a:hover { 
+.linksList a:hover { 
     background-color: #3ab14c4e;
 }
 
-.links_list a:visited {
+.linksList a:visited {
     color: #42cf54;
 }
 
-.links_list a, #suggestion-button a {
+.linksList a, #suggestionSiteButton a {
     font-family: 'Fredoka';
     text-decoration: none;
     color: #564E4E;
     font-size: 18px; 
 }
 
-#suggestion-button a {
+#suggestionSiteButton a {
     font-size: 21px;
 }
 
-.links_list li {
+.linksList li {
     margin: 15px 0;
 }
 
@@ -68,7 +71,7 @@
     bottom: -57.5vh;
 }
 
-#suggestion-button {
+#suggestionSiteButton {
     position: relative;
     background: url(../Images/carton-body.webp);
     text-align: center;
@@ -85,16 +88,10 @@
     outline-offset: -6px;
 }
 
-#suggestion-button a {
+#suggestionSiteButton a {
     padding: 9% 5%;
 }
 
-#liste_sites_internet {
+#webSiteLinks {
     margin-top: 60px;
-}
-
-.ul_title {
-    list-style-type: none;
-    font-size: 24px;
-    padding: 20px 0 10px;
 }
