@@ -64,7 +64,7 @@ function togglePasswordVisibility(passwordFieldId) {
 
     // Change l'icône ou le texte du bouton
     const toggleButton = document.getElementById("toggle-password");
-    toggleButton.innerText = isPasswordVisible
+    toggleButton.innerHTML = isPasswordVisible
         ? '<img src="./Icones/closed-eye.png" alt="oeil fermé pour cacher le mot de passe">'
         : '<img src="./Icones/opened-eye.png" alt="oeil ouvert pour montrer le mot de passe">';
 }
