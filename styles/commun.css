@@ -125,10 +125,9 @@ header img {
 
 .leftMenu {
     position: fixed;
-    overflow: scroll;
     width: 80vw; /*80% de l'écran*/
     max-width: 390px;
-    min-height: 60vh;
+    max-height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -141,6 +140,7 @@ header img {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.307);
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
+    padding: 30px 0;
 }
 
 .leftMenu.active {
@@ -232,10 +232,9 @@ header img {
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
     position: fixed;
-    overflow: scroll;
     width: 75vw;
     max-width: 350px;
-    min-height: 50vh;
+    max-height: auto;
     display: flex;
     flex-direction: column;
     transform: translateX(100%);
