@@ -215,12 +215,12 @@ header img {
     margin-right: 15px; /*changer la couleur avec javascript ???*/
 }
 
-.checkbox_container {
+.checkboxContainer {
     display: flex;
     align-items: center;
 }
 
-.checkbox_container label {
+.checkboxContainer label {
     margin: 10px 0 !important;
 }
 
