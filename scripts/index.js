@@ -348,7 +348,7 @@ const notes = {};
 
 function generateCalendar(month, year) {
     // Effacer l'ancien calendrier
-calendarBody.innerHTML = '';
+calendarBody.innerText = '';
 
 const firstDay = new Date(year, month, 1).getDay(); // Jour du 1er
 const daysInMonth = new Date(year, month + 1, 0).getDate();
@@ -448,52 +448,63 @@ nextBtn.addEventListener('click', () => {
 generateCalendar(currentMonth, currentYear);
 
 
-//memo
-//code memo
-// Create a "close" button and append it to each list item
-// const myNodelist = document.querySelectorAll("li");
-// let i;
-// for (i = 0; i < myNodelist.length; i++) {
-//   const span = document.createElement("span");
-//   const txt = document.createTextNode("\u00D7");
-//   span.className = "close-menu";
-//   span.appendChild(txt);
-//   myNodelist[i].appendChild(span);
-// }
 
-// // Click on a close button to hide the current list item
-// const close = document.getElementsByClassName("close-menu");
-// let j;
-// for (j = 0; j < close.length; j++) {
-//   close[j].onclick = function() {
-//     const div = this.parentElement;
-//     div.style.display = "none";
-//   }
-// }
+document.addEventListener('DOMContentLoaded', function () {
+    const listItemsContainer = document.querySelector('#noteList');
+    const todoInput = document.querySelector('#noteInput');
+    const boutonAjoutNote = document.querySelector('#boutonAjoutNote');
 
-// // Create a new list item when clicking on the "Add" button
-// function nouvelleNote() {
-//   const note = document.createElement("li");
-//   const inputValue = document.getElementById("noteInput");
-//   const memo = document.createTextNode(inputValue);
-//   noteList.appendChild(t);
-//   if (inputValue == '') {
-//     alert("Vous devez rentrer une note !");
-//   } else {
-//     document.getElementById("note-list").appendChild(li);
-//   }
-//   document.getElementById("note-input").value = "";
+    // Charger les éléments enregistrés dans le localStorage
+    listItemsContainer.innerHTML = localStorage.getItem('listItems') || '';
 
-//   const span = document.createElement("span");
-//   const txt = document.createTextNode("\u00D7");
-//   span.className = "close-menu";
-//   span.appendChild(txt);
-//   li.appendChild(span);
+    // Ajouter un nouvel élément
+    boutonAjoutNote.addEventListener('click', function (event) {
+        event.preventDefault();
+        const item = todoInput.value;
 
-//   for (i = 0; i < close.length; i++) {
-//     close[i].onclick = function() {
-//       const div = this.parentElement;
-//       div.style.display = "none";
-//     }
-//   }
-// }
+        if (item) {
+            const listItem = document.createElement('li');
+            listItem.innerHTML = `
+                <span class="note-item">${item}</span>
+                <button class="supprimer">❌</button>
+            `;
+            listItemsContainer.appendChild(listItem);
+
+            // Mettre à jour le localStorage
+            localStorage.setItem('listItems', listItemsContainer.innerHTML);
+
+            // Réinitialiser le champ d'entrée
+            todoInput.value = '';
+        }
+    });
+
+    // Gérer la suppression d'un élément
+    listItemsContainer.addEventListener('click', function (event) {
+        if (event.target.classList.contains('supprimer')) {
+            const listItem = event.target.closest('li');
+            if (listItem) {
+                listItem.remove();
+
+                // Mettre à jour le localStorage
+                localStorage.setItem('listItems', listItemsContainer.innerHTML);
+            }
+        }
+    });
+});
+
+
+
+  
+    // Gérer la suppression d'un élément
+    listItemsContainer.addEventListener('click', function (event) {
+      if (event.target.closest('.remove')) {
+        const listItem = event.target.closest('li');
+        listItem.remove();
+  
+        // Mettre à jour le localStorage
+        localStorage.setItem('listItems', listItemsContainer.innerText);
+      }
+    });
+  
+
+
