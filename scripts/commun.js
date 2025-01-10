@@ -13,6 +13,16 @@ userButton.addEventListener("click", (event) => {
     toggleUser();
 });
 
+function closeMenu() {
+    burgerButton.classList.remove("active");
+    leftMenu.classList.remove("active");
+}
+
+function closeUser() {
+    connexion.classList.remove("active");
+    userButton.setAttribute("src", "./Icones/user.png");
+}
+
 document.addEventListener("click", (event) => {
     // Vérifie si le clic est à l'extérieur des menus et boutons
     if (!leftMenu.contains(event.target) && !burgerButton.contains(event.target)) {
@@ -49,12 +59,4 @@ function toggleUser() {
     }
 }
 
-function closeMenu() {
-    burgerButton.classList.remove("active");
-    leftMenu.classList.remove("active");
-}
 
-function closeUser() {
-    connexion.classList.remove("active");
-    userButton.setAttribute("src", "./Icones/user.png");
-}

@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () { /* permet d'afficher une slide */
+document.addEventListener("DOMContentLoaded", () => { /* permet d'afficher une slide */
     const slides = document.querySelectorAll(".carouselInner .slide");
     const prevButton = document.querySelector(".carouselControl.prev");
     const nextButton = document.querySelector(".carouselControl.next");
@@ -19,13 +19,13 @@ document.addEventListener("DOMContentLoaded", function () { /* permet d'afficher
     }
 
     // Événement pour le bouton "Précédent"
-    prevButton.addEventListener("click", function () {
+    prevButton.addEventListener("click", () => {
         currentIndex = (currentIndex - 1 + totalSlides) % totalSlides; // Retourne au dernier élément si on dépasse
         updateSlides();
     });
 
     // Événement pour le bouton "Suivant"
-    nextButton.addEventListener("click", function () {
+    nextButton.addEventListener("click", () => {
         currentIndex = (currentIndex + 1) % totalSlides; // Retourne au premier élément si on dépasse
         updateSlides();
     });
