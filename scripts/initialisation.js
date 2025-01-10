@@ -17,16 +17,16 @@ function formulaireInitialisationValide() {
     
     // Validation du mot de passe principal (password)
     if (!regexPassword.test(passwordValue)) {
-        errorMessage1.textContent = "Le mot de passe doit contenir au moins 8 caractères dont un chiffre et une majuscule.";
+        errorMessage1.innerText = "Le mot de passe doit contenir au moins 8 caractères dont un chiffre et une majuscule.";
     } else {
-        errorMessage1.textContent = ""; //supprime le message
+        errorMessage1.innerText = ""; //supprime le message
     }
 
     // Validation de la correspondance du mot de passe de confirmation (password2)
     if (passwordValue2.length > 0 && passwordValue !== passwordValue2) {
-        errorMessage2.textContent = "Les mots de passe ne correspondent pas.";
+        errorMessage2.innerText = "Les mots de passe ne correspondent pas.";
     } else {
-        errorMessage2.textContent = ""; //idem
+        errorMessage2.innerText = ""; //idem
     }
 };
 

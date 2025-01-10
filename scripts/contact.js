@@ -27,7 +27,7 @@ function messageValide() {
 
 
     // Validation de la longueur du message
-    if (message.length < 5) {
+    if (message.length > 0 && message.length < 5) {
         errorMessage.innerText = "Le message doit contenir 5 caractères minimum.";
         submitButtonContact.disabled = true; // Désactiver le bouton si la validation échoue
     } else if (message.length == 500) {
