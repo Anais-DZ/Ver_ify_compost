@@ -509,3 +509,10 @@
 #boutonAjoutNote:hover {
     background-color: #bbb;
 }
+
+#constructionButton {
+    font-size: 12px;
+    color: rgb(210, 43, 43);
+    font-style: italic;
+    margin: 0;
+}
