@@ -448,8 +448,6 @@ nextBtn.addEventListener('click', () => {
 generateCalendar(currentMonth, currentYear);
 
 
-
-document.addEventListener('DOMContentLoaded', function () {
     const listItemsContainer = document.querySelector('#noteList');
     const todoInput = document.querySelector('#noteInput');
     const boutonAjoutNote = document.querySelector('#boutonAjoutNote');
@@ -465,7 +463,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (item) {
             const listItem = document.createElement('li');
             listItem.innerHTML = `
-                <span class="note-item">${item}</span>
+                <span class="noteItem">${item}</span>
                 <button class="supprimer">❌</button>
             `;
             listItemsContainer.appendChild(listItem);
@@ -479,7 +477,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Gérer la suppression d'un élément
-    listItemsContainer.addEventListener('click', function (event) {
+    listItemsContainer.addEventListener('click', (event) => {
         if (event.target.classList.contains('supprimer')) {
             const listItem = event.target.closest('li');
             if (listItem) {
@@ -490,9 +488,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     });
-});
-
-
 
   
     // Gérer la suppression d'un élément

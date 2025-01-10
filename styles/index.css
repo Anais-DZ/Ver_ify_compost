@@ -459,7 +459,7 @@
 }
 
 #noteList {
-    margin: 5px 0 40px;
+    margin: 5px 0 5px;
     padding: 0;
     list-style-type: none;
 }
@@ -474,18 +474,15 @@
     position: relative;
 }
 
-
-.closeMemo {
-    position: absolute;
-    right: -5px;
-    top: -15px;
-    padding: 12px 12px;
-    color: white;
-    font-size: 26px;
+.supprimer {
+    cursor: pointer;
+    background: none;
+    border: none;
 }
 
-.closeMemo:hover {
-    color: #f44336;
+.noteItem { 
+    cursor: initial;
+    margin-right: 5px;
 }
 
 
@@ -506,9 +503,6 @@
     transition: 0.3s;
 }
 
-#boutonAjoutNote:hover {
-    background-color: #bbb;
-}
 
 #constructionButton {
     font-size: 12px;
