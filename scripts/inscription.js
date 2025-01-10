@@ -1,27 +1,24 @@
-function ValidPassword(password) {
-    const minLength = 8;
-    const number = /\d/;
-    const majLetter = /[A-Z]/;
-
-    return password.length >= minLength && number.test(password) && majLetter.test(password);
-}
-
-// Gestion des événements sur les champs de mot de passe
 const identifiant = document.querySelector("#identifiant")
 const errorIdentifiantMessage = document.querySelector("#identifiantErrorMessage");
-const passwordInput = document.querySelector("#passwordInscription");
-const passwordInput2 = document.querySelector("#passwordInscription2");
-const submitButtonInscription = document.querySelector("#submitButtonInscription");
+
+const password = document.querySelector("#passwordInscription");
 const errorMessage1 = document.querySelector("#passwordErrorMessage1");
+
+const password2 = document.querySelector("#passwordInscription2");
 const errorMessage2 = document.querySelector("#passwordErrorMessage2");
 
+const submitButtonInscription = document.querySelector("#submitButtonInscription");
 
-// Fonction pour valider les mots de passe
+
+// Fonction pour valider le formulaire
 function formulaireValide() {
-    const password = passwordInput.value.trim();
-    const password2 = passwordInput2.value.trim();
-    const identifiantValue = identifiant.value;
-    const regexIdentifiant = /[a-z0-9._-]{5,15}$/;
+    const passwordValue = password.value.trim();
+    const regexPassword = /^(?=.*[A-z])(?=.*[0-9])\S{8,30}$/
+    
+    const passwordValue2 = password2.value.trim();
+
+    const identifiantValue = identifiant.value.trim();
+    const regexIdentifiant = /^[A-z0-9._-]{5,45}$/;
 
     // Validation de l'identifiant
     if (!regexIdentifiant.test(identifiantValue)) {
@@ -31,24 +28,24 @@ function formulaireValide() {
     }
 
     // Validation du mot de passe principal (password)
-    if (!ValidPassword(password)) {
+    if (passwordValue.length > 0 && !regexPassword.test(passwordValue)) {
         errorMessage1.textContent = "Le mot de passe doit contenir au moins 8 caractères dont un chiffre et une majuscule.";
     } else {
         errorMessage1.textContent = ""; //supprime le message
     }
 
     // Validation de la correspondance du mot de passe de confirmation (password2)
-    if (password2.length > 0 && password !== password2) {
+    if (passwordValue2.length > 0 && passwordValue !== passwordValue2) {
         errorMessage2.textContent = "Les mots de passe ne correspondent pas.";
     } else {
         errorMessage2.textContent = ""; //idem
     }
 };
 
-// Ajout d'événements pour la validation des mots de passe
+// Ajout des événements pour la validation du formulaire
 identifiant.addEventListener("input", formulaireValide);
-passwordInput.addEventListener("input", formulaireValide);
-passwordInput2.addEventListener("input", formulaireValide);
+password.addEventListener("input", formulaireValide);
+password2.addEventListener("input", formulaireValide);
 
 
 

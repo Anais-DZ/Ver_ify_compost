@@ -48,21 +48,6 @@
     cursor: not-allowed;
 }
 
-
-#identifiantErrorMessage, #passwordErrorMessage1, #passwordErrorMessage2  {
-    color: rgb(210, 19, 19);
-    font-family: "fredoka";
-    font-size: 14px;
-    text-align: center;
-    margin-top: 5px;
-}
-
-#passwordErrorMessage1 {
-    position: absolute;
-    z-index: 100;
-    top: 96px;
-}
-
 #togglePassword {
     position: relative;
     bottom: -47px;
@@ -78,10 +63,5 @@
     opacity: 60%;
     display: inline-block; /* Aligne correctement l'image à l'intérieur du bouton */
     vertical-align: middle;
-}
-
-.inscriptionContainer {
-    margin: 25px 0 20px;
-    position: relative;
 }
 

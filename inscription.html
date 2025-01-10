@@ -10,9 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400&family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
     <link href="./styles/inscription.css" rel="stylesheet">
     <link href="./styles/commun.css" rel="stylesheet">
-    <script src="./scripts/inscription.js" defer></script>
     <link href="./styles/formulaire.css" rel="stylesheet">
     <script src="./scripts/commun.js" async></script>
+    <script src="./scripts/inscription.js" defer></script>
     <title>Page - Inscription</title>
 </head>
 <body>
@@ -86,12 +86,12 @@
                     </legend>
                     <div>
                         <label for="identifiant">Votre identifiant</label>
-                        <input type="text" name="identifiant" placeholder="Entrez un identifiant" minlength="2" maxlength="15" id="identifiant" autocomplete="off" required />
+                        <input type="text" name="identifiant" placeholder="Entrez un identifiant" minlength="5" maxlength="45" id="identifiant" pattern="/^[A-z0-9._-]{5,45}$/;" autocomplete="off" required />
                         <div id="identifiantErrorMessage"></div>
                     </div>
                     <div class="inscriptionContainer">
                         <label for="passwordInscription">Votre mot de passe</label>
-                        <input type="password" name="password" placeholder="Entrez un mot de passe" id="passwordInscription" autocomplete="off" required />
+                        <input type="password" name="password" placeholder="Entrez un mot de passe" id="passwordInscription" minlength="2" maxlength="45" pattern="/^(?=.*[A-z])(?=.*[0-9])\S{8,30}$/" autocomplete="off" required />
                         <!--<button type="button" id="togglePassword">
                                 <img src="./Icones/closed-eye.png" alt="oeil fermé pour cacher le mot de passe">
                         </button>-->

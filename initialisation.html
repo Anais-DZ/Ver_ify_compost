@@ -11,7 +11,8 @@
     <link href="./styles/initialisation.css" rel="stylesheet">
     <link href="./styles/commun.css" rel="stylesheet">
     <link href="./styles/formulaire.css" rel="stylesheet">
-    <script src="./scripts/commun.js" async></script>
+    <script src="./scripts/commun.js" defer></script>
+    <script src="./scripts/initialisation.js" defer></script>
     <title>Page - Initialisation</title>
 </head>
 <body>
@@ -87,13 +88,15 @@
                     </legend>
                     <div>
                         <label for="passwordInitialisation">Votre nouveau mot de passe</label>
-                        <input type="password" name="password" placeholder="(8 caractères minimum)" minlength="2" maxlength="25" id="passwordInitialisation" autocomplete="off" required>
+                        <input type="password" name="password" placeholder="Entrez votre nouveau mot de passe" minlength="2" maxlength="25" id="passwordInitialisation" autocomplete="off" required>
+                        <div id="passwordErrorMessage1"></div>
                     </div>
                     <div>
-                        <label for="passwordInitialisation2" id="password_5_container">Confirmez votre nouveau mot de passe</label>
+                        <label for="passwordInitialisation2" id="passwordContainer">Confirmez votre mot de passe</label>
                         <input type="password" name="password" placeholder="Entrez à nouveau ce mot de passe" minlength="2" maxlength="25" id="passwordInitialisation2" autocomplete="off" required>
+                        <div id="passwordErrorMessage2"></div>
                     </div>
-                    <button type="submit">Valider</button>
+                    <button type="submit" id="initialisationButton">Valider</button>
                 </fieldset>
             </form>
             <div class="bandeHorizontale2"></div>

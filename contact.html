@@ -89,11 +89,13 @@
                     </legend>
                     <div>
                         <label for="nameFirstname">Prénom Nom *</label>
-                        <input type="text" name="prenom_nom" placeholder="Entrez votre prénom et votre nom" minlength="2" maxlength="25" id="nameFirstname" autocomplete="on" required >
+                        <input type="text" name="prenom_nom" placeholder="Entrez votre prénom et votre nom" minlength="" maxlength="25" id="nameFirstname" autocomplete="on" required >
                     </div>
                     <div>
                         <label for="mail">Adresse mail *</label>
-                        <input type="email" name="email" placeholder="Entrez votre adresse mail" minlength="2" maxlength="25" id="mail" autocomplete="on" required>
+                        <input type="email" name="email" placeholder="Entrez votre adresse mail"
+                        id="mail" maxlength="30" autocomplete="on" required>
+                        <div id="mailErrorMessage"></div>
                     </div>
                     <div>
                         <label for="message">Message</label>

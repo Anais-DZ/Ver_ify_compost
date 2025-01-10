@@ -4,14 +4,14 @@
     align-items: center;
 }
 
-.bande_horizontale_1 {
+.bandeHorizontale1 {
     height: 4px;
     margin: 5px 0;
     background-color: #564E4E;
     width: 90%;
 }
 
-.bande_horizontale_2 {
+.bandeHorizontale2 {
     height: 2px;
     background-color: #564E4E;
     width: 80%;
@@ -39,11 +39,11 @@
     position: absolute;
 }
 
-#password_5_container {
+#passwordContainer {
     margin-top: 35px;
 }
 
-.initialisation button {
+#initialisationButton {
     background-color: #564E4E;
     color: white;
     border: none;
@@ -57,15 +57,6 @@
     padding: 10px 25px;
 }
 
-.initialisation button:hover {
+#initialisationButton:hover {
     background-color: #221b1b;
-}
-
-#forgetten_password {
-    font-family: 'Fredoka condensed';
-    font-size: 15px;
-    font-weight:normal;
-    color: #564E4E;
-    text-align: center;
-    margin-bottom: 11px;
 }

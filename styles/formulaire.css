@@ -74,3 +74,12 @@
     color: #564E4E;
     margin: 25px 0 5px 0;
 }
+
+/* Message d'erreur des formulaires d'initialisation et d'inscription*/
+#identifiantErrorMessage, #passwordErrorMessage1, #passwordErrorMessage2  {
+    color: rgb(210, 19, 19);
+    font-family: "fredoka";
+    font-size: 14px;
+    text-align: center;
+    margin-top: 5px;
+}
