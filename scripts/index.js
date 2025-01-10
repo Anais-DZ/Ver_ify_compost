@@ -166,9 +166,7 @@ const input = document.getElementById('biodechet');
 const suggestionsListeDechets = document.getElementById('suggestionsDechets');
 const verifierButton = document.getElementById('boutonVerifier');
 const resultatOverlay = document.getElementById('resultatOverlay');
-// const resultat = document.getElementById('resultat');
 const closeOverlayButton = document.getElementById('closeOverlay');
-
 
 
 
@@ -287,8 +285,16 @@ function showResult(dechetRecherche) {
 // Événement au bouton "Vérifier"
 verifierButton.addEventListener('click', (event) => {
     event.preventDefault(); // Empêche la page de remonter après le submit
-    showResult(input.value.trim()); // Affiche le résultat
+    
+    const inputValue = input.value.trim();
+
+    if (inputValue == "") {
+        return; // La fonction s'arrête s'il n'y a rien d'écrit dans l'input pour ne pas que l'overlay s'affiche malgré tout
+    } else {
+        showResult(inputValue);
+    }
 });
+
 
 // Fonction pour réinitialiser l'input quand il reçoit le focus
 function resetInput() {
