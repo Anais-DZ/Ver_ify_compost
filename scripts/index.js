@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () { /* permet d'afficher
     function updateSlides() {
         slides.forEach((slide, index) => {
             // Active ou désactive l'affichage des slides
-            if (index === currentIndex) {
+            if (index == currentIndex) {
                 slide.style.display = "block"; // Affiche la slide actuelle
             } else {
                 slide.style.display = "none"; // Cache les autres slides
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () { /* permet d'afficher
 });
 
 
-//en attendant le cours sur la Base De Données, quelques déchets pour faire tester le site 
+// En attendant le cours sur la Base De Données, tableau en JavaScript des déchets compostables et où ils se jettent : 
 const compostables = [
     { name: "Coquilles d'oeuf", types: ["composteur", "lombricomposteur"] },
     { name: "Boîte d'oeufs sans encre", types: ["composteur", "lombricomposteur"] },
@@ -120,7 +120,7 @@ const compostables = [
     { name: "Fanes d’épinards", types: ["composteur", "lombricomposteur"] }
 ];
 
-
+// Tableau des déchets non compostables (à voir si plus tard, rajouter un type pour permettre à l'utilisateur de savoir si les déchets se recyclent ou non)
 const nonCompostables = [
     "Coquilles de moules",
     "Coquilles de crustacés",
@@ -131,7 +131,6 @@ const nonCompostables = [
     "Riz",
     "Pâtes",
     "Pain",
-    "Couches jetables",
     "Tampons, serviettes hygiéniques",
     "Coton-tiges",
     "Cendres de cheminée",
@@ -157,11 +156,12 @@ const nonCompostables = [
     "Produits chimiques (lessives, détergents, solvants)",
     "Peintures, solvants, produits chimiques",
     "Litière non compostable (silice, bentonite, litière agglomérante)",
-    "chewing-gum"
+    "Chewing-gum"
 ];
 
 
-// Récupération des éléments DOM
+
+// Récupération des éléments DOM de index.html
 const input = document.getElementById('biodechet');
 const suggestionsListeDechets = document.getElementById('suggestionsDechets');
 const verifierButton = document.getElementById('boutonVerifier');
@@ -170,134 +170,156 @@ const resultatOverlay = document.getElementById('resultatOverlay');
 const closeOverlayButton = document.getElementById('closeOverlay');
 
 
-// Fonction pour réinitialiser l'input
-function resetInput() {
-    input.value = ''; // Vide le champ de l'input
-    suggestionsListeDechets.style.display = 'none'; // Cache les suggestions
-}
 
-input.addEventListener('focus', resetInput); 
-// Réinitialise l'input quand il reçoit le focus
 
-// Événement pour afficher les suggestions pendant que l'utilisateur tape
-input.addEventListener('input', function () {
-    const query = input.value.toLowerCase().trim();
-    afficherSuggestions(query);
+                        //Fonction pour la suggestion des déchets 
+
+//Fonction pour afficher la liste de suggestions pendant que l'utilisateur tape son mot
+input.addEventListener('input', () => {
+    const recherche = input.value.toLowerCase().trim(); // si le mot entré est en majuscule et avec des espaces, il sera "transformé" par la fonction en un mot en minuscule et sans espace pour que le mot corresponde avec celui en suggestion (ex : sans cela Viande ne fonctionne pas mais viande oui)
+    afficherSuggestions(recherche);
 });
 
-// Fonction pour afficher les suggestions dynamiques
-function afficherSuggestions(query) {
-    suggestionsListeDechets.innerText = ''; // Réinitialise la liste avant de générer les nouvelles suggestions
 
-    if (query) {
-        // Filtrer les suggestions compostables et non compostables
-        const matches = [...compostables, ...nonCompostables].filter(item => {
-            if (typeof item === 'object') {
-                return item.name.toLowerCase().includes(query); // Filtrage par nom pour les compostables
+function afficherSuggestions(recherche) {
+    suggestionsListeDechets.innerText = ''; // Réinitialise la liste pour qu'elle "suive" ce que rentre l'utilisateur
+
+    //? Ne fonctionne pas sans ces conditions
+    if (recherche) {
+        // Affiche les suggestions pour les deux tableaux (map ne fonctionne pas)
+        const listeDesTableaux = [...compostables, ...nonCompostables].filter(dechet => { // Les deux tableaux sont assemblés par les trois points pour n'en former qu'un
+            if (typeof dechet == 'object') { //marche aussi avec 'string' mais dans ce cas, inverser les return
+                return dechet.name.toLowerCase().includes(recherche); // Retourne les compostables // includes permet d'afficher une suggestion contenant ce qui est tapé par l'utilisateur. Par exemple : "jou"
             }
-            return item.toLowerCase().includes(query); // Filtrage par texte pour non compostables
-        });
+            return dechet.toLowerCase().includes(recherche); // Retourne les non compostables
+    });
 
-        if (matches.length > 0) {
-            suggestionsListeDechets.style.display = 'block';
-            matches.forEach(match => {
-                const li = document.createElement('li');
-                li.textContent = typeof match === 'object' ? match.name : match; // Affiche le nom si compostable, le texte sinon
-                li.addEventListener('click', function () {
-                    input.value = typeof match === 'object' ? match.name : match; // Remplit le champ avec la suggestion cliquée
-                    suggestionsListeDechets.style.display = 'none'; // Masque les suggestions après sélection
-                });
-                suggestionsListeDechets.appendChild(li);
-            });
-        } else {
-            suggestionsListeDechets.style.display = 'none';
-        }
+    if (listeDesTableaux.length > 0) {
+        suggestionsListeDechets.style.display = 'block'; // La liste s'affiche si une lettre minimum est entrée
+
+        // Permet de parcourrir les tableaux pour afficher les déchets dans la liste (la liste n'étant pas dans le HTML, elle est produite en JS. Sans ça, la liste restera vide)
+        listeDesTableaux.forEach(dechet => {
+            const ligneSuggestion = document.createElement('li');
+            suggestionsListeDechets.appendChild(ligneSuggestion);
+
+            if (typeof dechet == 'string') { // Si le déchet n'est qu'une chaine de caractère
+                ligneSuggestion.innerText = dechet; // Affichera que le nom des déchets non compostables
+            } else {
+                ligneSuggestion.innerText = dechet.name; // Sinon affichera que le nom des biodéchets mais pas le type
+            };
+
+            ligneSuggestion.addEventListener('click', () => {
+                input.value = ligneSuggestion.innerText; // La suggestion se retrouve dans l'input
+                suggestionsListeDechets.style.display = 'none'; // et la liste se ferme
+            });      
+    });
+       
+    } else {
+        suggestionsListeDechets.style.display = 'none'; // Si aucune lettre n'est tapée
+    }
     }
 }
 
-// Fonction pour afficher l'overlay avec les détails dynamiques
-function showResultOverlay(title, description, status, iconPath) {
+
+// Fonction pour afficher l'overlay de la recherche et qui servira pour la fonction suivante
+function showResultOverlay(titre, description, reponse, imageComposteur) {
     const overlayTitle = document.getElementById('overlayTitle');
     const overlayDescription = document.getElementById('overlayDescription');
-    const overlayStatus = document.getElementById('overlayStatus');
-    const overlayIcon = document.getElementById('overlayImage');
+    const overlayReponse = document.getElementById('overlayReponse');
+    const overlayImage = document.getElementById('overlayImage');
     
+        // Permet d'écrire dans l'overlay (l'overlay est vide dans le html) :
+    overlayTitle.innerText = titre; // permet la mise à jour du titre
+    overlayDescription.innerText = description; // permet la mise à jour de la description
+    overlayReponse.innerText = reponse; // permet la mise à jour de la réponse
+    overlayImage.src = `./Images/${imageComposteur}`; // permet la mise à jour de l'image
 
-    // Met à jour les contenus dynamiques de l'overlay
-    overlayTitle.textContent = title;
-    overlayDescription.textContent = description;
-    overlayStatus.textContent = status;
-    overlayIcon.src = `./Images/${iconPath}`; // Met à jour l'image
-
-    // Affiche l'overlay
+        // Affiche l'overlay
     resultatOverlay.style.display = 'flex';
+    resultatOverlay.style.flexDirection = 'column';
 }
 
-// Fonction pour vérifier et afficher où jeter le biodéchet
-function showResult(biodechet) {
-    const formattedBiodechet = biodechet.toLowerCase().trim();
-    const compostableItem = compostables.find(item => item.name.toLowerCase() === formattedBiodechet);
 
-    if (compostableItem) {
-        if (compostableItem.types.length === 1 && compostableItem.types[0] === 'composteur') {
+// Fonction pour vérifier et afficher où jeter le biodéchet. Permet de modifier l'intérieur de l'overlay
+function showResult(dechetRecherche) {
+    const formattedBiodechet = dechetRecherche.toLowerCase().trim(); // si le mot entré est en majuscule et avec des espaces, il sera "transformé" par la fonction en un mot en minuscule et sans espace
+
+    const compostableDechet = compostables.find(dechet => dechet.name.toLowerCase() == formattedBiodechet);
+
+    if (compostableDechet) {
+        if (compostableDechet.types.length == 1) {
             showResultOverlay(
-                `${biodechet}`,
+                `${dechetRecherche}`,
                 'Ne convient pas au lombricomposteur',
                 '⚠️ Convient uniquement au composteur',
-                'compost-okay.webp' // Icône pour composteur   
+                'compost-okay.webp' // Image pour composteur   
             );
 
         } else {
-            const types = compostableItem.types.join(' et ');
+            const types = compostableDechet.types.join(' et '); // déclare "types" pour pouvoir afficher les noms des composteurs avec 'join' qui transforme les cases du tableau en chaîne de caractère
             showResultOverlay(
-                `${biodechet}`,
+                `${dechetRecherche}`,
                 '(en petits morceaux et/ou humidifiés pour nos amis les vers)',
                 `✅ Convient au ${types.toLowerCase()}`,
-                'compost-coeur.webp' // Icône pour lombricomposteur   
+                'compost-coeur.webp' // Image pour lombricomposteur   
             );
         }
         
-    } else if (nonCompostables.some(item => item.toLowerCase() === formattedBiodechet)) {
+    } else if (nonCompostables.filter(dechet => dechet.toLowerCase() == formattedBiodechet)) {
         showResultOverlay(
-            `${biodechet}`,
+            `${dechetRecherche}`,
             "Ce déchet doit être jeté avec les ordures ménagères ou au recyclage s'il se recycle",
             '❌ Ne convient ni au composteur, ni au lombricomposteur',
-            'compost-triste.webp' // Icône pour non compostable 
+            'compost-triste.webp' // Image pour non compostable 
         );
 
     } else {
         showResultOverlay(
-            `${biodechet}`,
+            `${dechetRecherche}`,
             "❓",
             "Ce déchet va me demander quelques recherches plus approfondies. En attendant, le mieux est de le jeter dans la poubelle ordinaire ou au recyclage s'il se recycle.",
-            'ver-perplexe.webp' // Icône pour déchet inconnu 
+            'ver-perplexe.webp' // Image pour déchet inconnu 
         );
     }
 }
 
-// Événement pour fermer l'overlay
-closeOverlayButton.addEventListener('click', function (event) {
-    event.preventDefault(); // Empêche le comportement par défaut
+
+// Événement au bouton "Vérifier"
+verifierButton.addEventListener('click', (event) => {
+    event.preventDefault(); // Empêche la page de remonter après le submit
+    showResult(input.value.trim()); // Affiche le résultat
+});
+
+// Fonction pour réinitialiser l'input quand il reçoit le focus
+function resetInput() {
+    input.value = ''; // Vide l'input de son texte précédent
+    suggestionsListeDechets.style.display = ''; // Cache la liste des suggestions
+}
+input.addEventListener('focus', resetInput);
+
+// Ferme la liste si on clique en dehors de celle-ci
+document.addEventListener('click', (event) => {
+    if (!suggestionsListeDechets.contains(event.target)) {
+        suggestionsListeDechets.style.display = 'none'; // Cache la liste
+    }
+});
+
+// Événement pour fermer l'overlay avec la croix
+closeOverlayButton.addEventListener('click', (event) => {
+    event.preventDefault(); // Empêche la page de remonter après la fermeture avec la croix
     resultatOverlay.style.display = 'none'; // Cache l'overlay
     
 });
 
-// Événement pour fermer l'overlay
-resultatOverlay.addEventListener('click', function (event) {
-    if (event.target === resultatOverlay) {
+// Événement pour fermer l'overlay avec un click en dehors de l'overlay
+resultatOverlay.addEventListener('click', (event) => {
+    if (event.target == resultatOverlay) {
         resultatOverlay.style.display = 'none'; // Cache l'overlay
     }
 });
 
-// Événement au bouton "Vérifier"
-verifierButton.addEventListener('click', (event) => {
-    event.preventDefault(); // Empêche le comportement par défaut du bouton submit
-    const nomBiodéchet = input.value.trim();
-    showResult(nomBiodéchet); // Affiche le résultat
-});
 
-// Fonction pour gérer l'input focus et la réinitialisation
-input.addEventListener('focus', resetInput); // Réinitialise l'input seulement lorsqu'il reçoit le focus
+
 
 //fonction avec prise de note dans le calendrier -les notes ne restent pas, en attente de php pour connexion utilisateur
 const monthYear = document.getElementById('monthYear');
@@ -326,7 +348,7 @@ const firstDay = new Date(year, month, 1).getDay(); // Jour du 1er
 const daysInMonth = new Date(year, month + 1, 0).getDate();
 const daysInPrevMonth = new Date(year, month, 0).getDate();
 
-const startDay = firstDay === 0 ? 6 : firstDay - 1; // Ajuster pour Lundi
+const startDay = firstDay == 0 ? 6 : firstDay - 1; // Ajuster pour Lundi
 monthYear.textContent = `${months[month]} ${year}`;
 
 let date = 1; // Jour actuel
@@ -338,7 +360,7 @@ let nextMonthDate = 1; // Jour du mois suivant
     for (let j = 0; j < 7; j++) {
         const cell = document.createElement('td');
 
-        if (i === 0 && j < startDay) {
+        if (i == 0 && j < startDay) {
         // Jours du mois précédent
         const prevDate = daysInPrevMonth - startDay + j + 1;
         cell.textContent = prevDate;
@@ -362,9 +384,9 @@ let nextMonthDate = 1; // Jour du mois suivant
 
         // Mettre en surbrillance le jour actuel
         if (
-            date === today.getDate() &&
-            month === today.getMonth() &&
-            year === today.getFullYear()
+            date == today.getDate() &&
+            month == today.getMonth() &&
+            year == today.getFullYear()
         ) {
             cell.classList.add('today');
         }
@@ -380,6 +402,7 @@ let nextMonthDate = 1; // Jour du mois suivant
     if (date > daysInMonth && nextMonthDate > 7) break;
     }
 }
+
 
 function addNoteToDay(date, cell) {
     const note = prompt(`Entrez une note pour le ${date}:`, notes[date] || '');
@@ -443,12 +466,12 @@ generateCalendar(currentMonth, currentYear);
 // }
 
 // // Create a new list item when clicking on the "Add" button
-// function newElement() {
-//   const li = document.createElement("li");
-//   const inputValue = document.getElementById("myInput").value;
-//   const t = document.createTextNode(inputValue);
-//   li.appendChild(t);
-//   if (inputValue === '') {
+// function nouvelleNote() {
+//   const note = document.createElement("li");
+//   const inputValue = document.getElementById("noteInput");
+//   const memo = document.createTextNode(inputValue);
+//   noteList.appendChild(t);
+//   if (inputValue == '') {
 //     alert("Vous devez rentrer une note !");
 //   } else {
 //     document.getElementById("note-list").appendChild(li);

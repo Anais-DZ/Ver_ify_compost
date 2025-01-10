@@ -21,10 +21,10 @@ function formulaireValide() {
     const password = passwordInput.value.trim();
     const password2 = passwordInput2.value.trim();
     const identifiantValue = identifiant.value;
-    const regexMail = /[a-z0-9._-]{5,15}$/;
+    const regexIdentifiant = /[a-z0-9._-]{5,15}$/;
 
     // Validation de l'identifiant
-    if (!regexMail.test(identifiantValue)) {
+    if (!regexIdentifiant.test(identifiantValue)) {
         errorIdentifiantMessage.textContent = "L'identifiant doit contenir au moins 5 caractères.";
     } else {
         errorIdentifiantMessage.textContent = "";

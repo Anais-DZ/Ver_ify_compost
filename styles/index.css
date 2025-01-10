@@ -225,7 +225,7 @@
     margin: 0;
 }
 
-#overlayStatus {
+#overlayReponse {
     font-size: 20px;
     color: #4e3d28;
 }
@@ -484,28 +484,28 @@
     font-size: 26px;
 }
 
-.close-memo:hover {
+.closeMemo:hover {
     color: #f44336;
 }
 
 
 /* Style the "Add" button */
-.boutonAjout {
+#boutonAjoutNote {
     padding: 10px;
-    width: 20%;
-    height: 20px;
+    width: auto;
+    height: auto;
     background-color: #564E4E;
+    font-family: "fredoka";
     color: white;
     border: none;
     border-radius: 5px;
     cursor:pointer;
-    
     text-align: center;
     font-size: 16px;
     cursor: pointer;
     transition: 0.3s;
 }
 
-.boutonAjout:hover {
+#boutonAjoutNote:hover {
     background-color: #bbb;
 }
