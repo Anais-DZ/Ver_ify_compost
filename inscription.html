@@ -92,15 +92,16 @@
                     <div class="inscriptionContainer">
                         <label for="passwordInscription">Votre mot de passe</label>
                         <input type="password" name="password" placeholder="Entrez un mot de passe" id="passwordInscription" minlength="2" maxlength="45" pattern="/^(?=.*[A-z])(?=.*[0-9])\S{8,30}$/" autocomplete="off" required />
-                        <!--<button type="button" id="togglePassword">
-                                <img src="./Icones/closed-eye.png" alt="oeil fermé pour cacher le mot de passe">
-                        </button>-->
                         <div id="passwordErrorMessage1"></div>
                     </div>
                     <div class="inscriptionContainer">
                         <label for="passwordInscription2">Confirmez votre mot de passe</label>
                         <input type="password" name="password" placeholder="Entrez à nouveau ce mot de passe" id="passwordInscription2" autocomplete="off" required/>
                         <div id="passwordErrorMessage2"></div>
+                    </div>
+                    <div class="checkboxContainer">
+                        <input type="checkbox" id="checkboxInscription"/>
+                        <label for="checkboxInscription">Afficher les mots de passe</label>
                     </div>
                     <button id="submitButtonInscription" type="submit" disabled>Inscription</button>
                 </fieldset>

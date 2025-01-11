@@ -67,6 +67,11 @@
     padding: 10px 10px;
 }
 
+.initialisation input:focus, .contact input:focus, .inscription input:focus  {
+    background: rgba(246, 255, 234, 0.738);
+    border: #c0ec59;
+}
+
 .inscription label, .contact label, .initialisation label {
     font-family: 'Fredoka';
     display: block;
@@ -82,4 +87,9 @@
     font-size: 14px;
     text-align: center;
     margin-top: 5px;
+}
+
+#checkboxInitialisation, #checkboxInscription {
+    width: auto;
+    margin-right: 10px; /*changer la couleur avec javascript ???*/
 }
