@@ -443,7 +443,7 @@
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    padding: 10px 5px;
+    padding: 10px;
     border-radius: 8px;
     font-family: "fredoka";
     width: 70%;
@@ -457,6 +457,7 @@
     font-size: 16px;
     border-radius: 5px;
     font-family: "fredoka";
+    margin-right: 10px;
 }
 
 #noteList {
