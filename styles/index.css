@@ -389,12 +389,13 @@
     border-radius: 50%;
 }
 
-.calendar td.autreMois {
+.calendar td.otherMonth {
     color: #b4b4b4;
-    cursor: default; /* Pas interactif */
+    cursor: default;
     background: none;
     font-size: 14px;
 }
+
 
 .noteIcon {
     position: absolute;

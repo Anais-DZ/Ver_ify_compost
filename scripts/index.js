@@ -370,11 +370,11 @@ let nextMonthDate = 1; // Jour du mois suivant
         // Jours du mois précédent
         const prevDate = daysInPrevMonth - startDay + j + 1;
         cell.textContent = prevDate;
-        cell.classList.add('other-month');
+        cell.classList.add('otherMonth');
         } else if (date > daysInMonth) {
         // Jours du mois suivant
         cell.textContent = nextMonthDate++;
-        cell.classList.add('other-month');
+        cell.classList.add('otherMonth');
         } else {
         // Jours du mois actuel
         const fullDate = `${date} / ${month + 1} / ${year}`;
@@ -480,6 +480,7 @@ generateCalendar(currentMonth, currentYear);
     listItemsContainer.addEventListener('click', (event) => {
         if (event.target.classList.contains('supprimer')) {
             const listItem = event.target.closest('li');
+            
             if (listItem) {
                 listItem.remove();
 
