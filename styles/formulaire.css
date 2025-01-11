@@ -67,9 +67,6 @@
     padding: 10px 10px;
 }
 
-.initialisation input:focus, .contact input:focus, .inscription input:focus  {
-    background: #c0ec5982;
-}
 
 .inscription label, .contact label, .initialisation label {
     font-family: 'Fredoka';

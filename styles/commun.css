@@ -293,6 +293,11 @@ header img {
     margin: 15px 0 0;
 }
 
+.initialisation input:focus, .contact input:focus, .inscription input:focus, .rightMenu input:focus  {
+    background: #c0ec5949;
+    color: black;
+}
+
 .separation {
     width: 30%;
     height: 1px;
