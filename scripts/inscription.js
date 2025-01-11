@@ -25,7 +25,7 @@ function formulaireValide() {
 
     // Validation de l'identifiant
     if (!regexIdentifiant.test(identifiantValue)) { // "test" permet de vérifier si identifiantValue (ou une chaîne de caractère en générale) correspond au régex. Ici, si le régex ne correspond pas à identifiantValue alors message d'erreur
-        errorIdentifiantMessage.textContent = "L'identifiant doit contenir au moins 5 caractères.";
+        errorIdentifiantMessage.textContent = "L'identifiant doit contenir au moins 5 caractères dont 4 lettres.";
     } else {
         errorIdentifiantMessage.textContent = ''; // sinon aucun message d'erreur
     }
