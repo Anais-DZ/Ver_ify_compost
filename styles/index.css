@@ -69,13 +69,17 @@
     width: 40px;
 }
 
-.carouselControl.prev { left: 8px; }
+.carouselControl.prev { 
+    left: 8px; 
+}
 
-.carouselControl.next { right: 8px; }
+.carouselControl.next { 
+    right: 8px; 
+}
 
 .rechercheDechets {
     width: 80vw;
-    margin: 55px 0 60px;
+    margin: 55px 0 0;
     max-width: 400px;
     outline: 0.5px solid #564e4e76;
     outline-offset: -6px;
@@ -230,54 +234,11 @@
     color: #4e3d28;
 }
 
-.downMenu {
-    display: flex;
-    flex-direction: column;
-    width: 85%;
+#imageCompost {
+    width: 230px;
     height: auto;
-    max-width: 350px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
-.downMenu  img {
-    width: 40px;
-    height: 40px;
-    margin: 5px 0 10px 0;
-}
-
-.downMenu  a {
-    border: solid 8px #5bc501;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    font-family: "fredoka";
-    font-size: 20px;
-    text-align: center;
-    text-decoration:none;
-    color: #564E4E;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding-right: 20px;
-    background-color: white;
-    box-shadow: 0px -2px 2px 0px #564e4e5d;
-    position: relative;
-}
-
-#liens {
-    z-index: 0;
-}
-
-#guide {
-    z-index: 1; 
-    top: -8px; 
-}
-
-/* #calendrier {
-    z-index: 2;
-    top: -30px;
-} */
-    
 #calendarFonctionnality, .rechercheDechets {
     font-family: "fredoka";
     display: flex;
@@ -292,7 +253,7 @@
 }
 
 #calendarFonctionnality {
-    margin: 50px 0;
+    margin: 0;
     width: 90vw;
     height: auto;
     padding: 0 10px 50px;
@@ -396,7 +357,6 @@
     font-size: 14px;
 }
 
-
 .noteIcone {
     position: absolute;
     top: 5px;
@@ -404,7 +364,6 @@
     font-size: 14px;
     color: #564E4E;
 }
-
 
 
                         /* memo*/
@@ -508,6 +467,55 @@
     transition: 0.3s;
 }
 
+.downMenu {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    height: auto;
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.downMenu  img {
+    width: 40px;
+    height: 40px;
+    margin: 5px 0 10px 0;
+}
+
+.downMenu  a {
+    border: solid 8px #5bc501;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    font-family: "fredoka";
+    font-size: 20px;
+    text-align: center;
+    text-decoration:none;
+    color: #564E4E;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-right: 20px;
+    background-color: white;
+    box-shadow: 0px -2px 2px 0px #564e4e5d;
+    position: relative;
+}
+
+#liens {
+    z-index: 0;
+}
+
+#guide {
+    z-index: 1; 
+    top: -8px; 
+}
+
+/* #calendrier {
+    z-index: 2;
+    top: -30px;
+} */
 
 #constructionButton {
     font-size: 12px;

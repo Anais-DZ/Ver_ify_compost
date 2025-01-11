@@ -120,51 +120,56 @@
             <ul id="suggestionsDechets"></ul>
             </form>
         </div>
+
+        <picture>
+            <source srcset="./Images/compost.webp" type="image/webp" />
+            <source srcset="./Images/compost.png" type="image/png" /> 
+            <img id="imageCompost" src="./Images/compost.png.png" alt="dessin d'un compost">
+        </picture>
+
+        <section id="calendarFonctionnality" class="calendarFonctionnality">
+            <h2 class="calendarTitle">Calendrier</h2>
+            <div class="separation"></div>
+            <div class="calendarContainer">
+                <div class="calendarHeader">
+                <button id="calendarButtonPrev">❮</button>
+                <h3 id="moisAnnee"></h3>
+                <button id="calendarButtonNext">❯</button>
+                </div>
+                <table class="calendar">
+                <thead>
+                    <tr class = weekContainer>
+                    <th>Lun</th>
+                    <th>Mar</th>
+                    <th>Mer</th>
+                    <th>Jeu</th>
+                    <th>Ven</th>
+                    <th>Sam</th>
+                    <th>Dim</th>
+                    </tr>
+                </thead>
+                <tbody id="calendarDaysContainer">
+                    <!-- Les jours créés en JS -->
+                </tbody>
+                </table>
+            </div>
+            <div id="memoContainer">
+                <h2>Mémo<img src="./Icones/crayon.png" alt="icone d'un crayon"></h2>   
+                <ul id="noteList">
+                    <li class="noteItem">  
+                    </li>
+                </ul>
+            </div>
+            <div id="ajoutNote">
+                <textarea type="text" id="noteInput" placeholder="Écrire une note" maxlength="20" cols="1" rows="1"></textarea>
+                <button id="boutonAjoutNote">Ajouter</button>
+            </div>      
+        </section>
         <div class="downMenu">
             <a id="liens" href="liens.html" alt="redirection page liens"><img src="./Icones/liens.png" alt="image d'un livret redirigeant vers la page Liens">Liens | Ressources</a>
             <a id="guide" href="construction.html" alt="redirection page guide"><img src="./Icones/guide.png" alt="image d'un livre redirigeant vers la page Guide">Guide d'entretien</a>
             <!--<a id="calendrier" href="#" alt="redirection_page_calendrier"><img src="./Icones/calendrier.png">Calendrier | Mémo</a>-->
         </div>
-        <section id="calendarFonctionnality" class="calendarFonctionnality">
-                <h2 class="calendarTitle">Calendrier</h2>
-                <div class="separation"></div>
-                <div class="calendarContainer">
-                    <div class="calendarHeader">
-                    <button id="calendarButtonPrev">❮</button>
-                    <h3 id="moisAnnee"></h3>
-                    <button id="calendarButtonNext">❯</button>
-                    </div>
-                    <table class="calendar">
-                    <thead>
-                        <tr class = weekContainer>
-                        <th>Lun</th>
-                        <th>Mar</th>
-                        <th>Mer</th>
-                        <th>Jeu</th>
-                        <th>Ven</th>
-                        <th>Sam</th>
-                        <th>Dim</th>
-                        </tr>
-                    </thead>
-                    <tbody id="calendarDaysContainer">
-                        <!-- Les jours créés en JS -->
-                    </tbody>
-                    </table>
-                </div>
-                <div id="memoContainer">
-                    <h2>Mémo<img src="./Icones/crayon.png" alt="icone d'un crayon"></h2>   
-                    <ul id="noteList">
-                        <li class="noteItem">  
-                        </li>
-                    </ul>
-                </div>
-                <div id="ajoutNote">
-                    <textarea type="text" id="noteInput" placeholder="Écrire une note" maxlength="20" cols="1" rows="1"></textarea>
-                    <button id="boutonAjoutNote">Ajouter</button>
-                </div>
-                
-                
-        </section>
     </main>
     <footer>
         <a href="contact.html" alt="lien page contact">Contact</a>
