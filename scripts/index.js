@@ -265,7 +265,8 @@ function showResult(dechetRecherche) {
                 'compost-coeur.webp' // Image pour lombricomposteur   
             );
         }
-        
+    
+    //! Ne marche pas avec filter
     } else if (nonCompostables.some(dechet => dechet.toLowerCase() == ecritureDechet)) {
         showResultOverlay(
             `${dechetRecherche}`,
