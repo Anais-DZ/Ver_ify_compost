@@ -78,7 +78,7 @@
 }
 
 .rechercheDechets {
-    width: 80vw;
+    width: 85vw;
     margin: 55px 0 0;
     max-width: 400px;
     outline: 0.5px solid #564e4e76;
@@ -373,7 +373,7 @@
     border-radius: 8px;
     padding: 10px 0;
     text-align: center;
-    margin: 50px 5px 20px;
+    margin: 20px 5px;
     width: 90%;
     height: auto;
     padding-bottom: 20px;
