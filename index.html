@@ -130,13 +130,13 @@
                 <div class="separation"></div>
                 <div class="calendarContainer">
                     <div class="calendarHeader">
-                    <button id="calendarPrev">❮</button>
-                    <h3 id="monthYear"></h3>
-                    <button id="calendarNext">❯</button>
+                    <button id="calendarButtonPrev">❮</button>
+                    <h3 id="moisAnnee"></h3>
+                    <button id="calendarButtonNext">❯</button>
                     </div>
                     <table class="calendar">
                     <thead>
-                        <tr>
+                        <tr class = weekContainer>
                         <th>Lun</th>
                         <th>Mar</th>
                         <th>Mer</th>
@@ -146,7 +146,7 @@
                         <th>Dim</th>
                         </tr>
                     </thead>
-                    <tbody id="calendarBody">
+                    <tbody id="calendarDaysContainer">
                         <!-- Les jours créés en JS -->
                     </tbody>
                     </table>

@@ -387,17 +387,19 @@ noteList.addEventListener('click', (event) => {
   
             //fonction avec prise de note dans le calendrier 
 //!les notes ne restent pas, en attente de php pour connexion utilisateur
-const monthYear = document.getElementById('monthYear');
-const calendarBody = document.getElementById('calendarBody');
-const prevBtn = document.getElementById('calendarPrev');
-const nextBtn = document.getElementById('calendarNext');
+// Sélection des éléments DOM
+const moisAnnee = document.querySelector('#moisAnnee');
+const calendarDaysContainer = document.querySelector('#calendarDaysContainer');
+const buttonPrev = document.querySelector('#calendarButtonPrev');
+const buttonNext = document.querySelector('#calendarButtonNext');
 
-const today = new Date();
-let currentMonth = today.getMonth();
-let currentYear = today.getFullYear();
+// Initialisation des dates
+const jour = new Date();
+let moisActuel = jour.getMonth();
+let anneeActuel = jour.getFullYear();
 
 // Noms des mois
-const months = [
+const mois = [
     "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
     "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"
 ];
@@ -405,103 +407,106 @@ const months = [
 // Stockage des notes
 const notes = {};
 
-function generateCalendar(month, year) {
-    // Effacer l'ancien calendrier
-calendarBody.innerText = '';
+// Fonction pour générer le calendrier
+function creerCalendrier(month, year) {
+    // Efface le contenu précédent
+    calendarDaysContainer.innerText = '';
 
-const firstDay = new Date(year, month, 1).getDay(); // Jour du 1er
-const daysInMonth = new Date(year, month + 1, 0).getDate();
-const daysInPrevMonth = new Date(year, month, 0).getDate();
+    // Calculs des dates
+    const premierJour = new Date(year, month, 1).getDay();
+    const joursDansLeMois = new Date(year, month + 1, 0).getDate();
+    const joursDuMoisPrecedent = new Date(year, month, 0).getDate();
+    const startDay = premierJour === 0 ? 6 : premierJour - 1;
 
-const startDay = firstDay == 0 ? 6 : firstDay - 1; // Ajuster pour Lundi
-monthYear.textContent = `${months[month]} ${year}`;
+    // Afficher le mois et l'année
+    moisAnnee.innerText = `${mois[month]} ${year}`;
 
-let date = 1; // Jour actuel
-let nextMonthDate = 1; // Jour du mois suivant
+    let date = 1; // Premier jour du mois actuel
+    let jourDuMoisSuivant = 1; // Premier jour du mois suivant
 
+    // Génération des lignes du calendrier
     for (let i = 0; i < 6; i++) { // Maximum 6 semaines
-    const row = document.createElement('tr');
+        const ligne = document.createElement('tr');
 
-    for (let j = 0; j < 7; j++) {
-        const cell = document.createElement('td');
+        for (let j = 0; j < 7; j++) {
+            const cellule = document.createElement('td');
 
-        if (i == 0 && j < startDay) {
-        // Jours du mois précédent
-        const prevDate = daysInPrevMonth - startDay + j + 1;
-        cell.textContent = prevDate;
-        cell.classList.add('otherMonth');
-        } else if (date > daysInMonth) {
-        // Jours du mois suivant
-        cell.textContent = nextMonthDate++;
-        cell.classList.add('otherMonth');
-        } else {
-        // Jours du mois actuel
-        const fullDate = `${date} / ${month + 1} / ${year}`;
-        cell.textContent = date;
+            if (i === 0 && j < startDay) {
+                // Jours du mois précédent
+                const prevDate = joursDuMoisPrecedent - startDay + j + 1;
+                cellule.innerText = prevDate;
+                cellule.classList.add('moisSuivantPrecedent');
+            } else if (date > joursDansLeMois) {
+                // Jours du mois suivant
+                cellule.innerText = jourDuMoisSuivant++;
+                cellule.classList.add('moisSuivantPrecedent');
+            } else {
+                // Jours du mois actuel
+                const dateDuJour = `${date}/${month + 1}/${year}`;
+                cellule.innerText = date;
 
-        // Vérifier les notes
-        if (notes[fullDate]) {
-            const icon = document.createElement('span');
-            icon.textContent = '📌';
-            icon.classList.add('note-icon');
-            cell.appendChild(icon);
+                // Vérifier les notes et ajouter une icône
+                if (notes[dateDuJour]) {
+                    const marquage = document.createElement('span');
+                    marquage.innerText = '📌';
+                    marquage.classList.add('noteIcone');
+                    cellule.appendChild(marquage);
+                }
+
+                // Mettre en surbrillance le jour actuel
+                if (
+                    date === jour.getDate() &&
+                    month === jour.getMonth() &&
+                    year === jour.getFullYear()
+                ) {
+                    cellule.classList.add('jour');
+                }
+
+                // Ajouter un événement de clic pour les notes
+                cellule.addEventListener('click', () => ajoutNote(dateDuJour, cellule));
+
+                date++;
+            }
+            ligne.appendChild(cellule);
         }
-
-        // Mettre en surbrillance le jour actuel
-        if (
-            date == today.getDate() &&
-            month == today.getMonth() &&
-            year == today.getFullYear()
-        ) {
-            cell.classList.add('today');
-        }
-
-        // Ajouter un événement de clic
-        cell.addEventListener('click', () => addNoteToDay(fullDate, cell));
-
-        date++;
-        }
-        row.appendChild(cell);
-    }
-    calendarBody.appendChild(row);
-    if (date > daysInMonth && nextMonthDate > 7) break;
+        calendarDaysContainer.appendChild(ligne);
     }
 }
 
-
-function addNoteToDay(date, cell) {
+// Fonction pour ajouter une note
+function ajoutNote(date, cellule) {
     const note = prompt(`Entrez une note pour le ${date}:`, notes[date] || '');
     if (note) {
-    notes[date] = note;
+        notes[date] = note;
 
-    // Ajouter un icône si elle n'existe pas
-    if (!cell.querySelector('.note-icon')) {
-        const icon = document.createElement('span');
-        icon.textContent = '📌';
-        icon.classList.add('note-icon');
-        cell.appendChild(icon);
-    }
+        // Ajouter un marquage là où il y a une note
+        if (!cellule.querySelector('.noteIcone')) {
+            const marquage = document.createElement('span');
+            marquage.innerText = '📌';
+            marquage.classList.add('noteIcone');
+            cellule.appendChild(marquage);
+        }
     }
 }
 
 // Navigation entre les mois
-prevBtn.addEventListener('click', () => {
-    currentMonth--;
-    if (currentMonth < 0) {
-    currentMonth = 11;
-    currentYear--;
+buttonPrev.addEventListener('click', () => {
+    moisActuel--;
+    if (moisActuel < 0) {
+        moisActuel = 11;
+        anneeActuel--;
     }
-    generateCalendar(currentMonth, currentYear);
+    creerCalendrier(moisActuel, anneeActuel);
 });
 
-nextBtn.addEventListener('click', () => {
-    currentMonth++;
-    if (currentMonth > 11) {
-    currentMonth = 0;
-    currentYear++;
+buttonNext.addEventListener('click', () => {
+    moisActuel++;
+    if (moisActuel > 11) {
+        moisActuel = 0;
+        anneeActuel++;
     }
-    generateCalendar(currentMonth, currentYear);
+    creerCalendrier(moisActuel, anneeActuel);
 });
 
 // Initialiser le calendrier
-generateCalendar(currentMonth, currentYear);
+creerCalendrier(moisActuel, anneeActuel);

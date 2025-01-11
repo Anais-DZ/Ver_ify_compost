@@ -382,14 +382,14 @@
     background-color: #f0f0f0; 
 } */
 
-.calendar td.today {
+.calendar td.jour {
     color: #ffffff;
     font-weight: bolder;
     background: #5dc5018d;
     border-radius: 50%;
 }
 
-.calendar td.otherMonth {
+.calendar td.moisSuivantPrecedent {
     color: #b4b4b4;
     cursor: default;
     background: none;
@@ -397,7 +397,7 @@
 }
 
 
-.noteIcon {
+.noteIcone {
     position: absolute;
     top: 5px;
     right: 5px;
@@ -405,7 +405,9 @@
     color: #564E4E;
 }
 
-/* memo*/
+
+
+                        /* memo*/
 #memoContainer {
     background-color: #0c4920;
     border: sienna solid 8px;
