@@ -448,59 +448,62 @@ nextBtn.addEventListener('click', () => {
 generateCalendar(currentMonth, currentYear);
 
 
-    const listItemsContainer = document.querySelector('#noteList');
-    const todoInput = document.querySelector('#noteInput');
-    const boutonAjoutNote = document.querySelector('#boutonAjoutNote');
 
-    // Charger les éléments enregistrés dans le localStorage
-    listItemsContainer.innerText= localStorage.getItem('listItems') || '';
 
-    // Ajouter un nouvel élément
-    boutonAjoutNote.addEventListener('click', function (event) {
-        event.preventDefault();
-        const item = todoInput.value;
+                        //Fonctions mémo 
+const listItemsContainer = document.querySelector('#noteList');
+const todoInput = document.querySelector('#noteInput');
+const boutonAjoutNote = document.querySelector('#boutonAjoutNote');
 
-        if (item) {
-            const listItem = document.createElement('li');
-            listItem.innerHTML = DOMPurify.sanitize (`
-                <span class="noteItem">${item}</span>
-                <button class="supprimer">❌</button>
-            `);
-            listItemsContainer.appendChild(listItem);
+// Charger les éléments enregistrés dans le localStorage
+listItemsContainer.innerHTML= localStorage.getItem('listItems') || '';
+
+// Ajouter un nouvel élément
+boutonAjoutNote.addEventListener('click', function (event) {
+    event.preventDefault();
+    const item = todoInput.value;
+
+    if (item) {
+        const listItem = document.createElement('li');
+        listItem.innerHTML = DOMPurify.sanitize (`
+            <span class="noteItem">${item}</span>
+            <button class="supprimer">❌</button>
+        `);
+        listItemsContainer.appendChild(listItem);
+
+        // Mettre à jour le localStorage
+        localStorage.setItem('listItems', listItemsContainer.innerHTML);
+
+        // Réinitialiser le champ d'entrée
+        todoInput.value = '';
+    }
+});
+
+// Gérer la suppression d'un élément
+listItemsContainer.addEventListener('click', (event) => {
+    if (event.target.classList.contains('supprimer')) {
+        const listItem = event.target.closest('li');
+        
+        if (listItem) {
+            listItem.remove();
 
             // Mettre à jour le localStorage
-            localStorage.setItem('listItems', listItemsContainer.innerText);
-
-            // Réinitialiser le champ d'entrée
-            todoInput.value = '';
+            localStorage.setItem('listItems', listItemsContainer.innerHTML);
         }
-    });
+    }
+});
 
-    // Gérer la suppression d'un élément
-    listItemsContainer.addEventListener('click', (event) => {
-        if (event.target.classList.contains('supprimer')) {
-            const listItem = event.target.closest('li');
-            
-            if (listItem) {
-                listItem.remove();
 
-                // Mettre à jour le localStorage
-                localStorage.setItem('listItems', listItemsContainer.innerText);
-            }
-        }
-    });
+// Gérer la suppression d'un élément
+listItemsContainer.addEventListener('click', function (event) {
+    if (event.target.closest('.remove')) {
+    const listItem = event.target.closest('li');
+    listItem.remove();
 
-  
-    // Gérer la suppression d'un élément
-    listItemsContainer.addEventListener('click', function (event) {
-      if (event.target.closest('.remove')) {
-        const listItem = event.target.closest('li');
-        listItem.remove();
-  
-        // Mettre à jour le localStorage
-        localStorage.setItem('listItems', listItemsContainer.innerText);
-      }
-    });
+    // Mettre à jour le localStorage
+    localStorage.setItem('listItems', listItemsContainer.innerHTML);
+    }
+});
   
 
 
