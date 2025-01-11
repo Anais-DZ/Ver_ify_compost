@@ -83,7 +83,7 @@ textareas.forEach((textarea) => {
     const initialPlaceholder = textarea.placeholder;
 
     textarea.addEventListener("focus", () => {
-        textareas.placeholder = "";
+        textarea.placeholder = "";
     });
 
     textarea.addEventListener("blur", () => { // blur = quand on clique en dehors de l'input
