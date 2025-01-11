@@ -453,7 +453,7 @@ generateCalendar(currentMonth, currentYear);
     const boutonAjoutNote = document.querySelector('#boutonAjoutNote');
 
     // Charger les éléments enregistrés dans le localStorage
-    listItemsContainer.innerHTML = localStorage.getItem('listItems') || '';
+    listItemsContainer.innerText= localStorage.getItem('listItems') || '';
 
     // Ajouter un nouvel élément
     boutonAjoutNote.addEventListener('click', function (event) {
@@ -462,14 +462,14 @@ generateCalendar(currentMonth, currentYear);
 
         if (item) {
             const listItem = document.createElement('li');
-            listItem.innerHTML = `
+            listItem.innerHTML = DOMPurify.sanitize (`
                 <span class="noteItem">${item}</span>
                 <button class="supprimer">❌</button>
-            `;
+            `);
             listItemsContainer.appendChild(listItem);
 
             // Mettre à jour le localStorage
-            localStorage.setItem('listItems', listItemsContainer.innerHTML);
+            localStorage.setItem('listItems', listItemsContainer.innerText);
 
             // Réinitialiser le champ d'entrée
             todoInput.value = '';
@@ -484,7 +484,7 @@ generateCalendar(currentMonth, currentYear);
                 listItem.remove();
 
                 // Mettre à jour le localStorage
-                localStorage.setItem('listItems', listItemsContainer.innerHTML);
+                localStorage.setItem('listItems', listItemsContainer.innerText);
             }
         }
     });
