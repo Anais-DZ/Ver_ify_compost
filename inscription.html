@@ -86,12 +86,12 @@
                     </legend>
                     <div>
                         <label for="identifiant">Votre identifiant</label>
-                        <input type="text" name="identifiant" placeholder="Entrez un identifiant" minlength="5" maxlength="45" id="identifiant" pattern="/^[A-z0-9._-]{5,45}$/;" autocomplete="off" required />
+                        <input type="text" name="identifiant" placeholder="Entrez un identifiant" minlength="5" maxlength="25" id="identifiant" pattern="/^(?=(.*[A-Za-z]){4,}).{5,25}$/;" autocomplete="off" required />
                         <div id="identifiantErrorMessage"></div>
                     </div>
                     <div class="inscriptionContainer">
                         <label for="passwordInscription">Votre mot de passe</label>
-                        <input type="password" name="password" placeholder="Entrez un mot de passe" id="passwordInscription" minlength="2" maxlength="45" pattern="/^(?=.*[A-z])(?=.*[0-9])\S{8,30}$/" autocomplete="off" required />
+                        <input type="password" name="password" placeholder="Entrez un mot de passe" id="passwordInscription" minlength="8" maxlength="50" pattern="/^.*(?=.*[A-Za-z])(?=.*\d).{8,50}$/" autocomplete="off" required />
                         <div id="passwordErrorMessage1"></div>
                     </div>
                     <div class="inscriptionContainer">

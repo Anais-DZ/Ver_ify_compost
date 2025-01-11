@@ -11,7 +11,7 @@ const checkbox = document.querySelector('#checkboxInitialisation');
         // Fonction pour valider le formulaire d'initialisation
 function formulaireInitialisationValide() {
     const passwordValue = password.value.trim();
-    const regexPassword = /^(?=.*[A-z])(?=.*[0-9])\S{8,30}$/
+    const regexPassword = /^.*(?=.*[A-Za-z])(?=.*\d).{8,30}$/
     
     const passwordValue2 = password2.value.trim();
 
