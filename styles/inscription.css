@@ -39,9 +39,6 @@
     padding: 10px 25px;
 }
 
-#submitButtonInscription:hover {
-    background-color: #278a20;
-}
 
 #submitButtonInscription:disabled {
     background-color: rgba(255, 0, 0, 0.162);

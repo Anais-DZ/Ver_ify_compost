@@ -68,8 +68,7 @@
 }
 
 .initialisation input:focus, .contact input:focus, .inscription input:focus  {
-    background: rgba(246, 255, 234, 0.738);
-    border: #c0ec59;
+    background: #c0ec5982;
 }
 
 .inscription label, .contact label, .initialisation label {

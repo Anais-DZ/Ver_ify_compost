@@ -60,3 +60,35 @@ function toggleUser() {
 }
 
 
+
+// Sélectionne tous les inputs et les textarea avec un attribut placeholder
+const inputs = document.querySelectorAll("input[placeholder]");
+const textareas = document.querySelectorAll("textarea[placeholder]");
+
+inputs.forEach((input) => { // A chaque input trouvé dans le code, la fonction suivante lui sera appliquée
+
+    const initialPlaceholder = input.placeholder;
+
+    input.addEventListener("focus", () => {
+        input.placeholder = ""; // le focus "supprime" le plaholder
+    });
+
+    input.addEventListener("blur", () => { // blur = quand on clique en dehors de l'input
+        input.placeholder = initialPlaceholder; //initialPlaceholder permet de "stocker" le placeholder. Par exemple si le placeholder est "mot de passe", initialPlaceholder sera "mot de passe"
+    });
+});
+
+// Même fonctionnement que la fonction précédente mais avec les textaera du code
+textareas.forEach((textarea) => {
+    const initialPlaceholder = textarea.placeholder;
+
+    textarea.addEventListener("focus", () => {
+        textareas.placeholder = "";
+    });
+
+    textarea.addEventListener("blur", () => { // blur = quand on clique en dehors de l'input
+        textarea.placeholder = initialPlaceholder;
+    });
+});
+
+

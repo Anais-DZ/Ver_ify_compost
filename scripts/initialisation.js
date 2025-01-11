@@ -26,8 +26,10 @@ function formulaireInitialisationValide() {
     // Validation de la correspondance du mot de passe de confirmation (password2)
     if (passwordValue2.length > 0 && passwordValue !== passwordValue2) {
         errorMessage2.innerText = 'Les mots de passe ne correspondent pas.';
+        initialisationButton.disabled = true; // Le bouton reste désactivé si la validation échoue
     } else {
         errorMessage2.innerText = ''; //idem
+        initialisationButton.disabled = false; // Le bouton est activée si la validation réussit
     }
 };
 // Evénements pour la validation du formulaire
