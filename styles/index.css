@@ -446,16 +446,16 @@
     padding: 10px 5px;
     border-radius: 8px;
     font-family: "fredoka";
+    width: 70%;
 }
 
 #noteInput {
     border: none;
-    border-radius: 0;
-    width: 55%;
+    width: 60%;
     height: 20px;
     padding: 10px;
     font-size: 16px;
-    border-radius: 8px;
+    border-radius: 5px;
     font-family: "fredoka";
 }
 
