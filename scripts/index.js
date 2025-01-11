@@ -1,39 +1,42 @@
-document.addEventListener("DOMContentLoaded", () => { /* permet d'afficher une slide */
-    const slides = document.querySelectorAll(".carouselInner .slide");
-    const prevButton = document.querySelector(".carouselControl.prev");
-    const nextButton = document.querySelector(".carouselControl.next");
-    const totalSlides = slides.length;
+                    // Foncions carrousel
 
-    let currentIndex = 0; // Index de la slide actuellement affichée
+const slides = document.querySelectorAll(".carouselInner .slide");
+const prevButton = document.querySelector(".carouselControl.prev");
+const nextButton = document.querySelector(".carouselControl.next");
+const totalSlides = slides.length;
 
-    // Fonction pour mettre à jour l'affichage des slides
-    function updateSlides() {
-        slides.forEach((slide, index) => {
-            // Active ou désactive l'affichage des slides
-            if (index == currentIndex) {
-                slide.style.display = "block"; // Affiche la slide actuelle
-            } else {
-                slide.style.display = "none"; // Cache les autres slides
-            }
-        });
-    }
+let currentIndex = 0; // Index de la slide actuellement affichée
 
-    // Événement pour le bouton "Précédent"
-    prevButton.addEventListener("click", () => {
-        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides; // Retourne au dernier élément si on dépasse
-        updateSlides();
+// Fonction pour mettre à jour l'affichage des slides
+function updateSlides() {
+    slides.forEach((slide, index) => {
+        // Active ou désactive l'affichage des slides
+        if (index == currentIndex) {
+            slide.style.display = "block"; // Affiche la slide actuelle
+        } else {
+            slide.style.display = "none"; // Cache les autres slides
+        }
     });
+}
+// Initialisation : afficher la première slide
+updateSlides();
 
-    // Événement pour le bouton "Suivant"
-    nextButton.addEventListener("click", () => {
-        currentIndex = (currentIndex + 1) % totalSlides; // Retourne au premier élément si on dépasse
-        updateSlides();
-    });
 
-    // Initialisation : afficher la première slide
+// Événement pour le bouton "Précédent"
+prevButton.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides; // Retourne au dernier élément si on dépasse
     updateSlides();
 });
 
+// Événement pour le bouton "Suivant"
+nextButton.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % totalSlides; // Retourne au premier élément si on dépasse
+    updateSlides();
+});
+
+
+
+                            // Fonctions recherche des déchets
 
 // En attendant le cours sur la Base De Données, tableau en JavaScript des déchets compostables et où ils se jettent : 
 const compostables = [
@@ -161,13 +164,11 @@ const nonCompostables = [
 
 
 
-// Récupération des éléments DOM de index.html
 const input = document.getElementById('biodechet');
 const suggestionsListeDechets = document.getElementById('suggestionsDechets');
 const verifierButton = document.getElementById('boutonVerifier');
 const resultatOverlay = document.getElementById('resultatOverlay');
 const closeOverlayButton = document.getElementById('closeOverlay');
-
 
 
                         //Fonction pour la suggestion des déchets 
@@ -235,16 +236,17 @@ function showResultOverlay(titre, description, reponse, imageComposteur) {
         // Affiche l'overlay
     resultatOverlay.style.display = 'flex';
     resultatOverlay.style.flexDirection = 'column';
-}
+};
 
 
 // Fonction pour vérifier et afficher où jeter le biodéchet. Permet de modifier l'intérieur de l'overlay
 function showResult(dechetRecherche) {
-    const formattedBiodechet = dechetRecherche.toLowerCase().trim(); // si le mot entré est en majuscule et avec des espaces, il sera "transformé" par la fonction en un mot en minuscule et sans espace
+    const ecritureDechet = dechetRecherche.toLowerCase().trim(); // si le mot entré est en majuscule et avec des espaces, il sera "transformé" par la fonction en un mot en minuscule et sans espace
 
-    const compostableDechet = compostables.find(dechet => dechet.name.toLowerCase() == formattedBiodechet);
+    const compostableDechet = compostables.find(dechet => dechet.name.toLowerCase() == ecritureDechet);
 
     if (compostableDechet) {
+
         if (compostableDechet.types.length == 1) {
             showResultOverlay(
                 `${dechetRecherche}`,
@@ -263,7 +265,7 @@ function showResult(dechetRecherche) {
             );
         }
         
-    } else if (nonCompostables.filter(dechet => dechet.toLowerCase() == formattedBiodechet)) {
+    } else if (nonCompostables.some(dechet => dechet.toLowerCase() == ecritureDechet)) {
         showResultOverlay(
             `${dechetRecherche}`,
             "Ce déchet doit être jeté avec les ordures ménagères ou au recyclage s'il se recycle",
@@ -295,6 +297,17 @@ verifierButton.addEventListener('click', (event) => {
     }
 });
 
+// Vérifier avec la touche Entrée //? Trouver comment choisir la suggestion et taper Entrée ensuite
+// input.addEventListener('keyup', (event) => {
+//     const inputValue = input.value.trim();
+
+//     if (event.key === 'Enter') {
+//         if (inputValue !== "") {
+//             showResult(inputValue); // Affiche le résultat si l'input n'est pas vide
+//         }
+//     }
+// });
+
 
 // Fonction pour réinitialiser l'input quand il reçoit le focus
 function resetInput() {
@@ -303,12 +316,6 @@ function resetInput() {
 }
 input.addEventListener('focus', resetInput);
 
-// Ferme la liste si on clique en dehors de celle-ci
-document.addEventListener('click', (event) => {
-    if (!suggestionsListeDechets.contains(event.target)) {
-        suggestionsListeDechets.style.display = 'none'; // Cache la liste
-    }
-});
 
 // Événement pour fermer l'overlay avec la croix
 closeOverlayButton.addEventListener('click', (event) => {
@@ -327,7 +334,57 @@ resultatOverlay.addEventListener('click', (event) => {
 
 
 
-//fonction avec prise de note dans le calendrier -les notes ne restent pas, en attente de php pour connexion utilisateur
+
+                        //Fonctions mémo 
+const noteList = document.querySelector('#noteList');
+const noteInput = document.querySelector('#noteInput');
+const boutonAjoutNote = document.querySelector('#boutonAjoutNote');
+
+// Charger les éléments enregistrés dans le localStorage
+noteList.innerHTML= localStorage.getItem('listItems') || '';
+
+
+// Ajouter un nouvel élément
+function ecrireMemo() {
+
+    const item = noteInput.value;
+
+    if (item) {
+        const listItem = document.createElement('li');
+        listItem.innerHTML = DOMPurify.sanitize (`
+            <span class="noteItem">${item}</span>
+            <button class="supprimer">❌</button>
+        `);
+        noteList.appendChild(listItem);
+
+        // Mettre à jour le localStorage
+        localStorage.setItem('listItems', noteList.innerHTML);
+
+        // Réinitialiser le champ d'entrée
+        noteInput.value = '';
+    };
+};
+boutonAjoutNote.addEventListener('click', ecrireMemo)
+
+
+// Gérer la suppression d'un élément
+noteList.addEventListener('click', (event) => {
+    if (event.target.classList.contains('supprimer')) {
+        const listItem = event.target.closest('li');
+        
+        if (listItem) {
+            listItem.remove();
+
+            // Mettre à jour le localStorage
+            localStorage.setItem('listItems', noteList.innerHTML);
+        }
+    }
+});
+
+
+  
+            //fonction avec prise de note dans le calendrier 
+//!les notes ne restent pas, en attente de php pour connexion utilisateur
 const monthYear = document.getElementById('monthYear');
 const calendarBody = document.getElementById('calendarBody');
 const prevBtn = document.getElementById('calendarPrev');
@@ -446,64 +503,3 @@ nextBtn.addEventListener('click', () => {
 
 // Initialiser le calendrier
 generateCalendar(currentMonth, currentYear);
-
-
-
-
-                        //Fonctions mémo 
-const listItemsContainer = document.querySelector('#noteList');
-const todoInput = document.querySelector('#noteInput');
-const boutonAjoutNote = document.querySelector('#boutonAjoutNote');
-
-// Charger les éléments enregistrés dans le localStorage
-listItemsContainer.innerHTML= localStorage.getItem('listItems') || '';
-
-// Ajouter un nouvel élément
-boutonAjoutNote.addEventListener('click', function (event) {
-    event.preventDefault();
-    const item = todoInput.value;
-
-    if (item) {
-        const listItem = document.createElement('li');
-        listItem.innerHTML = DOMPurify.sanitize (`
-            <span class="noteItem">${item}</span>
-            <button class="supprimer">❌</button>
-        `);
-        listItemsContainer.appendChild(listItem);
-
-        // Mettre à jour le localStorage
-        localStorage.setItem('listItems', listItemsContainer.innerHTML);
-
-        // Réinitialiser le champ d'entrée
-        todoInput.value = '';
-    }
-});
-
-// Gérer la suppression d'un élément
-listItemsContainer.addEventListener('click', (event) => {
-    if (event.target.classList.contains('supprimer')) {
-        const listItem = event.target.closest('li');
-        
-        if (listItem) {
-            listItem.remove();
-
-            // Mettre à jour le localStorage
-            localStorage.setItem('listItems', listItemsContainer.innerHTML);
-        }
-    }
-});
-
-
-// Gérer la suppression d'un élément
-listItemsContainer.addEventListener('click', function (event) {
-    if (event.target.closest('.remove')) {
-    const listItem = event.target.closest('li');
-    listItem.remove();
-
-    // Mettre à jour le localStorage
-    localStorage.setItem('listItems', listItemsContainer.innerHTML);
-    }
-});
-  
-
-
