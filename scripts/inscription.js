@@ -41,7 +41,7 @@ function formulaireValide() {
     };
 
             // Validation de la correspondance du mot de passe de confirmation (password2)
-    const passwordValue2 = password2;
+    const passwordValue2 = password2.value;
             // Pas de regex pour le password2 puisqu'il sera juste comparé au password
     const password2Valide = passwordValue == passwordValue2;
     if (passwordValue2.length > 0 && !password2Valide) { 
