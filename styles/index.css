@@ -427,8 +427,15 @@
     list-style-type: none;
 }
 
-#noteList li {
+.supprimer {
     cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.noteItem { 
+    cursor: pointer;
+    margin-right: 5px;
     padding: 2px 8px;
     font-size: 18px;
     transition: 0.2s;
@@ -438,15 +445,8 @@
     margin-bottom: 8px;
 }
 
-.supprimer {
-    cursor: pointer;
-    background: none;
-    border: none;
-}
-
-.noteItem { 
-    cursor: initial;
-    margin-right: 5px;
+.noteItem:hover { 
+    color: grey;
 }
 
 .noteItemRayee {
