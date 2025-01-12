@@ -57,6 +57,8 @@
     padding: 10px 25px;
 }
 
-#initialisationButton:hover {
-    background-color: #221b1b;
+#initialisationButton:disabled {
+    background-color: rgba(255, 0, 0, 0.162);
+    cursor: not-allowed;
+    
 }

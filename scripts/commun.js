@@ -61,6 +61,7 @@ function toggleUser() {
 
 
 
+                    // Fonction pour les placeholders
 // Sélectionne tous les inputs et les textarea avec un attribut placeholder
 const inputs = document.querySelectorAll("input[placeholder]");
 const textareas = document.querySelectorAll("textarea[placeholder]");

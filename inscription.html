@@ -37,7 +37,7 @@
                 
                 <h2>Connexion</h2>
                 <div class="separation"></div>
-                <p class="constructionButton">(Le site étant actuellement en développement, il n'est pas encore possible de se connecter, s'inscrire ou envoyer un message).</p>
+                <p id="constructionButton">(Le site étant actuellement en développement, il n'est pas encore possible de se connecter, s'inscrire ou envoyer un message).</p>
                 <div>
                     <label for="name">Votre identifiant</label>
                     <input type="text" name="identifiant" placeholder="Entrez votre identifiant" minlength="2" maxlength="25" id="name" required autocomplete="on">
@@ -86,17 +86,17 @@
                     </legend>
                     <div>
                         <label for="identifiant">Votre identifiant</label>
-                        <input type="text" name="identifiant" placeholder="Entrez un identifiant" minlength="5" maxlength="25" id="identifiant" pattern="/^(?=(.*[A-Za-z]){4,}).{5,25}$/;" autocomplete="off" required />
+                        <input type="text" name="identifiant" placeholder="Entrer un identifiant" minlength="5" maxlength="25" id="identifiant" pattern="/^(?=(.*[A-Za-z]){4,}).{5,25}$/;" autocomplete="off" required />
                         <div id="identifiantErrorMessage"></div>
                     </div>
                     <div class="inscriptionContainer">
                         <label for="passwordInscription">Votre mot de passe</label>
-                        <input type="password" name="password" placeholder="Entrez un mot de passe" id="passwordInscription" minlength="8" maxlength="50" pattern="/^.*(?=.*[A-Za-z])(?=.*\d).{8,50}$/" autocomplete="off" required />
+                        <input type="password" name="password" placeholder="Entrer un mot de passe" id="passwordInscription" minlength="8" maxlength="50" pattern="/^.*(?=.*[A-Za-z])(?=.*\d).{8,50}$/" autocomplete="off" required />
                         <div id="passwordErrorMessage1"></div>
                     </div>
                     <div class="inscriptionContainer">
-                        <label for="passwordInscription2">Confirmez votre mot de passe</label>
-                        <input type="password" name="password" placeholder="Entrez à nouveau ce mot de passe" id="passwordInscription2" autocomplete="off" required/>
+                        <label for="passwordInscription2">Confirmer votre mot de passe</label>
+                        <input type="password" name="password" placeholder="Entrer à nouveau ce mot de passe" id="passwordInscription2" autocomplete="off" required/>
                         <div id="passwordErrorMessage2"></div>
                     </div>
                     <div class="checkboxContainer">

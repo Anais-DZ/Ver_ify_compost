@@ -37,7 +37,7 @@
                 
                 <h2>Connexion</h2>
                 <div class="separation"></div>
-                <p class="constructionButton">(Le site étant actuellement en développement, il n'est pas encore possible de se connecter, s'inscrire ou envoyer un message).</p>
+                <p id="constructionButton">(Le site étant actuellement en développement, il n'est pas encore possible de se connecter, s'inscrire ou envoyer un message).</p>
                 <div>
                     <label for="name">Votre identifiant</label>
                     <input type="text" name="identifiant" placeholder="Entrez votre identifiant" minlength="2" maxlength="25" id="name" required autocomplete="on">
@@ -89,17 +89,17 @@
                     </legend>
                     <div>
                         <label for="nameFirstname">Prénom Nom *</label>
-                        <input type="text" name="prenom_nom" placeholder="Entrez votre prénom et votre nom" minlength="" maxlength="25" id="nameFirstname" autocomplete="on" required >
+                        <input type="text" name="prenom_nom" placeholder="Entrer votre prénom et votre nom" minlength="" maxlength="25" id="nameFirstname" autocomplete="on" required >
                     </div>
                     <div>
                         <label for="mail">Adresse mail *</label>
-                        <input type="email" name="email" placeholder="Entrez votre adresse mail"
+                        <input type="email" name="email" placeholder="Entrer votre adresse mail"
                         id="mail" maxlength="30" autocomplete="on" required>
                         <div id="mailErrorMessage"></div>
                     </div>
                     <div>
                         <label for="message">Message</label>
-                        <textarea name="message" placeholder="✏️  Écrivez votre message (500 caractères max.)" 
+                        <textarea name="message" placeholder="✏️  Écrire votre message (500 caractères max.)" 
                             maxlength="500" cols="45" rows="18" id="message" required></textarea>
                         <div id="charCount">500 caractères restants</div>
                         <div id="errorMessage"></div>
