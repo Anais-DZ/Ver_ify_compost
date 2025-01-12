@@ -136,7 +136,7 @@ header img {
     transform: translateX(-125%);
     transition: transform 0.7s cubic-bezier(0.18,0.89,0.32,1.27);
     z-index: 9;
-    margin-top: 525px;
+    margin-top: 512px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.307);
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
@@ -241,7 +241,7 @@ header img {
     transform: translateX(100%);
     transition: transform 0.8s cubic-bezier(0.18,0.89,0.32,1.27);
     z-index: 9;
-    margin-top: 55px;
+    margin-top: 45px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.307);
 }
 
@@ -285,8 +285,9 @@ header img {
     width: 75%;
 }
 
-.rightMenu button:hover {
-    background-color: #221b1b;
+.rightMenu button:disabled {
+    background-color: rgba(255, 0, 0, 0.162);
+    cursor: not-allowed;
 }
 
 #forgettenPassword {
