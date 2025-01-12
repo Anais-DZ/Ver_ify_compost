@@ -449,6 +449,11 @@
     margin-right: 5px;
 }
 
+.noteItemRayee {
+    text-decoration: line-through;
+    color: grey;
+}
+
 
 /* Style the "Add" button */
 #boutonAjoutNote {

@@ -337,7 +337,7 @@ resultatOverlay.addEventListener('click', (event) => {
 
 
 
-                        //Fonctions mémo 
+                    //Fonctions mémo 
 const noteList = document.querySelector('#noteList');
 const noteInput = document.querySelector('#noteInput');
 const boutonAjoutNote = document.querySelector('#boutonAjoutNote');
@@ -381,7 +381,15 @@ noteList.addEventListener('click', (event) => {
             localStorage.setItem('listItems', noteList.innerHTML);
         }
     }
+    // Rayer une note
+    if (event.target.classList.contains('noteItem')) {
+        event.target.classList.toggle('noteItemRayee');
+        
+        // Mettre à jour le localStorage
+        localStorage.setItem('listItems', noteList.innerHTML);
+    }
 });
+    
 
 
   
