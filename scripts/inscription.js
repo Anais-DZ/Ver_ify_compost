@@ -40,7 +40,7 @@ function formulaireValide() {
     // Validation de la correspondance du mot de passe de confirmation (password2)
     if (passwordValue2.length > 0 && passwordValue !== passwordValue2) { // Si le premier mot de passe ne correspond pas au second mot de passe, le message d'erreur apparaît
         errorMessage2.innerText = 'Les mots de passe ne correspondent pas.';
-        submitButtonInscription.disabled = true; // Le bouton reste désactivé si la validation échoue
+        // submitButtonInscription.disabled = true; // Le bouton reste désactivé si la validation échoue
     } else {
         errorMessage2.innerText = ''; //idem
         submitButtonInscription.disabled = false; // Activer le bouton si la validation réussit
@@ -72,20 +72,20 @@ checkboxInscription.addEventListener('change', mDpVisible);
             // Les placeholder
 
 // Sélectionne tous les inputs avec un attribut placeholder
-const inputs = document.querySelectorAll("input[placeholder]");
+// const inputs = document.querySelectorAll("input[placeholder]");
 
-inputs.forEach((input) => { // A chaque input trouvé dans le code, la fonction suivante lui sera appliquée
+// inputs.forEach((input) => { // A chaque input trouvé dans le code, la fonction suivante lui sera appliquée
 
-    const initialPlaceholder = input.placeholder;
+//     const initialPlaceholder = input.placeholder;
 
-    input.addEventListener("focus", () => {
-        input.placeholder = ""; // le focus "supprime" le plaholder
-    });
+//     input.addEventListener("focus", () => {
+//         input.placeholder = ""; // le focus "supprime" le plaholder
+//     });
 
-    input.addEventListener("blur", () => { // blur = quand on clique en dehors de l'input
-        input.placeholder = initialPlaceholder; //initialPlaceholder permet de "stocker" le placeholder. Par exemple si le placeholder est "mot de passe", initialPlaceholder sera "mot de passe"
-    });
-});
+//     input.addEventListener("blur", () => { // blur = quand on clique en dehors de l'input
+//         input.placeholder = initialPlaceholder; //initialPlaceholder permet de "stocker" le placeholder. Par exemple si le placeholder est "mot de passe", initialPlaceholder sera "mot de passe"
+//     });
+// });
 
 
 
