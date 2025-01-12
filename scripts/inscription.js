@@ -16,7 +16,7 @@ const checkboxInscription = document.querySelector('#checkboxInscription');
 
 function formulaireValide() {   
              // Validation de l'identifiant
-    const identifiantValue = identifiant.value.trim(); // trim permet de supprimer les espaces avant/après
+    const identifiantValue = identifiant.value;
     const regexIdentifiant = /^(?=(.*[A-Za-z]){4,}).{5,25}$/; 
             // signifie que l'identifiant doit être composé d'au moins 4 lettre avec un minimum de 5 caractères et 25 max
     const identifiantValide = regexIdentifiant.test(identifiantValue); 
@@ -29,19 +29,19 @@ function formulaireValide() {
     };
 
             // Validation du mot de passe principal (password)
-    const passwordValue = password.value.trim(); 
-    const regexPassword = /^.*(?=.*[A-Za-z])(?=.*\d).{8,30}$/ 
-            // signifie que le mot de passe doit être composé de lettres majuscules et minuscule et de chiffres avec un minimum de 8 caractères et 30 max (le \S supprime les espaces)
+    const passwordValue = password.value; 
+    const regexPassword = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,30}$/; 
+            // signifie que le mot de passe doit être composé de lettres majuscules et minuscule et de chiffres avec un minimum de 8 caractères et 30 max
     const passwordValide = regexPassword.test(passwordValue);
 
     if (passwordValue.length > 0 && !passwordValide) {  
-        errorMessage1.innerText = 'Le mot de passe doit contenir au moins 8 caractères dont un chiffre et une majuscule.';
+        errorMessage1.innerText = 'Le mot de passe doit contenir au moins 8 caractères dont 1 chiffre, 1 majuscule, 1 minuscule.';
     } else {
         errorMessage1.innerText = ''; // Pas de message d'erreur
     };
 
             // Validation de la correspondance du mot de passe de confirmation (password2)
-    const passwordValue2 = password2.value.trim();
+    const passwordValue2 = password2;
             // Pas de regex pour le password2 puisqu'il sera juste comparé au password
     const password2Valide = passwordValue == passwordValue2;
     if (passwordValue2.length > 0 && !password2Valide) { 
