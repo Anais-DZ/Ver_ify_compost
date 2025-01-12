@@ -1,25 +1,20 @@
-const password = document.querySelector('#passwordInitialisation');
-const errorMessage1 = document.querySelector('#passwordErrorMessage1');
+const password = document.querySelector('.password');
+const errorMessage1 = document.querySelector('.passwordErrorMessage1');
 
-const password2 = document.querySelector('#passwordInitialisation2');
-const errorMessage2 = document.querySelector('#passwordErrorMessage2');
+const password2 = document.querySelector('.password2');
+const errorMessage2 = document.querySelector('.passwordErrorMessage2');
 
-const submitButtonInitialisation = document.querySelector('#initialisationButton');
-const checkbox = document.querySelector('#checkboxInitialisation');
+const submitButtonInitialisation = document.querySelector('.submitButton');
+
 
 
         // Fonction pour valider le formulaire d'initialisation
-function formulaireInitialisationValide() {
-    
-    
-    
-
-    
+function formulaireInitialisationValide() {  
     // Validation du mot de passe principal (password)
     const passwordValue = password.value;
     const regexPassword = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,30}$/;
     const passwordValide = regexPassword.test(passwordValue)
-    if (!passwordValide) {
+    if (passwordValue.length > 0 && !passwordValide) {
         errorMessage1.innerText = 'Le mot de passe doit contenir au moins 8 caractères dont 1 chiffre, 1 lettre majuscule et 1 lettre minuscule.';
     } else {
         errorMessage1.innerText = ''; //supprime le message
@@ -48,7 +43,7 @@ function formulaireInitialisationValide() {
 password.addEventListener('keyup', formulaireInitialisationValide);
 password2.addEventListener('keyup', formulaireInitialisationValide);
 
-
+const checkbox = document.querySelector('.checkbox');
 // Fonction pour afficher les mots de passe 
 function mDpVisible() {
     if(checkbox.checked) {
