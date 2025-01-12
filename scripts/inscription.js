@@ -35,7 +35,7 @@ function formulaireValide() {
     const passwordValide = regexPassword.test(passwordValue);
 
     if (passwordValue.length > 0 && !passwordValide) {  
-        errorMessage1.innerText = 'Le mot de passe doit contenir au moins 8 caractères dont 1 chiffre, 1 majuscule, 1 minuscule.';
+        errorMessage1.innerText = 'Le mot de passe doit contenir au moins 8 caractères dont 1 chiffre, 1 lettre majuscule, 1 lettre minuscule.';
     } else {
         errorMessage1.innerText = ''; // Pas de message d'erreur
     };
@@ -60,9 +60,9 @@ function formulaireValide() {
     };
 };
 // Evénements pour la validation du formulaire
-identifiant.addEventListener('input', formulaireValide);
-password.addEventListener('input', formulaireValide);
-password2.addEventListener('input', formulaireValide);
+identifiant.addEventListener('keyup', formulaireValide);
+password.addEventListener('keyup', formulaireValide);
+password2.addEventListener('keyup', formulaireValide);
 
 
 
