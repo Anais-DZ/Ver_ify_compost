@@ -271,7 +271,9 @@ header img {
 }
 
 .rightMenu button {
-    background-color: #564E4E;
+    background-color: rgba(255, 0, 0, 0.162);
+    cursor: not-allowed;
+    /* background-color: #564E4E; */
     color: white;
     border: none;
     border-radius: 5px;
@@ -280,15 +282,15 @@ header img {
     font-family: "Cabin Sketch";
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.523);
     text-align: center;
-    margin: 10px 30px 20px;
+    margin: 10px 0 20px 38px;
     padding: 10px 10px;
     width: 75%;
 }
-
-.rightMenu button:disabled {
+/* A remettre quand la fonction JS sera faite */
+/* .rightMenu button:disabled {
     background-color: rgba(255, 0, 0, 0.162);
     cursor: not-allowed;
-}
+} */
 
 #forgettenPassword {
     font-family: "Fredoka";
