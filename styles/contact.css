@@ -37,6 +37,11 @@
     padding: 10px 10px;
 }
 
+.contact textarea:focus  {
+    background: #c0ec5949;
+    color: black;
+}
+
 #charCount {
     font-family: "Fredoka";
     text-align: right;
