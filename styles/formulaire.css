@@ -77,7 +77,7 @@
 }
 
 /* Message d'erreur des formulaires d'initialisation et d'inscription*/
-#identifiantErrorMessage, #passwordErrorMessage1, #passwordErrorMessage2  {
+#identifiantErrorMessage, #passwordErrorMessage1, #passwordErrorMessage2, #nomErrorMessage  {
     color: rgb(210, 19, 19);
     font-family: "fredoka";
     font-size: 14px;

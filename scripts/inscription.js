@@ -12,7 +12,7 @@ const submitButtonInscription = document.querySelector('#submitButtonInscription
 const checkboxInscription = document.querySelector('#checkboxInscription');
 
 
-// Fonction pour valider le formulaire
+            // Fonction pour valider le formulaire
 
 function formulaireValide() {   
              // Validation de l'identifiant
@@ -60,9 +60,9 @@ function formulaireValide() {
     };
 };
 // Evénements pour la validation du formulaire
-identifiant.addEventListener('keyup', formulaireValide);
-password.addEventListener('keyup', formulaireValide);
-password2.addEventListener('keyup', formulaireValide);
+identifiant.addEventListener('input', formulaireValide);
+password.addEventListener('input', formulaireValide);
+password2.addEventListener('input', formulaireValide);
 
 
 

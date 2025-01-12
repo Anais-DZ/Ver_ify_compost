@@ -89,7 +89,8 @@
                     </legend>
                     <div>
                         <label for="nameFirstname">Prénom Nom *</label>
-                        <input type="text" name="prenom_nom" placeholder="Entrer votre prénom et votre nom" minlength="" maxlength="25" id="nameFirstname" autocomplete="on" required >
+                        <input type="text" name="prenom_nom" placeholder="Entrer votre prénom et votre nom" minlength="3" maxlength="25" pattern="/^(?=(.*[A-Za-z]){3,}).{3,25}$/" id="nameFirstname" autocomplete="on" required >
+                        <div id="nomErrorMessage"></div>
                     </div>
                     <div>
                         <label for="mail">Adresse mail *</label>
@@ -98,7 +99,7 @@
                         <div id="mailErrorMessage"></div>
                     </div>
                     <div>
-                        <label for="message">Message</label>
+                        <label for="message">Message *</label>
                         <textarea name="message" placeholder="✏️  Écrire votre message (500 caractères max.)" 
                             maxlength="500" cols="45" rows="18" id="message" required></textarea>
                         <div id="charCount">500 caractères restants</div>

@@ -40,8 +40,8 @@ function formulaireInitialisationValide() {
 
 };
 // Evénements pour la validation du formulaire
-password.addEventListener('keyup', formulaireInitialisationValide);
-password2.addEventListener('keyup', formulaireInitialisationValide);
+password.addEventListener('input', formulaireInitialisationValide);
+password2.addEventListener('input', formulaireInitialisationValide);
 
 const checkbox = document.querySelector('.checkbox');
 // Fonction pour afficher les mots de passe 
