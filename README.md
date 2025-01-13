@@ -10,7 +10,7 @@ Ce projet est une opportunité idéale pour concilier mes préoccupations enviro
 
 Le site est maintenant accessible en ligne (en mobile first pour le moment), [Ver'ify Compost](https://ver-ify-compost.vercel.app/) , en étant toujours en cours de développement. Il me sert principalement à avoir une vision concrète de l'avancement et des fonctionnalités à venir. Certaines pages peuvent être incomplètes ou en travaux. Merci pour votre compréhension et n'hésitez pas à revenir régulièrement pour suivre les avancés ! :blush:
 
-<br/>Update ! 12 janvier 2025 --> Le mémo fonctionne à nouveau sans conflit avec d'autres éléments de la page. 
+<br/>Update ! 12 janvier 2025 --> Le mémo fonctionne à nouveau sans conflit avec d'autres éléments de la page. Il est possible d'y ajouter une note, de la rayer en cliquand dessus ou de la supprimer en cliquand sur la croix.
 <br/>Le front-end des pages "inscription", "initialisation" et "contact" sont terminées (HTML, CSS et JS) :
 - Les fonction pour les formulaires effectuent plusieurs validations sur le formulaire en vérifiant les saisies des utilisateurs, en affichant des messages d’erreur si les conditions ne sont pas respectées, et en activant ou désactivant le bouton de soumission en fonction des saisies.
 - La fonction **mDpVisible** contrôle la visibilité des mots de passe dans le formulaire en fonction de l'état de checkbox du formulaire. Lorsque la checkbox est cochée, les champs de mot de passe deviennent visibles. Sinon, ils restent masqués.
