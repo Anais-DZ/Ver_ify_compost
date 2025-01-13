@@ -354,7 +354,7 @@ function ecrireMemo() {
     if (item) {
         const listItem = document.createElement('li');
         listItem.innerHTML = DOMPurify.sanitize (`
-            <span class="noteItem">${item}</span>
+            <span class="item">${item}</span>
             <button class="supprimer">❌</button>
         `);
         noteList.appendChild(listItem);
@@ -382,8 +382,8 @@ noteList.addEventListener('click', (event) => {
         }
     }
     // Rayer une note
-    if (event.target.classList.contains('noteItem')) {
-        event.target.classList.toggle('noteItemRayee');
+    if (event.target.classList.contains('item')) {
+        event.target.classList.toggle('itemRayee');
         
         // Mettre à jour le localStorage
         localStorage.setItem('listItems', noteList.innerHTML);

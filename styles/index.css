@@ -421,11 +421,11 @@
     margin-right: 10px;
 }
 
-#noteList {
-    margin: 30px 0;
+#noteList li {
+    margin: 5px 0;
     padding: 0;
     list-style-type: none;
-    max-width: 100%;
+    max-width: 80%;
 }
 
 .supprimer {
@@ -434,15 +434,19 @@
     border: none;
 }
 
-.noteItem { 
+.noteItem {
+    margin: 5px 0;
+ }
+
+.item { 
     cursor: pointer;
-    margin-right: 5px;
     padding: 2px 8px;
     font-size: 18px;
     transition: 0.2s;
     color: #fff;
     font-family: "fredoka";
-    margin-bottom: 8px; /*ne marche pas */
+    width: 80px;
+    
                     /* trouver comment réduire la ligne*/
 }
 
@@ -451,7 +455,7 @@
     color: grey;
 } */
 
-.noteItemRayee {
+.itemRayee {
     text-decoration: line-through;
     color: grey;
 }
