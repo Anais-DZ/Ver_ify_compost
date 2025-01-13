@@ -41,8 +41,8 @@ header h1 {
     font-size: 42px;
     letter-spacing: 1px;
     margin: 13px 0 11px;
-    padding: 20px 25px 65px;
-    outline: 2px solid #ffffff;
+    padding: 20px 27px 65px;
+    outline: 5px double #ffffff;
     outline-offset: -2px;
     text-shadow:
         0.5px 0.5px 1.5px #187b27,
