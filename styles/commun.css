@@ -38,11 +38,11 @@ footer {
 header h1 {
     color: white;
     font-family: "fredoka";
-    font-size: 42px;
+    font-size: 44px;
     letter-spacing: 1px;
-    margin: 13px 0 11px;
-    padding: 20px 27px 65px;
-    outline: 5px double #ffffff;
+    margin: 10px 0 11px;
+    padding: 20px 18px 67px;
+    outline: 2px solid #ffffff;
     outline-offset: -2px;
     text-shadow:
         0.5px 0.5px 1.5px #187b27,
