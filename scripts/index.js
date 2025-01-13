@@ -354,7 +354,7 @@ function ecrireMemo() {
     if (item) {
         const listItem = document.createElement('li');
         listItem.innerHTML = DOMPurify.sanitize (`
-            <span class="noteItem">${item}</span>
+            <span class="item">${item}</span>
             <button class="supprimer">❌</button>
         `);
         noteList.appendChild(listItem);
@@ -366,7 +366,55 @@ function ecrireMemo() {
         noteInput.value = '';
     };
 };
-boutonAjoutNote.addEventListener('click', ecrireMemo)
+boutonAjoutNote.addEventListener('click', ecrireMemo);
+
+// Fonction pour ajouter une note à la liste //! A tester avec le code html pour éviter le innerHtml
+// function ecrireMemo() {
+//     const item = noteInput.value.trim(); // Supprimer les espaces inutiles
+//     if (item) {
+//         // Créer un nouvel élément li
+//         const listItem = document.createElement('li');
+//         listItem.classList.add('noteItem');
+        
+//         // Ajouter le texte de la note
+//         const span = document.createElement('span');
+//         span.classList.add('item');
+//         span.innerText = item;
+//         listItem.appendChild(span);
+        
+//         // Ajouter le bouton "supprimer"
+//         const deleteButton = document.createElement('button');
+//         deleteButton.classList.add('supprimer');
+//         deleteButton.innerText = '❌';
+//         deleteButton.addEventListener('click', function () {
+//             // Supprimer l'élément li
+//             listItem.remove();
+//             // Mettre à jour le localStorage
+//             localStorage.setItem('listItems', noteList.innerHTML);
+//         });
+//         listItem.appendChild(deleteButton);
+
+//         // Ajouter l'élément à la liste
+//         noteList.appendChild(listItem);
+
+//         // Mettre à jour le localStorage
+//         localStorage.setItem('listItems', noteList.innerHTML);
+
+//         // Réinitialiser le champ d'entrée
+//         noteInput.value = '';
+//     }
+// }
+
+// // Ajouter un écouteur d'événement au bouton
+// boutonAjoutNote.addEventListener('click', ecrireMemo);
+
+// // Gérer le rechargement de la page (les boutons "supprimer" doivent fonctionner après rechargement)
+// document.querySelectorAll('.supprimer').forEach(button => {
+//     button.addEventListener('click', function () {
+//         button.parentElement.remove();
+//         localStorage.setItem('listItems', noteList.innerHTML);
+//     });
+// });
 
 
 // Gérer la suppression d'un élément
@@ -382,8 +430,8 @@ noteList.addEventListener('click', (event) => {
         }
     }
     // Rayer une note
-    if (event.target.classList.contains('noteItem')) {
-        event.target.classList.toggle('noteItemRayee');
+    if (event.target.classList.contains('item')) {
+        event.target.classList.toggle('itemRayee');
         
         // Mettre à jour le localStorage
         localStorage.setItem('listItems', noteList.innerHTML);
