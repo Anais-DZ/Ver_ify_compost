@@ -16,7 +16,7 @@
     font-size: 30px;
     color: #564E4E;
     text-align: center;
-    margin: 25px 0 15px;
+    margin: 15px 0;
 }
 
 .carouselInner {
@@ -36,7 +36,7 @@
     font-size: 22px;
     text-align: center;
     color: #564E4E;
-    top: 343px;
+    top: 333px;
 }
 
 .slide p {
@@ -46,11 +46,11 @@
 
 #slideEconomy {
     width: 233px;
-    top: 340px;
+    top: 330px;
 }
 
 .littleSlide {
-    top: 357px;
+    top: 347px;
 }
 
 #cadreFeuilles {
@@ -64,7 +64,7 @@
 
 .carouselControl {
     position: absolute;
-    top: 428px;
+    top: 418px;
     cursor: pointer;
     width: 40px;
 }
@@ -79,7 +79,7 @@
 
 .rechercheDechets {
     width: 85vw;
-    margin: 55px 0 0;
+    margin: 40px 0 0;
     max-width: 400px;
     outline: 0.5px solid #564e4e76;
     outline-offset: -6px;
