@@ -442,7 +442,7 @@
     transition: 0.2s;
     color: #fff;
     font-family: "fredoka";
-    margin-bottom: 8px; 
+    margin-bottom: 8px; /*ne marche pas */
                     /* trouver comment réduire la ligne*/
 }
 
