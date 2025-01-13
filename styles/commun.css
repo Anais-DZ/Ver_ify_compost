@@ -45,10 +45,10 @@ header h1 {
     outline: 3px solid #ffffff;
     outline-offset: -2px;
     text-shadow:
-        0.5px 0.5px 1px #144d1d,
-        -0.5px 0.5px 1px #144d1d,
-        -0.5px -0.5px 1px #144d1d,
-        0.5px -0.5px 1px #144d1d;
+        0.5px 0.5px 1.5px #144d1d,
+        -0.5px 0.5px 1.5px #144d1d,
+        -0.5px -0.5px 1.5px #144d1d,
+        0.5px -0.5px 1.5px #144d1d;
 }
 
 header img {
