@@ -29,7 +29,7 @@ header {
 }
 
 footer {
-    height: 120px;
+    height: 100px;
     width: 100%;
     justify-content: flex-end;
     box-shadow: 0 0 30px 16px rgba(255, 255, 255, 0.4)
@@ -327,7 +327,7 @@ footer p {
     font-size: 14px;
     color: white;
     font-family: "fredoka";
-    margin-top: 20px;
+    margin: 10px 0 5px;
 }
 
 .attribution {
