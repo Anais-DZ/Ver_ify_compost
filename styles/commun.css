@@ -14,7 +14,7 @@ body {
 }
 
 header, footer {
-  background: url(../Images/header.webp);
+  background: url(../Images/bg-webp.webp);
   background-size: cover;
   background-position: center;
   display: flex;
@@ -45,10 +45,10 @@ header h1 {
     outline: 3px solid #ffffff;
     outline-offset: -2px;
     text-shadow:
-      0.5px 0.5px 1px #04420c,
-      -0.5px 0.5px 1px #04420c,
-      -0.5px -0.5px 1px #04420c,
-      0.5px -0.5px 1px #04420c;
+      0.5px 0.5px 2px #011a05,
+      -0.5px 0.5px 2px #011a05,
+      -0.5px -0.5px 2px #011a05,
+      0.5px -0.5px 2px #011a05;
 }
 
 header img {
@@ -312,11 +312,16 @@ header img {
     border-radius: 50%;
 }
 
-footer a {
+#contactLien {
     font-size: 32px;
     text-decoration: none;
     color: white;
     font-family: "fredoka";
+    text-shadow:
+        0.5px 0.5px 1px #011a05,
+        -0.5px 0.5px 1px #011a05,
+        -0.5px -0.5px 1px #011a05,
+        0.5px -0.5px 1px #011a05;
 }
 
 footer p {
@@ -328,8 +333,7 @@ footer p {
 
 .attribution {
     font-size: 15px !important;
-    text-decoration: underline;
-    text-underline-offset: 2px;
+    color: white;
 }
 
 .constructionButton {
