@@ -7,6 +7,8 @@ const errorMessage2 = document.querySelector('.passwordErrorMessage2');
 const submitButtonInitialisation = document.querySelector('#initialisationButton');
 
 
+// Le bouton est désactivé dès l'ouverture de la page
+submitButtonInitialisation.disabled = true;
 
         // Fonction pour valider le formulaire d'initialisation
 function formulaireInitialisationValide() {  

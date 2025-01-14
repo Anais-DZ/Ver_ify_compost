@@ -13,6 +13,8 @@ const submitButtonContact = document.querySelector("#submitButtonContact");
 const compteur = document.querySelector("#charCount");
 const nbreDeLettreMax = textareaMessage.getAttribute("maxlength");
 
+// Le bouton est désactivé dès l'ouverture de la page
+submitButtonContact.disabled = true; 
 
             // Fonction pour valider le formulaire de contact
 function messageValide() {
@@ -55,12 +57,14 @@ function messageValide() {
     };
 
             // Activation du bouton
-    if (nomValide && mailValide && minMessageValide && maxMessageValide) {
-        submitButtonContact.disabled = false; // Activer le bouton si la validation réussit
-    } else {
-        submitButtonContact.disabled = true; 
-        // Désactiver le bouton si la validation échoue
-    }
+    submitButtonContact.disabled = !(nomValide && mailValide && minMessageValide && maxMessageValide); 
+
+    // if (nomValide && mailValide && minMessageValide && maxMessageValide) {
+    //     submitButtonContact.disabled = false; // Activer le bouton si la validation réussit
+    // } else {
+    //     submitButtonContact.disabled = true; 
+         // Désactiver le bouton si la validation échoue
+    // }
 }
 nom.addEventListener("input", messageValide);
 email.addEventListener("input", messageValide);
