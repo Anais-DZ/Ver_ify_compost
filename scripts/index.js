@@ -342,7 +342,7 @@ const noteList = document.querySelector('#noteList');
 const noteInput = document.querySelector('#noteInput');
 const boutonAjoutNote = document.querySelector('#boutonAjoutNote');
 
-// Charger les éléments enregistrés dans le localStorage
+// les notes sont récupérées dans le localStorage
 noteList.innerHTML= localStorage.getItem('listItems') || '';
 
 
@@ -425,7 +425,7 @@ noteList.addEventListener('click', (event) => {
         if (listItem) {
             listItem.remove();
 
-            // Mettre à jour le localStorage
+            // enregistrement dans le localstorage
             localStorage.setItem('listItems', noteList.innerHTML);
         }
     }
@@ -433,7 +433,7 @@ noteList.addEventListener('click', (event) => {
     if (event.target.classList.contains('item')) {
         event.target.classList.toggle('itemRayee');
         
-        // Mettre à jour le localStorage
+        // enregistrement dans le localstorage
         localStorage.setItem('listItems', noteList.innerHTML);
     }
 });
@@ -443,6 +443,8 @@ noteList.addEventListener('click', (event) => {
   
             //fonction avec prise de note dans le calendrier 
 //!les notes ne restent pas, en attente de php pour connexion utilisateur
+
+
 // Sélection des éléments DOM
 const moisAnnee = document.querySelector('#moisAnnee');
 const calendarDaysContainer = document.querySelector('#calendarDaysContainer');
@@ -502,11 +504,13 @@ function creerCalendrier(month, year) {
                 cellule.innerText = date;
 
                 // Vérifier les notes et ajouter une icône
-                if (notes[dateDuJour]) {
+                const noteExistante = localStorage.getItem(dateDuJour);
+                if (noteExistante) {
                     const marquage = document.createElement('span');
                     marquage.innerText = '📌';
                     marquage.classList.add('noteIcone');
                     cellule.appendChild(marquage);
+                    
                 }
 
                 // Mettre en surbrillance le jour actuel
@@ -529,19 +533,24 @@ function creerCalendrier(month, year) {
     }
 }
 
-// Fonction pour ajouter une note
+// Fonction pour ajouter et enregistrer une note
 function ajoutNote(date, cellule) {
-    const note = prompt(`Entrez une note pour le ${date}:`, notes[date] || '');
+    // les notes sont récupérées du localstorage
+    const note = prompt(`Vous pouvez noter ce que vous avez fait pour entretenir votre composteur ce jour-là, le ${date}:`, localStorage.getItem(date) || '');
     if (note) {
-        notes[date] = note;
+        // la note sera stockée dans le local storage
+        localStorage.setItem(date, note);
 
-        // Ajouter un marquage là où il y a une note
+        // Si une note est entrée, un marquage est créé
         if (!cellule.querySelector('.noteIcone')) {
             const marquage = document.createElement('span');
             marquage.innerText = '📌';
             marquage.classList.add('noteIcone');
             cellule.appendChild(marquage);
         }
+    } else {
+        // si pas de note, le marquage est supprimé du local storage
+        localStorage.removeItem(date);
     }
 }
 
