@@ -500,7 +500,7 @@ function creerCalendrier(month, year) {
                 cellule.classList.add('moisSuivantPrecedent');
             } else {
                 // Jours du mois actuel
-                const dateDuJour = `${date}/${month + 1}/${year}`;
+                const dateDuJour = `${date}/0${month + 1}/${year}`;
                 cellule.innerText = date;
 
                 // Vérifier les notes et ajouter une icône
@@ -536,7 +536,7 @@ function creerCalendrier(month, year) {
 // Fonction pour ajouter et enregistrer une note
 function ajoutNote(date, cellule) {
     // les notes sont récupérées du localstorage
-    const note = prompt(`Vous pouvez noter ce que vous avez fait pour entretenir votre composteur ce jour-là, le ${date}:`, localStorage.getItem(date) || '');
+    const note = prompt(`Vous pouvez noter ce que vous avez fait ou aller faire pour entretenir votre composteur ce jour-là, le ${date}:`, localStorage.getItem(date) || '');
     if (note) {
         // la note sera stockée dans le local storage
         localStorage.setItem(date, note);
