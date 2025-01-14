@@ -536,7 +536,7 @@ function creerCalendrier(month, year) {
 // Fonction pour ajouter et enregistrer une note
 function ajoutNote(date, cellule) {
     // les notes sont récupérées du localstorage
-    const note = prompt(`Vous pouvez noter ce que vous avez fait ou aller faire pour entretenir votre composteur ce jour-là, le ${date}:`, localStorage.getItem(date) || '');
+    const note = prompt(`Vous pouvez noter ce que vous avez fait ou aller faire pour entretenir votre composteur (ex : récupérer le compost, ajouter des déchets humide, etc...), ce jour-là, le ${date}:`, localStorage.getItem(date) || '');
     if (note) {
         // la note sera stockée dans le local storage
         localStorage.setItem(date, note);
