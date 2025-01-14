@@ -25,7 +25,7 @@ header, footer {
 header {
     height: 150px;
     width: 100%;
-    box-shadow: 0px 0px 6px 3px rgba(0,0,0,0.2)
+    margin-top: 60px;
 }
 
 footer {
@@ -59,11 +59,15 @@ header img {
 
 #entete {
     width: 100%;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 7px 0;
-    background-color: transparent;
+    padding: 5px 0 0;
+    background-color: white;
+    position: fixed;
+    z-index: 1000;
+    
 }
 
 #entete img {
@@ -120,6 +124,9 @@ header img {
 
 #userButton {
     margin-left: 25%;
+    margin-bottom: 3px !important;
+    width: 47px !important;
+    height: 47px !important;
 }
 
 .leftMenu {
