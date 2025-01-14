@@ -143,7 +143,7 @@ header img {
     transform: translateX(-125%);
     transition: transform 0.7s cubic-bezier(0.18,0.89,0.32,1.27);
     z-index: 9;
-    margin-top: 508px;
+    margin-top: 485px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.307);
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
