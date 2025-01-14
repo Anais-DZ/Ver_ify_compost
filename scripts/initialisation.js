@@ -4,7 +4,7 @@ const errorMessage1 = document.querySelector('.passwordErrorMessage1');
 const password2 = document.querySelector('.password2');
 const errorMessage2 = document.querySelector('.passwordErrorMessage2');
 
-const submitButtonInitialisation = document.querySelector('.submitButton');
+const submitButtonInitialisation = document.querySelector('#initialisationButton');
 
 
 
@@ -25,17 +25,18 @@ function formulaireInitialisationValide() {
     const password2Valide = passwordValue == passwordValue2
     if (passwordValue2.length > 0 && !password2Valide) {
         errorMessage2.innerText = 'Les mots de passe ne correspondent pas.';
-        initialisationButton.disabled = true; // Le bouton reste désactivé si la validation échoue
     } else {
         errorMessage2.innerText = ''; //idem
-        initialisationButton.disabled = false; // Le bouton est activée si la validation réussit
+        
     }
 
-    if (passwordValide && password2Valide) {
-        initialisationButton.disabled = false; // Le bouton est activée si la validation réussit   
-    } else {
-        initialisationButton.disabled = true; // Le bouton reste désactivé si la validation échoue   
-    }
+    submitButtonInitialisation.disabled = !(passwordValide && password2Valide); // autre façon d'écire
+
+    // if (passwordValide && password2Valide) {
+    //     submitButtonInitialisation.disabled = false; // Le bouton est activée si la validation réussit   
+    // } else {
+    //     submitButtonInitialisation.disabled = true; // Le bouton reste désactivé si la validation échoue   
+    // }
 
 
 };
