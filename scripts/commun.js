@@ -2,14 +2,15 @@
 const burgerButton = document.querySelector(".menuToggler");
 const leftMenu = document.querySelector(".leftMenu");
 const userButton = document.querySelector("#userButton");
-const connexion = document.querySelector(".rightMenu");
+const rightMenu = document.querySelector(".rightMenu");
+
 
 burgerButton.addEventListener("click", (event) => {
-    event.stopPropagation(); // Empêche la propagation pour éviter la fermeture immédiate
+    event.stopPropagation(); // Evite la fermeture immédiate du menu
     toggleMenu();
 });
 userButton.addEventListener("click", (event) => {
-    event.stopPropagation(); // Empêche la propagation pour éviter la fermeture immédiate
+    event.stopPropagation(); // Evite la fermeture immédiate du menu
     toggleUser();
 });
 
@@ -19,7 +20,7 @@ function closeMenu() {
 }
 
 function closeUser() {
-    connexion.classList.remove("active");
+    rightMenu.classList.remove("active");
     userButton.setAttribute("src", "./Icones/user.png");
 }
 
@@ -29,7 +30,7 @@ document.addEventListener("click", (event) => {
         closeMenu();
     }
 
-    if (!connexion.contains(event.target) && !userButton.contains(event.target)) {
+    if (!rightMenu.contains(event.target) && !userButton.contains(event.target)) {
         closeUser();
     }
 });
@@ -44,13 +45,14 @@ function toggleMenu() {
 }
 
 function toggleUser() {
+
     // Ferme le menu gauche si ouvert
     closeMenu();
 
     // Basculer l'état du menu utilisateur
-    connexion.classList.toggle("active");
+    rightMenu.classList.toggle("active");
 
-    if (connexion.classList.contains("active")) {
+    if (rightMenu.classList.contains("active")) {
         // Si la classe "active" est présente
         userButton.setAttribute("src", "./Icones/close.png");
     } else {
