@@ -95,3 +95,15 @@
 #webSiteLinks {
     margin-top: 60px;
 }
+
+footer a {
+    font-size: 32px;
+    text-decoration: none;
+    color: white;
+    font-family: "fredoka";
+    text-shadow:
+        0.5px 0.5px 1px #187b27,
+        -0.5px 0.5px 1px #187b27,
+        -0.5px -0.5px 1px #187b27,
+        0.5px -0.5px 1px #187b27;
+}

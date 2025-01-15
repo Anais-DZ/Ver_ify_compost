@@ -319,6 +319,7 @@ header img {
     border-radius: 50%;
 }
 
+/* ne s'affiche plus dans les footer, à corriger */
 #contactLien {
     font-size: 32px;
     text-decoration: none;
