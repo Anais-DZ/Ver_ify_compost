@@ -64,9 +64,9 @@ function formulaireValide() {
     // };
 };
 // Evénements pour la validation du formulaire
-identifiant.addEventListener('input', formulaireValide);
-password.addEventListener('input', formulaireValide);
-password2.addEventListener('input', formulaireValide);
+identifiant.addEventListener('keyup', formulaireValide); //Va vérifier la validation de l'identifiant
+password.addEventListener('keyup', formulaireValide); //Va vérifier la validation du mot de passe
+password2.addEventListener('keyup', formulaireValide); //Va vérifier la validation de la confirmation du mot de passe
 
 
 

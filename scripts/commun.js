@@ -70,27 +70,27 @@ const textareas = document.querySelectorAll("textarea[placeholder]");
 
 inputs.forEach((input) => { // A chaque input trouvé dans le code, la fonction suivante lui sera appliquée
 
-    const initialPlaceholder = input.placeholder;
+    const placeholderEnregistre = input.placeholder;
 
     input.addEventListener("focus", () => {
         input.placeholder = ""; // le focus "supprime" le plaholder
     });
 
     input.addEventListener("blur", () => { // blur = quand on clique en dehors de l'input
-        input.placeholder = initialPlaceholder; //initialPlaceholder permet de "stocker" le placeholder. Par exemple si le placeholder est "mot de passe", initialPlaceholder sera "mot de passe"
+        input.placeholder = placeholderEnregistre; //placeholderEnregistre permet de "stocker" le placeholder. Par exemple si le placeholder est "mot de passe", placeholderEnregistre sera "mot de passe"
     });
 });
 
 // Même fonctionnement que la fonction précédente mais avec les textaera du code
 textareas.forEach((textarea) => {
-    const initialPlaceholder = textarea.placeholder;
+    const placeholderEnregistre = textarea.placeholder;
 
     textarea.addEventListener("focus", () => {
         textarea.placeholder = "";
     });
 
     textarea.addEventListener("blur", () => { // blur = quand on clique en dehors de l'input
-        textarea.placeholder = initialPlaceholder;
+        textarea.placeholder = placeholderEnregistre;
     });
 });
 
