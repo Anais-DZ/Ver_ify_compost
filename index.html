@@ -40,16 +40,18 @@
                 <div>
                     <label for="name">Votre identifiant</label>
                     <input type="text" name="identifiant" placeholder="Entrez votre identifiant" minlength="2" maxlength="25" id="name" required autocomplete="on">
+                    <div id="identifiantMenuError"></div>
                 </div>
                 <div>
                     <label for="passwordMenu">Votre mot de passe</label>
                     <input type="password" name="password" placeholder="Entrez votre mot de passe" minlength="2" maxlength="25" id="passwordMenu" autocomplete="on" required>
+                    <div id="passwordMenuError"></div>
                 </div>
                 <div class="checkboxContainer">
                     <input type="checkbox" id="checkbox" checked />
                     <label for="checkbox">Se souvenir de moi</label>
                 </div>
-                <button type="submit">Se connecter</button>
+                <button type="submit" id="submitButtonMenu" disabled>Se connecter</button>
                 <p>Nouvel·le arrivant·e ?
                     Par <a href="inscription.html" alt="lien page inscription">ici !</a></p>
                 <a id="forgettenPassword" href="initialisation.html" alt="réinitialisation du mot de passe">Mot de passe oublié ?</a>
