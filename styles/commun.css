@@ -70,8 +70,7 @@ header img {
     background: #008742;
     position: fixed;
     z-index: 1000;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
-    
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */   
 }
 
 #entete img {
@@ -239,6 +238,7 @@ header img {
 .rightMenu {
     background: #fefffa;
     border: 14px solid #94d353;
+    /* border-image: linear-gradient(to right bottom, #008742, #40a048, #6aba4e, #94d353, #c0ec59); */
     border-right: none;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
