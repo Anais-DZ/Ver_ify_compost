@@ -270,7 +270,7 @@ header img {
 }
 
 .initialisation input:focus, .contact input:focus, .inscription input:focus, .rightMenu input:focus  {
-    background:#00874156;
+    background:#0087412d;
     color: black;
 }
 
