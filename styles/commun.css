@@ -64,7 +64,8 @@ header img {
     justify-content: center;
     align-items: center;
     padding: 5px 0 0;
-    background-color: white;
+    /* background-color: #5bc501; */
+    background: #008742;
     position: fixed;
     z-index: 1000;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -94,7 +95,7 @@ header img {
     width: 46px;
     height: 2px;
     border-radius: 5px;
-    background: #5bc501;
+    background: #ffffff;
     transition: transform 0.3s ease-out;
     opacity: 0.1s ease-out;
 }
@@ -139,7 +140,7 @@ header img {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: #c0ec59;
+    background: #008742;
     transform: translateX(-125%);
     transition: transform 0.7s cubic-bezier(0.18,0.89,0.32,1.27);
     z-index: 9;
@@ -235,7 +236,7 @@ header img {
 
 .rightMenu {
     background: #fefffa;
-    border: 14px solid #c0ec59;
+    border: 14px solid #008742;
     border-right: none;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
@@ -257,7 +258,7 @@ header img {
 }
 
 .rightMenu input {
-    border: 1px solid #c0ec59;
+    border: 1px solid#008742;
     width: 100%;
     height: auto;
     border-radius: 5px;
@@ -269,7 +270,7 @@ header img {
 }
 
 .initialisation input:focus, .contact input:focus, .inscription input:focus, .rightMenu input:focus  {
-    background: #c0ec5949;
+    background:#00874156;
     color: black;
 }
 
