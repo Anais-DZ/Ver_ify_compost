@@ -278,9 +278,7 @@ header img {
 }
 
 #submitButtonMenu {
-    background-color: rgba(255, 0, 0, 0.162);
-    cursor: not-allowed;
-    /* background-color: #564E4E; */
+    background-color: #564E4E;
     color: white;
     border: none;
     border-radius: 5px;
