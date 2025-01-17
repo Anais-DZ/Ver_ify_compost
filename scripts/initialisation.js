@@ -1,3 +1,4 @@
+// Récupération des éléments du Dom nécessaires pour la fonction
 const password = document.querySelector('.password');
 const errorMessage1 = document.querySelector('.passwordErrorMessage1');
 
