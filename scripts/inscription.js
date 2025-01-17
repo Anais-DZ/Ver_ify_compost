@@ -11,8 +11,6 @@ const errorMessage2 = document.querySelector('#passwordErrorMessage2');
 const submitButtonInscription = document.querySelector('#submitButtonInscription');
 const checkboxInscription = document.querySelector('#checkboxInscription');
 
-// Le bouton est désactivé dès l'ouverture de la page
-submitButtonInscription.disabled = true;
 
             // Fonction pour valider le formulaire
 
@@ -55,8 +53,7 @@ function formulaireValide() {
     };
 
             // Activation du bouton
-    submitButtonInscription.disabled = !(identifiantValide && passwordValide && password2Valide);
-
+    
     // if (identifiantValide && passwordValide && password2Valide) {
     //     submitButtonInscription.disabled = false;
     // } else {
