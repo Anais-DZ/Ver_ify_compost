@@ -14,7 +14,6 @@ body {
 }
 
 header, footer {
-  background: url(../Images/bg-webp.webp);
   background-size: cover;
   background-position: center;
   display: flex;
@@ -26,35 +25,38 @@ header {
     height: 150px;
     width: 100%;
     margin-top: 59px;
+    outline: 2px solid #ffffff;
+    outline-offset: -10px;
+    background: linear-gradient(to bottom, #008742, #008742, #008742, #56ba3b, #c0ec59);
 }
 
 footer {
     height: 100px;
     width: 100%;
     justify-content: flex-end;
-    box-shadow: 0 0 30px 16px rgba(255, 255, 255, 0.4)
+    box-shadow: 0 0 30px 16px rgba(255, 255, 255, 0.4);
+    background: linear-gradient(to top, #008742, #008742, #40a048, #6aba4e, #94d353, #c0ec59);
 }
 
 header h1 {
     color: white;
     font-family: "fredoka";
-    font-size: 48px;
-    margin: 8px 0 0;
-    padding: 13px 18px 62px;
-    outline: 2px solid #ffffff;
-    outline-offset: -2px;
+    background-image: radial-gradient(circle, #dadada3a, #dedede3a, #e3e3e33a, #e7e7e73a, #ececec3a, #eeeeee3a, #f1f1f13a, #f3f3f33a, #f4f4f43a, #f5f5f53a, #f5f5f53a, #f6f6f63a);
+    font-size: 47px;
+    margin: 18px 0 0;
+    padding: 3px 15px 52px;
     text-shadow:
-        0.5px 0.5px 1.5px #187b27,
-        -0.5px 0.5px 1.5px #187b27,
-        -0.5px -0.5px 1.5px #187b27,
-        0.5px -0.5px 1.5px #187b27;
+        0.5px 0.5px 8px #008742,
+        -0.5px 0.5px 8px #008742,
+        -0.5px -0.5px 8px #008742,
+        0.5px -0.5px 8px #008742;
 }
 
 header img {
   width: 100px;
   height: auto;
   position: relative;
-  top: -60px;
+  top: -50px;
 }
 
 #entete {
@@ -68,7 +70,7 @@ header img {
     background: #008742;
     position: fixed;
     z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
     
 }
 
@@ -140,7 +142,7 @@ header img {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: #008742;
+    background: linear-gradient(to right bottom, #008742, #40a048, #6aba4e, #94d353, #c0ec59);
     transform: translateX(-125%);
     transition: transform 0.7s cubic-bezier(0.18,0.89,0.32,1.27);
     z-index: 9;
@@ -236,7 +238,7 @@ header img {
 
 .rightMenu {
     background: #fefffa;
-    border: 14px solid #008742;
+    border: 14px solid #94d353;
     border-right: none;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
@@ -258,7 +260,7 @@ header img {
 }
 
 .rightMenu input {
-    border: 1px solid#008742;
+    border: 1px solid #94d353;
     width: 100%;
     height: auto;
     border-radius: 5px;
@@ -270,7 +272,7 @@ header img {
 }
 
 .initialisation input:focus, .contact input:focus, .inscription input:focus, .rightMenu input:focus  {
-    background:#0087412d;
+    background:#c0ec5923;
     color: black;
 }
 
