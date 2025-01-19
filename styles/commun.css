@@ -22,7 +22,7 @@ header, footer {
 }
 
 header {
-    height: 140px;
+    height: 150px;
     width: 100%;
     margin-top: 59px;
     /* outline: 2px solid #ffffff;
@@ -35,21 +35,21 @@ footer {
     width: 100%;
     justify-content: flex-end;
     box-shadow: 0 0 30px 16px rgba(255, 255, 255, 0.4);
-    background: linear-gradient(to top, #008742, #008742, #40a048, #6aba4e, #94d353, #c0ec59);
+    background: #1c9600
 }
 
 header h1 {
     color: white;
     font-family: "fredoka";
     /* background-image: radial-gradient(circle, #dadada72, #dedede72, #e3e3e372, #e7e7e772, #ececec72, #eeeeee72, #f1f1f172, #f3f3f372, #f4f4f472, #f5f5f572, #f5f5f572, #f6f6f672); */
-    font-size: 46px;
-    margin: 5px 0 0;
+    font-size: 48px;
+    margin: 15px 0 0;
     padding: 18px 20px 55px;
     text-shadow:
-        0.5px 0.5px 2px #024821,
-        -0.5px 0.5px 2px #024821,
-        -0.5px -0.5px 2px #024821,
-        0.5px -0.5px 2px #024821;
+        0.5px 0.5px 3px #024821,
+        -0.5px 0.5px 3px #024821,
+        -0.5px -0.5px 3px #024821,
+        0.5px -0.5px 3px #024821;
         z-index: 4;
 }
 
@@ -66,7 +66,7 @@ header img {
     width: 410px;
     height: auto;
     position: relative;
-    top: -185px;
+    top: -195px;
     height: 230px;
     left: 0px;
     z-index: 2; 
@@ -80,7 +80,7 @@ header img {
     align-items: center;
     padding: 5px 0 0;
     /* background-color: #5bc501; */
-    background: #008742;
+    background: #ffffff;
     position: fixed;
     z-index: 1000;
     /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */   
@@ -106,10 +106,10 @@ header img {
 .line {
     position: absolute;
     display: block;
-    width: 46px;
+    width: 45px;
     height: 2px;
     border-radius: 5px;
-    background: #ffffff;
+    background: #1c9600;
     transition: transform 0.3s ease-out;
     opacity: 0.1s ease-out;
 }
