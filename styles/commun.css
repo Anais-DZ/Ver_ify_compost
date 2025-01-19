@@ -31,11 +31,12 @@ header {
 }
 
 footer {
+    margin-top: 15px;
     height: 100px;
     width: 100vw;
     justify-content: flex-end;
     box-shadow: 0 0 30px 16px rgba(255, 255, 255, 0.4);
-    background: #1c9600
+    background: linear-gradient(180deg, rgba(225, 255, 210, 0.107) 12%, rgba(227, 242, 223, 0.14) 15%, rgba(139,201,124,1) 25%, rgba(28,150,0,1) 35%);
 }
 
 header h1 {
@@ -70,6 +71,14 @@ header img {
     top: -145px;
     left: 2px;
     z-index: 2; 
+}
+
+#dessinHerbeFooter {
+    width: 99vw;
+    height: 100px;
+    position: relative;
+    z-index: 2;
+    top: -18px;
 }
 
 #entete {
@@ -353,6 +362,9 @@ header img {
         -0.5px 0.5px 1px #187b27,
         -0.5px -0.5px 1px #187b27,
         0.5px -0.5px 1px #187b27;
+    position: relative;
+    top: 105px;
+    z-index: 4;
 }
 
 footer p {
