@@ -41,11 +41,11 @@ footer {
 header h1 {
     color: white;
     font-family: "fredoka";
-    font-style: italic;
     /* background-image: radial-gradient(circle, #dadada72, #dedede72, #e3e3e372, #e7e7e772, #ececec72, #eeeeee72, #f1f1f172, #f3f3f372, #f4f4f472, #f5f5f572, #f5f5f572, #f6f6f672); */
-    font-size: 52px;
+    font-size: 50px;
     margin: 10px 0 0;
-    padding: 30px 5px 37px;
+    padding: 45px 0 27px;
+    text-align: center;
     text-shadow:
         0.5px 0.5px 3px #024821,
         -0.5px 0.5px 3px #024821,
@@ -55,16 +55,16 @@ header h1 {
 }
 
 header img {
-  width: 100px;
+  width: 85px;
   height: auto;
   position: relative;
-  top: -275px;
-  left: 155px;
+  top: -265px;
+  left: 158px;
   z-index: 3;
 }
 
 #dessinHerbe {
-    width: 400px;
+    width: 100vw;
     height: auto;
     position: relative;
     top: -195px;
