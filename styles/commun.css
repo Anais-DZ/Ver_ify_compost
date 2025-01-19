@@ -27,7 +27,7 @@ header {
     margin-top: 59px;
     /* outline: 2px solid #ffffff;
     outline-offset: -10px; */
-    background: linear-gradient(180deg, rgba(255,255,255,1) 15%, rgba(227,242,223,1) 30%, rgba(139,201,124,1) 38%, rgba(28,150,0,1) 48%);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 12%, rgba(227,242,223,1) 22%, rgba(139,201,124,1) 38%, rgba(28,150,0,1) 46%);
 }
 
 footer {
