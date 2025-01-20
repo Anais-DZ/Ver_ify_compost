@@ -43,10 +43,10 @@ footer {
 header h1 {
     color: white;
     font-family: "fredoka";
-    background-image: radial-gradient(circle, #dadada62, #dedede62, #e3e3e362, #e7e7e762, #ececec62, #eeeeee62, #f1f1f162, #f3f3f362, #f4f4f462, #f5f5f562, #f5f5f562, #f6f6f662);
+    background-image: radial-gradient(circle, #dadada75, #dedede75, #e3e3e375, #e7e7e775, #ececec75, #eeeeee75, #f1f1f175, #f3f3f375, #f4f4f475, #f5f5f575, #f5f5f575, #f6f6f675);
     font-size: 48px;
     margin: 15px 0 0;
-    padding: 3px 12px 50px;
+    padding: 3px 10px 48px;
     text-align: center;
     text-shadow:
         0.5px 0.5px 3px #024821,
@@ -60,7 +60,7 @@ header img {
   width: 95px;
   height: auto;
   position: relative;
-  top: -53px;
+  top: -50px;
   left: 0;
   z-index: 4;
 }
