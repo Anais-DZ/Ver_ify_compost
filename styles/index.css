@@ -37,7 +37,7 @@
     font-size: 22px;
     text-align: center;
     color: #564E4E;
-    top: 363px;
+    top: 303px;
 }
 
 .slide p {
@@ -47,11 +47,11 @@
 
 #slideEconomy {
     width: 233px;
-    top: 362px;
+    top: 302px;
 }
 
 .littleSlide {
-    top: 378px;
+    top: 318px;
 }
 
 #cadreFeuilles {
@@ -65,7 +65,7 @@
 
 .carouselControl {
     position: absolute;
-    top: 455px;
+    top: 395px;
     cursor: pointer;
     width: 40px;
 }
