@@ -26,7 +26,7 @@ header {
     width: 100vw;
     margin-top: 59px;
     outline: 1px solid #ffffff;
-    outline-offset: -10px;
+    outline-offset: -8px;
     /* background: linear-gradient(180deg, rgba(255,255,255,1) 12%, rgba(227,242,223,1) 22%, rgba(139,201,124,1) 38%, rgba(28,150,0,1) 46%); */
     background-image: url(/Images/header.webp);
 }
@@ -43,10 +43,10 @@ footer {
 header h1 {
     color: white;
     font-family: "fredoka";
-    background-image: radial-gradient(circle, #dadada38, #dedede38, #e3e3e338, #e7e7e738, #ececec38, #eeeeee38, #f1f1f138, #f3f3f338, #f4f4f438, #f5f5f538, #f5f5f538, #f6f6f638);
+    background-image: radial-gradient(circle, #dadada62, #dedede62, #e3e3e362, #e7e7e762, #ececec62, #eeeeee62, #f1f1f162, #f3f3f362, #f4f4f462, #f5f5f562, #f5f5f562, #f6f6f662);
     font-size: 48px;
     margin: 15px 0 0;
-    padding: 0px 10px 50px;
+    padding: 3px 12px 50px;
     text-align: center;
     text-shadow:
         0.5px 0.5px 3px #024821,
