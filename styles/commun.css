@@ -22,10 +22,10 @@ header, footer {
 }
 
 header {
-    height: 140px;
+    height: 150px;
     width: 100vw;
     margin-top: 59px;
-    outline: 1px solid #ffffff;
+    outline: 2px solid #ffffff;
     outline-offset: -8px;
     /* background: linear-gradient(180deg, rgba(255,255,255,1) 12%, rgba(227,242,223,1) 22%, rgba(139,201,124,1) 38%, rgba(28,150,0,1) 46%); */
     background-image: url(/Images/header.webp);
@@ -46,7 +46,7 @@ header h1 {
     /* background: radial-gradient(circle, #dadada75, #dedede75, #e3e3e375, #e7e7e775, #ececec75, #eeeeee75, #f1f1f175, #f3f3f375, #f4f4f475, #f5f5f575, #f5f5f575, #f6f6f675); */
     font-size: 47px;
     margin: 15px 0 0;
-    padding: 0px 10px 48px;
+    padding: 10px 10px 50px;
     text-align: center;
     text-shadow:
         0.5px 0.5px 3px #024821,
