@@ -394,13 +394,14 @@ footer p {
     margin: 0;
 }
 
-@media (max-width: 371px) {
+@media (max-width: 360px) {
     header h1 {
-        margin-top: 5px;
+        margin-top: 0px;
     }
 
     header img {
-        top: -95px;
-        left: 37%;
+        top: -57px;
+        left: 0;
+        z-index: 2;
     }
 }
