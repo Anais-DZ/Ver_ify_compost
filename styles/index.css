@@ -24,7 +24,7 @@
 }
 
 .carouselInner {
-    height: 150px;
+    height: 180px;
     width: auto;
     margin: 0;
     list-style-type: none;
@@ -32,7 +32,7 @@
     border-radius: 8px;
     padding: 10px 25px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     outline: 2px dashed #93d3536a;
     outline-offset: -7px;
@@ -40,7 +40,7 @@
 }
 
 .carousel {
-    height: 200px;
+    height: 220px;
     width: auto;
     display: flex;
     flex-direction: row;
@@ -49,18 +49,16 @@
 }
 
 .slide {
-    width: 230px;
     height: auto;
     font-family: "fredoka";
-    font-size: 20px;
+    font-size: 22px;
     text-align: center;
     color: #564E4E;
-    padding: 0;
 }
 
 .slide p {
-    font-size: 28px;
-    margin: 0 0 8px;
+    font-size: 26px;
+    margin: 8px 0 0;
 }
 
 .carouselControl {
