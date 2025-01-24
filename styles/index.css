@@ -78,6 +78,7 @@
     width: 85vw;
     margin: 30px 0 0;
     max-width: 400px;
+    max-height: 420px;
     outline: 0.5px solid #564e4e76;
     outline-offset: -6px;
     padding: 0 15px;
@@ -254,6 +255,7 @@
     width: 90vw;
     height: auto;
     padding: 0 10px 50px;
+    max-width: 400px;
 }
 
 .calendarContainer {
@@ -265,7 +267,7 @@
     margin: 15px 0 35px;
     padding-bottom: 10px;
     max-width: 400px;
-    max-height: 750px;
+    max-height: 700px;
 }
 
 .calendarHeader {
