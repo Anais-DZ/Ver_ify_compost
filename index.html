@@ -70,31 +70,31 @@
         </a>
     </header>
     <main class="indexContainer">
-        <div class="carouselContainer"> <!-- élément contenant le carousel + titre + fleche -->
+        <article class="carouselContainer"> <!-- élément contenant le carousel + titre + fleche -->
             <h2>Composter, c'est aussi :</h2>
             <!-- Bouton gauche-->
-            <img class="carouselControl prev" src="./Icones/arrow-left.png" alt="fleche gauche">
+            
             <div class="carousel"> <!-- élément contenant que le carousel-->
+                <img class="carouselControl prev" src="./Icones/arrow-left.png" alt="fleche gauche">
                 <ul class="carouselInner"> <!-- élément contenant toutes les slides -->
-                    <li>
+                    <!--<li>
                         <picture>
                             <source srcset="./Images/cadre-feuilles.webp" type="image/webp" />
                             <source srcset="./Images/cadre-feuilles.png" type="image/png" />
                             <img src="./Images/cadre-feuilles.png" id="cadreFeuilles" alt="image cadre avec des feuilles">
                         </picture>
-                    </li>                 
+                    </li>-->                
                 <!-- Première slide -->
                     <li class="slide"><p>🌍</p>Éviter à 100 kg/an de biodéchets d’être transformés en gaz à effet de serre</li>
                     <li class="slide littleSlide"><p>🌱</p>Produire son propre compost, gratuit et sans odeur</li>
                     <li class="slide littleSlide"><p>🪶</p>Diminuer de plus d’1/3 le poids de sa poubelle</li>
                     <li class="slide" id="slideEconomy"><p>💰</p>Faire faire des économies à sa collectivité et, à terme, à soi-même</li>
                 </ul>
-            <!-- Bouton droite -->
-            <img class="carouselControl next" src="./Icones/arrow-right.png" alt="fleche droite">
-                </div>
+                <!-- Bouton droite -->
+                <img class="carouselControl next" src="./Icones/arrow-right.png" alt="fleche droite">
             </div>
-        </div>
-        <div class="rechercheDechets">
+        </article>
+        <article class="rechercheDechets">
             <h2>Prêt·e<br/>à composter ?</h2>
             <div class="separation"></div>
             <p>Saisissez le nom du déchet dans la barre de recherche, puis cliquez sur la loupe pour découvrir le composteur adapté instantanément.</p>
@@ -121,15 +121,16 @@
             </div>
             <ul id="suggestionsDechets"></ul>
             </form>
-        </div>
+        </article>
 
-        <picture>
+        <img id="verAnime" src="./Images/ver-anime.gif" alt="image d un ver qui se cache"/>
+        <!--<picture>
             <source srcset="./Images/compost.webp" type="image/webp" />
             <source srcset="./Images/compost.png" type="image/png" /> 
             <img id="imageCompost" src="./Images/compost.png.png" alt="dessin d'un compost">
-        </picture>
+        </picture>-->
 
-        <section id="calendarFonctionnality" class="calendarFonctionnality">
+        <article id="calendarFonctionnality" class="calendarFonctionnality">
             <h2 class="calendarTitle">Calendrier</h2>
             <div class="separation"></div>
             <div class="calendarContainer">
@@ -169,12 +170,12 @@
                 <textarea type="text" id="noteInput" placeholder="Écrire une note" maxlength="32" cols="1" rows="1"></textarea>
                 <button id="boutonAjoutNote">Ajouter</button>
             </div>      
-        </section>
-        <div class="downMenu">
+        </article>
+        <article class="downMenu">
             <a id="liens" href="liens.html" alt="redirection page liens"><img src="./Icones/liens.png" alt="image d'un livret redirigeant vers la page Liens">Liens | Ressources</a>
             <a id="guide" href="construction.html" alt="redirection page guide"><img src="./Icones/guide.png" alt="image d'un livre redirigeant vers la page Guide">Guide d'entretien</a>
             <!--<a id="calendrier" href="#" alt="redirection_page_calendrier"><img src="./Icones/calendrier.png">Calendrier | Mémo</a>-->
-        </div>
+        </article>
     </main>
     <footer>
         <a href="contact.html" alt="lien page contact" id="contactLien">Contact</a>

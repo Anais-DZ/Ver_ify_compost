@@ -7,9 +7,12 @@
 }
 
 .carouselContainer {
-    margin: 50px 0 20px;
+    margin: 70px 0 20px;
     max-width: 410px;
     overflow: hidden;
+    width: 95vw;
+    height: auto;
+    border-radius: 8px;
 }
 
 .carouselContainer h2 {
@@ -17,65 +20,52 @@
     font-size: 30px;
     color: #564E4E;
     text-align: center;
-    margin: 15px 0;
+    margin: 15px 0 5px;
 }
 
 .carouselInner {
-    display: flex;
-    justify-content: center;
-    height: 90%;
+    height: 150px;
+    width: auto;
     margin: 0;
-    padding: 0;
     list-style-type: none;
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    outline: 2px dashed #93d3536a;
+    outline-offset: -7px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carousel {
+    height: 200px;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .slide {
-    position: absolute;
-    width: 200px;
-    height: 90px;
+    width: 230px;
+    height: auto;
     font-family: "fredoka";
-    font-size: 22px;
+    font-size: 20px;
     text-align: center;
     color: #564E4E;
-    top: 317px;
+    padding: 0;
 }
 
 .slide p {
     font-size: 28px;
-    margin-bottom: 8px;
-}
-
-#slideEconomy {
-    width: 233px;
-    top: 317px;
-}
-
-.littleSlide {
-    top: 330px;
-}
-
-#cadreFeuilles {
-    position: relative;
-}
-
-#cadreFeuilles, .carouselInner img {
-    width: 290px;
-    height: 200px;
+    margin: 0 0 8px;
 }
 
 .carouselControl {
-    position: absolute;
-    top: 405px;
     cursor: pointer;
     width: 40px;
-}
-
-.carouselControl.prev { 
-    left: 8px; 
-}
-
-.carouselControl.next { 
-    right: 8px; 
 }
 
 .rechercheDechets {
@@ -235,10 +225,10 @@
     color: #4e3d28;
 }
 
-#imageCompost {
+/* #imageCompost {
     width: 230px;
     height: auto;
-}
+} */
 
 #calendarFonctionnality, .rechercheDechets {
     font-family: "fredoka";
@@ -528,3 +518,9 @@
     z-index: 2;
     top: -30px;
 } */
+
+#verAnime {
+    width: 80px;
+    height: auto;
+    margin: 20px 0 20px 30px;
+}
