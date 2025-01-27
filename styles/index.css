@@ -24,7 +24,7 @@
 }
 
 .carouselInner {
-    height: 180px;
+    height: 150px;
     width: auto;
     margin: 0;
     list-style-type: none;
@@ -40,7 +40,7 @@
 }
 
 .carousel {
-    height: 220px;
+    height: 190px;
     width: auto;
     display: flex;
     flex-direction: row;
@@ -57,8 +57,8 @@
 }
 
 .slide p {
-    font-size: 26px;
-    margin: 8px 0 0;
+    font-size: 22px;
+    margin: 0 0 0;
 }
 
 .carouselControl {
@@ -78,7 +78,7 @@
     width: 85vw;
     margin: 30px 0 0;
     max-width: 400px;
-    max-height: 420px;
+    max-height: 450px;
     outline: 0.5px solid #564e4e76;
     outline-offset: -6px;
     padding: 0 15px;
@@ -232,11 +232,6 @@
     color: #4e3d28;
 }
 
-/* #imageCompost {
-    width: 230px;
-    height: auto;
-} */
-
 #calendarFonctionnality, .rechercheDechets {
     font-family: "fredoka";
     display: flex;
@@ -251,10 +246,10 @@
 }
 
 #calendarFonctionnality {
-    margin: 0;
+    margin: 0 0 80px 0;
     width: 90vw;
     height: auto;
-    padding: 0 10px 50px;
+    padding: 0 10px 30px;
     max-width: 400px;
 }
 
@@ -372,7 +367,7 @@
     border-radius: 8px;
     padding: 10px 0;
     text-align: center;
-    margin: 20px 5px;
+    margin: 20px 5px 30px;
     width: 90%;
     height: auto;
     padding-bottom: 20px;
@@ -403,7 +398,7 @@
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    padding: 10px;
+    padding: 10px 5px;
     border-radius: 8px;
     font-family: "fredoka";
     width: 85%;
@@ -417,7 +412,7 @@
     font-size: 16px;
     border-radius: 5px;
     font-family: "fredoka";
-    margin-right: 10px;
+    margin-right: 5px;
 }
 
 #noteList li {

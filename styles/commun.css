@@ -31,12 +31,11 @@ header {
 }
 
 footer {
-    margin-top: 15px;
-    height: 80px;
+    height: 130px;
     width: 100vw;
     justify-content: flex-end;
     box-shadow: 0 0 30px 16px rgba(255, 255, 255, 0.4);
-    background: linear-gradient(180deg, rgba(255,255,255,1) 12%, rgba(227,242,223,1) 22%, rgba(139,201,124,1) 30%, rgba(28,150,0,1) 31%);
+    background: linear-gradient(180deg, rgba(220,255,197,1) 12%, rgba(227,242,223,1) 22%, rgba(139,201,124,1) 30%, rgba(28,150,0,1) 31%);
 }
 
 header h1 {
@@ -63,21 +62,12 @@ header img {
   z-index: 4;
 }
 
-/* #dessinHerbe {
-    width: 100vw;
-    height: 100px;
-    position: relative;
-    top: -142px;
-    left: 0px;
-    z-index: 2; 
-} */
-
 #dessinHerbeFooter {
     width: 100vw;
     height: 110px;
     position: relative;
     z-index: 2;
-    top: -5px;
+    top: -25px;
 }
 
 #entete {
@@ -87,11 +77,9 @@ header img {
     justify-content: center;
     align-items: center;
     padding: 5px 0 0;
-    /* background-color: #5bc501; */
     background: #ffffff;
     position: fixed;
-    z-index: 1000;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */   
+    z-index: 1000;  
 }
 
 #entete img {
@@ -363,7 +351,7 @@ header img {
         -0.5px -0.5px 1px #187b27,
         0.5px -0.5px 1px #187b27;
     position: relative;
-    top: 120px;
+    top: 115px;
     z-index: 4;
 }
 
