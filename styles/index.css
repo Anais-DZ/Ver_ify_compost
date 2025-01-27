@@ -61,6 +61,10 @@
     margin: 0 0 0;
 }
 
+.littleSlide {
+    padding: 0 10px;
+}
+
 .carouselControl {
     cursor: pointer;
     width: 40px;
