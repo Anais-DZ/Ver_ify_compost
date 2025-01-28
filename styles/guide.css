@@ -1,0 +1,51 @@
+  
+  details {
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  summary {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    background: #90ee8d;
+    font-family: 'fredoka';
+  }
+
+  /* summary:hover {
+    background-color: #eaeaea;
+  } */
+
+  details[open] summary {
+    background: #11a30c;
+  }
+
+  .conseils {
+    padding: 10px;
+    font-size: 18px;
+    color: #333;
+    margin: 10px 5px;
+  }
+
+  #vers {
+    margin-top: 20px;
+  }
+
+  #saison {
+    margin-bottom: 80px;
+  }
+
+  #verLecture {
+    width: 110px;
+    height: auto;
+    margin-left: 38%;
+    margin-top: 60px;
+  }
+
+  #titreEntretien {
+    font-family: "cabin sketch";
+    text-align: center;
+    margin-top: 0;
+  }

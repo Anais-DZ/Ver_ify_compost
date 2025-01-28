@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="./Images/logo-site.webp" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Un site dédié à vous aider à trier facilement et rapidement vos déchets compostables. Découvrez en quelques clics comment simplifier le compostage et adopter des gestes écologiques au quotidien.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400&family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <link href="./styles/commun.css" rel="stylesheet">
+    <link href="./styles/guide.css" rel="stylesheet">
+    <script src="./scripts/commun.js" defer></script>
+    <title>Page - Guide</title>
+</head>
+<body>
+    <nav id="entete">
+        <div class="leftMenu">
+            <a href="index.html" alt="accueil">Accueil</a>
+            <a href="#calendarFonctionnality" alt="calendrier memo">Calendrier</a>
+            <a href="construction.html" alt="guide entretien">Guide d'entretien</a>
+            <a href="liens.html" alt="liens ressources">Liens & Ressources</a>
+            <a href="construction.html" alt="mon compte">Mon compte</a>
+            <a href="contact.html" alt="contact"> Contact</a>
+            <a id="deconnexion" href="construction.html" alt="deconnexion"><img src="./Icones/off.png" alt="bouton deconnexion">Déconnexion</a>
+        </div>
+        <button type="button" aria-label="ouvre ferme menu gauche" class="menuToggler">
+            <span class="line line1"></span> <!--span dans un bouton, oui mais div dans un bouton, non-->
+            <span class="line line2"></span>
+            <span class="line line3"></span>
+        </button>
+        <a href="#calendarFonctionnality" alt="calendrier memo"><img id="calendar" src="./Icones/calendar.png" alt="Logo calendrier"></a>
+        <form method="post" action="monProgramme.php" autocomplete="on">
+            <fieldset class="rightMenu">
+                
+                <h2>Connexion</h2>
+                <div class="separation"></div>
+                <p id="constructionButton">(Le site étant actuellement en développement, il n'est pas encore possible de se connecter, s'inscrire ou envoyer un message).</p>
+                <div>
+                    <label for="name">Votre identifiant</label>
+                    <input type="text" name="identifiant" placeholder="Entrez votre identifiant" minlength="2" maxlength="25" id="name" required autocomplete="on">
+                    <div id="identifiantMenuError"></div>
+                </div>
+                <div>
+                    <label for="passwordMenu">Votre mot de passe</label>
+                    <input type="password" name="password" placeholder="Entrez votre mot de passe" minlength="2" maxlength="25" id="passwordMenu" autocomplete="on" required>
+                    <div id="passwordMenuError"></div>
+                </div>
+                <div class="checkboxContainer">
+                    <input type="checkbox" id="checkbox" checked />
+                    <label for="checkbox">Se souvenir de moi</label>
+                </div>
+                <button type="submit" id="submitButtonMenu" disabled>Se connecter</button>
+                <p>Nouvel·le arrivant·e ?
+                    Par <a href="inscription.html" alt="lien page inscription">ici !</a></p>
+                <a id="forgettenPassword" href="initialisation.html" alt="réinitialisation du mot de passe">Mot de passe oublié ?</a>
+            </fieldset>
+        </form>
+        <img id="userButton" src="./Icones/user.png" title="Connexion" alt="Logo utilisateur">
+    </nav>
+    <header>
+        <h1>Ver'ify Compost</h1>
+        <a href="index.html" alt="Retour à la page d'accueil" >
+            <picture>
+                <source srcset="./Images/logo-site.webp" type="image/webp" />
+                <source srcset="./Images/logo-site.png" type="image/png" /> 
+                <img src="./Images/logo-site.png" alt="logo du site permettant de retourner à l'accueil">
+            </picture>
+        </a>
+    </header>
+    <main class="guideEntretien">
+        <img id="verLecture" src="./Images/ver-guide.png" alt="ver tenant un livre">
+        <h2 id="titreEntretien">Conseils et entretien</h2>
+        <details id="vers">
+            <summary>Quels vers ? (en cours)</summary>
+            <p class="conseils">
+            Pour un lombricomposteur, le choix des vers est essentiel afin d'assurer une décomposition efficace des déchets organiques. Les vers les plus adaptés ne sont pas des vers de terre classiques, mais des espèces spécifiques qui se nourrissent en surface et se reproduisent rapidement.
+
+            Les vers Eisenia fetida, aussi appelés "vers rouges" ou "vers de fumier", sont les plus couramment utilisés. Ils sont résistants, s'adaptent bien aux variations de température et se nourrissent rapidement de déchets organiques. Les Eisenia andrei, proches des Eisenia fetida, sont également un excellent choix pour leur efficacité.
+            
+            Ces vers préfèrent un environnement humide et sombre, avec une température idéale entre 15 et 25°C. Évitez les vers de terre classiques du jardin, car ils ne conviennent pas à l’espace confiné et à l’humidité du lombricomposteur. Bien nourris et bien entretenus, ces vers transformeront vos déchets en un compost de grande qualité !
+            </p>
+        </details>
+        <details id="saison">
+            <summary>Les saisons (en cours)</summary>
+            <p class="conseils">
+            Le composteur est un outil écologique permettant de recycler les déchets organiques en un engrais naturel riche en nutriments. Tout au long de l'année, son fonctionnement est influencé par les saisons.
+
+            En printemps, l'activité microbienne s'intensifie grâce à l'humidité et la hausse des températures. C'est le moment idéal pour ajouter des restes de taille, herbes fraîches et épluchures. En été, la chaleur accélère la décomposition, mais il est essentiel d'arroser le compost pour éviter qu’il ne se dessèche.
+            
+            L’automne apporte une abondance de feuilles mortes, parfaites pour équilibrer le compost avec des matières sèches. Enfin, en hiver, le processus ralentit à cause du froid, mais il continue lentement. C’est une période propice pour maintenir l’équilibre entre déchets verts et bruns, en attendant le retour du printemps.
+            </p>
+        </details>
+    </main>
+    <footer>
+        <a href="contact.html" alt="lien page contact" id="contactLien">Contact</a>
+        <picture>
+            <source srcset="./Images/herbe.webp" type="image/webp" />
+            <source srcset="./Images/herbe.png" type="image/png" /> 
+            <img id="dessinHerbeFooter" src="./Images/herbe.png" alt="brin d'herbe dessiné">
+        </picture>
+        <p>Copyright© 2024 - 2025 | Design by <a class="attribution" href="https://www.freepik.com/" target="_blank" alt="lien page freepik">Freepik</a> & <a class="attribution" href="https://anais-diez.vercel.app/" target="_blank" alt="lien page perso">Anaïs DIEZ</a>
+        </p>
+    </footer>
+</body>
+</html>
