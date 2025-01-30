@@ -1,6 +1,4 @@
-  
   details {
-    margin-bottom: 10px;
     border: 1px solid #ddd;
     background: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -29,10 +27,6 @@
     margin: 10px 5px;
   }
 
-  #vers {
-    margin-top: 20px;
-  }
-
   #saison {
     margin-bottom: 80px;
   }
@@ -48,4 +42,8 @@
     font-family: "cabin sketch";
     text-align: center;
     margin-top: 0;
+  }
+
+  #aRenommer {
+    margin-bottom: 60px;
   }
