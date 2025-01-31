@@ -264,7 +264,7 @@ header img {
 }
 
 .rightMenu.active {
-    transform: translate(-180px);
+    transform: translate(-178px);
 }
 
 .rightMenu input {
