@@ -4,14 +4,33 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border: none;
     font-family: 'fredoka';
+    border-bottom-left-radius: 8px;
   }
 
   summary {
-    padding: 10px;
+    padding: 10px 10px 10px 25px;
     cursor: pointer;
     font-size: 20px;
-    border-bottom: 2px solid #90ee8d;
-    
+    border-bottom: 1px solid #90ee8d;
+    border-left: 1px solid #90ee8d;
+    border-bottom-left-radius: 8px;
+    position: relative;
+    list-style: none;
+    transition: background-color 0.4s ease-in-out;
+  }
+
+  summary::before {
+    content: ">";
+    position: absolute;
+    left: 8px;
+    font-size: 20px;
+    color: #333;
+    transition: transform 0.4s ease;
+  }
+
+  details[open] summary::before {
+    content: ">"; 
+    transform: rotate(90deg); /* le chevron se tourne vers le bas quand ouvert */
   }
 
   /* summary:hover {
@@ -21,6 +40,7 @@
   details[open] summary {
     background: #90ee8d;
     border: none;
+    transition: background-color 0.4s ease-in-out;
   }
 
   .conseils {

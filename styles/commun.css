@@ -248,7 +248,6 @@ header img {
     background: #fefffa;
     border: 14px solid #94d353;
     /* border-image: linear-gradient(to right bottom, #008742, #40a048, #6aba4e, #94d353, #c0ec59); */
-    border-right: none;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
     position: fixed;
@@ -265,7 +264,7 @@ header img {
 }
 
 .rightMenu.active {
-    transform: translate(-162px);
+    transform: translate(-180px);
 }
 
 .rightMenu input {
