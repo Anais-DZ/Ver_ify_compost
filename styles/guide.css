@@ -5,18 +5,23 @@
     border: none;
     font-family: 'fredoka';
     border-bottom-left-radius: 8px;
+    border-top-right-radius: 8px;
+    margin : 0 5px 5px 5px;
+    color: #564E4E;
   }
 
   summary {
-    padding: 10px 10px 10px 25px;
+    padding: 15px 20px 15px 25px;
     cursor: pointer;
-    font-size: 20px;
-    border-bottom: 1px solid #90ee8d;
-    border-left: 1px solid #90ee8d;
+    font-size: 18px;
+    color: #564E4E;
     border-bottom-left-radius: 8px;
     position: relative;
     list-style: none;
     transition: background-color 0.4s ease-in-out;
+    border: 4px solid #90ee8d58;
+    border-bottom-left-radius: 8px;
+    border-top-right-radius: 8px;
   }
 
   summary::before {
@@ -38,16 +43,15 @@
   } */
 
   details[open] summary {
-    background: #90ee8d;
+    background: #90ee8d58;
     border: none;
     transition: background-color 0.4s ease-in-out;
   }
 
   .conseils {
-    padding: 10px;
-    font-size: 18px;
+    font-size: 16px;
     color: #333;
-    margin: 10px 5px;
+    margin: 20px 15px;
     font-family: 'fredoka';
   }
 
@@ -56,7 +60,7 @@
   }
 
   #verLecture {
-    width: 110px;
+    width: 100px;
     height: auto;
     margin-left: 38%;
     margin-top: 60px;
@@ -65,18 +69,38 @@
   #titreEntretien {
     font-family: "cabin sketch";
     text-align: center;
-    margin-top: 0;
+    margin: 0 15px;
+    color: #564E4E;
   }
 
   #aRenommer {
-    margin-bottom: 60px;
+    margin-bottom: 80px;
   }
 
   h4 {
+    margin: 15px 10px 10px 15px;
+    font-weight: normal;
+    font-style: italic;
+  }
+
+  h3 {
     margin-left: 15px;
   }
 
   ul {
-    margin-right: 15px;
+    margin: 0 15px 0 0;
     padding-bottom: 20px;
+  }
+
+  li {
+    margin-bottom: 5px;
+  }
+
+  .paragraphePrincipal {
+    padding: 10px;
+    font-size: 18px;
+    color: #333;
+    margin: 10px 5px 25px;
+    font-family: 'fredoka';
+    text-align: center;
   }
