@@ -196,6 +196,7 @@ header img {
     text-align: center;
     padding-left: 0;
     border-radius: 8px;
+    opacity: 0.7;
 }
 
 #deconnexion img {
