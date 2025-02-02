@@ -22,6 +22,7 @@
     background: #fff;
     border: none;
     font-family: 'fredoka';
+    font-size: 18px;
     border-bottom-left-radius: 8px;
     border-top-right-radius: 8px;
     margin : 0 5px 5px 5px;
@@ -34,7 +35,8 @@
   summary {
     padding: 15px 20px 15px 25px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 20px;
+    font-weight: normal;
     color: #564E4E;
     border-bottom-left-radius: 8px;
     position: relative;
@@ -50,7 +52,7 @@
     position: absolute;
     left: 8px;
     font-size: 20px;
-    color: #333;
+    color: #564E4E;
     transition: transform 0.4s ease;
   }
 
@@ -67,11 +69,12 @@
     background: #90ee8d58;
     border: none;
     transition: background-color 0.4s ease-in-out;
+    font-weight: 500;
   }
 
   .conseils {
-    font-size: 16px;
-    color: #333;
+    font-size: 18px;
+    color: #564E4E;
     margin: 20px 15px;
     font-family: 'fredoka';
   }
@@ -81,7 +84,7 @@
   }
 
   #verLecture {
-    width: 90px;
+    width: 100px;
     height: auto;
     margin-top: 20px;
   }
@@ -90,7 +93,8 @@
     font-family: "cabin sketch";
     text-align: center;
     color: #564E4E;
-    margin: 15px 30px;
+    margin: 15px 20px;
+    font-size: 28px;
   }
 
   #aRenommer {
@@ -104,7 +108,9 @@
   }
 
   h3 {
-    margin-left: 15px;
+    margin: 15px;
+    font-size: 20px;
+    font-weight: 500;
   }
 
   ul {
@@ -118,7 +124,7 @@
 
   .paragraphePrincipal {
     font-size: 18px;
-    color: #333;
+    color: #564E4E;
     font-family: 'fredoka';
     text-align: center;
     margin: 10px 10px 0;
@@ -136,4 +142,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.saisons {
+  margin-top: 35px;
 }
