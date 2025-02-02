@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="./Images/logo-site.webp" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Un site dédié à vous aider à trier facilement et rapidement vos déchets compostables. Découvrez en quelques clics comment simplifier le compostage et adopter des gestes écologiques au quotidien.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400&family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <link href="./styles/compte.css" rel="stylesheet">
+    <link href="./styles/liens.css" rel="stylesheet">
+    <link href="./styles/commun.css" rel="stylesheet">
+    <script src="./scripts/commun.js" defer></script>
+    <title>Page - Accueil</title>
+</head>
+<body>
+    <nav id="entete">
+        <div class="leftMenu">
+            <a href="index.html" alt="accueil">Accueil</a>
+            <a href="#calendarFonctionnality" alt="calendrier memo">Calendrier</a>
+            <a href="guide.html" alt="guide entretien">Conseils et entretien</a>
+            <a href="liens.html" alt="liens ressources">Liens & Ressources</a>
+            <a href="compte.html" alt="mon compte">Mon compte</a>
+            <a href="contact.html" alt="contact"> Contact</a>
+            <a id="deconnexion" href="construction.html" alt="deconnexion"><img src="./Icones/off.png" alt="bouton deconnexion">Déconnexion</a>
+        </div>
+        <button type="button" aria-label="ouvre ferme menu gauche" class="menuToggler">
+            <span class="line line1"></span> <!--span dans un bouton, oui mais div dans un bouton, non-->
+            <span class="line line2"></span>
+            <span class="line line3"></span>
+        </button>
+        <a href="#calendarFonctionnality" alt="calendrier memo"><img id="calendar" src="./Icones/calendar.png" alt="Logo calendrier"></a>
+        <form method="post" action="monProgramme.php" autocomplete="on">
+            <fieldset class="rightMenu">
+                
+                <h2>Connexion</h2>
+                <div class="separation"></div>
+                <p id="constructionButton">(Le site étant actuellement en développement, il n'est pas encore possible de se connecter, s'inscrire ou envoyer un message).</p>
+                <div>
+                    <label for="name">Votre identifiant</label>
+                    <input type="text" name="identifiant" placeholder="Entrez votre identifiant" minlength="2" maxlength="25" id="name" required autocomplete="on">
+                    <div id="identifiantMenuError"></div>
+                </div>
+                <div>
+                    <label for="passwordMenu">Votre mot de passe</label>
+                    <input type="password" name="password" placeholder="Entrez votre mot de passe" minlength="2" maxlength="25" id="passwordMenu" autocomplete="on" required>
+                    <div id="passwordMenuError"></div>
+                </div>
+                <div class="checkboxContainer">
+                    <input type="checkbox" id="checkbox" checked />
+                    <label for="checkbox">Se souvenir de moi</label>
+                </div>
+                <button type="submit" id="submitButtonMenu" disabled>Se connecter</button>
+                <p>Nouvel·le arrivant·e ?
+                    Par <a href="inscription.html" alt="lien page inscription">ici !</a></p>
+                <a id="forgettenPassword" href="initialisation.html" alt="réinitialisation du mot de passe">Mot de passe oublié ?</a>
+            </fieldset>
+        </form>
+        <img id="userButton" src="./Icones/user.png" title="Connexion" alt="Logo utilisateur">
+    </nav>
+    <header>
+        <h1>Ver'ify Compost</h1>
+        <a href="index.html" alt="Retour à la page d'accueil" >
+            <picture>
+                <source srcset="./Images/logo-site.webp" type="image/webp" />
+                <source srcset="./Images/logo-site.png" type="image/png" /> 
+                <img src="./Images/logo-site.png" alt="logo du site permettant de retourner à l'accueil">
+            </picture>
+        </a>
+    </header>
+    <main>
+        <section class="links">
+            <article>
+            <div class="separationLinksMax"></div>
+            <div class="separationLinksMin"></div>
+            <h2>Mon compte</h2>
+            <div class="separationLinksMin"></div>
+            <div class="separationLinksMax"></div>  
+            </article>
+        </section>
+    </main>
+    <footer>
+        <a href="contact.html" alt="lien page contact" id="contactLien">Contact</a>
+        <picture>
+            <source srcset="./Images/herbe.webp" type="image/webp" />
+            <source srcset="./Images/herbe.png" type="image/png" /> 
+            <img id="dessinHerbeFooter" src="./Images/herbe.png" alt="brin d'herbe dessiné">
+        </picture>
+        <p>Copyright© 2024 - 2025 | Design by <a class="attribution" href="https://www.freepik.com/" target="_blank" alt="lien page freepik">Freepik</a> & <a class="attribution" href="https://anais-diez.vercel.app/" target="_blank" alt="lien page perso">Anaïs DIEZ</a>
+        </p>
+    </footer>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.3/dist/purify.min.js"></script>
+</body>
+</html>

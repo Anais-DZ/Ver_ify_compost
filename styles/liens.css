@@ -8,10 +8,9 @@
 .links h2 {
     font-family: "Cabin sketch";
     font-size: 30px;
-    font-weight:normal;
+    font-weight:bold;
     color: #564E4E;
     text-align: center;
-    padding: 15px 0;
     margin: 15px 0;
 }
 
@@ -29,9 +28,9 @@
 }
 
 .listSites {
-    font-family: "Cabin sketch";
-    font-size: 22px;
-    font-weight:normal;
+    font-family: "fredoka";
+    font-size: 20px !important ;
+    font-weight:bolder;
     color: #564E4E;
     margin: 45px 10px 45px 0;
     list-style-type: none;
@@ -71,13 +70,13 @@
     position: relative;
     background: url(../Images/carton-body.webp);
     text-align: center;
-    margin: 50px 0 20px;
+    margin: 30px 0 20px;
     height: auto;
-    max-width: 290px;
+    max-width: 380px;
     border-radius: 8px;
     padding: 25px 10px;
     border: none;
-    box-shadow: 0 0 5px 2px #564e4e76;
+    box-shadow: 0 4px 8px #564e4e2f;
     outline: 0.5px solid #564e4e76;
     outline-offset: -6px;
 }
@@ -91,12 +90,13 @@
 }
 
 article {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 90vw;
+    box-shadow: 0 4px 8px #564e4e2f;
+    width: 95vw;
+    max-width: 700px;
     height: auto;
     background-color: white;
     border-radius: 8px;
-    padding: 20px 0;
+    padding: 30px 0 20px 0;
 }
 
 ul {
