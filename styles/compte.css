@@ -6,14 +6,15 @@
 }
 
 #planeteTerreImage {
-    width: 90px;
+    width: 120px;
     height: auto;
     margin-top: 20px;
 }
 
 #poubelleIcone {
-    width: 30px;
+    width: 40px;
     height: auto;
+    margin-right: 5px;
 }
 
 #supprimerCompte {
@@ -24,7 +25,7 @@
     margin: 30px 0 20px;
     padding: 15px 30px;
     font-family: 'fredoka';
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 600;
     border-radius: 8px;
     color: #564E4E;
@@ -34,7 +35,7 @@
 
 #titreInformations {
     font-family: 'fredoka';
-    font-size: 22px;
+    font-size: 24px;
     margin: 0 0 5px;
 }
 
@@ -47,21 +48,23 @@
 }
 
 .informations {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
-    margin: 15px 0 5px;
+    margin: 25px 0 10px;
 }
 
 .modification {
     list-style-type: none;
     font-style: oblique;
-    font-size: 14px;
+    font-size: 16px;
     cursor: pointer;
     text-decoration: underline;
+    margin-top: 5px;
 }
 
 .utilisateur {
     list-style-type: disc;
+    font-size: 18px;
 }
 
 .phrasePrototype {
@@ -70,5 +73,5 @@
     font-style: oblique;
     color: rgb(216, 0, 0);
     text-align: center;
-    margin: 0;
+    margin: 0 35px;
 }
