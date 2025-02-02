@@ -5,7 +5,7 @@
   }
 
   .separationLinksMin, .separationLinksMax {
-    width: 90%;
+    width: 95%;
     height: 1px;
     background-color: #564E4E;
     margin-left: auto;
@@ -93,7 +93,7 @@
     font-family: "cabin sketch";
     text-align: center;
     color: #564E4E;
-    margin: 15px 20px;
+    margin: 15px 10px;
     font-size: 28px;
   }
 
