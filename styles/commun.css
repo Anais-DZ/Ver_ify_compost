@@ -50,7 +50,7 @@ header h1 {
         -0.5px 0.5px 3px #024821,
         -0.5px -0.5px 3px #024821,
         0.5px -0.5px 3px #024821;
-        z-index: 4;
+    z-index: 1;
     background-color: rgba(190, 255, 137, 0.062);
     backdrop-filter: blur(3px);
 }
@@ -61,7 +61,7 @@ header img {
   position: relative;
   top: -50px;
   left: 0;
-  z-index: 4;
+  z-index: 10;
 }
 
 #dessinHerbeFooter {

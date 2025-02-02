@@ -71,13 +71,38 @@
     </header>
     <main>
         <section class="links">
-            <article>
-            <div class="separationLinksMax"></div>
-            <div class="separationLinksMin"></div>
-            <h2>Mon compte</h2>
-            <div class="separationLinksMin"></div>
-            <div class="separationLinksMax"></div>  
-            </article>
+            <article class="monCompte">
+                <div class="separationLinksMax"></div>
+                <div class="separationLinksMin"></div>
+                <h2>Mon compte</h2>
+                <div class="separationLinksMin"></div>
+                <div class="separationLinksMax"></div>
+                <picture>
+                    <source srcset="./Images/planete_profil.webp" type="image/webp" />
+                    <source srcset="./Images/planete_profil.png" type="image/png" /> 
+                    <img id="planeteTerreImage" src="./Images/planete_profil.png" alt="image de la terre">
+                </picture>
+                <h3 id="titreInformations">Mes informations</h3>
+                <p class="phrasePrototype">(Ceci n'est que le prototype de la page "Mon compte" qui n'est pas encore active.)</p>
+                <ul class="listeInformations">
+                    <li class="informations">Mon identifiant</li>
+                        <ul>
+                            <li class="utilisateur">Jeanne Doe</li>
+                            <li class="modification">(modifier mon identifiant)</li>
+                        </ul>
+                    <li class="informations">Mon adresse mail</li>
+                    <ul>
+                        <li class="utilisateur">jeanne.doe@gmail.com</li>
+                        <li class="modification">(modifier mon adresse mail)</li>
+                    </ul>
+                    <li class="informations">Mon mot de passe</li>
+                    <ul>
+                        <li class="utilisateur">*************</li>
+                        <li class="modification">(modifier mon mot de passe)</li>
+                    </ul>  
+                </ul>
+                <button id="supprimerCompte"><img id="poubelleIcone" src="./Icones/supprimer.png" alt="icone poubelle">Supprimer mon compte</button> 
+            </article>  
         </section>
     </main>
     <footer>

@@ -1,0 +1,74 @@
+.monCompte {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #564E4E;
+}
+
+#planeteTerreImage {
+    width: 90px;
+    height: auto;
+    margin-top: 20px;
+}
+
+#poubelleIcone {
+    width: 30px;
+    height: auto;
+}
+
+#supprimerCompte {
+    background: url(../Images/carton-body.webp);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 30px 0 20px;
+    padding: 15px 30px;
+    font-family: 'fredoka';
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 8px;
+    color: #564E4E;
+    border: 0.5px solid #564e4e38;
+    box-shadow: 0 2px 4px #564e4e76;
+}
+
+#titreInformations {
+    font-family: 'fredoka';
+    font-size: 22px;
+    margin: 0 0 5px;
+}
+
+.listeInformations {
+    font-family: 'fredoka';
+    margin-left: 20px;
+    padding: 0 !important;
+    list-style-type: none;
+    align-self: flex-start;
+}
+
+.informations {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 15px 0 5px;
+}
+
+.modification {
+    list-style-type: none;
+    font-style: oblique;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.utilisateur {
+    list-style-type: disc;
+}
+
+.phrasePrototype {
+    font-size: 16px;
+    font-family: 'fredoka';
+    font-style: oblique;
+    color: rgb(216, 0, 0);
+    text-align: center;
+    margin: 0;
+}
