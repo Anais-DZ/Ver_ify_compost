@@ -43,7 +43,7 @@ header h1 {
     font-family: "fredoka";
     font-size: 47px;
     margin: 15px 0 0;
-    padding: 10px 10px 50px;
+    padding: 10px 8px 50px;
     text-align: center;
     text-shadow:
         0.5px 0.5px 3px #024821,
@@ -51,6 +51,8 @@ header h1 {
         -0.5px -0.5px 3px #024821,
         0.5px -0.5px 3px #024821;
         z-index: 4;
+    background-color: rgba(91, 189, 11, 0.144);
+    backdrop-filter: blur(3px);
 }
 
 header img {
