@@ -10,6 +10,8 @@ Ce projet est une opportunité idéale pour concilier mes préoccupations enviro
 
 Le site est maintenant accessible en ligne (en mobile first pour le moment), [Ver'ify Compost](https://ver-ify-compost.vercel.app/) , en étant toujours en cours de développement. Il me sert principalement à avoir une vision concrète de l'avancement et des fonctionnalités à venir. Certaines pages peuvent être incomplètes ou en travaux. Merci pour votre compréhension et n'hésitez pas à revenir régulièrement pour suivre les avancés ! :blush:
 
+<br/>Update ! 07 février 2025 --> Le responsive pour les écrans 760px minimum est là ! 😄 La page de connexion n'est pas encore active.
+
 <br/>Update ! 02 février 2025 --> La page "Mon compte" est accessible mais seulement en prototype en attendant le back-end. Le menu de gauche apparaît maintenant sur les écrans de plus de 1000px.
 
 <br/>Update ! 31 janvier 2025 --> Une page de plus ! Il est possible dorénavant d'aller sur la page "Conseils et entretien" et de cliquer sur n'importe quel conseil pour voir apparaître du texte sur la même page grâce à la balise <détails>.
