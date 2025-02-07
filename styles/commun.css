@@ -51,17 +51,21 @@ header h1 {
         -0.5px -0.5px 3px #024821,
         0.5px -0.5px 3px #024821;
     z-index: 1;
-    background-color: rgba(190, 255, 137, 0.062);
-    backdrop-filter: blur(3px);
 }
 
-header img {
+#retourAccueil {
   width: 95px;
   height: auto;
   position: relative;
   top: -50px;
   left: 0;
   z-index: 10;
+}
+
+#logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center
 }
 
 #dessinHerbeFooter {
@@ -141,6 +145,10 @@ header img {
     margin-bottom: 3px !important;
     width: 48px !important;
     height: 48px !important;
+}
+
+.leftMenuDesktop {
+    display: none;
 }
 
 .leftMenu {
@@ -395,35 +403,38 @@ footer p {
         margin-top: 0px;
     }
 
-    header img {
+    #retourAccueil {
         top: -57px;
         left: 0;
         z-index: 2;
     }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 760px) {
+
     header {
-        height: 200px;
-        margin-top: 0;
+        height: 170px;
+        margin: 0;
         outline-offset: -8px;
+        width: 100%;
     }
 
     header h1 {
-        font-size: 68px;
+        font-size: 62px;
         backdrop-filter: none;
         background: none;
-        padding: 0;
-        margin-top: 80px;
+        padding: 35px 0 0;
+        margin: 0;
     }
 
-    header img {
-        width: 125px;
-        top : 20px;
-        left : 450px;  
+    #retourAccueil {
+        width: 110px;
+        position: relative;
+        top: -5px;
+        left: 5px;
     }
 
-    header a {
+    .lienMenuDesktop {
         margin-top: -20px;
         z-index: 20;
     }
@@ -437,18 +448,25 @@ footer p {
         flex-direction: row;
         align-items: center;
         justify-content: space-evenly;
-        align-items: center;
     }
 
-    .leftMenuDesktop a { 
+    .lienMenuDesktop { 
         font-family: "fredoka";
         font-size: 22px;
         color: #564E4E;
         text-decoration: none;
         background: #fefffa;
         padding: 0;
-        text-align: center;
-        margin: 25px 0;
+        margin: 20px 10px;
+        align-items: center;
+    }
+
+    .lienMenuDesktop:hover {
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        text-decoration-thickness: 1.2px;
+        transform: scale(1.1);
+        font-weight: 500;
     }
 
     #deconnexionDesktop {
@@ -470,5 +488,14 @@ footer p {
     header {
         justify-content: center;
         align-items: stretch;
+    }
+
+    #dessinHerbeFooter {
+        width: 50vw;
+        height: 100px;
+    }
+
+    footer {
+        width: 100%;
     }
 }

@@ -19,7 +19,7 @@
         <div class="leftMenu">
             <a href="index.html" alt="accueil">Accueil</a>
             <a href="#calendarFonctionnality" alt="calendrier memo">Calendrier</a>
-            <a href="guide.html" alt="guide entretien">Conseils et entretien</a>
+            <a href="guide.html" alt="guide entretien">Conseils & entretien</a>
             <a href="liens.html" alt="liens ressources">Liens & Ressources</a>
             <a href="compte.html" alt="mon compte">Mon compte</a>
             <a href="contact.html" alt="contact"> Contact</a>
@@ -60,29 +60,30 @@
         <img id="userButton" src="./Icones/user.png" title="Connexion" alt="Logo utilisateur">
     </nav>
     <header>
-        <h1>Ver'ify Compost</h1>
-        <a href="index.html" alt="Retour à la page d'accueil" >
-            <picture>
-                <source srcset="./Images/logo-site.webp" type="image/webp" />
-                <source srcset="./Images/logo-site.png" type="image/png" /> 
-                <img src="./Images/logo-site.png" alt="logo du site permettant de retourner à l'accueil">
-            </picture>
-        </a>
-        <div class="leftMenuDesktop">
-            <a href="index.html" alt="accueil">Accueil</a>
-            <a href="#calendarFonctionnality" alt="calendrier memo">Calendrier</a>
-            <a href="guide.html" alt="guide entretien">Conseils et entretien</a>
-            <a href="liens.html" alt="liens ressources">Liens & Ressources</a>
-            <a href="compte.html" alt="mon compte">Mon compte</a>
-            <a href="contact.html" alt="contact"> Contact</a>
-            <a id="deconnexionDesktop" href="construction.html" alt="deconnexion"><img src="./Icones/off.png" alt="bouton deconnexion">Connexion</a>
+        <div id="logo">
+            <h1>Ver'ify Compost</h1>
+            <a href="index.html" alt="Retour à la page d'accueil" >
+                <picture>
+                    <source srcset="./Images/logo-site.webp" type="image/webp" />
+                    <source srcset="./Images/logo-site.png" type="image/png" /> 
+                    <img  id="retourAccueil" src="./Images/logo-site.png" alt="logo du site permettant de retourner à l'accueil">
+                </picture>
+            </a>
         </div>
     </header>
+    <div class="leftMenuDesktop">
+        <a class="lienMenuDesktop" href="index.html" alt="accueil">Accueil</a>
+        <a class="lienMenuDesktop" href="#calendarFonctionnality" alt="calendrier memo">Calendrier</a>
+        <a class="lienMenuDesktop" href="guide.html" alt="guide entretien">Conseils & entretien</a>
+        <a class="lienMenuDesktop" href="liens.html" alt="liens ressources">Liens & Ressources</a>
+        <a class="lienMenuDesktop" href="compte.html" alt="mon compte">Mon compte</a>
+        <a class="lienMenuDesktop" href="contact.html" alt="contact"> Contact</a>
+        <a class="lienMenuDesktop" id="deconnexionDesktop" href="construction.html" alt="deconnexion"><img src="./Icones/off.png" alt="bouton deconnexion">Connexion</a>
+    </div>
     <main class="indexContainer">
         <article class="carouselContainer"> <!-- élément contenant le carousel + titre + fleche -->
             <h2>Composter, c'est aussi :</h2>
             <!-- Bouton gauche-->
-            
             <div class="carousel"> <!-- élément contenant que le carousel-->
                 <img class="carouselControl prev" src="./Icones/arrow-left.png" alt="fleche gauche">
                 <ul class="carouselInner"> <!-- élément contenant toutes les slides -->
@@ -103,78 +104,80 @@
                 <img class="carouselControl next" src="./Icones/arrow-right.png" alt="fleche droite">
             </div>
         </article>
-        <article class="rechercheDechets">
-            <h2>Prêt·e<br/>à composter ?</h2>
-            <div class="separation"></div>
-            <p>Saisissez le nom du déchet dans la barre de recherche, puis cliquez sur la loupe pour découvrir le composteur adapté instantanément.</p>
-            <div class="separation"></div>
+        <section id="fonctionsPremieres">
+            <article class="rechercheDechets">
+                <h2>Prêt·e<br/>à composter ?</h2>
+                <div class="separation"></div>
+                <p>Saisissez le nom du déchet dans la barre de recherche, puis cliquez sur la loupe pour découvrir le composteur adapté instantanément.</p>
+                <div class="separation"></div>
 
-            <form class="searchBar">
-                <textarea id="biodechet" name="biodéchet" placeholder="Le nom du déchet, c'est ici !"
-                    maxlength="20" cols="1" rows="1" required></textarea>
-            <button id="boutonVerifier">
-                    <picture>
-                        <source srcset="./Images/loupe.webp" type="image/webp" />
-                        <source srcset="./Images/loupe.png" type="image/png" /> 
-                        <img src="./Images/loupe.png" alt="icone loupe pour valider la recherche"/>
-                    </picture>
-            </button>
-            <div id="resultatOverlay" class="overlay">
-                <div class="overlayContent">
-                    <button id="closeOverlay" class="boutonCloseOverlay">&times;</button>
-                    <h1 id="overlayTitle"></h1>
-                    <p id="overlayDescription"></p>
-                    <p id="overlayReponse"></p>
-                    <img id="overlayImage" src="" alt="image d'un composteur differente selon la reponse" />   
+                <form class="searchBar">
+                    <textarea id="biodechet" name="biodéchet" placeholder="Le nom du déchet, c'est ici !"
+                        maxlength="20" cols="1" rows="1" required></textarea>
+                <button id="boutonVerifier">
+                        <picture>
+                            <source srcset="./Images/loupe.webp" type="image/webp" />
+                            <source srcset="./Images/loupe.png" type="image/png" /> 
+                            <img src="./Images/loupe.png" alt="icone loupe pour valider la recherche"/>
+                        </picture>
+                </button>
+                <div id="resultatOverlay" class="overlay">
+                    <div class="overlayContent">
+                        <button id="closeOverlay" class="boutonCloseOverlay">&times;</button>
+                        <h1 id="overlayTitle"></h1>
+                        <p id="overlayDescription"></p>
+                        <p id="overlayReponse"></p>
+                        <img id="overlayImage" src="" alt="image d'un composteur differente selon la reponse" />   
+                    </div>
                 </div>
-            </div>
-            <ul id="suggestionsDechets"></ul>
-            </form>
-        </article>
+                <ul id="suggestionsDechets"></ul>
+                </form>
+            </article>
 
-        <img id="verAnime" src="./Images/ver-anime.gif" alt="image d un ver qui se cache"/>
+            <img id="verAnime" src="./Images/ver-anime.gif" alt="image d un ver qui se cache"/>
 
-        <article id="calendarFonctionnality" class="calendarFonctionnality">
-            <h2 class="calendarTitle">Calendrier</h2>
-            <div class="separation"></div>
-            <div class="calendarContainer">
-                <div class="calendarHeader">
-                <button id="calendarButtonPrev">❮</button>
-                <h3 id="moisAnnee"></h3>
-                <button id="calendarButtonNext">❯</button>
+            <article id="calendarFonctionnality" class="calendarFonctionnality">
+                <h2 class="calendarTitle">Calendrier</h2>
+                <div class="separation"></div>
+                <div class="calendarContainer">
+                    <div class="calendarHeader">
+                    <button id="calendarButtonPrev">❮</button>
+                    <h3 id="moisAnnee"></h3>
+                    <button id="calendarButtonNext">❯</button>
+                    </div>
+                    <table class="calendar">
+                    <thead>
+                        <tr class = weekContainer>
+                        <th>Lun</th>
+                        <th>Mar</th>
+                        <th>Mer</th>
+                        <th>Jeu</th>
+                        <th>Ven</th>
+                        <th>Sam</th>
+                        <th>Dim</th>
+                        </tr>
+                    </thead>
+                    <tbody id="calendarDaysContainer">
+                        <!-- Les jours créés en JS -->
+                    </tbody>
+                    </table>
                 </div>
-                <table class="calendar">
-                <thead>
-                    <tr class = weekContainer>
-                    <th>Lun</th>
-                    <th>Mar</th>
-                    <th>Mer</th>
-                    <th>Jeu</th>
-                    <th>Ven</th>
-                    <th>Sam</th>
-                    <th>Dim</th>
-                    </tr>
-                </thead>
-                <tbody id="calendarDaysContainer">
-                    <!-- Les jours créés en JS -->
-                </tbody>
-                </table>
-            </div>
-            <div class="separation"></div>
-            <div id="memoContainer">
-                <h2>Mémo<img src="./Icones/crayon.png" alt="icone d'un crayon"></h2>   
-                <ul id="noteList">
-                    <li class="noteItem">
-                        <!-- <span class="item"></span>
-                        <button class="supprimer"></button>  -->
-                    </li>
-                </ul>
-            </div>
-            <div id="ajoutNote">
-                <textarea type="text" id="noteInput" placeholder="Écrire une note" maxlength="32" cols="1" rows="1"></textarea>
-                <button id="boutonAjoutNote">Ajouter</button>
-            </div>      
-        </article>
+                <div class="separation"></div>
+                <div id="memoContainer">
+                    <h2>Mémo<img src="./Icones/crayon.png" alt="icone d'un crayon"></h2>   
+                    <ul id="noteList">
+                        <li class="noteItem">
+                            <!-- <span class="item"></span>
+                            <button class="supprimer"></button>  -->
+                        </li>
+                    </ul>
+                </div>
+                <div id="ajoutNote">
+                    <textarea type="text" id="noteInput" placeholder="Écrire une note" maxlength="32" cols="1" rows="1"></textarea>
+                    <button id="boutonAjoutNote">Ajouter</button>
+                </div>      
+            </article>
+        </section>
     </main>
     <footer>
         <a href="contact.html" alt="lien page contact" id="contactLien">Contact</a>

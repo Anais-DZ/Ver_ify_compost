@@ -78,10 +78,16 @@
     margin-left: 10px;
 }
 
+#fonctionsPremieres {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .rechercheDechets {
-    width: 85vw;
+    width: 320px;
     margin: 30px 0 0;
-    max-height: 450px;
+    max-height: auto;
     outline: 0.5px solid #564e4e76;
     outline-offset: -6px;
     padding: 0 15px;
@@ -264,8 +270,8 @@
     overflow: hidden;
     margin: 15px 0 35px;
     padding-bottom: 10px;
-    max-width: 400px;
-    max-height: 700px;
+    max-width: 380px;
+    max-height: 550px;
 }
 
 .calendarHeader {
@@ -533,6 +539,25 @@
 
 @media (min-width: 1000px) {
     .rechercheDechets {
-        width: 330px;
+        width: 360px;
+        margin-right: 50px;
+        align-self: self-start;
+    }
+
+    #fonctionsPremieres {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #verAnime {
+        display: none;
+    }
+
+    #calendarFonctionnality, .rechercheDechets {
+        margin-top: 80px;
+    }
+
+    #calendarFonctionnality {
+        margin-left: 50px;
     }
 }
