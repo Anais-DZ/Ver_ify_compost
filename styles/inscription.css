@@ -25,7 +25,7 @@
     position: absolute;
 }
 
-#submitButtonInscription {
+#submitButtonInscription, #submitButtonConnexionDesktop {
     background-color: #564E4E;
     color: white;
     border: none;
@@ -40,7 +40,7 @@
 }
 
 
-#submitButtonInscription:disabled {
+#submitButtonInscription:disabled, #submitButtonConnexionDesktop:disabled {
     background-color: rgba(255, 0, 0, 0.162);
     cursor: not-allowed;
 }
@@ -60,5 +60,44 @@
     opacity: 60%;
     display: inline-block; /* Aligne correctement l'image à l'intérieur du bouton */
     vertical-align: middle;
+}
+
+@media (min-width: 760px) {
+    .formulaireDesktop {
+        display: flex;
+        flex-direction: row;
+        box-shadow: 0 4px 8px #564e4e2f;
+        width: 60vw;
+        height: auto;
+        background-color: rgba(255, 255, 255, 0.6);
+        border-radius: 8px;
+        padding: 30px 20px 20px;
+        margin: 50px 0;
+        backdrop-filter: blur(10px);
+        outline: 0.5px solid #564e4e76;
+        outline-offset: -6px;
+    }
+
+    #forgettenPasswordConnexionDesktop {
+        margin: 0 0 20px !important;
+    }
+
+    #inscription-form, #formConnexionDesktop {
+        margin: 0;
+    }
+
+    h3 {
+        font-family: 'Fredoka';
+        font-size: 22px;
+        font-weight: 500;
+        color: #564E4E;
+        padding: 0 0 120px;
+        z-index: 200;
+    }
+
+    .inscription img {
+        width: 180px;
+        height: auto;
+    }
 }
 

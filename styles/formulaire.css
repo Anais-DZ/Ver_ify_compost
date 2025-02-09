@@ -35,11 +35,11 @@
 }
 
 .inscription fieldset, .initialisation fieldset {
-    max-width: 350px;
+    max-width: 280px;
 }
 
 .contact fieldset {
-    max-width: 600px;
+    max-width: 400px;
 }
 
 .inscription h2, .contact h2, .initialisation h2 {
@@ -93,7 +93,7 @@
     margin-top: 5px;
 }
 
-#checkboxInitialisation, #checkboxInscription {
+#checkboxInitialisation, #checkboxInscription, #checkboxConnexionDesktop {
     width: auto;
     margin-right: 10px; /*changer la couleur avec javascript ???*/
 }
