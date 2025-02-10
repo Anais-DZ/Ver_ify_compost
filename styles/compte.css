@@ -31,6 +31,7 @@
     color: #564E4E;
     border: 0.5px solid #564e4e38;
     box-shadow: 0 2px 4px #564e4e76;
+    cursor: pointer;
 }
 
 #titreInformations {
