@@ -100,9 +100,19 @@ h3 {
         z-index: 200;
     }
 
-    section p {
-        font-size: 22px !important;
-        font-family: 'fredoka' !important;
+    #coordination {
+        position: relative;
+        font-size: 26px;
+        font-family: 'fredoka';
+        font-weight: 600;
+        margin-top: auto;
+        margin-bottom: auto;
+        border: 5px solid #c0ec59;
+        border-radius: 50%;
+        padding: 20px;
+        box-shadow: 0 4px 8px #564e4e2f;
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .inscription img {
