@@ -384,15 +384,14 @@
 
 .containerTaches {
     background: white;
-    padding: 0 20px;
+    padding: 0 20px 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 80%;
+    width: 78%;
     max-width: 500px;
-    max-height: 100vh; /* Limite la hauteur */
-    overflow-y: auto; /* Ajoute un scroll si le contenu dépasse */
+    height: 700px; /* Limite la hauteur */
     position: relative;
-    margin-top: 70px;
+    margin-top: 40px;
 }
 
 .closeBtn {
@@ -410,13 +409,13 @@
 
 #tacheDate {
     font-size: 26px;
-    margin: 65px 0 10px;
+    margin: 45px 0 10px;
     font-family: 'cabin sketch';
     text-align: center;
 }
 
 .listeDeTache {
-    overflow-y: auto; /* Active le scroll vertical */
+    
     padding: 0;
     margin: 0;
 }
@@ -437,9 +436,11 @@ input[type="checkbox"] {
 }
 
 #chatLogan {
-    width: 150px;
+    width: 140px;
     height: auto;
-    margin-left: 185px;
+    position: absolute;
+    right: -13px;
+    bottom: -30px;
 }
 
 
