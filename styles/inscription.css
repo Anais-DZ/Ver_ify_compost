@@ -100,6 +100,11 @@ h3 {
         z-index: 200;
     }
 
+    section p {
+        font-size: 22px !important;
+        font-family: 'fredoka' !important;
+    }
+
     .inscription img {
         width: 180px;
         height: auto;
