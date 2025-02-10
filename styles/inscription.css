@@ -127,6 +127,6 @@ h3 {
     .formulaireDesktop {
         display: flex;
         flex-direction: row;
-        align-items: flex-start;
+        align-items: flex-start; 
     }
 }

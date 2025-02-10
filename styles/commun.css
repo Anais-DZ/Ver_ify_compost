@@ -435,10 +435,6 @@ footer p {
         left: 5px;
     }
 
-    .lienMenuDesktop {
-        margin-top: -20px;
-        z-index: 20;
-    }
 
     #entete {
         display: none;
