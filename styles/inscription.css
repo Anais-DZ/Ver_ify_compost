@@ -66,12 +66,14 @@ h3 {
     display: none;
 }
 
+
 @media (min-width: 760px) {
     .formulaireDesktop {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        align-items: center;
         box-shadow: 0 4px 8px #564e4e2f;
-        width: 60vw;
+        width: 80vw;
         height: auto;
         background-color: rgba(255, 255, 255, 0.6);
         border-radius: 8px;
@@ -121,3 +123,10 @@ h3 {
     }
 }
 
+@media (min-width: 1000px) {
+    .formulaireDesktop {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start; 
+    }
+}

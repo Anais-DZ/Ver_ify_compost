@@ -504,14 +504,14 @@ function creerCalendrier(month, year) {
                 cellule.innerText = date;
 
                 // Vérifier les notes et ajouter une icône
-                const noteExistante = localStorage.getItem(dateDuJour);
-                if (noteExistante) {
-                    const marquage = document.createElement('span');
-                    marquage.innerText = '📌';
-                    marquage.classList.add('noteIcone');
-                    cellule.appendChild(marquage);
+                // const noteExistante = localStorage.getItem(dateDuJour);
+                // if (noteExistante) {
+                //     const marquage = document.createElement('span');
+                //     marquage.innerText = '📌';
+                //     marquage.classList.add('noteIcone');
+                //     cellule.appendChild(marquage);
                     
-                }
+                // }
 
                 // Mettre en surbrillance le jour actuel
                 if (
@@ -523,7 +523,7 @@ function creerCalendrier(month, year) {
                 }
 
                 // Ajouter un événement de clic pour les notes
-                cellule.addEventListener('click', () => ajoutNote(dateDuJour, cellule));
+                // cellule.addEventListener('click', () => ajoutNote(dateDuJour, cellule));
 
                 date++;
             }
@@ -533,26 +533,51 @@ function creerCalendrier(month, year) {
     }
 }
 
-// Fonction pour ajouter et enregistrer une note
-function ajoutNote(date, cellule) {
-    // les notes sont récupérées du localstorage
-    const note = prompt(`Vous pouvez noter ce que vous avez fait ou aller faire pour entretenir votre composteur (ex : récupérer le compost, ajouter des déchets humide, etc...), ce jour-là, le ${date}:`, localStorage.getItem(date) || '');
-    if (note) {
-        // la note sera stockée dans le local storage
-        localStorage.setItem(date, note);
+document.addEventListener("DOMContentLoaded", function () { //! à commenter si tu veux remettre la boite de dialogue
+    const overlayTache = document.getElementById("overlayListeTaches");
+    const tacheDate = document.getElementById("tacheDate");
+    const closeOverlayBtn = document.getElementById("closeOverlayBtn");
 
-        // Si une note est entrée, un marquage est créé
-        if (!cellule.querySelector('.noteIcone')) {
-            const marquage = document.createElement('span');
-            marquage.innerText = '📌';
-            marquage.classList.add('noteIcone');
-            cellule.appendChild(marquage);
-        }
-    } else {
-        // si pas de note, le marquage est supprimé du local storage
-        localStorage.removeItem(date);
+    function openOverlay(date) {
+        tacheDate.innerText = `Tâches pour le ${date}`;
+        overlayTache.style.display = "flex";
     }
-}
+
+    function closeOverlay() {
+        overlayTache.style.display = "none";
+    }
+
+    closeOverlayBtn.addEventListener("click", closeOverlay);
+
+    // Exemple d'intégration avec le calendrier
+    document.querySelectorAll(".calendar td").forEach(cell => {
+        cell.addEventListener("click", function () {
+            const dateSelectionnee = this.innerText + "/" + "0"+(new Date().getMonth() + 1) + "/" + new Date().getFullYear();
+            openOverlay(dateSelectionnee);
+        });
+    });
+});
+
+// // Fonction pour ajouter et enregistrer une note
+// function ajoutNote(date, cellule) { //! à décommenter si tu veux remettre la boite de dialogue
+//     // les notes sont récupérées du localstorage
+//     const note = prompt(`Vous pouvez noter ce que vous avez fait ou aller faire pour entretenir votre composteur (ex : récupérer le compost, ajouter des déchets humide, etc...), ce jour-là, le ${date}:`, localStorage.getItem(date) || '');
+//     if (note) {
+//         // la note sera stockée dans le local storage
+//         localStorage.setItem(date, note);
+
+//         // Si une note est entrée, un marquage est créé
+//         if (!cellule.querySelector('.noteIcone')) {
+//             const marquage = document.createElement('span');
+//             marquage.innerText = '📌';
+//             marquage.classList.add('noteIcone');
+//             cellule.appendChild(marquage);
+//         }
+//     } else {
+//         // si pas de note, le marquage est supprimé du local storage
+//         localStorage.removeItem(date);
+//     }
+// }
 
 // Navigation entre les mois
 buttonPrev.addEventListener('click', () => {
