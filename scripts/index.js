@@ -39,43 +39,46 @@ document.addEventListener("DOMContentLoaded", function () {
 
                             // Fonctions recherche des déchets
 
-// En attendant le cours sur la Base De Données, tableau en JavaScript des déchets compostables et où ils se jettent : 
-const compostables = [
-    { name: "Coquilles d'oeuf", types: ["composteur", "lombricomposteur"] },
-    { name: "Boîte d'oeufs sans encre", types: ["composteur", "lombricomposteur"] },
+// En attendant le cours sur la Base De Données, tableau en JavaScript des déchets et où ils se jettent : 
+
+//la variable tabDechet stocke un tableau d'objets
+const tabDechet = [
+    { name: "Coquilles d'oeuf", types: ["composteur et lombricomposteur"] },
+    { name: "Boîte d'oeufs sans encre", types: ["composteur et lombricomposteur"] },
     { name: "Coquilles de noix", types: ["composteur"] },
-    { name: "Pelures de banane", types: ["composteur", "lombricomposteur"] },
-    { name: "Épluchures de carotte", types: ["composteur", "lombricomposteur"] },
-    { name: "Marc de café", types: ["composteur", "lombricomposteur"] },
+    { name: "Pelures de banane", types: ["composteur et lombricomposteur"] },
+    { name: "Épluchures de carotte", types: ["composteur et lombricomposteur"] },
+    { name: "Marc de café", types: ["composteur et lombricomposteur"] },
     { name: "Peau d'orange", types: ["composteur"] },
-    { name: "Fanes de radis", types: ["composteur", "lombricomposteur"] },
-    { name: "Épluchures de pomme", types: ["composteur", "lombricomposteur"] },
+    { name: "Fanes de radis", types: ["composteur et lombricomposteur"] },
+    { name: "Épluchures de pomme", types: ["composteur et lombricomposteur"] },
     { name: "Ail", types: ["composteur"] },
-    { name: "Échalottes", types: ["composteur"] },
+    { name: "Échalotes", types: ["composteur"] },
+    { name: "Échalote", types: ["composteur"] },
     { name: "Piment", types: ["composteur"] },
     { name: "Agrûme", types: ["composteur"] },
-    { name: "Carton sans encre", types: ["composteur", "lombricomposteur"] },
+    { name: "Carton sans encre", types: ["composteur et lombricomposteur"] },
     { name: "Tonte de pelouse", types: ["composteur"] },
     { name: "Feuilles mortes", types: ["composteur"] },
     { name: "Fleurs fanées", types: ["composteur"]},
     { name: "Sciure de bois (non traité)", types: ["composteur"] },
-    { name: "Fanes de carottes", types: ["composteur", "lombricomposteur"] },
-    { name: "Épluchures de pommes de terre", types: ["composteur", "lombricomposteur"] },
-    { name: "Épluchures de courgettes", types: ["composteur", "lombricomposteur"] },
+    { name: "Fanes de carottes", types: ["composteur et lombricomposteur"] },
+    { name: "Épluchures de pommes de terre", types: ["composteur et lombricomposteur"] },
+    { name: "Épluchures de courgettes", types: ["composteur et lombricomposteur"] },
     { name: "Peau de kiwi", types: ["composteur"] },
     { name: "Peau de mangue", types: ["composteur"] },
-    { name: "Sachet de thé (sans agrafe)", types: ["composteur", "lombricomposteur"] },
-    { name: "Mouchoirs en papier", types: ["composteur", "lombricomposteur"] },
-    { name: "Essuie-tout", types: ["composteur", "lombricomposteur"] },
-    { name: "Boîte en carton brun (sans encre)", types: ["composteur", "lombricomposteur"] },
+    { name: "Sachet de thé (sans agrafe)", types: ["composteur et lombricomposteur"] },
+    { name: "Mouchoirs en papier", types: ["composteur et lombricomposteur"] },
+    { name: "Essuie-tout", types: ["composteur et lombricomposteur"] },
+    { name: "Boîte en carton brun (sans encre)", types: ["composteur et lombricomposteur"] },
     { name: "Terre d’anciennes plantes", types: ["composteur"] },
     { name: "Plumes", types: ["composteur"] },
     { name: "Cheveux", types: ["composteur"] },
     { name: "Peau de melon", types: ["composteur"] },
-    { name: "Restes de salade", types: ["composteur", "lombricomposteur"] },
-    { name: "Épluchures de poire", types: ["composteur", "lombricomposteur"] },
-    { name: "Peau de pêche", types: ["composteur", "lombricomposteur"] },
-    { name: "Trognon de pommes", types: ["composteur", "lombricomposteur"] },
+    { name: "Restes de salade", types: ["composteur et lombricomposteur"] },
+    { name: "Épluchures de poire", types: ["composteur et lombricomposteur"] },
+    { name: "Peau de pêche", types: ["composteur et lombricomposteur"] },
+    { name: "Trognon de pommes", types: ["composteur et lombricomposteur"] },
     { name: "Peau de citron", types: ["composteur"] },
     { name: "Peau de mandarine", types: ["composteur"] },
     { name: "Peau de pamplemousse", types: ["composteur"] },
@@ -104,65 +107,63 @@ const compostables = [
     { name: "Herbes aromatiques", types: ["composteur"] },
     { name: "Feuilles de laurier", types: ["composteur"] },
     { name: "Coquilles de graines", types: ["composteur"] },
-    { name: "Épluchures de concombre", types: ["composteur", "lombricomposteur"] },
-    { name: "Fanes de betteraves", types: ["composteur", "lombricomposteur"] },
+    { name: "Épluchures de concombre", types: ["composteur et lombricomposteur"] },
+    { name: "Fanes de betteraves", types: ["composteur et lombricomposteur"] },
     { name: "Épluchures de poireaux", types: ["composteur"] },
-    { name: "Fanes de céleri", types: ["composteur", "lombricomposteur"] },
+    { name: "Fanes de céleri", types: ["composteur et lombricomposteur"] },
     { name: "Épluchures de poivron", types: ["composteur"] },
     { name: "Peau de courge", types: ["composteur"] },
     { name: "Épluchures d’aubergine", types: ["composteur"] },
-    { name: "Feuilles de chou", types: ["composteur", "lombricomposteur"] },
-    { name: "Fanes de navets", types: ["composteur", "lombricomposteur"] },
-    { name: "Restes de brocoli", types: ["composteur", "lombricomposteur"] },
-    { name: "Restes de chou-fleur", types: ["composteur", "lombricomposteur"] },
+    { name: "Feuilles de chou", types: ["composteur et lombricomposteur"] },
+    { name: "Fanes de navets", types: ["composteur et lombricomposteur"] },
+    { name: "Restes de brocoli", types: ["composteur et lombricomposteur"] },
+    { name: "Restes de chou-fleur", types: ["composteur et lombricomposteur"] },
     { name: "Feuilles d’artichaut", types: ["composteur"] },
-    { name: "Fanes de fenouil", types: ["composteur", "lombricomposteur"] },
-    { name: "Épluchures de radis", types: ["composteur", "lombricomposteur"] },
+    { name: "Fanes de fenouil", types: ["composteur et lombricomposteur"] },
+    { name: "Épluchures de radis", types: ["composteur et lombricomposteur"] },
     { name: "Épluchures d’oignon", types: ["composteur"] },
-    { name: "Épluchures de betterave", types: ["composteur", "lombricomposteur"] },
-    { name: "Restes de haricots verts", types: ["composteur", "lombricomposteur"] },
-    { name: "Fanes d’épinards", types: ["composteur", "lombricomposteur"] }
+    { name: "Épluchures de betterave", types: ["composteur et lombricomposteur"] },
+    { name: "Restes de haricots verts", types: ["composteur et lombricomposteur"] },
+    { name: "Fanes d’épinards", types: ["composteur et lombricomposteur"] },
+    { name: "Coquilles de moules", types: ["autres"] },
+    { name: "Coquilles de crustacés", types: ["autres"] },
+    { name: "Coquilles d'huîtres", types: ["autres"] },
+    { name: "Viande", types: ["autres"] },
+    { name: "Poisson", types: ["autres"] },
+    { name: "Oeufs", types: ["autres"] },
+    { name: "Riz", types: ["autres"] },
+    { name: "Pâtes", types: ["autres"] },
+    { name: "Pain", types: ["autres"] },
+    { name: "Tampons, serviettes hygiéniques", types: ["autres"] },
+    { name: "Coton-tiges", types: ["autres"] },
+    { name: "Cendres de cheminée", types: ["autres"] },
+    { name: "Charbons de barbecue", types: ["autres"] },
+    { name: "Plastiques", types: ["autres"] },
+    { name: "Métal non recyclé", types: ["autres"] },
+    { name: "Verre", types: ["autres"] },
+    { name: "Papier journal", types: ["autres"] },
+    { name: "Papier glacé", types: ["autres"] },
+    { name: "Croûtes de fromage", types: ["autres"] },
+    { name: "Os", types: ["autres"] },
+    { name: "Produits laitiers (fromage, beurre, etc.)", types: ["autres"] },
+    { name: "Mégots de cigarette", types: ["autres"] },
+    { name: "Piles", types: ["autres"] },
+    { name: "Couches jetables", types: ["autres"] },
+    { name: "Textiles synthétiques", types: ["autres"] },
+    { name: "Médicaments", types: ["autres"] },
+    { name: "Bois traité ou verni", types: ["autres"] },
+    { name: "Tissus", types: ["autres"] },
+    { name: "Sacs plastiques", types: ["autres"] },
+    { name: "Feuilles plastifiées", types: ["autres"] },
+    { name: "Vaisselle cassée", types: ["autres"] },
+    { name: "Produits chimiques (lessives, détergents, solvants)", types: ["autres"] },
+    { name: "Peintures, solvants, produits chimiques", types: ["autres"] },
+    { name: "Litière non compostable (silice, bentonite, litière agglomérante)", types: ["autres"] },
+    { name: "Chewing-gum", types: ["autres"] },
+    { name: "Pâtisseries", types: ["autres"] },
+    { name: "Chocolat", types: ["autres"] },
+    { name: "Bonbons, sucreries", types: ["autres"] },
 ];
-
-// Tableau des déchets non compostables (à voir si plus tard, rajouter un type pour permettre à l'utilisateur de savoir si les déchets se recyclent ou non)
-const nonCompostables = [
-    "Coquilles de moules",
-    "Coquilles de crustacés",
-    "Coquilles d'huîtres",
-    "Viande",
-    "Poisson",
-    "Oeufs",
-    "Riz",
-    "Pâtes",
-    "Pain",
-    "Tampons, serviettes hygiéniques",
-    "Coton-tiges",
-    "Cendres de cheminée",
-    "Charbons de barbecue",
-    "Plastiques",
-    "Métal non recyclé",
-    "Verre",
-    "Papier journal",
-    "Papier glacé",
-    "Croûtes de fromage",
-    "Os",
-    "Produits laitiers (fromage, beurre, etc.)",
-    "Mégots de cigarette",
-    "Piles",
-    "Couches jetables",
-    "Textiles synthétiques",
-    "Médicaments",
-    "Bois traité ou verni",
-    "Tissus",
-    "Sacs plastiques",
-    "Feuilles plastifiées",
-    "Vaisselle cassée",
-    "Produits chimiques (lessives, détergents, solvants)",
-    "Peintures, solvants, produits chimiques",
-    "Litière non compostable (silice, bentonite, litière agglomérante)",
-    "Chewing-gum"
-];
-
 
 
 const input = document.getElementById('biodechet');
@@ -176,114 +177,172 @@ const closeOverlayButton = document.getElementById('closeOverlay');
 
 //Fonction pour afficher la liste de suggestions pendant que l'utilisateur tape son mot
 input.addEventListener('input', () => {
-    const recherche = input.value.toLowerCase().trim(); // si le mot entré est en majuscule et avec des espaces, il sera "transformé" par la fonction en un mot en minuscule et sans espace pour que le mot corresponde avec celui en suggestion (ex : sans cela Viande ne fonctionne pas mais viande oui)
-    afficherSuggestions(recherche);
+    const recherche = input.value.toLowerCase().trim(); // si le mot entré est en majuscule et avec des espaces, il sera "transformé" par toLowerCase().trim() en un mot en minuscule et sans espace avant et après le mot pour que ce dernier corresponde avec celui en suggestion (ex : sans cela "Viande" sera différent de "viande")
+    afficherSuggestions(recherche); //appel de la fonction
 });
 
 
 function afficherSuggestions(recherche) {
-    suggestionsListeDechets.innerText = ''; // Réinitialise la liste pour qu'elle "suive" ce que rentre l'utilisateur
 
-    //? Ne fonctionne pas sans ces conditions
-    if (recherche) {
-        // Affiche les suggestions pour les deux tableaux (map ne fonctionne pas)
-        const listeDesTableaux = [...compostables, ...nonCompostables].filter(dechet => { // Les deux tableaux sont assemblés par les trois points pour n'en former qu'un
-            if (typeof dechet == 'object') { //marche aussi avec 'string' mais dans ce cas, inverser les return
-                return dechet.name.toLowerCase().includes(recherche); // Retourne les compostables // includes permet d'afficher une suggestion contenant ce qui est tapé par l'utilisateur. Par exemple : "jou"
-            }
-            return dechet.toLowerCase().includes(recherche); // Retourne les non compostables
-    });
+    suggestionsListeDechets.innerText = ''; // Réinitialise la liste pour qu'elle "suive" ce que rentre l'utilisateur.
 
-    if (listeDesTableaux.length > 0) {
-        suggestionsListeDechets.style.display = 'block'; // La liste s'affiche si une lettre minimum est entrée
+    if (recherche) { // la liste s'affichera quand l'utilisateur commencera à taper sa recherche
 
-        // Permet de parcourrir les tableaux pour afficher les déchets dans la liste (la liste n'étant pas dans le HTML, elle est produite en JS. Sans ça, la liste restera vide)
-        listeDesTableaux.forEach(dechet => {
-            const ligneSuggestion = document.createElement('li');
-            suggestionsListeDechets.appendChild(ligneSuggestion);
+        //! La recherche ne doit faire aucune différence entre les mots tapés sans accent et les mots qui ont un accent dans le tableau (ex: taper "epluchures" doit renvoyer "Épluchures") et enlever les apostrophes et les espaces pour que la liste de suggestions ne disparaisse pas après avoir tapé un espace entre deux mots.
+        const normalisationDeLaRecherche = recherche
+            .normalize('NFD') //Sépare les lettres des accents pour qu'on puisse les supprimer.
+            .replace(/[\u0300-\u036f]/g, '')  // Enlever les accents
+            .toLowerCase()  // Tout mettre en minuscule
+            .replace(/['’]/g, '')  // Enlever les apostrophes
+            .replace(/\s+/g, '')  // Supprimer tous les espaces
 
-            if (typeof dechet == 'string') { // Si le déchet n'est qu'une chaine de caractère
-                ligneSuggestion.innerText = dechet; // Affichera que le nom des déchets non compostables
-            } else {
-                ligneSuggestion.innerText = dechet.name; // Sinon affichera que le nom des biodéchets mais pas le type
-            };
+        // - normalize('NFD') -> NFD (Normalization Form Decomposed) va permettre de normaliser une chaîne de caractère en décomposant les caractères spéciaux en caractères de base et accent séparé. Ex : "é" (U+00E9) devient "e" (U+0065) + "´" (U+0301). La chaîne de caractère sera rendue plus facile à comparer ensuite.
 
-            ligneSuggestion.addEventListener('click', () => {
-                input.value = ligneSuggestion.innerText; // La suggestion se retrouve dans l'input
-                suggestionsListeDechets.style.display = 'none'; // et la liste se ferme
-            });      
-    });
-       
+        // - replace(/[\u0300-\u036f]/g, '') : un regex est utilisé par replace() pour remplacer tous les caractères spéciaux de la du/des mots recherché(s) par une chaîne vide.
+
+        // - /[\u0300-\u036f]/g : le regex utilisé recherche tous les accents et caractères spéciaux qui sont dans la plage Unicode des signes diacritiques (U+0300 à U+036F).
+
+        // - /\s+/g : le regex utilisé permet de détecter les espaces dans une chaîne de caractères.
+
+
+        //! Normalisation de la recherche en supprimant les caractères spéciaux (accents, cédilles, etc...), en remplaçant les majuscules par les minuscules et en la triant par ordre alphabétique
+        const rechercheUtilisateur = tabDechet.filter(dechet => {
+            // - filter() va permettre de filtrer les déchets pour ne garder que ceux qui correspondent à la recherche après la normalisation (tout ce qui suit dans la parenthèse).
+
+            // Normalisation du nom du déchet sans accents, apostrophes, et espaces
+            const nomDechetNormalise = dechet.name
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '')  // Enlever les accents
+                .toLowerCase()  // Mettre en minuscule
+                .replace(/['’]/g, '')  // Enlever les apostrophes
+                .replace(/\s+/g, '');  // Supprimer les espaces
+
+            // Retourne le nom du déchet qui commence par les premières lettres tapées dans la recherche
+            return nomDechetNormalise.startsWith(normalisationDeLaRecherche);
+
+            // - startWith() permet d'afficher dans la liste, les déchet qui commencent par les lettres tapées par l'utilisateur après avoir enlevé les accents grâce à rechercheSansAccent en paramètre.
+
+            // - includes() peut fonctionner mais permet d'afficher une suggestion contenant ce qui est tapé par l'utilisateur (ex: "ch" affichera "échalote" ou "cheveux" mais pas "viande") sauf que pour l'expérience UI/UX, il est préférable que les premières lettres tapées soit les premières lettres du mot recherché d'où l'utilisation de startWith().
+
+        }).sort((a, b) => {
+            // une fois les déchets retournés, ils vont être affichés par ordre alphabétique
+            return a.name.localeCompare(b.name);
+
+            // - sort() permet de comparer deux éléments du tableau (ici les objets a et b) pour savoir lequel doit venir avant l'autre dans l'affichage de la liste.
+
+            // - localeCompare() permet de trier un tableau sans tenir compte de la casse et des caractères spéciaux (ex: "chewing-gum" "Cheveux" seront comparés et mis par odre alphabétique dans la liste même si l'un deux a une majuscule dans le tableau)
+        });
+        
+        
+
+        if (rechercheUtilisateur.length > 0) { //vérifie qu'au moins un déchet est trouvé sinon affichera une liste vide
+            suggestionsListeDechets.style.display = 'block'; // La liste s'affiche si une lettre minimum est entrée sinon reste invisible, même durant le focus
+
+            rechercheUtilisateur.forEach(dechet => { //forEach() permet de parcourir le tableau et créera une ligne (li) dans la liste du html (ul) à chaque élément trouvé (si je cherche "oeuf", foreach va rechercher l'élément "oeuf" dans le tableau et renvoyer cet élément dans une ligne). La liste n'existant pas dans le HTML, elle est produite en JS. Sans ça, la liste restera vide)
+                const ligneSuggestion = document.createElement('li'); //déclaration de la variable qui contiendra cette ligne créée
+                ligneSuggestion.innerText = dechet.name; //ajoute le texte du nom du déchet dans <li> et non le nom + le type
+                suggestionsListeDechets.appendChild(ligneSuggestion); //ajoute <li> créé à la liste
+
+                //va permettre de remplir l'input avec le déchet suggéré lorsque l'utilisateur va cliquer dessus
+                ligneSuggestion.addEventListener('click', () => {
+                    input.value = ligneSuggestion.innerText; //la valeur de l'input sera le nom du déchet cherché
+                    suggestionsListeDechets.style.display = 'none'; // et la liste "disparaît" après avoir cliqué sur le déchet
+                });
+            });
+
+        } else {
+            suggestionsListeDechets.style.display = 'none'; //la liste de suggestion n'apparaît pas si aucun déchet n'est trouvé
+        }
+
     } else {
-        suggestionsListeDechets.style.display = 'none'; // Si aucune lettre n'est tapée
-    }
+        suggestionsListeDechets.style.display = 'none'; //la liste n'apparaît pas si aucun texte n'est tapé ou si l'utilisateur efface sa recherche
     }
 }
 
 
-// Fonction pour afficher l'overlay de la recherche et qui servira pour la fonction suivante
-function showResultOverlay(titre, description, reponse, imageComposteur) {
-    const overlayTitle = document.getElementById('overlayTitle');
+
+// Fonction pour afficher l'overlay de la recherche et qui servira pour la fonction resultatRecherche(dechetRecherche)
+function afficherOverlay(titre, description, reponse, imageComposteur) {
+    const overlayTitre = document.getElementById('overlayTitre');
     const overlayDescription = document.getElementById('overlayDescription');
     const overlayReponse = document.getElementById('overlayReponse');
     const overlayImage = document.getElementById('overlayImage');
     
-        // Permet d'écrire dans l'overlay (l'overlay est vide dans le html) :
-    overlayTitle.innerText = titre; // permet la mise à jour du titre
+    // Permet d'écrire dans l'overlay (l'overlay est vide dans le html) et modifier le texte selon le déchet trouvé:
+    overlayTitre.innerText = titre; // permet la mise à jour du titre
     overlayDescription.innerText = description; // permet la mise à jour de la description
     overlayReponse.innerText = reponse; // permet la mise à jour de la réponse
     overlayImage.src = `./Images/${imageComposteur}`; // permet la mise à jour de l'image
 
-        // Affiche l'overlay
+    // Affiche l'intérieur de l'overlay en colonne
+    //resultatOverlay est la div du dom qui contient l'overlay et qui n'apparaît pas physiquement dans le html de l'index
     resultatOverlay.style.display = 'flex';
     resultatOverlay.style.flexDirection = 'column';
 };
 
 
-// Fonction pour vérifier et afficher où jeter le biodéchet. Permet de modifier l'intérieur de l'overlay
-function showResult(dechetRecherche) {
-    const ecritureDechet = dechetRecherche.toLowerCase().trim(); // si le mot entré est en majuscule et avec des espaces, il sera "transformé" par la fonction en un mot en minuscule et sans espace
+// Fonction qui permet de rechercher le déchet dans tabDechet et d'afficher l'overlay permettant à l'utilisateur de savoir où jeter le biodéchet.
+function resultatRecherche(dechetRecherche) {
 
-    const compostableDechet = compostables.find(dechet => dechet.name.toLowerCase() == ecritureDechet);
+    // Normalisation de la recherche utilisateur. Cela permettra qu'en cas d'oublie d'espace par exemple, le bon résultat s'affiche (ex: si l'utilisateur tape "cartonsans encre", le résultat renverra "carton sans encre" et affichera le bon overlay et non l'overlay d'un déchet inconnu )
+    const ecritureDechet = dechetRecherche
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')  // Supprime les accents
+        .toLowerCase()
+        .replace(/['’]/g, '')  // Supprime les apostrophes
+        .replace(/\s+/g, '');  // Supprimer les espaces
 
-    if (compostableDechet) {
+    
+    // find() permet de rechercher le déchet dans tabDechet qui correspond exactement au mot stocké dans la variable ecritureDechet et va le stocker dans la variable dechetTrouve
+    const dechetTrouve = tabDechet.find(dechet => {
 
-        if (compostableDechet.types.length == 1) {
-            showResultOverlay(
-                `${dechetRecherche}`,
-                'Ne convient pas au lombricomposteur',
-                '⚠️ Convient uniquement au composteur',
-                'compost-okay.webp' // Image pour composteur   
+        // Recherche du déchet dans tabDechet avec normalisation du nom du déchet
+        const nomDechetNormalise = dechet.name
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')  // Supprime les accents
+            .toLowerCase()
+            .replace(/['’]/g, '')  // Supprime les apostrophes
+            .replace(/\s+/g, '');  // Supprimer les espaces
+
+        return nomDechetNormalise === ecritureDechet;
+    });
+
+    if (dechetTrouve) { //Une fois le nom du déchet normalisé, vérification de l'existence du déchet dans tabDechet et s'il existe, nous passons aux conditionx suivantes
+
+        const typeContainer = dechetTrouve.types;
+
+        if (typeContainer.includes("composteur et lombricomposteur")) {
+            afficherOverlay(
+                dechetTrouve.name, // Affichage du nom exact et pas le mot tapé par l'utilisateur (ex: si l'utilisateur tape "cartonsans encre", le nom du déchet qui sera réeelement affiché sur l'overlay sera "carton sans encre")
+                "(en petits morceaux et/ou humidifiés pour nos amis les vers)",
+                "✅ Convient au composteur et lombricomposteur",
+                "compost-coeur.webp" // Image pour les deux composteurs
             );
-
+        } else if (typeContainer.includes("composteur")) {
+            afficherOverlay(
+                dechetTrouve.name,
+                "Ne convient pas au lombricomposteur",
+                "⚠️ Convient uniquement au composteur",
+                "compost-okay.webp" // Image pour composteur uniquement
+            );
         } else {
-            const types = compostableDechet.types.join(' et '); // déclare "types" pour pouvoir afficher les noms des composteurs avec 'join' qui transforme les cases du tableau en chaîne de caractère
-            showResultOverlay(
-                `${dechetRecherche}`,
-                '(en petits morceaux et/ou humidifiés pour nos amis les vers)',
-                `✅ Convient au ${types.toLowerCase()}`,
-                'compost-coeur.webp' // Image pour lombricomposteur   
+            afficherOverlay(
+                dechetTrouve.name,
+                "Ce déchet doit être jeté avec les ordures ménagères ou au recyclage s'il se recycle",
+                "❌ Ne convient ni au composteur, ni au lombricomposteur",
+                "compost-triste.webp" // Image pour non compostable
             );
         }
-    
-    //! Ne marche pas avec filter
-    } else if (nonCompostables.some(dechet => dechet.toLowerCase() == ecritureDechet)) {
-        showResultOverlay(
-            `${dechetRecherche}`,
-            "Ce déchet doit être jeté avec les ordures ménagères ou au recyclage s'il se recycle",
-            '❌ Ne convient ni au composteur, ni au lombricomposteur',
-            'compost-triste.webp' // Image pour non compostable 
-        );
-
     } else {
-        showResultOverlay(
-            `${dechetRecherche}`,
+        afficherOverlay(
+            dechetRecherche, // Affichage du mot exacte tapé par l'utilisateur car il n'existe pas dans le tableau
             "❓",
-            "Ce déchet va me demander quelques recherches plus approfondies. En attendant, le mieux est de le jeter dans la poubelle ordinaire ou au recyclage s'il se recycle.",
-            'ver-perplexe.webp' // Image pour déchet inconnu 
+            "Ce déchet m'est inconnu et va me demander quelques recherches plus approfondies. En attendant, le mieux est de le jeter dans la poubelle ordinaire ou au recyclage s'il se recycle.",
+            "ver-perplexe.webp" // Image pour déchet inconnu
         );
     }
 }
+
 
 
 // Événement au bouton "Vérifier"
@@ -295,20 +354,9 @@ verifierButton.addEventListener('click', (event) => {
     if (inputValue == "") {
         return; // La fonction s'arrête s'il n'y a rien d'écrit dans l'input pour ne pas que l'overlay s'affiche malgré tout
     } else {
-        showResult(inputValue);
+        resultatRecherche(inputValue);
     }
 });
-
-// Vérifier avec la touche Entrée //? Trouver comment choisir la suggestion et taper Entrée ensuite
-// input.addEventListener('keyup', (event) => {
-//     const inputValue = input.value.trim();
-
-//     if (event.key === 'Enter') {
-//         if (inputValue !== "") {
-//             showResult(inputValue); // Affiche le résultat si l'input n'est pas vide
-//         }
-//     }
-// });
 
 
 // Fonction pour réinitialiser l'input quand il reçoit le focus
@@ -333,6 +381,17 @@ resultatOverlay.addEventListener('click', (event) => {
     }
 });
 
+
+// Vérifier avec la touche Entrée //? Trouver comment choisir la suggestion et taper Entrée ensuite
+// input.addEventListener('keyup', (event) => {
+//     const inputValue = input.value.trim();
+
+//     if (event.key === 'Enter') {
+//         if (inputValue !== "") {
+//             showResult(inputValue); // Affiche le résultat si l'input n'est pas vide
+//         }
+//     }
+// });
 
 
 
