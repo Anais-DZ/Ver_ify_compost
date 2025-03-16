@@ -254,6 +254,8 @@ function afficherSuggestions(recherche) {
                 ligneSuggestion.addEventListener('click', () => {
                     input.value = ligneSuggestion.innerText; //la valeur de l'input sera le nom du déchet cherché
                     suggestionsListeDechets.style.display = 'none'; // et la liste "disparaît" après avoir cliqué sur le déchet
+                    // Relance la recherche immédiatement après avoir choisi une suggestion
+                    resultatRecherche(input.value);
                 });
             });
 
@@ -364,7 +366,6 @@ function resultatRecherche(dechetRecherche) {
 }
 
 
-
 // Événement au bouton "Vérifier"
 verifierButton.addEventListener('click', (event) => {
     event.preventDefault(); // Empêche la page de remonter après le submit
@@ -379,13 +380,12 @@ verifierButton.addEventListener('click', (event) => {
 });
 
 // Fonction pour valider la recherche avec la touche "Enter"
-
-function Rechercher(event) {
+function RechercherDechet(event) {
     // Vérifie si l'utilisateur a appuyé sur "Enter" ou a cliqué sur le bouton "Rechercher"
     if (event.key === 'Enter' || event.type === 'click') {  
-        event.preventDefault();   // Empêche le comportement par défaut (par exemple, soumettre un formulaire)
+        // event.preventDefault(); 
         
-        const inputValue = input.value.trim(); // Récupère la valeur de l'input et enlève les espaces inutiles
+        const inputValue = input.value;
 
         if (inputValue === "") {
             return; // Si l'input est vide, ne fait rien
@@ -394,19 +394,17 @@ function Rechercher(event) {
         }
     }
 }
-
 // Écouteur d'événements pour la touche "Enter" dans l'input
-input.addEventListener('keydown', Rechercher);
+input.addEventListener('keydown', RechercherDechet);
 
 // Écouteur d'événements pour le clic sur le bouton de recherche
 const boutonRecherche = document.getElementById('btnRechercher'); // Assurez-vous que le bouton a l'ID "btnRechercher"
 if (boutonRecherche) {
     boutonRecherche.addEventListener('click', Rechercher);
 }
-
-
 // Écouteur d'événements pour la touche "Enter" dans l'input
 input.addEventListener('keydown', RechercherDechet);
+
 
 
 // Fonction pour réinitialiser l'input quand il reçoit le focus
