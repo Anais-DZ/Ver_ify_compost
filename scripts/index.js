@@ -48,9 +48,11 @@ const tabDechet = [
     { name: "Coquilles de noix", types: ["composteur"] },
     { name: "Pelures de banane", types: ["composteur et lombricomposteur"] },
     { name: "Épluchures de carotte", types: ["composteur et lombricomposteur"] },
+    { name: "Carotte", types: ["composteur et lombricomposteur"] },
     { name: "Marc de café", types: ["composteur et lombricomposteur"] },
     { name: "Peau d'orange", types: ["composteur"] },
     { name: "Fanes de radis", types: ["composteur et lombricomposteur"] },
+    { name: "Radis", types: ["composteur et lombricomposteur"] },
     { name: "Épluchures de pomme", types: ["composteur et lombricomposteur"] },
     { name: "Ail", types: ["composteur"] },
     { name: "Échalotes", types: ["composteur"] },
@@ -130,7 +132,8 @@ const tabDechet = [
     { name: "Coquilles d'huîtres", types: ["autres"] },
     { name: "Viande", types: ["autres"] },
     { name: "Poisson", types: ["autres"] },
-    { name: "Oeufs", types: ["autres"] },
+    { name: "Oeuf entier", types: ["autres"] },
+    { name: "Oeuf cuit", types: ["autres"] },
     { name: "Riz", types: ["autres"] },
     { name: "Pâtes", types: ["autres"] },
     { name: "Pain", types: ["autres"] },
@@ -242,7 +245,7 @@ function afficherSuggestions(recherche) {
         if (rechercheUtilisateur.length > 0) { //vérifie qu'au moins un déchet est trouvé sinon affichera une liste vide
             suggestionsListeDechets.style.display = 'block'; // La liste s'affiche si une lettre minimum est entrée sinon reste invisible, même durant le focus
 
-            rechercheUtilisateur.forEach(dechet => { //forEach() permet de parcourir le tableau et créera une ligne (li) dans la liste du html (ul) à chaque élément trouvé (si je cherche "oeuf", foreach va rechercher l'élément "oeuf" dans le tableau et renvoyer cet élément dans une ligne). La liste n'existant pas dans le HTML, elle est produite en JS. Sans ça, la liste restera vide)
+            rechercheUtilisateur.forEach(dechet => { //forEach() permet de parcourir le tableau et créera une ligne (li) dans la liste du html (ul) à chaque élément trouvé (si je cherche "oeuf", foreach va rechercher l'élément "oeuf" dans le tableau et renvoyer cet élément dans une ligne). La liste n'existant pas dans le Dom, elle est produite en JS. Sans ça, la liste restera vide)
                 const ligneSuggestion = document.createElement('li'); //déclaration de la variable qui contiendra cette ligne créée
                 ligneSuggestion.innerText = dechet.name; //ajoute le texte du nom du déchet dans <li> et non le nom + le type
                 suggestionsListeDechets.appendChild(ligneSuggestion); //ajoute <li> créé à la liste
@@ -374,6 +377,24 @@ verifierButton.addEventListener('click', (event) => {
         resultatRecherche(inputValue);
     }
 });
+
+// Fonction pour valider la recherche avec la touche "Enter"
+function RechercherDechet(event) {
+    if (event.key === 'Enter') {  // Vérifie si la touche pressée est "Enter"
+        event.preventDefault();   // Empêche le comportement par défaut du formulaire (soumettre)
+        
+        const inputValue = input.value(); // Récupère la valeur de l'input et enlève les espaces inutiles
+
+        if (inputValue === "") {
+            return; // Si l'input est vide, ne fait rien
+        } else {
+            resultatRecherche(inputValue);  // Appelle la fonction de recherche
+        }
+    }
+}
+
+// Écouteur d'événements pour la touche "Enter" dans l'input
+input.addEventListener('keydown', RechercherDechet);
 
 
 // Fonction pour réinitialiser l'input quand il reçoit le focus
