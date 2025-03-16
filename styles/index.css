@@ -408,7 +408,7 @@
 }
 
 #tacheDate {
-    font-size: 26px;
+    font-size: 24px;
     margin: 45px 0 10px;
     font-family: 'cabin sketch';
     text-align: center;
@@ -441,6 +441,10 @@ input[type="checkbox"] {
     position: absolute;
     right: -13px;
     bottom: -30px;
+}
+
+i {
+    color: rgb(156, 0, 0);
 }
 
 
