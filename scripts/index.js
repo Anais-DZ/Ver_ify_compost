@@ -135,7 +135,7 @@ const tabDechet = [
     { name: "Pâtes", types: ["autres"] },
     { name: "Pain", types: ["autres"] },
     { name: "Tampons, serviettes hygiéniques", types: ["autres"] },
-    { name: "Coton-tiges", types: ["autres"] },
+    { name: "Coton-tiges en plastique", types: ["autres"] },
     { name: "Cendres de cheminée", types: ["autres"] },
     { name: "Charbons de barbecue", types: ["autres"] },
     { name: "Plastiques", types: ["autres"] },
@@ -163,6 +163,8 @@ const tabDechet = [
     { name: "Pâtisseries", types: ["autres"] },
     { name: "Chocolat", types: ["autres"] },
     { name: "Bonbons, sucreries", types: ["autres"] },
+    { name: "Cotons-tiges en carton", types: ["autres"] },
+    { name: "Cotons-tiges en bois", types: ["autres"] }
 ];
 
 
@@ -176,10 +178,11 @@ const closeOverlayButton = document.getElementById('closeOverlay');
                         //Fonction pour la suggestion des déchets 
 
 //Fonction pour afficher la liste de suggestions pendant que l'utilisateur tape son mot
-input.addEventListener('input', () => {
-    const recherche = input.value.toLowerCase().trim(); // si le mot entré est en majuscule et avec des espaces, il sera "transformé" par toLowerCase().trim() en un mot en minuscule et sans espace avant et après le mot pour que ce dernier corresponde avec celui en suggestion (ex : sans cela "Viande" sera différent de "viande")
+function gestionInput() {
+    const recherche = input.value; //déclaration de la variable "recherche" qui stocke ce qui est tapé dans l'input
     afficherSuggestions(recherche); //appel de la fonction
-});
+};
+input.addEventListener('input', gestionInput);
 
 
 function afficherSuggestions(recherche) {
@@ -191,18 +194,17 @@ function afficherSuggestions(recherche) {
         //! La recherche ne doit faire aucune différence entre les mots tapés sans accent et les mots qui ont un accent dans le tableau (ex: taper "epluchures" doit renvoyer "Épluchures") et enlever les apostrophes et les espaces pour que la liste de suggestions ne disparaisse pas après avoir tapé un espace entre deux mots.
         const normalisationDeLaRecherche = recherche
             .normalize('NFD') //Sépare les lettres des accents pour qu'on puisse les supprimer.
-            .replace(/[\u0300-\u036f]/g, '')  // Enlever les accents
-            .toLowerCase()  // Tout mettre en minuscule
-            .replace(/['’]/g, '')  // Enlever les apostrophes
-            .replace(/\s+/g, '')  // Supprimer tous les espaces
+            .replace(/['’\s–—-]|[\u0300-\u036f]/g, '')
+            // [\u0300-\u036f] Enlève les accents
+            // ['’]  Enlève les apostrophes
+            // /\s/  Supprime tous les espaces
+            // [-–—] Supprime les tirets
+            .toLowerCase();  // Tout mettre en minuscule
 
         // - normalize('NFD') -> NFD (Normalization Form Decomposed) va permettre de normaliser une chaîne de caractère en décomposant les caractères spéciaux en caractères de base et accent séparé. Ex : "é" (U+00E9) devient "e" (U+0065) + "´" (U+0301). La chaîne de caractère sera rendue plus facile à comparer ensuite.
 
         // - replace(/[\u0300-\u036f]/g, '') : un regex est utilisé par replace() pour remplacer tous les caractères spéciaux de la du/des mots recherché(s) par une chaîne vide.
 
-        // - /[\u0300-\u036f]/g : le regex utilisé recherche tous les accents et caractères spéciaux qui sont dans la plage Unicode des signes diacritiques (U+0300 à U+036F).
-
-        // - /\s+/g : le regex utilisé permet de détecter les espaces dans une chaîne de caractères.
 
 
         //! Normalisation de la recherche en supprimant les caractères spéciaux (accents, cédilles, etc...), en remplaçant les majuscules par les minuscules et en la triant par ordre alphabétique
@@ -211,11 +213,13 @@ function afficherSuggestions(recherche) {
 
             // Normalisation du nom du déchet sans accents, apostrophes, et espaces
             const nomDechetNormalise = dechet.name
-                .normalize('NFD')
-                .replace(/[\u0300-\u036f]/g, '')  // Enlever les accents
-                .toLowerCase()  // Mettre en minuscule
-                .replace(/['’]/g, '')  // Enlever les apostrophes
-                .replace(/\s+/g, '');  // Supprimer les espaces
+            .normalize('NFD') //Sépare les lettres des accents pour qu'on puisse les supprimer.
+            .replace(/['’\s–—-]|[\u0300-\u036f]/g, '')
+            // [\u0300-\u036f] Enlève les accents
+            // ['’]  Enlève les apostrophes
+            // /\s/  Supprime tous les espaces
+            // [-–—] Supprime les tirets
+            .toLowerCase();  // Tout mettre en minuscule
 
             // Retourne le nom du déchet qui commence par les premières lettres tapées dans la recherche
             return nomDechetNormalise.startsWith(normalisationDeLaRecherche);
@@ -259,6 +263,15 @@ function afficherSuggestions(recherche) {
     }
 }
 
+// Fonction pour fermer la liste des suggestions si l'utilisateur clique ailleurs que sur la liste
+function fermerListe(event) {
+    if (!suggestionsListeDechets.contains(event.target) && !input.contains(event.target)) { //la liste sera fermée si l'utilisateur clique ailleurs que sur la liste et sur l'unput
+        suggestionsListeDechets.style.display = 'none';
+    }
+}
+document.addEventListener('click', fermerListe);
+
+
 
 
 // Fonction pour afficher l'overlay de la recherche et qui servira pour la fonction resultatRecherche(dechetRecherche)
@@ -286,11 +299,13 @@ function resultatRecherche(dechetRecherche) {
 
     // Normalisation de la recherche utilisateur. Cela permettra qu'en cas d'oublie d'espace par exemple, le bon résultat s'affiche (ex: si l'utilisateur tape "cartonsans encre", le résultat renverra "carton sans encre" et affichera le bon overlay et non l'overlay d'un déchet inconnu )
     const ecritureDechet = dechetRecherche
-        .normalize('NFD')
-        .replace(/[\u0300-\u036f]/g, '')  // Supprime les accents
-        .toLowerCase()
-        .replace(/['’]/g, '')  // Supprime les apostrophes
-        .replace(/\s+/g, '');  // Supprimer les espaces
+        .normalize('NFD') //Sépare les lettres des accents pour qu'on puisse les supprimer.
+        .replace(/['’\s–—-]|[\u0300-\u036f]/g, '')
+        // [\u0300-\u036f] Enlève les accents
+        // ['’]  Enlève les apostrophes
+        // /\s/  Supprime tous les espaces
+        // [-–—] Supprime les tirets
+        .toLowerCase();  // Tout mettre en minuscule
 
     
     // find() permet de rechercher le déchet dans tabDechet qui correspond exactement au mot stocké dans la variable ecritureDechet et va le stocker dans la variable dechetTrouve
@@ -298,13 +313,15 @@ function resultatRecherche(dechetRecherche) {
 
         // Recherche du déchet dans tabDechet avec normalisation du nom du déchet
         const nomDechetNormalise = dechet.name
-            .normalize('NFD')
-            .replace(/[\u0300-\u036f]/g, '')  // Supprime les accents
-            .toLowerCase()
-            .replace(/['’]/g, '')  // Supprime les apostrophes
-            .replace(/\s+/g, '');  // Supprimer les espaces
+            .normalize('NFD') //Sépare les lettres des accents pour qu'on puisse les supprimer.
+            .replace(/['’\s–—-]|[\u0300-\u036f]/g, '')
+            // [\u0300-\u036f] Enlève les accents
+            // ['’]  Enlève les apostrophes
+            // /\s/  Supprime tous les espaces
+            // [-–—] Supprime les tirets
+            .toLowerCase();  // Tout mettre en minuscule
 
-        return nomDechetNormalise === ecritureDechet;
+        return nomDechetNormalise === ecritureDechet; // retourne le nom du déchet trouvé dans tabDechet s'il est strictement identique au déchet entré par l'utilisateur
     });
 
     if (dechetTrouve) { //Une fois le nom du déchet normalisé, vérification de l'existence du déchet dans tabDechet et s'il existe, nous passons aux conditionx suivantes
@@ -349,10 +366,10 @@ function resultatRecherche(dechetRecherche) {
 verifierButton.addEventListener('click', (event) => {
     event.preventDefault(); // Empêche la page de remonter après le submit
     
-    const inputValue = input.value.trim();
+    const inputValue = input.value;
 
     if (inputValue == "") {
-        return; // La fonction s'arrête s'il n'y a rien d'écrit dans l'input pour ne pas que l'overlay s'affiche malgré tout
+        return; // La fonction ne fonctionne pas s'il n'y a rien d'écrit dans l'input sinon l'overlay s'affiche si on clique sur le bouton.
     } else {
         resultatRecherche(inputValue);
     }
