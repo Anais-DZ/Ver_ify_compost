@@ -379,11 +379,13 @@ verifierButton.addEventListener('click', (event) => {
 });
 
 // Fonction pour valider la recherche avec la touche "Enter"
-function RechercherDechet(event) {
-    if (event.key === 'Enter') {  // Vérifie si la touche pressée est "Enter"
-        event.preventDefault();   // Empêche le comportement par défaut du formulaire (soumettre)
+
+function Rechercher(event) {
+    // Vérifie si l'utilisateur a appuyé sur "Enter" ou a cliqué sur le bouton "Rechercher"
+    if (event.key === 'Enter' || event.type === 'click') {  
+        event.preventDefault();   // Empêche le comportement par défaut (par exemple, soumettre un formulaire)
         
-        const inputValue = input.value(); // Récupère la valeur de l'input et enlève les espaces inutiles
+        const inputValue = input.value.trim(); // Récupère la valeur de l'input et enlève les espaces inutiles
 
         if (inputValue === "") {
             return; // Si l'input est vide, ne fait rien
@@ -392,6 +394,16 @@ function RechercherDechet(event) {
         }
     }
 }
+
+// Écouteur d'événements pour la touche "Enter" dans l'input
+input.addEventListener('keydown', Rechercher);
+
+// Écouteur d'événements pour le clic sur le bouton de recherche
+const boutonRecherche = document.getElementById('btnRechercher'); // Assurez-vous que le bouton a l'ID "btnRechercher"
+if (boutonRecherche) {
+    boutonRecherche.addEventListener('click', Rechercher);
+}
+
 
 // Écouteur d'événements pour la touche "Enter" dans l'input
 input.addEventListener('keydown', RechercherDechet);
