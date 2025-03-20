@@ -489,8 +489,12 @@ footer p {
     }
 
     #dessinHerbeFooter {
-        width: 50vw;
-        height: 100px;
+        display: none;
+    }
+
+    #contactLien {
+        top: 0;
+        z-index: 4;
     }
 
     footer {
