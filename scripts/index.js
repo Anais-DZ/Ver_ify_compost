@@ -331,9 +331,9 @@ function afficherSuggestions(recherche) {
         if (rechercheUtilisateur.length > 0) { //vérifie qu'au moins un déchet est trouvé sinon affichera une liste vide
             suggestionsListeDechets.style.display = 'block'; // La liste s'affiche si une lettre minimum est entrée sinon reste invisible, même durant le focus
 
-            rechercheUtilisateur.forEach(dechet => { //forEach() permet de parcourir le tableau et créera une ligne (li) dans la liste du html (ul) à chaque élément trouvé (si je cherche "oeuf", foreach va rechercher l'élément "oeuf" dans le tableau et renvoyer cet élément dans une ligne). La liste n'existant pas dans le Dom, elle est produite en JS. Sans ça, la liste restera vide)
+            rechercheUtilisateur.forEach(dechet => { //forEach() permet de parcourir le tableau et créera une ligne (li) dans la liste du DOM (ul) à chaque élément trouvé (si je cherche "oeuf", foreach va rechercher l'élément "oeuf" dans le tableau et renvoyer cet élément dans une ligne). La liste n'existant pas dans le Dom, elle est produite en JS. Sans ça, la liste restera vide)
                 const ligneSuggestion = document.createElement('li'); //déclaration de la variable qui contiendra cette ligne créée
-                ligneSuggestion.innerText = dechet.name; //ajoute le texte du nom du déchet dans <li> et non le nom + le type
+                ligneSuggestion.innerText = dechet.name; //ajoute le texte du nom du déchet dans <li> et non le nom + le nom du container
                 suggestionsListeDechets.appendChild(ligneSuggestion); //ajoute <li> créé à la liste
 
                 //va permettre de remplir l'input avec le déchet suggéré lorsque l'utilisateur va cliquer dessus
