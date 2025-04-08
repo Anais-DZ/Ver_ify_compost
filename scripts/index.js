@@ -530,6 +530,7 @@ function VerifierDechet(event) {
             return; // Si l'input est vide, cliquer sur "Vérifier" ne fait pas apparaître l'overlay
         } else {
             resultatRecherche(inputValue);  // sinon appel de la fonction de recherche
+            input.blur(); //ferme le clavier sur mobile en retirant le focus de l’input
         }
     }
 }
