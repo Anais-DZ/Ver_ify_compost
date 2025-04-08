@@ -226,7 +226,6 @@ const tabDechet = [
     { name: "Fanes de navet", types: "composteur et lombricomposteur" },
     { name: "Fève", types: "composteur et lombricomposteur" },
     { name: "Figue", types: "composteur et lombricomposteur" },
-    { name: "Fraise", types: "composteur et lombricomposteur" },
     { name: "Framboise", types: "composteur et lombricomposteur" },
     { name: "Kiwi", types: "composteur et lombricomposteur" },
     { name: "Laitue", types: "composteur et lombricomposteur" },
