@@ -528,7 +528,16 @@ function VerifierDechet(event) {
     if (event.key === 'Enter' || event.type === 'click') {  
         event.preventDefault(); //empeche la page de remonter
         
-        const inputValue = input.value;
+        // Vérifie si une seule suggestion est visible
+        const suggestions = suggestionsListeDechets.querySelectorAll('li');
+
+        let inputValue = input.value; // Ne pas mettre const car la variable change
+
+        if (suggestions.length === 1) {
+            inputValue = suggestions[0].innerText; // s'il n'y a qu'un déchet suggéré, on remplace le déchet recherché par la suggestion dans l'input
+            input.value = inputValue; // Met aussi à jour l'input visuellement
+            suggestionsListeDechets.style.display = 'none'; // On cache la liste
+        }
 
         if (inputValue === "") {
             return; // Si l'input est vide, cliquer sur "Vérifier" ne fait pas apparaître l'overlay
