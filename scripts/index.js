@@ -309,9 +309,13 @@ function afficherSuggestions(recherche) {
 
             // Normalisation du nom du déchet sans accents, apostrophes, et espaces, etc... avec la fonction normaliserEcritureDechet()
             const nomDechetNormalise = normaliserEcritureDechet(dechet.name);
+            const distance = distanceLevenshtein(normalisationDeLaRecherche, nomDechetNormalise);
+
+            // Le nom du déchet doit commencer par les lettres tapées par l'utilisateur, ou la distance de Levenshtein doit être faible
+            return nomDechetNormalise.startsWith(normalisationDeLaRecherche) || distance <= 2;
 
             // Retourne le nom du déchet qui commence par les premières lettres tapées dans la recherche
-            return nomDechetNormalise.startsWith(normalisationDeLaRecherche);
+            //return nomDechetNormalise.startsWith(normalisationDeLaRecherche);
 
             // - startWith() permet d'afficher dans la liste, les déchet qui commencent par les lettres tapées par l'utilisateur après avoir enlevé les accents grâce à rechercheSansAccent en paramètre.
 
@@ -364,6 +368,56 @@ function fermerListe(event) {
 document.addEventListener('click', fermerListe);
 
 
+// Fonction pour calculer la distance de Levenshtein entre deux mots
+function distanceLevenshtein(a, b) {
+    const distanceTable = []; // On remplace "matrix" par "distanceTable"
+
+    // Initialisation de la distanceTable
+    for (let i = 0; i <= a.length; i++) {
+        distanceTable[i] = [i];
+    }
+    for (let j = 0; j <= b.length; j++) {
+        distanceTable[0][j] = j;
+    }
+
+    // Remplissage de la distanceTable
+    for (let i = 1; i <= a.length; i++) {
+        for (let j = 1; j <= b.length; j++) {
+            if (a[i - 1] === b[j - 1]) {
+                distanceTable[i][j] = distanceTable[i - 1][j - 1];
+            } else {
+                distanceTable[i][j] = Math.min(
+                    distanceTable[i - 1][j] + 1, // Suppression
+                    distanceTable[i][j - 1] + 1, // Insertion
+                    distanceTable[i - 1][j - 1] + 1 // Substitution
+                );
+            }
+        }
+    }
+    return distanceTable[a.length][b.length];
+}
+
+// Fonction pour corriger un mot mal orthographié
+function corrigerMot(mot) {
+    const normalisationMot = normaliserEcritureDechet(mot);
+    let meilleurMot = null;
+    let meilleureDistance = Infinity;
+
+    tabDechet.forEach(dechet => {
+        const nomDechetNormalise = normaliserEcritureDechet(dechet.name);
+        const distance = distanceLevenshtein(normalisationMot, nomDechetNormalise);
+
+        if (distance < meilleureDistance) {
+            meilleureDistance = distance;
+            meilleurMot = dechet.name;
+        }
+    });
+
+    // Si la meilleure distance est raisonnable (ex: max 2 erreurs), on retourne la correction
+    return (meilleureDistance <= 2) ? meilleurMot : null;
+}
+
+
 // Fonction pour afficher l'overlay de la recherche et qui servira pour la fonction resultatRecherche(dechetRecherche)
 function afficherOverlay(titre, description, reponse, imageComposteur) {
     const overlayTitre = document.getElementById('overlayTitre');
@@ -381,17 +435,23 @@ function afficherOverlay(titre, description, reponse, imageComposteur) {
     //resultatOverlay est la div du dom qui contient l'overlay et qui n'apparaît pas physiquement dans le html de l'index
     resultatOverlay.style.display = 'flex';
     resultatOverlay.style.flexDirection = 'column';
+
+    
 };
 
 
 // Fonction qui permet de rechercher le déchet dans tabDechet et d'afficher l'overlay permettant à l'utilisateur de savoir où jeter le biodéchet.
 function resultatRecherche(dechetRecherche) {
+    let dechetCorrige = corrigerMot(dechetRecherche);
+
+    // Si une correction est trouvée, on l'utilise
+    const motFinal = dechetCorrige || dechetRecherche;
 
     // find() permet de parcourir le tableau tabDechet pour trouver le déchet entré par l'utilisateur et le nom du déchet sera stocké dans la variable dechetTrouve pour la condition suivante.
     const dechetTrouve = tabDechet.find(dechet => {
 
         //déclaration des variables qui vont contenir les deux mots normalisés permettant ainsi de les comparer
-        const dechetEntre = normaliserEcritureDechet(dechetRecherche); // utilisation de la fonction normaliserEcritureDechet() pour normaliser le déchet recherché. 
+        const dechetEntre = normaliserEcritureDechet(motFinal); // utilisation de la fonction normaliserEcritureDechet() pour normaliser le déchet recherché. 
         const nomDechetNormalise = normaliserEcritureDechet(dechet.name); // utilisation de la fonction normaliserEcritureDechet() pour normaliser le nom des déchets dans le tableau
 
         return nomDechetNormalise === dechetEntre; // retourne le nom du déchet trouvé dans tabDechet s'il est strictement identique au déchet entré par l'utilisateur et le stocke dans la variable.
