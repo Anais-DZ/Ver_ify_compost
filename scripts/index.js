@@ -275,6 +275,20 @@ function gestionInput() {
 };
 input.addEventListener('input', gestionInput);
 
+//Fonction pour afficher le pluriel d'un mot
+function auPluriel(mot) {
+    if (mot.endsWith('al')) {
+        return mot.slice(0, -2) + 'aux'; // animal => animaux
+    } else if (mot.endsWith('eau') || mot.endsWith('eu')) {
+        return mot + 'x'; // cadeau => cadeaux
+    } else if (mot.endsWith('s') || mot.endsWith('x') || mot.endsWith('z')) {
+        return mot; // mot déjà au pluriel ou invariable
+    } else {
+        return mot + 's'; // règle générale
+    }
+}
+
+
 
 // La fonction normaliserEcritureDechet() va permettre de normaliser les mots entrés par l'utilisateur et faciliter leur comparaison ensuite
 function normaliserEcritureDechet(dechet) {
@@ -300,8 +314,9 @@ function afficherSuggestions(recherche) {
 
         //! La recherche ne doit faire aucune différence entre les mots tapés sans accent et les mots qui ont un accent dans le tableau (ex: taper "epluchures" doit renvoyer "Épluchures") et enlever les apostrophes et les espaces pour que la liste de suggestions ne disparaisse pas après avoir tapé un espace entre deux mots.
         const normalisationDeLaRecherche = normaliserEcritureDechet(recherche); //appel de la fonction normaliserEcritureDechet() pour normaliser le mot recherché
-            
 
+        const plurielRecherche = auPluriel(normalisationDeLaRecherche);
+            
         //! Normalisation de la recherche en supprimant les caractères spéciaux (accents, cédilles, etc...), en remplaçant les majuscules par les minuscules et en la triant par ordre alphabétique
         const rechercheUtilisateur = tabDechet.filter(dechet => {
             // - filter() va permettre de filtrer les déchets pour ne garder que ceux qui correspondent à la recherche après la normalisation (tout ce qui suit dans la parenthèse).
@@ -311,7 +326,8 @@ function afficherSuggestions(recherche) {
             const distance = distanceLevenshtein(normalisationDeLaRecherche, nomDechetNormalise);
 
             // Le nom du déchet doit commencer par les lettres tapées par l'utilisateur, ou la distance de Levenshtein doit être faible
-            return nomDechetNormalise.startsWith(normalisationDeLaRecherche) || distance <= 2;
+            return nomDechetNormalise.startsWith(normalisationDeLaRecherche) ||
+            nomDechetNormalise.startsWith(plurielRecherche) || distance <= 2;
 
             // Retourne le nom du déchet qui commence par les premières lettres tapées dans la recherche
             //return nomDechetNormalise.startsWith(normalisationDeLaRecherche);
