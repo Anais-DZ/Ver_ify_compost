@@ -11,13 +11,13 @@ Ce projet est une opportunité idéale pour concilier mes préoccupations enviro
 Le site est maintenant accessible en ligne (en mobile first pour le moment), [Ver'ify Compost](https://ver-ify-compost.vercel.app/) , en étant toujours en cours de développement. Il me sert principalement à avoir une vision concrète de l'avancement et des fonctionnalités à venir. Certaines pages peuvent être incomplètes ou en travaux. Merci pour votre compréhension et n'hésitez pas à revenir régulièrement pour suivre les avancés ! :blush:
 
 <br/>Update ! 8 avrils 2025 --> Amélioration de la recherche des déchets :
-    - ajout d'une fonction pour trouver le déchet même si l'utilisateur entre le mot avec une faute et/ou au pluriel.
-    - s'il y a un seul déchet suggéré quand l'utilisateur commence à taper un mot, il n'a pas besoin d'écrire le mot entier mais seulement de cliquer sur la touche "Entrée" pour avoir la réponse.
+- ajout d'une fonction pour trouver le déchet même si l'utilisateur entre le mot avec une faute et/ou au pluriel.
+- s'il y a un seul déchet suggéré quand l'utilisateur commence à taper un mot, il n'a pas besoin d'écrire le mot entier mais seulement de cliquer sur la touche "Entrée" pour avoir la réponse.
     
 <br/>Update ! 16 mars 2025 --> Amélioration de la recherche des déchets :
-    - les suggestions dans la liste lors de la recherche s'affiche dans l'ordre alphabétique
-    - pour afficher le résultat, il est autant possible d'appuyer sur la touche Entrée que sur le bouton "Vérifier"
-    - lorsqu'on clique sur un déchet suggéré, cela affiche directement le résultat pour économiser quelques clicks
+- les suggestions dans la liste lors de la recherche s'affiche dans l'ordre alphabétique
+- pour afficher le résultat, il est autant possible d'appuyer sur la touche Entrée que sur le bouton "Vérifier"
+- lorsqu'on clique sur un déchet suggéré, cela affiche directement le résultat pour économiser quelques clicks
 
 <br/>Update ! 07 février 2025 --> Le responsive pour les écrans 760px minimum est là ! 😄 La page de connexion n'est pas encore active.
 
