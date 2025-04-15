@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <link rel="icon" href="./Images/logo-site.webp" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Un site dédié à vous aider à trier facilement et rapidement vos déchets compostables. Découvrez en quelques clics comment simplifier le compostage et adopter des gestes écologiques au quotidien.">
+    <meta name="description" content="Verify Compost vous aide, en quelques clics, à savoir quels déchets composter et comment entretenir votre compost. Simplifiez le tri, réduisez vos déchets et adoptez des gestes écologiques au quotidien." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400&family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
@@ -12,8 +13,9 @@
     <link href="./styles/commun.css" rel="stylesheet">
     <script src="./scripts/index.js" defer></script>
     <script src="./scripts/commun.js" defer></script>
-    <title>Page - Accueil</title>
+    <title>Guide du compostage - Vérifiez ce que vous pouvez composter | Verify Compost</title>
 </head>
+
 <body>
     <nav id="entete">
         <div class="leftMenu">
@@ -23,28 +25,33 @@
             <a href="liens.html" alt="liens ressources">Liens & Ressources</a>
             <a href="compte.html" alt="mon compte">Mon compte</a>
             <a href="contact.html" alt="contact"> Contact</a>
-            <a id="deconnexion" href="construction.html" alt="deconnexion"><img src="./Icones/off.png" alt="bouton deconnexion">Déconnexion</a>
+            <a id="deconnexion" href="construction.html" alt="deconnexion"><img src="./Icones/off.png"
+                    alt="bouton deconnexion">Déconnexion</a>
         </div>
         <button type="button" aria-label="ouvre ferme menu gauche" class="menuToggler">
             <span class="line line1"></span> <!--span dans un bouton, oui mais div dans un bouton, non-->
             <span class="line line2"></span>
             <span class="line line3"></span>
         </button>
-        <a href="#calendarFonctionnality" alt="calendrier memo"><img id="calendar" src="./Icones/calendar.png" alt="Logo calendrier"></a>
+        <a href="#calendarFonctionnality" alt="calendrier memo"><img id="calendar" src="./Icones/calendar.png"
+                alt="Logo calendrier"></a>
         <form method="post" action="monProgramme.php" autocomplete="on">
             <fieldset class="rightMenu">
-                
+
                 <h2>Connexion</h2>
                 <div class="separation"></div>
-                <p id="constructionButton">(Le site étant actuellement en développement, il n'est pas encore possible de se connecter, s'inscrire ou envoyer un message).</p>
+                <p id="constructionButton">(Le site étant actuellement en développement, il n'est pas encore possible de
+                    se connecter, s'inscrire ou envoyer un message).</p>
                 <div>
                     <label for="name">Votre identifiant</label>
-                    <input type="text" name="identifiant" placeholder="Entrez votre identifiant" minlength="2" maxlength="25" id="name" required autocomplete="on">
+                    <input type="text" name="identifiant" placeholder="Entrez votre identifiant" minlength="2"
+                        maxlength="25" id="name" required autocomplete="on">
                     <div id="identifiantMenuError"></div>
                 </div>
                 <div>
                     <label for="passwordMenu">Votre mot de passe</label>
-                    <input type="password" name="password" placeholder="Entrez votre mot de passe" minlength="2" maxlength="25" id="passwordMenu" autocomplete="on" required>
+                    <input type="password" name="password" placeholder="Entrez votre mot de passe" minlength="2"
+                        maxlength="25" id="passwordMenu" autocomplete="on" required>
                     <div id="passwordMenuError"></div>
                 </div>
                 <div class="checkboxContainer">
@@ -54,7 +61,8 @@
                 <button type="submit" id="submitButtonMenu" disabled>Se connecter</button>
                 <p>Nouvel·le arrivant·e ?
                     Par <a href="inscription.html" alt="lien page inscription">ici !</a></p>
-                <a id="forgettenPassword" href="initialisation.html" alt="réinitialisation du mot de passe">Mot de passe oublié ?</a>
+                <a id="forgettenPassword" href="initialisation.html" alt="réinitialisation du mot de passe">Mot de passe
+                    oublié ?</a>
             </fieldset>
         </form>
         <img id="userButton" src="./Icones/user.png" title="Connexion" alt="Logo utilisateur">
@@ -62,11 +70,12 @@
     <header>
         <div id="logo">
             <h1>Ver'ify Compost</h1>
-            <a href="index.html" alt="Retour à la page d'accueil" >
+            <a href="index.html" alt="Retour à la page d'accueil">
                 <picture>
                     <source srcset="./Images/logo-site.webp" type="image/webp" />
-                    <source srcset="./Images/logo-site.png" type="image/png" /> 
-                    <img  id="retourAccueil" src="./Images/logo-site.png" alt="logo du site permettant de retourner à l'accueil">
+                    <source srcset="./Images/logo-site.png" type="image/png" />
+                    <img id="retourAccueil" src="./Images/logo-site.png"
+                        alt="logo du site permettant de retourner à l'accueil">
                 </picture>
             </a>
         </div>
@@ -78,7 +87,8 @@
         <a class="lienMenuDesktop" href="liens.html" alt="liens ressources">Liens & Ressources</a>
         <a class="lienMenuDesktop" href="compte.html" alt="mon compte">Mon compte</a>
         <a class="lienMenuDesktop" href="contact.html" alt="contact"> Contact</a>
-        <a class="lienMenuDesktop" id="deconnexionDesktop" href="connexionDesktop.html" alt="deconnexion"><img src="./Icones/off.png" alt="bouton deconnexion">Connexion</a>
+        <a class="lienMenuDesktop" id="deconnexionDesktop" href="connexionDesktop.html" alt="deconnexion"><img
+                src="./Icones/off.png" alt="bouton deconnexion">Connexion</a>
     </div>
     <main class="indexContainer">
         <article class="carouselContainer"> <!-- élément contenant le carousel + titre + fleche -->
@@ -93,12 +103,18 @@
                             <source srcset="./Images/cadre-feuilles.png" type="image/png" />
                             <img src="./Images/cadre-feuilles.png" id="cadreFeuilles" alt="image cadre avec des feuilles">
                         </picture>
-                    </li>-->                
-                <!-- Première slide -->
-                    <li class="slide">Éviter à 100 kg/an de biodéchets d’être transformés en gaz à effet de serre<p>🌍</p></li>
-                    <li class="slide littleSlide">Produire son propre compost, gratuit et sans odeur<p>🌱</p></li>
-                    <li class="slide littleSlide">Diminuer de plus d’1/3 le poids de sa poubelle<p>🪶</p></li>
-                    <li class="slide" id="slideEconomy">Faire faire des économies à sa collectivité et, à terme, à soi-même<p>💰</p></li>
+                    </li>-->
+                    <!-- Première slide -->
+                    <li class="slide">Éviter à 100 kg/an de biodéchets d’être transformés en gaz à effet de serre<p>🌍
+                        </p>
+                    </li>
+                    <li class="slide littleSlide">Produire son propre compost, gratuit et sans odeur<p>🌱</p>
+                    </li>
+                    <li class="slide littleSlide">Diminuer de plus d’1/3 le poids de sa poubelle<p>🪶</p>
+                    </li>
+                    <li class="slide" id="slideEconomy">Faire faire des économies à sa collectivité et, à terme, à
+                        soi-même<p>💰</p>
+                    </li>
                 </ul>
                 <!-- Bouton droite -->
                 <img class="carouselControl next" src="./Icones/arrow-right.png" alt="fleche droite">
@@ -106,60 +122,61 @@
         </article>
         <section id="fonctionsPremieres">
             <article class="rechercheDechets">
-                <h2>Prêt·e<br/>à composter ?</h2>
+                <h2>Prêt·e<br />à composter ?</h2>
                 <div class="separation"></div>
-                <p>Saisissez le nom du déchet dans la barre de recherche, puis cliquez sur la loupe pour découvrir le composteur adapté instantanément.</p>
+                <p>Saisissez le nom du déchet dans la barre de recherche, puis cliquez sur la loupe pour découvrir le
+                    composteur adapté instantanément.</p>
                 <div class="separation"></div>
 
                 <form class="searchBar">
-                    <textarea id="biodechet" name="biodéchet" placeholder="Le nom du déchet, c'est ici !"
-                        maxlength="30" cols="1" rows="1" required></textarea>
-                <button id="boutonVerifier">
+                    <textarea id="biodechet" name="biodéchet" placeholder="Le nom du déchet, c'est ici !" maxlength="30"
+                        cols="1" rows="1" required></textarea>
+                    <button id="boutonVerifier">
                         <picture>
                             <source srcset="./Images/loupe.webp" type="image/webp" />
-                            <source srcset="./Images/loupe.png" type="image/png" /> 
-                            <img src="./Images/loupe.png" alt="icone loupe pour valider la recherche"/>
+                            <source srcset="./Images/loupe.png" type="image/png" />
+                            <img src="./Images/loupe.png" alt="icone loupe pour valider la recherche" />
                         </picture>
-                </button>
-                <div id="resultatOverlay" class="overlay">
-                    <div class="overlayContent">
-                        <button id="closeOverlay" class="boutonCloseOverlay">&times;</button>
-                        <h1 id="overlayTitre"></h1>
-                        <p id="overlayDescription"></p>
-                        <p id="overlayReponse"></p>
-                        <img id="overlayImage" src="" alt="image d'un composteur differente selon la reponse" />   
+                    </button>
+                    <div id="resultatOverlay" class="overlay">
+                        <div class="overlayContent">
+                            <button id="closeOverlay" class="boutonCloseOverlay">&times;</button>
+                            <h1 id="overlayTitre"></h1>
+                            <p id="overlayDescription"></p>
+                            <p id="overlayReponse"></p>
+                            <img id="overlayImage" src="" alt="image d'un composteur differente selon la reponse" />
+                        </div>
                     </div>
-                </div>
-                <ul id="suggestionsDechets"></ul>
+                    <ul id="suggestionsDechets"></ul>
                 </form>
             </article>
 
-            <img id="verAnime" src="./Images/ver-anime.gif" alt="image d un ver qui se cache"/>
+            <img id="verAnime" src="./Images/ver-anime.gif" alt="image d un ver qui se cache" />
 
             <article id="calendarFonctionnality" class="calendarFonctionnality">
                 <h2 class="calendarTitle">Calendrier</h2>
                 <div class="separation"></div>
                 <div class="calendarContainer">
                     <div class="calendarHeader">
-                    <button id="calendarButtonPrev">❮</button>
-                    <h3 id="moisAnnee"></h3>
-                    <button id="calendarButtonNext">❯</button>
+                        <button id="calendarButtonPrev">❮</button>
+                        <h3 id="moisAnnee"></h3>
+                        <button id="calendarButtonNext">❯</button>
                     </div>
                     <table class="calendar">
-                    <thead>
-                        <tr class = weekContainer>
-                        <th>Lun</th>
-                        <th>Mar</th>
-                        <th>Mer</th>
-                        <th>Jeu</th>
-                        <th>Ven</th>
-                        <th>Sam</th>
-                        <th>Dim</th>
-                        </tr>
-                    </thead>
-                    <tbody id="calendarDaysContainer">
-                        <!-- Les jours créés en JS -->
-                    </tbody>
+                        <thead>
+                            <tr class=weekContainer>
+                                <th>Lun</th>
+                                <th>Mar</th>
+                                <th>Mer</th>
+                                <th>Jeu</th>
+                                <th>Ven</th>
+                                <th>Sam</th>
+                                <th>Dim</th>
+                            </tr>
+                        </thead>
+                        <tbody id="calendarDaysContainer">
+                            <!-- Les jours créés en JS -->
+                        </tbody>
                     </table>
                 </div>
                 <div id="overlayListeTaches" class="overlay">
@@ -176,23 +193,28 @@
                             </li>
                             <li>
                                 <input type="checkbox" id="tache2">
-                                <label for="tache2">Aération du compost (remuer légèrement pour éviter le compactage)</label>
+                                <label for="tache2">Aération du compost (remuer légèrement pour éviter le
+                                    compactage)</label>
                             </li>
                             <li>
                                 <input type="checkbox" id="tache3">
-                                <label for="tache3">Vérification de l'humidité (ajouter de l’eau si sec, du carton si trop humide)</label>
+                                <label for="tache3">Vérification de l'humidité (ajouter de l’eau si sec, du carton si
+                                    trop humide)</label>
                             </li>
                             <li>
                                 <input type="checkbox" id="tache4">
-                                <label for="tache4">Contrôle de la température (garder à l’abri du gel et des fortes chaleurs)</label>
+                                <label for="tache4">Contrôle de la température (garder à l’abri du gel et des fortes
+                                    chaleurs)</label>
                             </li>
                             <li>
                                 <input type="checkbox" id="tache5">
-                                <label for="tache5">Observation des vers ou du compost (ajuster l’humidité ou l’aération si besoin)</label>
+                                <label for="tache5">Observation des vers ou du compost (ajuster l’humidité ou l’aération
+                                    si besoin)</label>
                             </li>
                             <li>
                                 <input type="checkbox" id="tache6">
-                                <label for="tache6">Ajout de matières en alternant vertes (épluchures) et brunes (carton, feuilles sèches)</label>
+                                <label for="tache6">Ajout de matières en alternant vertes (épluchures) et brunes
+                                    (carton, feuilles sèches)</label>
                             </li>
                             <li>
                                 <input type="checkbox" id="tache7">
@@ -201,14 +223,15 @@
                         </ul>
                         <picture>
                             <source srcset="./Images/Logan.webp" type="image/webp" />
-                            <source srcset="./Images/Logan.png" type="image/png" /> 
-                            <img  id="chatLogan" src="./Images/Logan.png" alt="image d'un chat au milieu de pot de fleur">
+                            <source srcset="./Images/Logan.png" type="image/png" />
+                            <img id="chatLogan" src="./Images/Logan.png"
+                                alt="image d'un chat au milieu de pot de fleur">
                         </picture>
                     </div>
                 </div>
                 <div class="separation"></div>
                 <div id="memoContainer">
-                    <h2>Mémo<img src="./Icones/crayon.png" alt="icone d'un crayon"></h2>   
+                    <h2>Mémo<img src="./Icones/crayon.png" alt="icone d'un crayon"></h2>
                     <ul id="noteList">
                         <li class="noteItem">
                             <!-- <span class="item"></span>
@@ -217,9 +240,10 @@
                     </ul>
                 </div>
                 <div id="ajoutNote">
-                    <textarea type="text" id="noteInput" placeholder="Écrire une note" maxlength="32" cols="1" rows="1"></textarea>
+                    <textarea type="text" id="noteInput" placeholder="Écrire une note" maxlength="32" cols="1"
+                        rows="1"></textarea>
                     <button id="boutonAjoutNote">Ajouter</button>
-                </div>      
+                </div>
             </article>
         </section>
     </main>
@@ -227,13 +251,16 @@
         <a href="contact.html" alt="lien page contact" id="contactLien">Contact</a>
         <picture>
             <source srcset="./Images/herbe.webp" type="image/webp" />
-            <source srcset="./Images/herbe.png" type="image/png" /> 
+            <source srcset="./Images/herbe.png" type="image/png" />
             <img id="dessinHerbeFooter" src="./Images/herbe.png" alt="brin d'herbe dessiné">
         </picture>
-        <p>Copyright© 2024 - 2025 | Design by <a class="attribution" href="https://www.freepik.com/" target="_blank" alt="lien page freepik">Freepik</a> & <a class="attribution" href="https://anais-diez.vercel.app/" target="_blank" alt="lien page perso">Anaïs DIEZ</a>
+        <p>Copyright© 2024 - 2025 | Design by <a class="attribution" href="https://www.freepik.com/" target="_blank"
+                alt="lien page freepik">Freepik</a> & <a class="attribution" href="https://anais-diez.vercel.app/"
+                target="_blank" alt="lien page perso">Anaïs DIEZ</a>
         </p>
     </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.3/dist/purify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.3/dist/purify.min.js"></script>
 </body>
+
 </html>

@@ -536,7 +536,7 @@ function VerifierDechet(event) {
         if (suggestions.length === 1) {
             inputValue = suggestions[0].innerText; // s'il n'y a qu'un déchet suggéré, on remplace le déchet recherché par la suggestion dans l'input
             input.value = inputValue; // Met aussi à jour l'input visuellement
-            suggestionsListeDechets.style.display = 'none'; // On cache la liste
+            suggestionsListeDechets.style.display = 'none'; // La liste est cachée après avoir appuyé sur Entrée
         }
 
         if (inputValue === "") {
