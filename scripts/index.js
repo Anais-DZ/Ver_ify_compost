@@ -82,6 +82,7 @@ const tabDechet = [
     { name: "Peau de pêche", types: "composteur et lombricomposteur" },
     { name: "Trognon de pommes", types: "composteur et lombricomposteur" },
     { name: "Peau de citron", types: "composteur" },
+    { name: "Citron", types: "composteur" },
     { name: "Épluchures de citron", types: "composteur" },
     { name: "Peau de citron", types: "composteur" },
     { name: "Peau de citron", types: "composteur" },
@@ -195,7 +196,6 @@ const tabDechet = [
     { name: "Chou", types: "composteur" },
     { name: "Chou de Bruxelles", types: "composteur" },
     { name: "Chou-fleur", types: "composteur et lombricomposteur" },
-    { name: "Citron", types: "composteur" },
     { name: "Clémentine", types: "composteur" },
     { name: "Coques de noix", types: "composteur" },
     { name: "Coques de noisette", types: "composteur" },
@@ -453,29 +453,18 @@ function afficherOverlay(titre, description, reponse, imageComposteur) {
     const overlayDescription = document.getElementById('overlayDescription');
     const overlayReponse = document.getElementById('overlayReponse');
     const overlayImage = document.getElementById('overlayImage');
-    // const loader = document.getElementById('loader');
-    // const overlayContent = document.getElementById('overlayContent');
     
     // Permet d'écrire dans l'overlay (l'overlay est vide dans le html) et modifier le texte selon le déchet trouvé:
     overlayTitre.innerText = titre; // permet la mise à jour du titre
     overlayDescription.innerText = description; // permet la mise à jour de la description
     overlayReponse.innerText = reponse; // permet la mise à jour de la réponse
-
-    // Quand l'image est prête, on montre tout
-    // overlayImage.onload = function () {
-    //     loader.style.display = 'none';
-    //     overlayContent.style.display = 'block';
-    // };
-
     overlayImage.src = `./Images/${imageComposteur}`; // permet la mise à jour de l'image
 
     // Affiche l'intérieur de l'overlay en colonne
     //resultatOverlay est la div du dom qui contient l'overlay et qui n'apparaît pas physiquement dans le html de l'index
     resultatOverlay.style.display = 'flex';
     resultatOverlay.style.flexDirection = 'column';
-    loader.style.display = 'block';
-    overlayContent.style.display = 'none';
-}
+};
 
 
 // Fonction qui permet de rechercher le déchet dans tabDechet et d'afficher l'overlay permettant à l'utilisateur de savoir où jeter le biodéchet.
