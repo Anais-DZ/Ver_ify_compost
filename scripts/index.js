@@ -490,23 +490,19 @@ function resultatRecherche(dechetRecherche) {
         const typeContainer = dechetTrouve.types;
 
         if (typeContainer.includes("composteur et lombricomposteur")) {
-            setTimeout(() => {
-                afficherOverlay( //appel de la fonction qui va afficher l'overlay
-                    dechetTrouve.name, // Affichage du nom exact et pas le mot tapé par l'utilisateur (ex: si l'utilisateur tape "cartonsans encre", le nom du déchet qui sera réellement affiché sur l'overlay sera "carton sans encre")
-                    "(en petits morceaux et/ou humidifiés pour nos amis les vers)",
-                    "✅ Convient au composteur et lombricomposteur",
-                    "compost-coeur.webp" // Image pour les deux composteurs
-                );
-            }, 200);
+            afficherOverlay( //appel de la fonction qui va afficher l'overlay
+                dechetTrouve.name, // Affichage du nom exact et pas le mot tapé par l'utilisateur (ex: si l'utilisateur tape "cartonsans encre", le nom du déchet qui sera réellement affiché sur l'overlay sera "carton sans encre")
+                "(en petits morceaux et/ou humidifiés pour nos amis les vers)",
+                "✅ Convient au composteur et lombricomposteur",
+                "compost-coeur.webp" // Image pour les deux composteurs
+            );
         } else if (typeContainer.includes("composteur")) {
-            setTimeout(() => {
-                afficherOverlay(
-                    dechetTrouve.name,
-                    "Ne convient pas au lombricomposteur",
-                    "⚠️ Convient uniquement au composteur",
-                    "compost-okay.webp" // Image pour composteur uniquement
-                );
-            }, 200);
+            afficherOverlay(
+                dechetTrouve.name,
+                "Ne convient pas au lombricomposteur",
+                "⚠️ Convient uniquement au composteur",
+                "compost-okay.webp" // Image pour composteur uniquement
+            );
         } else {
             afficherOverlay(
                 dechetTrouve.name,
@@ -516,14 +512,12 @@ function resultatRecherche(dechetRecherche) {
             );
         }
     } else {
-        setTimeout(() => {
-            afficherOverlay(
-                dechetRecherche, // Affichage du mot exacte tapé par l'utilisateur car il n'existe pas dans le tableau
-                "❓",
-                "Ce déchet m'est inconnu et va me demander quelques recherches plus approfondies. En attendant, le mieux est de le jeter dans la poubelle ordinaire ou au recyclage s'il se recycle.",
-                "ver-perplexe.webp" // Image pour déchet inconnu
-            );
-        }, 200);
+        afficherOverlay(
+            dechetRecherche, // Affichage du mot exacte tapé par l'utilisateur car il n'existe pas dans le tableau
+            "❓",
+            "Ce déchet m'est inconnu et va me demander quelques recherches plus approfondies. En attendant, le mieux est de le jeter dans la poubelle ordinaire ou au recyclage s'il se recycle.",
+            "ver-perplexe.webp" // Image pour déchet inconnu
+        );
     }
 }
 
