@@ -1,20 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <link rel="icon" href="./Images/logo-site.webp" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Un site dédié à vous aider à trier facilement et rapidement vos déchets compostables. Découvrez en quelques clics comment simplifier le compostage et adopter des gestes écologiques au quotidien.">
+    <meta name="description" content="Verify Compost vous aide, en quelques clics, à savoir quels déchets composter et comment entretenir votre compost. Simplifiez le tri, réduisez vos déchets et adoptez des gestes écologiques au quotidien." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400&family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <link href="./styles/commun.css" rel="stylesheet">
     <link href="./styles/contact.css" rel="stylesheet">
     <link href="./styles/formulaire.css" rel="stylesheet">
-    <link href="./styles/commun.css" rel="stylesheet">
-    <script src="./scripts/commun.js" async></script>
     <script src="./scripts/contact.js" defer></script>
-    <title>Page - Contact</title>
+    <script src="./scripts/commun.js" defer></script>
+    <title><title>Contactez-nous ! | Verify Compost</title></title>
 </head>
+
 <body>
     <nav id="entete">
         <div class="leftMenu">
@@ -22,9 +24,7 @@
             <a href="https://ver-ify-compost.vercel.app/#calendarFonctionnality" alt="calendrier memo">Calendrier</a>
             <a href="guide.html" alt="guide entretien">Conseils & entretien</a>
             <a href="liens.html" alt="liens ressources">Liens & Ressources</a>
-            <a href="compte.html" alt="mon compte">Mon compte</a>
             <a href="contact.html" alt="contact"> Contact</a>
-            <a id="deconnexion" href="construction.html" alt="deconnexion"><img src="./Icones/off.png" alt="bouton deconnexion">Déconnexion</a>
         </div>
         <button type="button" aria-label="ouvre ferme menu gauche" class="menuToggler">
             <span class="line line1"></span> <!--span dans un bouton, oui mais div dans un bouton, non-->
@@ -32,61 +32,36 @@
             <span class="line line3"></span>
         </button>
         <a href="https://ver-ify-compost.vercel.app/#calendarFonctionnality" alt="calendrier memo"><img id="calendar" src="./Icones/calendar.png" alt="Logo calendrier"></a>
-        <form method="post" action="monProgramme.php" autocomplete="on">
-            <fieldset class="rightMenu">
-                
-                <h2>Connexion</h2>
-                <div class="separation"></div>
-                <p id="constructionButton">(Le site étant actuellement en développement, il n'est pas encore possible de se connecter, s'inscrire ou envoyer un message).</p>
-                <div>
-                    <label for="name">Votre identifiant</label>
-                    <input type="text" name="identifiant" placeholder="Entrez votre identifiant" minlength="2" maxlength="25" id="name" required autocomplete="on">
-                </div>
-                <div>
-                    <label for="passwordMenu">Votre mot de passe</label>
-                    <input type="password" name="password" placeholder="Entrez votre mot de passe" minlength="2" maxlength="25" id="passwordMenu" autocomplete="on" required>
-                </div>
-                <div class="checkboxContainer">
-                    <input type="checkbox" id="checkbox" checked />
-                    <label for="checkbox">Se souvenir de moi</label>
-                </div>
-                <button type="submit" id="submitButtonMenu">Se connecter</button>
-                <p>Nouvel·le arrivant·e ?
-                    Par <a href="inscription.html" alt="lien page inscription">ici !</a></p>
-                <a id="forgettenPassword" href="initialisation.html" alt="réinitialisation du mot de passe">Mot de passe oublié ?</a>
-            </fieldset>
-        </form>
-        <img id="userButton" src="./Icones/user.png" title="Connexion" alt="Logo utilisateur">
     </nav>
     <header>
         <div id="logo">
             <h1>Ver'ify Compost</h1>
-            <a href="index.html" alt="Retour à la page d'accueil" >
+            <a href="index.html" alt="Retour à la page d'accueil">
                 <picture>
                     <source srcset="./Images/logo-site.webp" type="image/webp" />
-                    <source srcset="./Images/logo-site.png" type="image/png" /> 
-                    <img  id="retourAccueil" src="./Images/logo-site.png" alt="logo du site permettant de retourner à l'accueil">
+                    <source srcset="./Images/logo-site.png" type="image/png" />
+                    <img id="retourAccueil" src="./Images/logo-site.png"
+                        alt="logo du site permettant de retourner à l'accueil">
                 </picture>
             </a>
         </div>
     </header>
     <div class="leftMenuDesktop">
         <a class="lienMenuDesktop" href="index.html" alt="accueil">Accueil</a>
-        <a class="lienMenuDesktop" href="https://ver-ify-compost.vercel.app/#calendarFonctionnality" alt="calendrier memo">Calendrier</a>
+        <a class="lienMenuDesktop" href="#calendarFonctionnality" alt="calendrier memo">Calendrier</a>
         <a class="lienMenuDesktop" href="guide.html" alt="guide entretien">Conseils & entretien</a>
         <a class="lienMenuDesktop" href="liens.html" alt="liens ressources">Liens & Ressources</a>
-        <a class="lienMenuDesktop" href="compte.html" alt="mon compte">Mon compte</a>
         <a class="lienMenuDesktop" href="contact.html" alt="contact"> Contact</a>
-        <a class="lienMenuDesktop" id="deconnexionDesktop" href="connexionDesktop.html" alt="deconnexion"><img src="./Icones/off.png" alt="bouton deconnexion">Connexion</a>
     </div>
-    <main>
-        <div class="contact">
-            <div class="bandeHorizontale1"></div>
-            <div class="bandeHorizontale2"></div>
+    <main class="contact">
+        <article >
+            <div class="separationLinksMax"></div>
+            <div class="separationLinksMin"></div>
+            <h2 id="titreContact">Contact</h2>
+            <div class="separationLinksMin"></div>
+            <div class="separationLinksMax"></div>
 
-            <h2>Contact</h2>
-
-            <p>Besoin d’aide ? Une question ? Une suggestion ? Ou simplement l’envie de me laisser un petit mot ?</p>
+            <p id="intro">Besoin d’aide ? Une question ? Une suggestion ? Ou simplement l’envie de me laisser un petit mot ?</p>
             <!--<p class="constructionButton">(Le site étant actuellement en développement, il est possible de remplir le formulaire mais pas d'envoyer de message)</p>-->
 
             <form action="https://formsubmit.co/4c6d921710bb3c7a8334d74f232d8325" method="post" id="contactFormulaire">
@@ -120,9 +95,7 @@
                     <button type="submit" id="submitButtonContact">Envoyer</button>
                 </fieldset>
             </form>
-            <div class="bandeHorizontale2"></div>
-            <div class="bandeHorizontale1"></div>
-        </div>
+        </article>
     </main>
 
 

@@ -1,20 +1,36 @@
 .contact {
+    width: 100%;
+    background-color: rgb(253, 255, 246);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px !important;
+}
+
+article {
+    box-shadow: 0 4px 8px #564e4e2f;
+    width: 95vw;
+    max-width: 650px ;
+    height: auto;
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px 0 10px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.bandeHorizontale1 {
-    height: 4px;
-    margin: 5px 0;
+.separationLinksMin, .separationLinksMax {
+    width: 95%;
+    height: 1px;
     background-color: #564E4E;
-    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2px;
 }
 
-.bandeHorizontale2 {
-    height: 2px;
-    background-color: #564E4E;
-    width: 80%;
+.separationLinksMax {
+    height: 3px;
 }
 
 .contact img {
@@ -23,6 +39,10 @@
     left: 35px;
     top: -70px;
     position: absolute;
+}
+
+.contact form {
+    margin: 120px 0 0 0;
 }
 
 .contact textarea {
@@ -77,3 +97,15 @@
     cursor: not-allowed;
 }
 
+#intro {
+    margin : 20px 10px 0 10px;
+}
+
+#titreContact {
+    font-family: "Cabin sketch";
+    font-size: 30px;
+    font-weight:bold;
+    color: #564E4E;
+    text-align: center;
+    margin: 15px 0;
+}

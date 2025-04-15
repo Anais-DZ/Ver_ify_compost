@@ -23,49 +23,14 @@
             <a href="#calendarFonctionnality" alt="calendrier memo">Calendrier</a>
             <a href="guide.html" alt="guide entretien">Conseils & entretien</a>
             <a href="liens.html" alt="liens ressources">Liens & Ressources</a>
-            <a href="compte.html" alt="mon compte">Mon compte</a>
             <a href="contact.html" alt="contact"> Contact</a>
-            <a id="deconnexion" href="construction.html" alt="deconnexion"><img src="./Icones/off.png"
-                    alt="bouton deconnexion">Déconnexion</a>
         </div>
         <button type="button" aria-label="ouvre ferme menu gauche" class="menuToggler">
             <span class="line line1"></span> <!--span dans un bouton, oui mais div dans un bouton, non-->
             <span class="line line2"></span>
             <span class="line line3"></span>
         </button>
-        <a href="#calendarFonctionnality" alt="calendrier memo"><img id="calendar" src="./Icones/calendar.png"
-                alt="Logo calendrier"></a>
-        <form method="post" action="monProgramme.php" autocomplete="on">
-            <fieldset class="rightMenu">
-
-                <h2>Connexion</h2>
-                <div class="separation"></div>
-                <p id="constructionButton">(Le site étant actuellement en développement, il n'est pas encore possible de
-                    se connecter, s'inscrire ou envoyer un message).</p>
-                <div>
-                    <label for="name">Votre identifiant</label>
-                    <input type="text" name="identifiant" placeholder="Entrez votre identifiant" minlength="2"
-                        maxlength="25" id="name" required autocomplete="on">
-                    <div id="identifiantMenuError"></div>
-                </div>
-                <div>
-                    <label for="passwordMenu">Votre mot de passe</label>
-                    <input type="password" name="password" placeholder="Entrez votre mot de passe" minlength="2"
-                        maxlength="25" id="passwordMenu" autocomplete="on" required>
-                    <div id="passwordMenuError"></div>
-                </div>
-                <div class="checkboxContainer">
-                    <input type="checkbox" id="checkbox" checked />
-                    <label for="checkbox">Se souvenir de moi</label>
-                </div>
-                <button type="submit" id="submitButtonMenu" disabled>Se connecter</button>
-                <p>Nouvel·le arrivant·e ?
-                    Par <a href="inscription.html" alt="lien page inscription">ici !</a></p>
-                <a id="forgettenPassword" href="initialisation.html" alt="réinitialisation du mot de passe">Mot de passe
-                    oublié ?</a>
-            </fieldset>
-        </form>
-        <img id="userButton" src="./Icones/user.png" title="Connexion" alt="Logo utilisateur">
+        <a href="#calendarFonctionnality" alt="calendrier memo"><img id="calendar" src="./Icones/calendar.png" alt="Logo calendrier"></a>
     </nav>
     <header>
         <div id="logo">
@@ -85,14 +50,11 @@
         <a class="lienMenuDesktop" href="#calendarFonctionnality" alt="calendrier memo">Calendrier</a>
         <a class="lienMenuDesktop" href="guide.html" alt="guide entretien">Conseils & entretien</a>
         <a class="lienMenuDesktop" href="liens.html" alt="liens ressources">Liens & Ressources</a>
-        <a class="lienMenuDesktop" href="compte.html" alt="mon compte">Mon compte</a>
         <a class="lienMenuDesktop" href="contact.html" alt="contact"> Contact</a>
-        <a class="lienMenuDesktop" id="deconnexionDesktop" href="connexionDesktop.html" alt="deconnexion"><img
-                src="./Icones/off.png" alt="bouton deconnexion">Connexion</a>
     </div>
     <main class="indexContainer">
         <article class="carouselContainer"> <!-- élément contenant le carousel + titre + fleche -->
-            <h2>Composter, c'est aussi :</h2>
+            <h2>Le compostage, c'est aussi :</h2>
             <!-- Bouton gauche-->
             <div class="carousel"> <!-- élément contenant que le carousel-->
                 <img class="carouselControl prev" src="./Icones/arrow-left.png" alt="fleche gauche">
