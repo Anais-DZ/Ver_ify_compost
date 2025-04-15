@@ -453,8 +453,8 @@ function afficherOverlay(titre, description, reponse, imageComposteur) {
     const overlayDescription = document.getElementById('overlayDescription');
     const overlayReponse = document.getElementById('overlayReponse');
     const overlayImage = document.getElementById('overlayImage');
-    const loader = document.getElementById('loader');
-    const overlayContent = document.getElementById('overlayContent');
+    // const loader = document.getElementById('loader');
+    // const overlayContent = document.getElementById('overlayContent');
     
     // Permet d'écrire dans l'overlay (l'overlay est vide dans le html) et modifier le texte selon le déchet trouvé:
     overlayTitre.innerText = titre; // permet la mise à jour du titre
@@ -462,10 +462,10 @@ function afficherOverlay(titre, description, reponse, imageComposteur) {
     overlayReponse.innerText = reponse; // permet la mise à jour de la réponse
 
     // Quand l'image est prête, on montre tout
-    overlayImage.onload = function () {
-        loader.style.display = 'none';
-        overlayContent.style.display = 'block';
-    };
+    // overlayImage.onload = function () {
+    //     loader.style.display = 'none';
+    //     overlayContent.style.display = 'block';
+    // };
 
     overlayImage.src = `./Images/${imageComposteur}`; // permet la mise à jour de l'image
 
