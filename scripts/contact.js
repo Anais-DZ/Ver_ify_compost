@@ -14,12 +14,12 @@ const compteur = document.querySelector("#charCount");
 const nbreDeLettreMax = textareaMessage.getAttribute("maxlength");
 
 // Le bouton est désactivé dès l'ouverture de la page
-submitButtonContact.disabled = true; 
+submitButtonContact.disabled = true;
 
-            // Fonction pour valider le formulaire de contact
+// Fonction pour valider le formulaire de contact
 function messageValide() {
 
-            // Validation du Prénom et Nom
+    // Validation du Prénom et Nom
     // const nomValue = nom.value;
     const nomValue = nom.value;
     const regexNom = /^(?=(.*[A-Za-z]){3,}).{3,25}$/;
@@ -28,9 +28,9 @@ function messageValide() {
         errorNomMessage.innerText = "Votre prénom/nom doit contenir au moins 3 caractères dont 3 lettres.";
     } else {
         errorNomMessage.innerText = "";
-    } 
+    }
 
-            // Validation de l'adresse mail
+    // Validation de l'adresse mail
     const emailValue = email.value;
     const regexMail = /^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,30}$/;
     const mailValide = regexMail.test(emailValue);
@@ -39,33 +39,47 @@ function messageValide() {
     } else {
         errorEmail.innerText = "";
     }
-            // Mise à jour du nombre de caractères restants
+    // Mise à jour du nombre de caractères restants
     const message = textareaMessage.value;
     const charRestant = nbreDeLettreMax - message.length;
     compteur.innerText = `${charRestant} caractères restants`;
 
-            // Validation de la longueur du message
+    // Validation de la longueur du message
     const minMessageValide = message.length > 5;
     const maxMessageValide = message.length <= 500;
     if (message.length > 0 && !minMessageValide) {
         errorMessage.innerText = "Le message doit contenir 5 caractères minimum.";
-        
+
     } else if (!maxMessageValide) {
         errorMessage.innerText = "Vous avez atteint le nombre de caractères maximum.";
     } else {
         errorMessage.innerText = ""; // Effacer le message d'erreur  
     };
 
-            // Activation du bouton
-    submitButtonContact.disabled = !(nomValide && mailValide && minMessageValide && maxMessageValide); 
+    // Activation du bouton
+    submitButtonContact.disabled = !(nomValide && mailValide && minMessageValide && maxMessageValide);
 
     // if (nomValide && mailValide && minMessageValide && maxMessageValide) {
     //     submitButtonContact.disabled = false; // Activer le bouton si la validation réussit
     // } else {
     //     submitButtonContact.disabled = true; 
-         // Désactiver le bouton si la validation échoue
+    // Désactiver le bouton si la validation échoue
     // }
 }
 nom.addEventListener("input", messageValide);
 email.addEventListener("input", messageValide);
 textareaMessage.addEventListener("input", messageValide);
+
+// Affiche la boîte de dialogue de remerciement.
+// function handleFormSubmit(event) {
+//     event.preventDefault(); // Empêche la soumission du formulaire par défaut.
+
+//     // Affiche la boîte de dialogue de remerciement.
+//     alert("Merci pour votre message ! Nous l'avons bien reçu.");
+
+//     // Après 3 secondes, redirige l'utilisateur vers la page d'accueil.
+//     setTimeout(function () {
+//         // Redirection vers la page d'accueil ou page de remerciement
+//         window.location.href = "https://ver-ify-compost.vercel.app/";
+//     }, 3000); // Attendre 3 secondes avant de rediriger
+// }
