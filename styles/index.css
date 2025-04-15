@@ -196,6 +196,16 @@
     z-index: 10;
 }
 
+#loader {
+    font-size: 1.2em;
+    color: #555;
+    text-align: center;
+    margin: 20px;
+    /* Un vrai spinner ? */
+    /* background: url('spinner.gif') no-repeat center center;
+       height: 50px; */
+  }
+
 .overlayContent {
     background-color: #fff4e7;
     width: 330px;
