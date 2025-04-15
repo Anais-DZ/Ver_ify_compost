@@ -1,6 +1,6 @@
 main {
     width: 100%;
-    background-color: rgb(253, 255, 246);
+    background-color: rgb(253, 255, 248);
 }
 
 body {
@@ -173,7 +173,7 @@ header h1 {
     transform: translateX(-125%);
     transition: transform 0.7s cubic-bezier(0.18,0.89,0.32,1.27);
     z-index: 9;
-    margin-top: 480px;
+    margin-top: 355px;
 }
 
 .leftMenu.active {
