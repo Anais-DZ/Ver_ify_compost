@@ -142,13 +142,6 @@ header h1 {
     margin-left: 20px;
 }
 
-#userButton {
-    margin-left: 25%;
-    margin-bottom: 3px !important;
-    width: 48px !important;
-    height: 48px !important;
-}
-
 .leftMenuDesktop {
     display: none;
 }
@@ -193,162 +186,6 @@ header h1 {
     border-bottom-right-radius: 8px;
 }
 
-#deconnexion {
-    width: 85%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 25px 0 0;
-    text-align: center;
-    padding-left: 0;
-    border-radius: 8px;
-    opacity: 0.7;
-}
-
-#deconnexion img {
-    width: 30px;
-    height: 30px;
-    margin-right: 5px;
-}
-
-#deconnexionDesktop {
-    display: none;
-}
-
-
-/* menu connexion*/
-.rightMenu a {
-    font-family: "Fredoka";
-    color: #689e58;
-    text-decoration: underline;
-    font-weight: bold;
-    font-size: 18px;
-}
-
-.rightMenu p {
-    font-family: "Fredoka";
-    color: #564E4E;
-    text-align: center;
-    margin: 0;
-    font-size: 18px;
-}
-
-.rightMenu label {
-    font-family: "Fredoka";
-    display: inline-block;
-    font-size: 18px;
-    color: #564E4E;
-    margin: 35px 0 4px 0;
-}
-
-.rightMenu h2 {
-    font-family: "Cabin sketch";
-    font-size: 32px;
-    text-align: center;
-    margin: 15px 0 10px;
-    color: #564E4E;
-}
-
-#checkbox {
-    width: auto;
-    margin-right: 10px; /*changer la couleur avec javascript ???*/
-}
-
-.checkboxContainer {
-    display: flex;
-    align-items: center;
-}
-
-.checkboxContainer label {
-    margin: 10px 0 !important;
-    font-size: 14px !important;
-}
-
-.rightMenu {
-    background: #fefffa;
-    border: 14px solid #94d353;
-    /* border-image: linear-gradient(to right bottom, #008742, #40a048, #6aba4e, #94d353, #c0ec59); */
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-    position: fixed;
-    width: 75vw;
-    max-width: 350px;
-    min-height: auto;
-    display: flex;
-    flex-direction: column;
-    transform: translateX(100%);
-    transition: transform 0.8s cubic-bezier(0.18,0.89,0.32,1.27);
-    z-index: 9;
-    margin-top: 27px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.307);
-    cursor:pointer ; /* le pointer n'apparaît plus ! à corriger*/
-}
-
-.rightMenu.active {
-    transform: translate(-178px);
-}
-
-.rightMenu input {
-    border: 1px solid #94d353;
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    font-size: 14px;
-    font-style: italic;
-    box-sizing: border-box;
-    font-family: 'Fredoka';
-    padding: 10px 10px;
-}
-
-.initialisation input:focus, .contact input:focus, .inscription input:focus, .rightMenu input:focus  {
-    background:#c0ec5923;
-    color: black;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-}
-
-.rightMenu label {
-    margin-top: 20px;
-}
-
-#submitButtonMenu {
-    background-color: #564E4E;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor:pointer;
-    font-size: 22px;
-    font-family: "Cabin Sketch";
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.523);
-    text-align: center;
-    margin: 10px 0 20px 38px;
-    padding: 10px 10px;
-    width: 75%;
-}
-
-#identifiantMenuError, #passwordMenuError {
-    color: rgb(210, 19, 19);
-    font-family: "fredoka";
-    font-size: 14px;
-    text-align: center;
-    margin-top: 5px;
-}
-
-/* A remettre quand la fonction JS sera faite */
-#submitButtonMenu:disabled {
-    background-color: rgba(255, 0, 0, 0.162);
-    cursor: not-allowed;
-}
-
-#forgettenPassword, #forgettenPasswordConnexionDesktop {
-    font-family: "Fredoka";
-    font-size: 15px;
-    font-weight:normal;
-    color: #564E4E;
-    text-align: center;
-    margin: 15px 0 0;
-}
-
-
 .separation {
     width: 30%;
     height: 1px;
@@ -359,7 +196,6 @@ header h1 {
     border-radius: 50%;
 }
 
-/* ne s'affiche plus dans les footer, à corriger */
 #contactLien {
     font-size: 32px;
     text-decoration: none;
@@ -385,20 +221,6 @@ footer p {
 .attribution {
     font-size: 15px !important;
     color: white;
-}
-
-.constructionButton {
-    font-size: 17px !important;
-    color: rgb(210, 43, 43) !important;
-    font-style: italic;
-    margin: 10px 25px 0 !important;
-}
-
-#constructionButton { /* paragraphe du menu*/
-    font-size: 12px;
-    color: rgb(210, 43, 43);
-    font-style: italic;
-    margin: 0;
 }
 
 @media (max-width: 360px) {
@@ -466,22 +288,6 @@ footer p {
         text-decoration-thickness: 1.2px;
         transform: scale(1.1);
         font-weight: 500;
-    }
-
-    #deconnexionDesktop {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding-left: 0;
-        opacity: 0.7;
-    }
-
-    #deconnexionDesktop img {
-        width: 30px;
-        height: 30px;
-        margin-right: 5px;
-        display: none;
     }
 
     header {
