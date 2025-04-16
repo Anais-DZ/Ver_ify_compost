@@ -602,8 +602,8 @@ function ecrireMemo() {
     if (item) {
         const listItem = document.createElement('li');
         listItem.innerHTML = DOMPurify.sanitize (`
-            <span class="item">${item}</span>
             <button class="supprimer">❌</button>
+            <span class="item">${item}</span>
         `);
         noteList.appendChild(listItem);
 

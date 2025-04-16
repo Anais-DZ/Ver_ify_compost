@@ -28,11 +28,11 @@ header {
 }
 
 footer {
-    height: 130px;
+    height: 100px;
     width: 100vw;
     justify-content: flex-end;
     box-shadow: 0 0 30px 16px rgba(255, 255, 255, 0.4);
-    background: linear-gradient(180deg, rgba(220,255,197,1) 12%, rgba(227,242,223,1) 22%, rgba(139,201,124,1) 30%, rgba(28,150,0,1) 31%);
+    background: rgba(28,150,0,1);
 }
 
 header h1 {
