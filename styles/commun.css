@@ -223,6 +223,10 @@ footer p {
     color: white;
 }
 
+.codepen_wrapper {
+    margin: 0 auto;
+  }
+
 @media (max-width: 360px) {
     header h1 {
         margin-top: 0px;
