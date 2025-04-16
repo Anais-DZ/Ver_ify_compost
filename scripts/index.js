@@ -57,7 +57,7 @@ const recupererDechetsApi = async ()=> {
         
         //la réponse va pouvoir être transformée grâce à json() que l'on stocke dans la variable data
         const data = await response.json();
-        console.log('Données reçues :', data); // pour vérifier
+        console.log('Données reçues :', data); // pour vérifier que les données soient bien reçues
 
         //les données récupérées passent par forEach pour créer le tableau tabDechet
         data.forEach(dechet => {
