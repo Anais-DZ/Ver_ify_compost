@@ -15,6 +15,8 @@ Bon compostage !
 "Ver'ify Compost" est un projet de site web mobile lancé fin octobre dans le cadre de ma formation en développement web. Il s'agit d'un projet évolutif qui s'étendra tout au long de mon parcours d'apprentissage et voir même bien après.
 Un prototype dynamique est disponible sur mon [Figma](https://www.figma.com/design/I3VE2n0b4SOG1q0VF3Tl2E/Projet-Ver'ify-Compost?node-id=631-1717&p=f&t=K11yaDICjozdfypa-0), offrant un aperçu des fonctionnalités et du design.
 
+<br/>Update ! 16 avril 2025 --> Plus de tableau en JavaScript dans mon script ! J'ai intégré une API, API que j'ai codé pour avoir tous les noms de déchets possibles et leurs composteurs (API que vous pouvez retrouver ici [API Waste](https://api-waste.onrender.com/)) me permettant de les récupérer dans ma base de données et de remplir mon tableau.
+
 <br/>Update ! 16 avril 2025 --> 
 - La page contact est active (vous pouvez me laisser un message si vous le souhaitez 😉) : [Ver'ify Compost | Contact](https://verify-compost.vercel.app/contact.html)
 - Suppression des pages en construction ("inscription", "initialisation", "connexion") pour un site plus clair. Ces pages seront à nouveau sur le site quand la création de compte utilisateur sera nécessaire pour accéder à d'autres fonctionnalités.
