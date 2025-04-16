@@ -39,241 +39,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
                             // Fonctions recherche des déchets
 
-// En attendant le cours sur la Base De Données, tableau en JavaScript des déchets et où ils se jettent : 
+//la variable tabDechet stocke un tableau d'objets contenant les données récupérées depuis l'api
+const tabDechet = [];
 
-//la variable tabDechet stocke un tableau d'objets
-const tabDechet = [
-    { name: "Coquilles d'oeuf", types: "composteur et lombricomposteur" },
-    { name: "Boîte d'oeufs sans encre", types: "composteur et lombricomposteur" },
-    { name: "Coquilles de noix", types: "composteur" },
-    { name: "Pelures de banane", types: "composteur et lombricomposteur" },
-    { name: "Peau de banane", types: "composteur et lombricomposteur" },
-    { name: "Épluchures de carotte", types: "composteur et lombricomposteur" },
-    { name: "Marc de café", types: "composteur et lombricomposteur" },
-    { name: "Peau d'orange", types: "composteur" },
-    { name: "Fanes de radis", types: "composteur et lombricomposteur" },
-    { name: "Radis", types: "composteur et lombricomposteur" },
-    { name: "Épluchures de pomme", types: "composteur et lombricomposteur" },
-    { name: "Cassis", types: "composteur et lombricomposteur" },
-    { name: "Mûres", types: "composteur et lombricomposteur" },
-    { name: "Groseilles", types: "composteur et lombricomposteur" },
-    { name: "Ail", types: "composteur" },
-    { name: "Piment", types: "composteur" },
-    { name: "Agrûme", types: "composteur" },
-    { name: "Carton sans encre", types: "composteur et lombricomposteur" },
-    { name: "Tonte de pelouse", types: "composteur" },
-    { name: "Feuilles mortes", types: "composteur" },
-    { name: "Fleurs fanées", types: "composteur"},
-    { name: "Sciure de bois (non traité)", types: "composteur" },
-    { name: "Fanes de carottes", types: "composteur et lombricomposteur" },
-    { name: "Épluchures de pommes de terre", types: "composteur et lombricomposteur" },
-    { name: "Épluchures de courgettes", types: "composteur et lombricomposteur" },
-    { name: "Peau de kiwi", types: "composteur" },
-    { name: "Peau de mangue", types: "composteur" },
-    { name: "Sachet de thé (sans agrafe)", types: "composteur et lombricomposteur" },
-    { name: "Mouchoirs en papier", types: "composteur et lombricomposteur" },
-    { name: "Essuie-tout", types: "composteur et lombricomposteur" },
-    { name: "Boîte en carton brun (sans encre)", types: "composteur et lombricomposteur" },
-    { name: "Terre d’anciennes plantes", types: "composteur" },
-    { name: "Plumes", types: "composteur" },
-    { name: "Cheveux", types: "composteur" },
-    { name: "Restes de salade", types: "composteur et lombricomposteur" },
-    { name: "Épluchures de poire", types: "composteur et lombricomposteur" },
-    { name: "Peau de pêche", types: "composteur et lombricomposteur" },
-    { name: "Trognon de pommes", types: "composteur et lombricomposteur" },
-    { name: "Peau de citron", types: "composteur" },
-    { name: "Citron", types: "composteur" },
-    { name: "Épluchures de citron", types: "composteur" },
-    { name: "Peau de citron", types: "composteur" },
-    { name: "Peau de citron", types: "composteur" },
-    { name: "Pelure d'orange", types: "composteur" },
-    { name: "Mandarine", types: "composteur" },
-    { name: "Peau de pamplemousse", types: "composteur" },
-    { name: "Peau de clémentine", types: "composteur" },
-    { name: "Peau de lime", types: "composteur" },
-    { name: "Peau de kumquat", types: "composteur" },
-    { name: "Peau de yuzu", types: "composteur" },
-    { name: "Peau de bergamote", types: "composteur" },
-    { name: "Épluchures de fraise", types: "composteur et lombricomposteur" },
-    { name: "Fraise", types: "composteur et lombricomposteur" },
-    { name: "Morceaux de fraise", types: "composteur et lombricomposteur" },
-    { name: "Peau de pastèque", types: "composteur" },
-    { name: "Peau de prune", types: "composteur" },
-    { name: "Peau de cerise", types: "composteur" },
-    { name: "Épluchures de figue", types: "composteur" },
-    { name: "Épluchures de raisin", types: "composteur" },
-    { name: "Peau de kaki", types: "composteur" },
-    { name: "Épluchures de grenade", types: "composteur" },
-    { name: "Épluchures de rhubarbe", types: "composteur" },
-    { name: "Peau d’avocat", types: "composteur" },
-    { name: "Noyau de pêche", types: "composteur" },
-    { name: "Noyau de prune", types: "composteur" },
-    { name: "Noyau de fruit", types: "composteur" },
-    { name: "Noyau de cerise", types: "composteur" },
-    { name: "Restes de pain", types: "composteur" },
-    { name: "Céréales non sucrées", types: "composteur" },
-    { name: "Épices", types: "composteur" },
-    { name: "Herbes aromatiques", types: "composteur" },
-    { name: "Feuilles de laurier", types: "composteur" },
-    { name: "Coquilles de graines", types: "composteur" },
-    { name: "Épluchures de concombre", types: "composteur et lombricomposteur" },
-    { name: "Fanes de betteraves", types: "composteur et lombricomposteur" },
-    { name: "Épluchures de poireaux", types: "composteur" },
-    { name: "Fanes de céleri", types: "composteur et lombricomposteur" },
-    { name: "Céleri-branche", types: "composteur et lombricomposteur" },
-    { name: "Céleri-rave", types: "composteur et lombricomposteur" },
-    { name: "Céleri-pomme", types: "composteur et lombricomposteur" },
-    { name: "Céleri", types: "composteur et lombricomposteur" },
-    { name: "Épluchures de poivron", types: "composteur" },
-    { name: "Peau de courge", types: "composteur" },
-    { name: "Épluchures d’aubergine", types: "composteur" },
-    { name: "Feuilles de chou", types: "composteur et lombricomposteur" },
-    { name: "Restes de brocoli", types: "composteur et lombricomposteur" },
-    { name: "Restes de chou-fleur", types: "composteur et lombricomposteur" },
-    { name: "Feuilles d’artichaut", types: "composteur" },
-    { name: "Fanes de fenouil", types: "composteur et lombricomposteur" },
-    { name: "Épluchures de radis", types: "composteur et lombricomposteur" },
-    { name: "Épluchures d’oignon", types: "composteur" },
-    { name: "Épluchures de betterave", types: "composteur et lombricomposteur" },
-    { name: "Restes de haricots verts", types: "composteur et lombricomposteur" },
-    { name: "Haricots verts", types: "composteur et lombricomposteur" },
-    { name: "Fanes d’épinards", types: "composteur et lombricomposteur" },
-    { name: "Coquilles de moules", types: "autres" },
-    { name: "Coquilles de crustacés", types: "autres" },
-    { name: "Coquilles d'huîtres", types: "autres" },
-    { name: "Viande", types: "autres" },
-    { name: "Poisson", types: "autres" },
-    { name: "Oeuf entier", types: "autres" },
-    { name: "Oeuf cuit", types: "autres" },
-    { name: "Riz", types: "autres" },
-    { name: "Pâtes", types: "autres" },
-    { name: "Pain", types: "autres" },
-    { name: "Tampons, serviettes hygiéniques", types: "autres" },
-    { name: "Coton-tiges en plastique", types: "autres" },
-    { name: "Cendres de cheminée", types: "autres" },
-    { name: "Charbons de barbecue", types: "autres" },
-    { name: "Plastiques", types: "autres" },
-    { name: "Métal non recyclé", types: "autres" },
-    { name: "Verre", types: "autres" },
-    { name: "Papier journal", types: "autres" },
-    { name: "Papier glacé", types: "autres" },
-    { name: "Croûtes de fromage", types: "autres" },
-    { name: "Os", types: "autres" },
-    { name: "Produits laitiers (fromage, beurre, etc.)", types: "autres" },
-    { name: "Lait", types: "autres" },
-    { name: "Beurre", types: "autres" },
-    { name: "Crème (fraîche, fouettée, chantilly...)", types: "autres" },
-    { name: "Yahourt", types: "autres" },
-    { name: "Fromage", types: "autres" },
-    { name: "Fromage blanc", types: "autres" },
-    { name: "Mégots de cigarette", types: "autres" },
-    { name: "Cigarette", types: "autres" },
-    { name: "Piles", types: "autres" },
-    { name: "Couches jetables", types: "autres" },
-    { name: "Textiles synthétiques", types: "autres" },
-    { name: "Vêtement", types: "autres" },
-    { name: "Médicaments", types: "autres" },
-    { name: "Bois traité ou verni", types: "autres" },
-    { name: "Tissus", types: "autres" },
-    { name: "Sacs plastiques", types: "autres" },
-    { name: "Feuilles plastifiées", types: "autres" },
-    { name: "Vaisselle cassée", types: "autres" },
-    { name: "Produits chimiques (lessives, détergents, solvants)", types: "autres" },
-    { name: "Peintures, solvants, produits chimiques", types: "autres" },
-    { name: "Litière non compostable (silice, bentonite, litière agglomérante)", types: "autres" },
-    { name: "Chewing-gum", types: "autres" },
-    { name: "Pâtisseries", types: "autres" },
-    { name: "Chocolat", types: "autres" },
-    { name: "Bonbons, sucreries", types: "autres" },
-    { name: "Cotons-tiges en carton", types: "composteur et lombricomposteur" },
-    { name: "Cotons-tiges en bois", types: "composteur" },
-    { name: "Ananas", types: "composteur" },
-    { name: "Fruit de la passion", types: "composteur" },
-    { name: "Fruit du dragon", types: "composteur" },
-    { name: "Grenade", types: "composteur" },
-    { name: "Peau d'ananas", types: "composteur" },
-    { name: "Asperge", types: "composteur" },
-    { name: "Avocat", types: "composteur" },
-    { name: "Peau de melon", types: "composteur" },
-    { name: "Peau de pastèque", types: "composteur" },
-    { name: "Chou", types: "composteur" },
-    { name: "Chou de Bruxelles", types: "composteur" },
-    { name: "Chou-fleur", types: "composteur et lombricomposteur" },
-    { name: "Clémentine", types: "composteur" },
-    { name: "Coques de noix", types: "composteur" },
-    { name: "Coques de noisette", types: "composteur" },
-    { name: "Coques d’amande", types: "composteur" },
-    { name: "Coques de pistache", types: "composteur" },
-    { name: "Durian", types: "composteur" },
-    { name: "Échalote", types: "composteur" },
-    { name: "Fenouil", types: "composteur" },
-    { name: "Kumquat", types: "composteur" },
-    { name: "Maïs", types: "composteur et lombricomposteur" },
-    { name: "Mandarine", types: "composteur" },
-    { name: "Mangue", types: "composteur" },
-    { name: "Noix", types: "composteur" },
-    { name: "Noisette", types: "composteur" },
-    { name: "Oignon", types: "composteur" },
-    { name: "Olive", types: "composteur" },
-    { name: "Orange", types: "composteur" },
-    { name: "Morceaux d'orange", types: "composteur" },
-    { name: "Morceaux de pomme", types: "composteur et lombricomposteur" },
-    { name: "Mirabelle", types: "composteur et lombricomposteur" },
-    { name: "Patates douces crues", types: "composteur" },
-    { name: "Pamplemousse", types: "composteur" },
-    { name: "Poireau", types: "composteur" },
-    { name: "Poivron", types: "composteur" },
-    { name: "Pomme de terre crue", types: "composteur" },
-    { name: "Morceaux de pomme de terre crue", types: "composteur" },
-    { name: "Potimarron (sans pépins)", types: "composteur et lombricomposteur" },
-    { name: "Potiron (sans pépins)", types: "composteur et lombricomposteur" },
-    { name: "Raisin entier", types: "composteur et lombricomposteur" },
-    { name: "Yuzu", types: "composteur" },
-    { name: "Abricot (sans le noyau)", types: "composteur et lombricomposteur" },
-    { name: "Aubergine", types: "composteur et lombricomposteur" },
-    { name: "Banane", types: "composteur et lombricomposteur" },
-    { name: "Betterave", types: "composteur et lombricomposteur" },
-    { name: "Blette", types: "composteur et lombricomposteur" },
-    { name: "Carotte", types: "composteur et lombricomposteur" },
-    { name: "Cerise", types: "composteur et lombricomposteur" },
-    { name: "Concombre", types: "composteur et lombricomposteur" },
-    { name: "Courgette", types: "composteur et lombricomposteur" },
-    { name: "Épinard", types: "composteur et lombricomposteur" },
-    { name: "Fanes de carotte", types: "composteur et lombricomposteur" },
-    { name: "Fanes de navet", types: "composteur et lombricomposteur" },
-    { name: "Fève", types: "composteur et lombricomposteur" },
-    { name: "Figue", types: "composteur et lombricomposteur" },
-    { name: "Framboise", types: "composteur et lombricomposteur" },
-    { name: "Kiwi", types: "composteur et lombricomposteur" },
-    { name: "Laitue", types: "composteur et lombricomposteur" },
-    { name: "Lentille", types: "composteur et lombricomposteur" },
-    { name: "Mâche", types: "composteur et lombricomposteur" },
-    { name: "Myrtille", types: "composteur et lombricomposteur" },
-    { name: "Navet", types: "composteur et lombricomposteur" },
-    { name: "Nectarine (sans le noyau)", types: "composteur et lombricomposteur" },
-    { name: "Panais", types: "composteur et lombricomposteur" },
-    { name: "Pastèque (sans la peau et sans pépins)", types: "composteur et lombricomposteur" },
-    { name: "Melon (sans la peau et sans pépins)", types: "composteur et lombricomposteur" },
-    { name: "Pêche (sans le noyau)", types: "composteur et lombricomposteur" },
-    { name: "Petits pois", types: "composteur et lombricomposteur" },
-    { name: "Physalis", types: "composteur et lombricomposteur" },
-    { name: "Poire", types: "composteur et lombricomposteur" },
-    { name: "Pois chiche", types: "composteur et lombricomposteur" },
-    { name: "Pomme", types: "composteur et lombricomposteur" },
-    { name: "Prune (sans le noyau)", types: "composteur et lombricomposteur" },
-    { name: "Raisins secs", types: "composteur et lombricomposteur" },
-    { name: "Salade", types: "composteur et lombricomposteur" },  
-    { name: "Tomates (grande quantité)", types: "composteur" },  
-    { name: "Tomates (petite quantité)", types: "composteur" },
-    { name: "Topinambour", types: "composteur" },
-    { name: "Épluchures de topinambour", types: "composteur" },
-    { name: "Huile", types: "autres" },
-    { name: "Vinaigre", types: "autres" },
-    { name: "Vinaigrette", types: "autres" },
-    { name: "Moutarde", types: "autres" },
-    { name: "Condiments (huile, moutarde, vinaigre...", types: "autres" },
-    { name: "Ketchup", types: "autres" }
-];
+// Fonction recupererDechetsApi() pour récupérer les données de l'api et remplir le tableau dynamiquement
+// async indique que la fonction va effectuer une requête et attendre la réponse avant de passer à la suite du code
+const recupererDechetsApi = async ()=> {
+    try {
+
+        // utilisation de fetch() pour envoyer une requête à l'adresse url de l'api
+        const response = await fetch('https://api-waste.onrender.com/'); // adresse de mon api des déchets
+
+        if (!response.ok) {
+            //s'il n'y a pas de réponse de l'api, envoi d'un message d'erreur
+            throw new Error('Erreur de récupération des données, pas de chance !');
+        }
+        
+        //la réponse va pouvoir être transformée grâce à json() que l'on stocke dans la variable data
+        const data = await response.json();
+        console.log('Données reçues :', data); // pour vérifier
+
+        //les données récupérées passent par forEach pour créer le tableau tabDechet
+        data.forEach(dechet => {
+            tabDechet.push({ //push() ajoute un élément à un tableau
+                name_waste: dechet.name_waste,
+                type_container: dechet.type_container
+            });
+        });
+    // récupération du message d'erreur
+    } catch (error) {
+        console.error('Erreur lors de la récupération des données de l\'api', error);
+    }
+}
+// appel de la fonction
+recupererDechetsApi();
 
 
 const input = document.getElementById('biodechet');
@@ -339,7 +138,7 @@ function afficherSuggestions(recherche) {
             // - filter() va permettre de filtrer les déchets pour ne garder que ceux qui correspondent à la recherche après la normalisation (tout ce qui suit dans la parenthèse).
 
             // Normalisation du nom du déchet sans accents, apostrophes, et espaces, etc... avec la fonction normaliserEcritureDechet()
-            const nomDechetNormalise = normaliserEcritureDechet(dechet.name);
+            const nomDechetNormalise = normaliserEcritureDechet(dechet.name_waste);
             const distance = distanceLevenshtein(normalisationDeLaRecherche, nomDechetNormalise);
 
             // Le nom du déchet doit commencer par les lettres tapées par l'utilisateur, ou la distance de Levenshtein doit être faible
@@ -355,7 +154,7 @@ function afficherSuggestions(recherche) {
 
         }).sort((a, b) => {
             // une fois les déchets retournés, ils vont être affichés par ordre alphabétique
-            return a.name.localeCompare(b.name);
+            return a.name_waste.localeCompare(b.name_waste);
 
             // - sort() permet de comparer deux éléments du tableau (ici les objets a et b) pour savoir lequel doit venir avant l'autre dans l'affichage de la liste.
 
@@ -369,7 +168,7 @@ function afficherSuggestions(recherche) {
 
             rechercheUtilisateur.forEach(dechet => { //forEach() permet de parcourir le tableau et créera une ligne (li) dans la liste du DOM (ul) à chaque élément trouvé (si je cherche "oeuf", foreach va rechercher l'élément "oeuf" dans le tableau et renvoyer cet élément dans une ligne). La liste n'existant pas dans le Dom, elle est produite en JS. Sans ça, la liste restera vide)
                 const ligneSuggestion = document.createElement('li'); //déclaration de la variable qui contiendra cette ligne créée
-                ligneSuggestion.innerText = dechet.name; //ajoute le texte du nom du déchet dans <li> et non le nom + le nom du container
+                ligneSuggestion.innerText = dechet.name_waste; //ajoute le texte du nom du déchet dans <li> et non le nom + le nom du container
                 suggestionsListeDechets.appendChild(ligneSuggestion); //ajoute <li> créé à la liste
 
                 //va permettre de remplir l'input avec le déchet suggéré lorsque l'utilisateur va cliquer dessus
@@ -436,12 +235,12 @@ function corrigerMot(mot) {
     let meilleureDistance = Infinity;
 
     tabDechet.forEach(dechet => {
-        const nomDechetNormalise = normaliserEcritureDechet(dechet.name);
+        const nomDechetNormalise = normaliserEcritureDechet(dechet.name_waste);
         const distance = distanceLevenshtein(normalisationMot, nomDechetNormalise);
 
         if (distance < meilleureDistance) {
             meilleureDistance = distance;
-            meilleurMot = dechet.name;
+            meilleurMot = dechet.name_waste;
         }
     });
 
@@ -482,7 +281,7 @@ function resultatRecherche(dechetRecherche) {
 
         //déclaration des variables qui vont contenir les deux mots normalisés permettant ainsi de les comparer
         const dechetEntre = normaliserEcritureDechet(motFinal); // utilisation de la fonction normaliserEcritureDechet() pour normaliser le déchet recherché. 
-        const nomDechetNormalise = normaliserEcritureDechet(dechet.name); // utilisation de la fonction normaliserEcritureDechet() pour normaliser le nom des déchets dans le tableau
+        const nomDechetNormalise = normaliserEcritureDechet(dechet.name_waste); // utilisation de la fonction normaliserEcritureDechet() pour normaliser le nom des déchets dans le tableau
 
         return nomDechetNormalise === dechetEntre; // retourne le nom du déchet trouvé dans tabDechet s'il est strictement identique au déchet entré par l'utilisateur et le stocke dans la variable.
     });
@@ -490,25 +289,25 @@ function resultatRecherche(dechetRecherche) {
     if (dechetTrouve) { // une fois le déchet trouvé, il faut vérifier le nom du container qui lui est attribué
 
         // déclaration de la variable qui va stocker le nom du container du déchet trouvé
-        const typeContainer = dechetTrouve.types;
+        const typeContainer = dechetTrouve.type_container;
 
         if (typeContainer.includes("composteur et lombricomposteur")) {
             afficherOverlay( //appel de la fonction qui va afficher l'overlay
-                dechetTrouve.name, // Affichage du nom exact et pas le mot tapé par l'utilisateur (ex: si l'utilisateur tape "cartonsans encre", le nom du déchet qui sera réellement affiché sur l'overlay sera "carton sans encre")
+                dechetTrouve.name_waste, // Affichage du nom exact et pas le mot tapé par l'utilisateur (ex: si l'utilisateur tape "cartonsans encre", le nom du déchet qui sera réellement affiché sur l'overlay sera "carton sans encre")
                 "(en petits morceaux et/ou humidifiés pour nos amis les vers)",
                 "✅ Convient au composteur et lombricomposteur",
                 "compost-coeur.webp" // Image pour les deux composteurs
             );
         } else if (typeContainer.includes("composteur")) {
             afficherOverlay(
-                dechetTrouve.name,
+                dechetTrouve.name_waste,
                 "Ne convient pas au lombricomposteur",
                 "⚠️ Convient uniquement au composteur",
                 "compost-okay.webp" // Image pour composteur uniquement
             );
         } else {
             afficherOverlay(
-                dechetTrouve.name,
+                dechetTrouve.name_waste,
                 "Ce déchet doit être jeté avec les ordures ménagères ou au recyclage s'il se recycle",
                 "❌ Ne convient ni au composteur, ni au lombricomposteur",
                 "compost-triste.webp" // Image pour non compostable
