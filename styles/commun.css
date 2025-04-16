@@ -155,8 +155,8 @@ header h1 {
 
 .leftMenu {
     position: fixed;
-    width: 80vw; /*80% de l'écran*/
-    max-width: 280px;
+    width: 90vw; /*80% de l'écran*/
+    max-width: 300px;
     min-height: auto;
     display: flex;
     justify-content: center;

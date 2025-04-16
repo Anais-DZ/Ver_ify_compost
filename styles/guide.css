@@ -40,7 +40,7 @@
     position: relative;
     list-style: none;
     transition: background-color 0.4s ease-in-out;
-    border: 4px solid #40ff0058;
+    border: 1px solid #564e4e6f;
     border-radius: 5px;
   }
 
@@ -63,7 +63,7 @@
   } */
 
   details[open] summary {
-    background: #90ee8d58;
+    background: #cfffce58;
     border: none;
     transition: background-color 0.4s ease-in-out;
     font-weight: 500;
@@ -95,7 +95,7 @@
   }
 
   #aRenommer {
-    margin-bottom: 70px;
+    margin-bottom: 90px;
   }
 
   h4 {
