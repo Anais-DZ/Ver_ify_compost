@@ -229,7 +229,7 @@ const tabDechet = [
     { name: "Potiron (sans pépins)", types: "composteur et lombricomposteur" },
     { name: "Raisin entier", types: "composteur et lombricomposteur" },
     { name: "Yuzu", types: "composteur" },
-    { name: "Abricot", types: "composteur et lombricomposteur" },
+    { name: "Abricot (sans le noyau)", types: "composteur et lombricomposteur" },
     { name: "Aubergine", types: "composteur et lombricomposteur" },
     { name: "Banane", types: "composteur et lombricomposteur" },
     { name: "Betterave", types: "composteur et lombricomposteur" },
