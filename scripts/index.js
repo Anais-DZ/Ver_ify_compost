@@ -291,14 +291,14 @@ function resultatRecherche(dechetRecherche) {
         // déclaration de la variable qui va stocker le nom du container du déchet trouvé
         const typeContainer = dechetTrouve.type_container;
 
-        if (typeContainer.includes("composteur et lombricomposteur")) {
+        if (typeContainer.includes("Composteur et lombricomposteur")) {
             afficherOverlay( //appel de la fonction qui va afficher l'overlay
                 dechetTrouve.name_waste, // Affichage du nom exact et pas le mot tapé par l'utilisateur (ex: si l'utilisateur tape "cartonsans encre", le nom du déchet qui sera réellement affiché sur l'overlay sera "carton sans encre")
                 "(en petits morceaux et/ou humidifiés pour nos amis les vers)",
                 "✅ Convient au composteur et lombricomposteur",
                 "compost-coeur.webp" // Image pour les deux composteurs
             );
-        } else if (typeContainer.includes("composteur")) {
+        } else if (typeContainer.includes("Composteur")) {
             afficherOverlay(
                 dechetTrouve.name_waste,
                 "Ne convient pas au lombricomposteur",
