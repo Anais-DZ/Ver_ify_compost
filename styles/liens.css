@@ -44,7 +44,7 @@
 }
 
 .linksList a:hover { 
-    background-color: #3ab14c4e;
+    color: #59b867c7;
 }
 
 .linksList a:visited {
@@ -64,7 +64,7 @@
 }
 
 .linksList li {
-    margin: 15px 0;
+    margin: 20px 0;
 }
 
 
