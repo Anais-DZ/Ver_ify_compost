@@ -4,19 +4,6 @@
     align-items: center;
   }
 
-  .separationLinksMin, .separationLinksMax {
-    width: 95%;
-    height: 1px;
-    background-color: #564E4E;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 2px;
-}
-
-.separationLinksMax {
-    height: 3px;
-}
-
   details {
     border: 1px solid #ddd;
     background: #fff;
@@ -91,11 +78,11 @@
     text-align: center;
     color: #564E4E;
     margin: 15px 10px;
-    font-size: 28px;
+    font-size: 24px;
   }
 
   #aRenommer {
-    margin-bottom: 90px;
+    margin-bottom: 100px;
   }
 
   h4 {
@@ -128,17 +115,8 @@
   }
   
   article {
-    box-shadow: 0 4px 8px #564e4e14;
-    width: 95vw;
-    max-width: 700px;
-    height: auto;
-    background-color: rgba(255, 255, 255);
-    border-radius: 8px;
-    margin: 60px 0 10px;
-    padding: 30px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding-bottom: 30px !important;
+    margin: 10px 0 20px 0 !important;
 }
 
 .saisons {
