@@ -209,7 +209,7 @@ header h1 {
     height: 3px;
 }
 
-article {
+.containArticle {
     box-shadow: 0 4px 8px #564e4e2f;
     width: 95vw;
     max-width: 650px ;
