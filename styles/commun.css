@@ -50,7 +50,7 @@ header h1 {
     z-index: 1;
 }
 
-#retourAccueil {
+#backHome {
   width: 95px;
   height: auto;
   position: relative;
@@ -65,7 +65,7 @@ header h1 {
     align-items: center
 }
 
-#dessinHerbeFooter {
+#grassPictureFooter {
     width: 100vw;
     height: 110px;
     position: relative;
@@ -142,7 +142,7 @@ header h1 {
     margin-left: 20px;
 }
 
-.leftMenuDesktop {
+.menuDesktop {
     display: none;
 }
 
@@ -223,7 +223,7 @@ header h1 {
     margin: 25px 0 40px 0;
 }
 
-#contactLien {
+#contactLink {
     font-size: 32px;
     text-decoration: none;
     color: white;
@@ -256,7 +256,7 @@ footer p {
         margin-top: 0px;
     }
 
-    #retourAccueil {
+    #backHome {
         top: -57px;
         left: 0;
         z-index: 2;
@@ -280,7 +280,7 @@ footer p {
         margin: 0;
     }
 
-    #retourAccueil {
+    #backHome {
         width: 110px;
         position: relative;
         top: -5px;
@@ -292,14 +292,14 @@ footer p {
         display: none;
     }
 
-    .leftMenuDesktop {
+    .menuDesktop {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-evenly;
     }
 
-    .lienMenuDesktop { 
+    .linkMenuDesktop { 
         font-family: "fredoka";
         font-size: 22px;
         color: #564E4E;
@@ -310,7 +310,7 @@ footer p {
         align-items: center;
     }
 
-    .lienMenuDesktop:hover {
+    .linkMenuDesktop:hover {
         text-decoration: underline;
         text-underline-offset: 4px;
         text-decoration-thickness: 1.2px;
@@ -323,11 +323,11 @@ footer p {
         align-items: stretch;
     }
 
-    #dessinHerbeFooter {
+    #grassPictureFooter {
         display: none;
     }
 
-    #contactLien {
+    #contactLink {
         top: 0;
         z-index: 4;
     }

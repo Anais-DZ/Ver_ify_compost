@@ -78,13 +78,13 @@
     margin-left: 10px;
 }
 
-#fonctionsPremieres {
+#firstFunction {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.rechercheDechets {
+.searchWaste {
     width: 320px;
     margin: 30px 0 0;
     max-height: auto;
@@ -93,7 +93,7 @@
     padding: 0 15px;
 }
 
-.rechercheDechets h2 {
+.searchWaste h2 {
     font-family: "Cabin sketch";
     font-size: 32px;
     padding: 15px 0;
@@ -107,7 +107,7 @@
       0.5px -0.5px 1px #ffffff;
 }
 
-.rechercheDechets p {
+.searchWaste p {
     font-family: "fredoka";
     color: #564E4E;
     text-align: center;
@@ -152,13 +152,12 @@
     margin-top: 2px;
 }
 
-#suggestionsDechets {
+#suggestionListWastes {
     font-family: "fredoka";
     font-style: italic;
     color: #564E4E;
     font-size: 18px;
     position: absolute;
-    top: 80%; /* Juste sous l'input */
     left: 0;
     list-style-type: none;
     width: 100%;
@@ -172,17 +171,13 @@
     padding: 0;
   }
 
-#suggestionsDechets li {
+#suggestionListWastes li {
     padding: 10px;
     cursor: pointer;
 }
 
-/*à mettre pour desktop*/
-/*#suggestionsDechets li:hover {
-    background-color: #f0f0f0;
-}*/
 
-/* Style pour l'overlay */
+/* overlay de la recherhe du déchet */
 .overlay {
     position: fixed;
     top: 0;
@@ -196,16 +191,6 @@
     z-index: 10;
 }
 
-#loader {
-    font-size: 1.2em;
-    color: #555;
-    text-align: center;
-    margin: 20px;
-    /* Un vrai spinner ? */
-    /* background: url('spinner.gif') no-repeat center center;
-       height: 50px; */
-  }
-
 .overlayContent {
     background-color: #fff4e7;
     width: 330px;
@@ -218,7 +203,7 @@
     font-family: "Fredoka";
 }
 
-.boutonCloseOverlay {
+.closeOverlayButton {
     position: absolute;
     top: -5px;
     right: 5px;
@@ -240,18 +225,26 @@
     font-size: 16px;
 }
 
-#overlayImage {
+#overlayPicture {
     width: 250px;
     height: auto;
     margin: 0;
 }
 
-#overlayReponse {
+#overlayResponse {
     font-size: 20px;
     color: #4e3d28;
 }
 
-#calendarFonctionnality, .rechercheDechets {
+
+#separationPictureCompost {
+    width: 120px;
+    height: auto;
+    margin: 20px 0 10px;
+}
+
+
+#calendarFonctionnality, .searchWaste {
     font-family: "fredoka";
     display: flex;
     flex-direction: column;
@@ -351,19 +344,14 @@
     transition: background-color 0.2s ease-in-out;
 }
 
-/* à mettre pour le desktop
-.calendar td:hover {
-    background-color: #f0f0f0; 
-} */
-
-.calendar td.jour {
+.calendar td.day {
     color: #ffffff;
     font-weight: bolder;
     background: #5dc5018d;
     border-radius: 50%;
 }
 
-.calendar td.moisSuivantPrecedent {
+.calendar td.prevAndNextMonth {
     color: #b4b4b4;
     cursor: default;
     background: none;
@@ -378,8 +366,9 @@
     color: #564E4E;
 }
 
+
 /* overlay liste */
-.overlayListeTaches {
+.overlayListTask {
     position: fixed;
     top: 0;
     left: 0;
@@ -392,7 +381,7 @@
     z-index: 30;
 }
 
-.containerTaches {
+.containerTask {
     background: white;
     padding: 0 20px 20px;
     border-radius: 10px;
@@ -404,7 +393,7 @@
     margin-top: 40px;
 }
 
-.closeBtn {
+#closeOverlayListButton {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -417,27 +406,26 @@
     padding: 5px;
 }
 
-#tacheDate {
+#dateOfTask {
     font-size: 24px;
     margin: 45px 0 10px;
     font-family: 'cabin sketch';
     text-align: center;
 }
 
-.listeDeTache {
-    
+.listTask {
     padding: 0;
     margin: 0;
 }
 
-.listeDeTache li {
+.listTask li {
     display: flex;
     align-items: center;
     padding: 10px;
     border-bottom: 1px dashed #ddd;
 }
 
-.listeDeTache li:last-child {
+.listTask li:last-child {
     border-bottom: none;
 }
 
@@ -445,7 +433,7 @@ input[type="checkbox"] {
     margin-right: 10px;
 }
 
-#chatLogan {
+#LoganPicture {
     width: 140px;
     height: auto;
     position: absolute;
@@ -458,7 +446,7 @@ i {
 }
 
 
-                        /* memo*/
+/* memo*/
 #memoContainer {
     background-color: #0c4920;
     border: sienna solid 8px;
@@ -490,7 +478,7 @@ i {
 }
 
 
-#ajoutNote {
+#addNote {
     background: rgba(255, 255, 255, 0.5);
     display: flex;
     flex-direction: row;
@@ -524,7 +512,7 @@ i {
     margin: 0;
 }
 
-.supprimer {
+.deleteTask {
     cursor: pointer;
     background: none;
     border: none;
@@ -538,22 +526,14 @@ i {
     transition: 0.2s;
     color: #fff;
     font-family: "fredoka";
-                    /* trouver comment réduire la ligne*/
 }
 
-
-/* .noteItem:hover { 
-    color: grey;
-} */
-
-.itemRayee {
+.crossedOutItem {
     text-decoration: line-through;
     color: grey;
 }
 
-
-/* Style the "Add" button */
-#boutonAjoutNote {
+#addNoteButton {
     padding: 10px;
     width: auto;
     height: auto;
@@ -569,79 +549,24 @@ i {
     transition: 0.3s;
 }
 
-.downMenu {
-    display: flex;
-    flex-direction: column;
-    width: 85%;
-    height: auto;
-    max-width: 350px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 75px;
-    margin-top: 50px;
-}
-
-.downMenu  img {
-    width: 40px;
-    height: 40px;
-    margin: 5px 0 10px 0;
-}
-
-.downMenu  a {
-    border: solid 8px #5bc501;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    font-family: "fredoka";
-    font-size: 20px;
-    text-align: center;
-    text-decoration:none;
-    color: #564E4E;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding-right: 20px;
-    background-color: white;
-    box-shadow: 0px -2px 2px 0px #564e4e5d;
-    position: relative;
-}
-
-#liens {
-    z-index: 0;
-}
-
-#guide {
-    z-index: 1; 
-    top: -8px; 
-}
-
-/* #calendrier {
-    z-index: 2;
-    top: -30px;
-} */
-
-#verAnime {
-    width: 80px;
-    height: auto;
-    margin: 20px 0 20px 30px;
-}
 
 @media (min-width: 1000px) {
-    .rechercheDechets {
+    .searchWaste {
         width: 360px;
         margin-right: 50px;
         align-self: self-start;
     }
 
-    #fonctionsPremieres {
+    #firstFunction {
         display: flex;
         flex-direction: row;
     }
 
-    #verAnime {
+    #separationPictureCompost {
         display: none;
     }
 
-    #calendarFonctionnality, .rechercheDechets {
+    #calendarFonctionnality, .searchWaste {
         margin-top: 80px;
     }
 

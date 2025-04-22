@@ -2,15 +2,6 @@
 <html lang="fr">
 
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S27Y37WTXR"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-S27Y37WTXR');
-    </script>
     <meta charset="UTF-8">
     <link rel="icon" href="./Images/logo-site.webp" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,10 +29,6 @@
 </head>
 
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NR3CWLTV" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
     <nav id="entete">
         <div class="leftMenu">
             <a href="index.html" alt="accueil">Accueil</a>
@@ -50,7 +37,7 @@
             <a href="liens.html" alt="liens ressources">Liens & Ressources</a>
             <a href="contact.html" alt="contact"> Contact</a>
         </div>
-        <button type="button" aria-label="ouvre ferme menu gauche" class="menuToggler">
+        <button type="button" aria-label="ouverture fermeture du menu rideau" class="menuToggler">
             <span class="line line1"></span> <!--span dans un bouton, oui mais div dans un bouton, non-->
             <span class="line line2"></span>
             <span class="line line3"></span>
@@ -65,33 +52,29 @@
                 <picture>
                     <source srcset="./Images/logo-site.webp" type="image/webp" />
                     <source srcset="./Images/logo-site.png" type="image/png" />
-                    <img id="retourAccueil" src="./Images/logo-site.png"
+                    <img id="backHome" src="./Images/logo-site.png"
                         alt="logo du site permettant de retourner à l'accueil">
                 </picture>
             </a>
         </div>
     </header>
-    <div class="leftMenuDesktop">
-        <a class="lienMenuDesktop" href="index.html" alt="accueil">Accueil</a>
-        <a class="lienMenuDesktop" href="#calendarFonctionnality" alt="calendrier memo">Calendrier</a>
-        <a class="lienMenuDesktop" href="guide.html" alt="guide entretien">Conseils & entretien</a>
-        <a class="lienMenuDesktop" href="liens.html" alt="liens ressources">Liens & Ressources</a>
-        <a class="lienMenuDesktop" href="contact.html" alt="contact"> Contact</a>
+    <div class="menuDesktop">
+        <a class="linkMenuDesktop" href="index.html" alt="accueil">Accueil</a>
+        <a class="linkMenuDesktop" href="#calendarFonctionnality" alt="calendrier memo">Calendrier</a>
+        <a class="linkMenuDesktop" href="guide.html" alt="guide entretien">Conseils & entretien</a>
+        <a class="linkMenuDesktop" href="liens.html" alt="liens ressources">Liens & Ressources</a>
+        <a class="linkMenuDesktop" href="contact.html" alt="contact"> Contact</a>
     </div>
     <main class="indexContainer">
-        <article class="carouselContainer"> <!-- élément contenant le carousel + titre + fleche -->
+        <!-- élément contenant le carousel + titre + fleche -->
+        <article class="carouselContainer"> 
             <h2>Le compostage, c'est aussi :</h2>
-            <!-- Bouton gauche-->
-            <div class="carousel"> <!-- élément contenant que le carousel-->
+            <!-- élément contenant que le carousel-->
+            <div class="carousel">
+                <!-- Bouton gauche --> 
                 <img class="carouselControl prev" src="./Icones/arrow-left.png" alt="fleche gauche">
-                <ul class="carouselInner"> <!-- élément contenant toutes les slides -->
-                    <!--<li>
-                        <picture>
-                            <source srcset="./Images/cadre-feuilles.webp" type="image/webp" />
-                            <source srcset="./Images/cadre-feuilles.png" type="image/png" />
-                            <img src="./Images/cadre-feuilles.png" id="cadreFeuilles" alt="image cadre avec des feuilles">
-                        </picture>
-                    </li>-->
+                <!-- élément contenant toutes les slides -->
+                <ul class="carouselInner">
                     <!-- Première slide -->
                     <li class="slide">Éviter à 100 kg/an de biodéchets d’être transformés en gaz à effet de serre<p>🌍
                         </p>
@@ -104,12 +87,12 @@
                         soi-même<p>💰</p>
                     </li>
                 </ul>
-                <!-- Bouton droite -->
+                <!-- Bouton droite --> 
                 <img class="carouselControl next" src="./Icones/arrow-right.png" alt="fleche droite">
             </div>
         </article>
-        <section id="fonctionsPremieres">
-            <article class="rechercheDechets">
+        <section id="firstFunction">
+            <article class="searchWaste">
                 <h2>Prêt·e<br />à composter ?</h2>
                 <div class="separation"></div>
                 <p>Saisissez le nom du déchet dans la barre de recherche, puis cliquez sur la loupe pour découvrir le
@@ -117,29 +100,34 @@
                 <div class="separation"></div>
 
                 <form class="searchBar">
-                    <textarea id="biodechet" name="biodéchet" placeholder="Le nom du déchet, c'est ici !" maxlength="30"
+                    <textarea id="biowaste" name="biodéchet" placeholder="Le nom du déchet, c'est ici !" maxlength="30"
                         cols="1" rows="1" required></textarea>
-                    <button id="boutonVerifier">
+                    <button id="checkButton">
                         <picture>
                             <source srcset="./Images/loupe.webp" type="image/webp" />
                             <source srcset="./Images/loupe.png" type="image/png" />
                             <img src="./Images/loupe.png" alt="icone loupe pour valider la recherche" />
                         </picture>
                     </button>
-                    <div id="resultatOverlay" class="overlay">
+                    <div id="resultOverlay" class="overlay">
                         <div class="overlayContent">
-                            <button id="closeOverlay" class="boutonCloseOverlay">&times;</button>
-                            <h1 id="overlayTitre"></h1>
+                            <button id="closeOverlay" class="closeOverlayButton">&times;</button>
+                            <h1 id="overlayTitle"></h1>
                             <p id="overlayDescription"></p>
-                            <p id="overlayReponse"></p>
-                            <img id="overlayImage" src="" alt="image d'un composteur differente selon la reponse" />
+                            <p id="overlayResponse"></p>
+                            <img id="overlayPicture" src="" alt="image d'un composteur differente selon la reponse" />
                         </div>
                     </div>
-                    <ul id="suggestionsDechets"></ul>
+                    <ul id="suggestionListWastes"></ul>
                 </form>
             </article>
 
-            <img id="verAnime" src="./Images/ver-anime.gif" alt="image d un ver qui se cache" />
+            <picture>
+                <source srcset="./Images/compost.webp" type="image/webp" />
+                <source srcset="./Images/compost.png" type="image/png" />
+                <img id="separationPictureCompost" src="./Images/compost.png"
+                    alt="dessin d'un compost">
+            </picture>
 
             <article id="calendarFonctionnality" class="calendarFonctionnality">
                 <h2 class="calendarTitle">Calendrier</h2>
@@ -147,7 +135,7 @@
                 <div class="calendarContainer">
                     <div class="calendarHeader">
                         <button id="calendarButtonPrev">❮</button>
-                        <h3 id="moisAnnee"></h3>
+                        <h3 id="monthAndYear"></h3>
                         <button id="calendarButtonNext">❯</button>
                     </div>
                     <table class="calendar">
@@ -167,52 +155,52 @@
                         </tbody>
                     </table>
                 </div>
-                <div id="overlayListeTaches" class="overlay">
-                    <div class="containerTaches">
-                        <button class="closeBtn" id="closeOverlayBtn">X</button>
-                        <div class="headerListe">
-                            <p id="tacheDate">Tâches pour cette date</p>
+                <div id="overlayListTask" class="overlay">
+                    <div class="containerTask">
+                        <button id="closeOverlayListButton">X</button>
+                        <div class="headerList">
+                            <p id="dateOfTask">Tâches pour cette date</p>
                             <i>Fonctionnalité en construction. Encore un peu de patience 😊 </i>
                         </div>
-                        <ul class="listeDeTache">
+                        <ul class="listTask">
                             <li>
-                                <input type="checkbox" id="tache1">
-                                <label for="tache1">Démarrage de mon composteur ou lombricomposteur</label>
+                                <input type="checkbox" id="task1">
+                                <label for="task1">Démarrage de mon composteur ou lombricomposteur</label>
                             </li>
                             <li>
-                                <input type="checkbox" id="tache2">
-                                <label for="tache2">Aération du compost (remuer légèrement pour éviter le
+                                <input type="checkbox" id="task2">
+                                <label for="task2">Aération du compost (remuer légèrement pour éviter le
                                     compactage)</label>
                             </li>
                             <li>
-                                <input type="checkbox" id="tache3">
-                                <label for="tache3">Vérification de l'humidité (ajouter de l’eau si sec, du carton si
+                                <input type="checkbox" id="task3">
+                                <label for="task3">Vérification de l'humidité (ajouter de l’eau si sec, du carton si
                                     trop humide)</label>
                             </li>
                             <li>
-                                <input type="checkbox" id="tache4">
-                                <label for="tache4">Contrôle de la température (garder à l’abri du gel et des fortes
+                                <input type="checkbox" id="task4">
+                                <label for="task4">Contrôle de la température (garder à l’abri du gel et des fortes
                                     chaleurs)</label>
                             </li>
                             <li>
-                                <input type="checkbox" id="tache5">
-                                <label for="tache5">Observation des vers ou du compost (ajuster l’humidité ou l’aération
+                                <input type="checkbox" id="task5">
+                                <label for="task5">Observation des vers ou du compost (ajuster l’humidité ou l’aération
                                     si besoin)</label>
                             </li>
                             <li>
-                                <input type="checkbox" id="tache6">
-                                <label for="tache6">Ajout de matières en alternant vertes (épluchures) et brunes
+                                <input type="checkbox" id="task6">
+                                <label for="task6">Ajout de matières en alternant vertes (épluchures) et brunes
                                     (carton, feuilles sèches)</label>
                             </li>
                             <li>
-                                <input type="checkbox" id="tache7">
-                                <label for="tache7">Récupération du compost et/ou du thé (le jus du compost)</label>
+                                <input type="checkbox" id="task7">
+                                <label for="task7">Récupération du compost et/ou du thé (le jus du compost)</label>
                             </li>
                         </ul>
                         <picture>
                             <source srcset="./Images/Logan.webp" type="image/webp" />
                             <source srcset="./Images/Logan.png" type="image/png" />
-                            <img id="chatLogan" src="./Images/Logan.png"
+                            <img id="LoganPicture" src="./Images/Logan.png"
                                 alt="image d'un chat au milieu de pot de fleur">
                         </picture>
                     </div>
@@ -223,25 +211,25 @@
                     <ul id="noteList">
                         <li class="noteItem">
                             <!-- <span class="item"></span>
-                            <button class="supprimer"></button>  -->
+                            <button class="delete"></button>  -->
                         </li>
                     </ul>
                 </div>
-                <div id="ajoutNote">
+                <div id="addNote">
                     <textarea type="text" id="noteInput" placeholder="Écrire une note" maxlength="34" cols="1"
                         rows="1"></textarea>
-                    <button id="boutonAjoutNote">Ajouter</button>
+                    <button id="addNoteButton">Ajouter</button>
                 </div>
             </article>
         </section>
     </main>
 
     <footer>
-        <a href="contact.html" alt="lien page contact" id="contactLien">Contact</a>
+        <a href="contact.html" alt="lien page contact" id="contactLink">Contact</a>
         <picture>
             <source srcset="./Images/herbe.webp" type="image/webp" />
             <source srcset="./Images/herbe.png" type="image/png" />
-            <img id="dessinHerbeFooter" src="./Images/herbe.png" alt="brin d'herbe dessiné">
+            <img id="grassPictureFooter" src="./Images/herbe.png" alt="brin d'herbe dessiné">
         </picture>
         <p>Copyright© 2024 - 2025 | Design by <a class="attribution" href="https://www.freepik.com/" target="_blank"
                 alt="lien page freepik">Freepik</a> & <a class="attribution" href="https://anais-diez.vercel.app/"
