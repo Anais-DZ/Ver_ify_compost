@@ -169,6 +169,7 @@
     display: none;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.307);
     padding: 0;
+    top: 60px;
   }
 
 #suggestionListWastes li {
