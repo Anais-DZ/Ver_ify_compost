@@ -354,7 +354,6 @@ const addNoteButton = document.querySelector('#addNoteButton');
 // les notes sont récupérées dans le localStorage
 noteList.innerHTML = localStorage.getItem('listItems') || '';
 
-
 // Ajouter un nouvel élément
 function writteMemo() {
 
@@ -362,16 +361,24 @@ function writteMemo() {
 
     if (item) {
         const listItem = document.createElement('li');
-        listItem.innerHTML = DOMPurify.sanitize(`
-            <button class="deleteTask">❌</button>
-            <span class="item">${item}</span>
-        `);
+        const deleteButton = document.createElement('button');
+
+        deleteButton.textContent = '❌';
+        deleteButton.classList.add('deleteTask');
+
+        const span = document.createElement('span');
+        span.textContent = item;
+        span.classList.add('item');
+
+        // Elements assemblés et envoyés dans le DOM
+        listItem.appendChild(deleteButton);
+        listItem.appendChild(span);
         noteList.appendChild(listItem);
 
-        // Mettre à jour le localStorage
+        // Mise à jour du localStorage
         localStorage.setItem('listItems', noteList.innerHTML);
 
-        // Réinitialiser le champ d'entrée
+        // Reset champ texte
         noteInput.value = '';
     };
 };
