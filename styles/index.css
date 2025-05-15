@@ -18,7 +18,12 @@
     margin-bottom: 100px;
 
     p {
-        margin-bottom: 2px;
+        margin-bottom: 5px;
+    }
+
+    img {
+        width: 120px;
+        height: auto;
     }
 }
 
@@ -117,10 +122,10 @@
     margin: 25px 20px 10px;
     color: #564E4E;
     text-shadow:
-      0.5px 0.5px 1px #ffffff,
-      -0.5px 0.5px 1px #ffffff,
-      -0.5px -0.5px 1px #ffffff,
-      0.5px -0.5px 1px #ffffff;
+        0.5px 0.5px 1px #ffffff,
+        -0.5px 0.5px 1px #ffffff,
+        -0.5px -0.5px 1px #ffffff,
+        0.5px -0.5px 1px #ffffff;
 }
 
 .searchWaste p {
@@ -181,12 +186,13 @@
     background-color: white;
     z-index: 9;
     max-height: 300px;
-    overflow-y: scroll; /*pour faire défiler si liste trop longue*/
+    overflow-y: scroll;
+    /*pour faire défiler si liste trop longue*/
     display: none;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.307);
     padding: 0;
     top: 60px;
-  }
+}
 
 #suggestionListWastes li {
     padding: 10px;
@@ -261,7 +267,8 @@
 }
 
 
-#calendarFonctionnality, .searchWaste {
+#calendarFonctionnality,
+.searchWaste {
     font-family: "fredoka";
     display: flex;
     flex-direction: column;
@@ -319,10 +326,10 @@
     margin: 40px 0 20px;
     color: #564E4E;
     text-shadow:
-      0.5px 0.5px 1px #ffffff,
-      -0.5px 0.5px 1px #ffffff,
-      -0.5px -0.5px 1px #ffffff,
-      0.5px -0.5px 1px #ffffff;
+        0.5px 0.5px 1px #ffffff,
+        -0.5px 0.5px 1px #ffffff,
+        -0.5px -0.5px 1px #ffffff,
+        0.5px -0.5px 1px #ffffff;
 }
 
 .calendarHeader h3 {
@@ -340,14 +347,16 @@
     margin: 0 15px;
 }
 
-.calendar th, .calendar td {
+.calendar th,
+.calendar td {
     color: #564E4E;
     font-weight: normal;
     height: 20px;
-    vertical-align: middle; /* Centre le contenu */
+    vertical-align: middle;
+    /* Centre le contenu */
 }
 
-.calendar th { 
+.calendar th {
     text-transform: uppercase;
     font-size: 16px;
     padding: 20px 5px;
@@ -405,7 +414,8 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 78%;
     max-width: 500px;
-    height: 700px; /* Limite la hauteur */
+    height: 700px;
+    /* Limite la hauteur */
     position: relative;
     margin-top: 40px;
 }
@@ -536,7 +546,7 @@ i {
     padding-left: 0;
 }
 
-.item { 
+.item {
     cursor: pointer;
     padding: 2px 0;
     font-size: 18px;
@@ -559,7 +569,7 @@ i {
     color: white;
     border: none;
     border-radius: 5px;
-    cursor:pointer;
+    cursor: pointer;
     text-align: center;
     font-size: 16px;
     cursor: pointer;
@@ -583,7 +593,8 @@ i {
         display: none;
     }
 
-    #calendarFonctionnality, .searchWaste {
+    #calendarFonctionnality,
+    .searchWaste {
         margin-top: 80px;
     }
 

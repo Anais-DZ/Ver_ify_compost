@@ -33,6 +33,7 @@ footer {
     justify-content: flex-end;
     box-shadow: 0 0 30px 16px rgba(255, 255, 255, 0.4);
     background: rgba(28,150,0,1);
+    text-align: center;
 }
 
 header h1 {

@@ -103,7 +103,7 @@
 
                 <form class="searchBar">
                     <textarea id="biowaste" name="biodéchet" placeholder="Le nom du déchet, c'est ici !" maxlength="30"
-                        cols="1" rows="1" required></textarea>
+                        cols="1" rows="1" pattern="^[A-Za-zÀ-ÿÀ-ÖØ-öø-ÿ\- ]{3,30}$" required></textarea>
                     <button id="checkButton">
                         <picture>
                             <source srcset="./Images/loupe.webp" type="image/webp" />
@@ -242,6 +242,8 @@
         <p>Copyright© 2024 <a class="attribution" href="https://monportfolio-anais.vercel.app/" target="_blank"
                 alt="lien page perso">Anaïs DIEZ</a> | Design by <a class="attribution" href="https://www.freepik.com/"
                 target="_blank" alt="lien page freepik">Freepik</a>
+            <br>
+            <a class="attribution" href="/cgu.html" target="_blank" alt="page CGU">CGU</a>
         </p>
     </footer>
 </body>

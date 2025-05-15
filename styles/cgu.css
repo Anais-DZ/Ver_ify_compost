@@ -1,0 +1,46 @@
+main {
+    font-family: 'Fredoka';
+    color: #564E4E;
+}
+
+.cgu {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.containArticle {
+    padding: 20px 0 10px 0;
+    align-items: start !important;
+    margin: 25px 0 70px 0 !important;
+    text-align: justify;
+
+    h2 {
+        align-self: center;
+        font-family: 'Cabin Sketch';
+    }
+
+    h3 {
+        font-family: 'Cabin Sketch' !important;
+        margin: 35px 0 0;
+    }
+
+    ul {
+        list-style-type: none;
+        padding-left: 15px;
+    }
+
+    a:hover {
+        color: #59b867c7;
+    }
+
+    a {
+        color: #42cf54;
+        text-decoration: none;
+    }
+}
+
+.mentions {
+    padding: 0 20px;
+}
