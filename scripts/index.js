@@ -239,6 +239,13 @@ function displayOverlay(title, description, response, composterPicture) {
 
 // Fonction qui permet de rechercher le déchet dans tabDechet et d'afficher l'overlay permettant à l'utilisateur de savoir où jeter le biodéchet.
 function resultOfSearch(searchedWaste) {
+    const regex = /^[A-Za-zÀ-ÿ\- ]{3,30}$/;
+
+    if (!regex.test(searchedWaste.trim())) {
+        alert("Le mot entré n'est pas valide. Il doit contenir uniquement des lettres ou tiret et faire entre 3 et 30 caractères.");
+        return; // stoppe la fonction si le mot n'est pas valide
+    }
+    
     let adjustedWaste = adjustWrittingWord(searchedWaste);
 
     // Si une correction est trouvée, on l'utilise
