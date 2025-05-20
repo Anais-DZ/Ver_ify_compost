@@ -46,13 +46,14 @@ const getApiWaste = async () => {
     try {
         // utilisation de fetch() pour envoyer une requête à l'adresse url de l'api
         const response = await fetch('https://api-waste.onrender.com/');
-
+        
         if (!response.ok) {
             //s'il n'y a pas de réponse de l'api, envoi d'un message d'erreur
             throw new Error('Erreur de récupération des données, pas de chance !');
         }
         //la réponse va pouvoir être transformée grâce à json() que l'on stocke dans la variable data
         const data = await response.json();
+
         //les données récupérées passent par forEach pour créer le tableau tabDechet
         data.forEach(waste => {
             tabDechet.push(
@@ -80,10 +81,50 @@ const closeOverlayButton = document.getElementById('closeOverlay');
 
 //Fonction pour afficher la liste de suggestions pendant que l'utilisateur tape son mot
 function gestionInput() {
-    //appel de la fonction qui affiche la liste de suggestion
+    //appel de la fonction qui va afficher ce qui est tapé dans l'input
     displaySuggestionList(input.value);
 };
 input.addEventListener('input', gestionInput);
+
+//Fonction pour trouver le mot, même au pluriel
+function plurialWord(word) {
+    if (word.endsWith('al')) {
+        return word.slice(0, -2) + 'aux'; // animal => animaux
+    } else if (word.endsWith('eau') || word.endsWith('eu')) {
+        return word + 'x'; // cadeau => cadeaux
+    } else if (word.endsWith('s') || word.endsWith('x') || word.endsWith('z')) {
+        return word; // mot déjà au pluriel ou invariable
+    } else {
+        return word + 's'; // règle générale
+    }
+}
+
+// Fonction pour calculer la distance de Levenshtein entre deux mots
+function distanceLevenshtein(a, b) {
+    const distanceTable = [];
+    // Initialisation de la distanceTable
+    for (let i = 0; i <= a.length; i++) {
+        distanceTable[i] = [i];
+    }
+    for (let j = 0; j <= b.length; j++) {
+        distanceTable[0][j] = j;
+    }
+    // Remplissage de la distanceTable
+    for (let i = 1; i <= a.length; i++) {
+        for (let j = 1; j <= b.length; j++) {
+            if (a[i - 1] === b[j - 1]) {
+                distanceTable[i][j] = distanceTable[i - 1][j - 1];
+            } else {
+                distanceTable[i][j] = Math.min(
+                    distanceTable[i - 1][j] + 1, // Suppression
+                    distanceTable[i][j - 1] + 1, // Insertion
+                    distanceTable[i - 1][j - 1] + 1 // Substitution
+                );
+            }
+        }
+    }
+    return distanceTable[a.length][b.length];
+}
 
 // La fonction normalizeWritting() va permettre de normaliser les mots entrés par l'utilisateur et faciliter leur comparaison ensuite
 function normalizeWritting(waste) {
@@ -123,30 +164,38 @@ function displaySuggestionList(search) {
     if (search) { 
         const normalizationOfSearch = normalizeWritting(search); //appel de la fonction normalizeWritting() pour normaliser le mot recherché
 
+        const plurialSearch = plurialWord(normalizationOfSearch);
+
         const searchOfUser = tabDechet.filter(waste => {
 
             // Normalisation du nom du déchet sans accents, apostrophes, et espaces, etc... avec la fonction normalizeWritting()
             const normalizeNameWaste = normalizeWritting(waste.name_waste);
+            const distance = distanceLevenshtein(normalizationOfSearch, normalizeNameWaste);
 
-            // une fois les déchets comparés et retournés, ils vont être affichés par ordre alphabétique dans la liste de suggestion
+            // Le nom du déchet doit commencer par les lettres tapées par l'utilisateur, ou la distance de Levenshtein doit être faible
+            return normalizeNameWaste.startsWith(normalizationOfSearch) ||
+                normalizeNameWaste.startsWith(plurialSearch) || distance <= 2;
+
         }).sort((a, b) => {
+            // une fois les déchets comparés et retournés, ils vont être affichés par ordre alphabétique dans la liste de suggestion
             return a.name_waste.localeCompare(b.name_waste);
         });
 
-        if (searchOfUser.length > 0) { // la liste s'affichera quand l'utilisateur commencera à taper sa recherche
-            suggestionListWastes.style.display = 'block'; 
-            searchOfUser.forEach(waste => { //forEach() permet de parcourir le tableau et créera une ligne (li) dans la liste du DOM (ul) à chaque élément trouvé
+        // la liste s'affichera quand l'utilisateur commencera à taper sa recherche
+        if (searchOfUser.length > 0) {
+            suggestionListWastes.style.display = 'block';
 
+            searchOfUser.forEach(waste => { //forEach() permet de parcourir le tableau et créera une ligne (li) dans la liste du DOM (ul) à chaque élément trouvé
 
                 const lineSuggestion = document.createElement('li');
                 lineSuggestion.innerText = waste.name_waste;
                 suggestionListWastes.appendChild(lineSuggestion); //ajoute <li> créé à la liste
 
-                //va permettre de remplir l'input avec le déchet suggéré lorsque l'utilisateur va cliquer dessus 
+                //va permettre de remplir l'input avec le déchet suggéré lorsque l'utilisateur va cliquer dessus et appeler la fonction la fonction resultOfSearch() afficher l'overlay
                 lineSuggestion.addEventListener('click', () => {
-                    input.value = lineSuggestion.innerText;
-                    suggestionListWastes.style.display = 'none'; // la liste "disparaît" après avoir cliqué sur le déchet
-                    //et appel de la fonction resultOfSearch() afficher l'overlay
+                    input.value = lineSuggestion.innerText; //la valeur de l'input sera le nom du déchet cherché
+                    suggestionListWastes.style.display = 'none'; // et la liste "disparaît" après avoir cliqué sur le déchet
+
                     resultOfSearch(input.value);
                 });
             });
@@ -159,6 +208,14 @@ function displaySuggestionList(search) {
         suggestionListWastes.style.display = 'none'; //la liste n'apparaît pas si aucun texte n'est tapé ou si l'utilisateur efface sa recherche
     }
 }
+
+// Fonction pour fermer la liste des suggestions si l'utilisateur clique ailleurs que sur la liste
+function closeSuggestionList(e) {
+    if (!suggestionListWastes.contains(e.target) && !input.contains(e.target)) { //la liste sera fermée si l'utilisateur clique ailleurs que sur la liste ou sur l'unput
+        suggestionListWastes.style.display = 'none';
+    }
+}
+document.addEventListener('click', closeSuggestionList);
 
 
 // Fonction pour afficher l'overlay du résultat de la recherche
@@ -190,11 +247,17 @@ function resultOfSearch(searchedWaste) {
 
         return;
     }
+    
+    let adjustedWaste = adjustWrittingWord(searchedWaste);
+
+    // Si une correction est trouvée, on l'utilise
+    const finalWord = adjustedWaste || searchedWaste;
 
     // find() permet de parcourir le tableau tabDechet pour trouver le déchet entré par l'utilisateur et le nom du déchet sera stocké dans la variable foundWaste pour la condition suivante.
     const foundWaste = tabDechet.find(waste => {
 
         //déclaration des variables qui vont contenir les deux mots normalisés permettant ainsi de les comparer
+        const enterWaste = normalizeWritting(finalWord); // utilisation de la fonction normalizeWritting() pour normaliser le déchet recherché. 
         const normalizeNameWaste = normalizeWritting(waste.name_waste); // utilisation de la fonction normalizeWritting() pour normaliser le nom des déchets dans le tableau
 
         return normalizeNameWaste === enterWaste; // retourne le nom du déchet trouvé dans tabDechet s'il est strictement identique au déchet entré par l'utilisateur et le stocke dans la variable.
@@ -206,29 +269,26 @@ function resultOfSearch(searchedWaste) {
 
         if (typeContainer.includes("Composteur et lombricomposteur")) {
             displayOverlay( //appel de la fonction qui va afficher l'overlay
-
-                foundWaste.name_waste, // Affichage du mot exacte trouvé dans le tableau
-
+                foundWaste.name_waste,
                 "(en petits morceaux et/ou humidifiés pour nos amis les vers)",
                 "✅ Convient au composteur et lombricomposteur",
-                "compost-coeur.webp"
+                "compost-coeur.webp" // Image pour les deux composteurs
             );
         } else if (typeContainer.includes("Composteur")) {
             displayOverlay(
                 foundWaste.name_waste,
                 "Ne convient pas au lombricomposteur",
                 "⚠️ Convient uniquement au composteur",
-                "compost-okay.webp"
+                "compost-okay.webp" // Image pour composteur uniquement
             );
         } else {
             displayOverlay(
                 foundWaste.name_waste,
                 "Ce déchet doit être jeté avec les ordures ménagères ou au recyclage s'il se recycle",
                 "❌ Ne convient ni au composteur, ni au lombricomposteur",
-                "compost-triste.webp"
+                "compost-triste.webp" // Image pour non compostable
             );
         }
-        
     } else {
         displayOverlay(
             searchedWaste, // Affichage du mot exacte tapé par l'utilisateur
@@ -267,18 +327,11 @@ function verifyWaste(event) {
 }
 // Écouteur d'événements pour la touche "Enter" dans l'input
 input.addEventListener('keydown', verifyWaste);
+
 // Écouteur d'événements pour le clic sur le bouton de recherche
 if (checkButton) {
     checkButton.addEventListener('click', verifyWaste);
 }
-
-// Fonction pour fermer la liste des suggestions si l'utilisateur clique ailleurs que sur la liste
-function closeSuggestionList(e) {
-    if (!suggestionListWastes.contains(e.target) && !input.contains(e.target)) { //la liste sera fermée si l'utilisateur clique ailleurs que sur la liste ou sur l'unput
-        suggestionListWastes.style.display = 'none';
-    }
-}
-document.addEventListener('click', closeSuggestionList);
 
 // Fonction pour réinitialiser l'input quand il reçoit le focus
 function resetInput() {
