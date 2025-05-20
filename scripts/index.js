@@ -42,25 +42,20 @@ document.addEventListener("DOMContentLoaded", function () {
 const tabDechet = [];
 
 // Fonction getApiWaste() pour récupérer les données de l'api et remplir le tableau dynamiquement
-// async indique que la fonction va effectuer une requête et attendre la réponse avant de passer à la suite du code
 const getApiWaste = async () => {
     try {
-
         // utilisation de fetch() pour envoyer une requête à l'adresse url de l'api
         const response = await fetch('https://api-waste.onrender.com/');
-
         if (!response.ok) {
             //s'il n'y a pas de réponse de l'api, envoi d'un message d'erreur
             throw new Error('Erreur de récupération des données, pas de chance !');
         }
-
         //la réponse va pouvoir être transformée grâce à json() que l'on stocke dans la variable data
         const data = await response.json();
-
         //les données récupérées passent par forEach pour créer le tableau tabDechet
         data.forEach(waste => {
             tabDechet.push(
-                { 
+                {
                     name_waste: waste.name_waste,
                     type_container: waste.type_container
                 }
@@ -80,31 +75,17 @@ getApiWaste();
 const input = document.getElementById('biowaste');
 const suggestionListWastes = document.getElementById('suggestionListWastes');
 const checkButton = document.getElementById('checkButton');
-const resultOverlay = document.getElementById('resultOverlay');
 const closeOverlayButton = document.getElementById('closeOverlay');
 
 //Fonction pour afficher la liste de suggestions pendant que l'utilisateur tape son mot
 function gestionInput() {
-    //appel de la fonction qui va afficher ce qui est tapé dans l'input
+    //appel de la fonction qui affiche la liste de suggestion
     displaySuggestionList(input.value);
 };
 input.addEventListener('input', gestionInput);
 
-//Fonction pour afficher le pluriel d'un mot
-function plurialWord(word) {
-    if (word.endsWith('al')) {
-        return word.slice(0, -2) + 'aux'; // animal => animaux
-    } else if (word.endsWith('eau') || word.endsWith('eu')) {
-        return word + 'x'; // cadeau => cadeaux
-    } else if (word.endsWith('s') || word.endsWith('x') || word.endsWith('z')) {
-        return word; // mot déjà au pluriel ou invariable
-    } else {
-        return word + 's'; // règle générale
-    }
-}
-
-// La fonction normalizeWrittingWaste() va permettre de normaliser les mots entrés par l'utilisateur et faciliter leur comparaison ensuite
-function normalizeWrittingWaste(waste) {
+// La fonction normalizeWritting() va permettre de normaliser les mots entrés par l'utilisateur et faciliter leur comparaison ensuite
+function normalizeWritting(waste) {
     return waste
         .normalize('NFD') // Sépare les lettres des accents
         .replace(/['’\s–—-]|[\u0300-\u036f]/g, '')
@@ -119,46 +100,32 @@ function normalizeWrittingWaste(waste) {
 function displaySuggestionList(search) {
     suggestionListWastes.innerText = ''; // Réinitialise la liste pour qu'elle "suive" ce que rentre l'utilisateur.
 
-    if (search) { // la liste s'affichera quand l'utilisateur commencera à taper sa recherche
-
-        const normalizationOfSearch = normalizeWrittingWaste(search); //appel de la fonction normalizeWrittingWaste() pour normaliser le mot recherché
-
-        const plurialSearch = plurialWord(normalizationOfSearch);
-
+    if (search) { 
+        const normalizationOfSearch = normalizeWritting(search); //appel de la fonction normalizeWritting() pour normaliser le mot recherché
         const searchOfUser = tabDechet.filter(waste => {
 
-            // Normalisation du nom du déchet sans accents, apostrophes, et espaces, etc... avec la fonction normalizeWrittingWaste()
-            const normalizeNameWaste = normalizeWrittingWaste(waste.name_waste);
-            const distance = distanceLevenshtein(normalizationOfSearch, normalizeNameWaste);
-
-            // Le nom du déchet doit commencer par les lettres tapées par l'utilisateur, ou la distance de Levenshtein doit être faible
-            return normalizeNameWaste.startsWith(normalizationOfSearch) ||
-                normalizeNameWaste.startsWith(plurialSearch) || distance <= 2;
-
+            // Normalisation du nom du déchet sans accents, apostrophes, et espaces, etc... avec la fonction normalizeWritting()
+            const normalizeNameWaste = normalizeWritting(waste.name_waste);
             // Retourne le nom du déchet qui commence par les premières lettres tapées dans la recherche grâce à starsWith()
-            //return normalizeNameWaste.startsWith(normalizationOfSearch);  
-
-        }).sort((a, b) => {
+            return normalizeNameWaste.startsWith(normalizationOfSearch); 
             // une fois les déchets comparés et retournés, ils vont être affichés par ordre alphabétique dans la liste de suggestion
+        }).sort((a, b) => {
             return a.name_waste.localeCompare(b.name_waste);
         });
 
+        if (searchOfUser.length > 0) { // la liste s'affichera quand l'utilisateur commencera à taper sa recherche
+            suggestionListWastes.style.display = 'block'; 
+            searchOfUser.forEach(waste => { //forEach() permet de parcourir le tableau et créera une ligne (li) dans la liste du DOM (ul) à chaque élément trouvé
 
-
-        if (searchOfUser.length > 0) { 
-            suggestionListWastes.style.display = 'block'; // Empêche la liste de s'afficher lors du focus sur l'input
-
-            searchOfUser.forEach(waste => { //forEach() permet de parcourir le tableau et créera une ligne (li) dans la liste du DOM (ul) à chaque élément trouvé (si je cherche "oeuf", foreach va rechercher l'élément "oeuf" dans le tableau et renvoyer cet élément dans une ligne). La liste n'existant pas dans le Dom, elle est produite en JS. Sans ça, la liste restera vide)
-
-                const lineSuggestion = document.createElement('li'); 
+                const lineSuggestion = document.createElement('li');
                 lineSuggestion.innerText = waste.name_waste;
                 suggestionListWastes.appendChild(lineSuggestion); //ajoute <li> créé à la liste
 
-                //va permettre de remplir l'input avec le déchet suggéré lorsque l'utilisateur va cliquer dessus et appeler la fonction la fonction resultOfSearch() afficher l'overlay
+                //va permettre de remplir l'input avec le déchet suggéré lorsque l'utilisateur va cliquer dessus 
                 lineSuggestion.addEventListener('click', () => {
-                    input.value = lineSuggestion.innerText; //la valeur de l'input sera le nom du déchet cherché
-                    suggestionListWastes.style.display = 'none'; // et la liste "disparaît" après avoir cliqué sur le déchet
-
+                    input.value = lineSuggestion.innerText;
+                    suggestionListWastes.style.display = 'none'; // la liste "disparaît" après avoir cliqué sur le déchet
+                    //et appel de la fonction resultOfSearch() afficher l'overlay
                     resultOfSearch(input.value);
                 });
             });
@@ -172,72 +139,15 @@ function displaySuggestionList(search) {
     }
 }
 
-// Fonction pour fermer la liste des suggestions si l'utilisateur clique ailleurs que sur la liste
-function closeSuggestionList(event) {
-    if (!suggestionListWastes.contains(event.target) && !input.contains(event.target)) { //la liste sera fermée si l'utilisateur clique ailleurs que sur la liste et sur l'unput
-        suggestionListWastes.style.display = 'none';
-    }
-}
-document.addEventListener('click', closeSuggestionList);
 
 
-// Fonction pour calculer la distance de Levenshtein entre deux mots
-function distanceLevenshtein(a, b) {
-
-    const distanceTable = [];
-
-    // Initialisation de la distanceTable
-    for (let i = 0; i <= a.length; i++) {
-        distanceTable[i] = [i];
-    }
-    for (let j = 0; j <= b.length; j++) {
-        distanceTable[0][j] = j;
-    }
-
-    // Remplissage de la distanceTable
-    for (let i = 1; i <= a.length; i++) {
-        for (let j = 1; j <= b.length; j++) {
-            if (a[i - 1] === b[j - 1]) {
-                distanceTable[i][j] = distanceTable[i - 1][j - 1];
-            } else {
-                distanceTable[i][j] = Math.min(
-                    distanceTable[i - 1][j] + 1, // Suppression
-                    distanceTable[i][j - 1] + 1, // Insertion
-                    distanceTable[i - 1][j - 1] + 1 // Substitution
-                );
-            }
-        }
-    }
-    return distanceTable[a.length][b.length];
-}
-
-// Fonction pour corriger un mot mal orthographié
-function adjustWrittingWord(word) {
-    const normalizationWord = normalizeWrittingWaste(word);
-    let bestWord = null;
-    let bestDistance = Infinity;
-
-    tabDechet.forEach(waste => {
-        const normalizeNameWaste = normalizeWrittingWaste(waste.name_waste);
-        const distance = distanceLevenshtein(normalizationWord, normalizeNameWaste);
-
-        if (distance < bestDistance) {
-            bestDistance = distance;
-            bestWord = waste.name_waste;
-        }
-    });
-
-    // Si la meilleure distance est raisonnable (ex: max 2 erreurs), on retourne la correction
-    return (bestDistance <= 2) ? bestWord : null;
-}
-
-
-// Fonction pour afficher l'overlay de la recherche et qui servira pour la fonction resultOfSearch(searchedWaste)
+// Fonction pour afficher l'overlay du résultat de la recherche
 function displayOverlay(title, description, response, composterPicture) {
     const overlayTitle = document.getElementById('overlayTitle');
     const overlayDescription = document.getElementById('overlayDescription');
     const overlayResponse = document.getElementById('overlayResponse');
     const overlayPicture = document.getElementById('overlayPicture');
+    const resultOverlay = document.getElementById('resultOverlay');
 
     // Permet d'écrire dans l'overlay (l'overlay est vide dans le html) et modifier le texte selon le déchet trouvé:
     overlayTitle.innerText = title; // permet la mise à jour du titre
@@ -245,60 +155,64 @@ function displayOverlay(title, description, response, composterPicture) {
     overlayResponse.innerText = response; // permet la mise à jour de la réponse
     overlayPicture.src = `./Images/${composterPicture}`; // permet la mise à jour de l'image
 
-    // Affiche l'intérieur de l'overlay en colonne //!(ne pas mettre dans le css, ça ne fonctionne pas)
+    // Affiche l'intérieur de l'overlay en colonne
     resultOverlay.style.display = 'flex';
     resultOverlay.style.flexDirection = 'column';
-
 };
-
 
 // Fonction qui permet de rechercher le déchet dans tabDechet et d'afficher l'overlay permettant à l'utilisateur de savoir où jeter le biodéchet.
 function resultOfSearch(searchedWaste) {
-    let adjustedWaste = adjustWrittingWord(searchedWaste);
 
-    // Si une correction est trouvée, on l'utilise
-    const finalWord = adjustedWaste || searchedWaste;
+    // Alerte mot non valide
+    const regex = /^[A-Za-zÀ-ÿ\- ]{2,30}$/;
+    if (!regex.test(searchedWaste.trim())) {
+        alert("Le mot entré n'est pas valide. Il doit contenir uniquement des lettres ou tiret et faire entre 2 et 30 caractères.");
+
+        return;
+    }
 
     // find() permet de parcourir le tableau tabDechet pour trouver le déchet entré par l'utilisateur et le nom du déchet sera stocké dans la variable foundWaste pour la condition suivante.
     const foundWaste = tabDechet.find(waste => {
 
         //déclaration des variables qui vont contenir les deux mots normalisés permettant ainsi de les comparer
-        const enterWaste = normalizeWrittingWaste(finalWord); // utilisation de la fonction normalizeWrittingWaste() pour normaliser le déchet recherché. 
-        const normalizeNameWaste = normalizeWrittingWaste(waste.name_waste); // utilisation de la fonction normalizeWrittingWaste() pour normaliser le nom des déchets dans le tableau
+
+        const enterWaste = normalizeWritting(searchedWaste); // utilisation de la fonction normalizeWritting() pour normaliser le déchet recherché. 
+
+        const normalizeNameWaste = normalizeWritting(waste.name_waste); // utilisation de la fonction normalizeWritting() pour normaliser le nom des déchets dans le tableau
 
         return normalizeNameWaste === enterWaste; // retourne le nom du déchet trouvé dans tabDechet s'il est strictement identique au déchet entré par l'utilisateur et le stocke dans la variable.
     });
 
     if (foundWaste) { // une fois le déchet trouvé, il faut vérifier le nom du container qui lui est attribué
-
         // déclaration de la variable qui va stocker le nom du container du déchet trouvé
         const typeContainer = foundWaste.type_container;
 
         if (typeContainer.includes("Composteur et lombricomposteur")) {
             displayOverlay( //appel de la fonction qui va afficher l'overlay
-                foundWaste.name_waste, // Affichage du nom exact et pas le mot tapé par l'utilisateur (ex: si l'utilisateur tape "cartonsans encre", le nom du déchet qui sera réellement affiché sur l'overlay sera "carton sans encre")
+                foundWaste.name_waste, // Affichage du mot exacte trouvé dans le tableau
                 "(en petits morceaux et/ou humidifiés pour nos amis les vers)",
                 "✅ Convient au composteur et lombricomposteur",
-                "compost-coeur.webp" // Image pour les deux composteurs
+                "compost-coeur.webp"
             );
         } else if (typeContainer.includes("Composteur")) {
             displayOverlay(
                 foundWaste.name_waste,
                 "Ne convient pas au lombricomposteur",
                 "⚠️ Convient uniquement au composteur",
-                "compost-okay.webp" // Image pour composteur uniquement
+                "compost-okay.webp"
             );
         } else {
             displayOverlay(
                 foundWaste.name_waste,
                 "Ce déchet doit être jeté avec les ordures ménagères ou au recyclage s'il se recycle",
                 "❌ Ne convient ni au composteur, ni au lombricomposteur",
-                "compost-triste.webp" // Image pour non compostable
+                "compost-triste.webp"
             );
         }
+        
     } else {
         displayOverlay(
-            searchedWaste, // Affichage du mot exacte tapé par l'utilisateur car il n'existe pas dans le tableau
+            searchedWaste, // Affichage du mot exacte tapé par l'utilisateur
             "❓",
             "Ce déchet m'est inconnu et va me demander quelques recherches plus approfondies. En attendant, le mieux est de le jeter dans la poubelle ordinaire ou au recyclage s'il se recycle.",
             "ver-perplexe.webp" // Image pour déchet inconnu
@@ -334,12 +248,18 @@ function verifyWaste(event) {
 }
 // Écouteur d'événements pour la touche "Enter" dans l'input
 input.addEventListener('keydown', verifyWaste);
-
 // Écouteur d'événements pour le clic sur le bouton de recherche
 if (checkButton) {
     checkButton.addEventListener('click', verifyWaste);
 }
 
+// Fonction pour fermer la liste des suggestions si l'utilisateur clique ailleurs que sur la liste
+function closeSuggestionList(e) {
+    if (!suggestionListWastes.contains(e.target) && !input.contains(e.target)) { //la liste sera fermée si l'utilisateur clique ailleurs que sur la liste ou sur l'unput
+        suggestionListWastes.style.display = 'none';
+    }
+}
+document.addEventListener('click', closeSuggestionList);
 
 // Fonction pour réinitialiser l'input quand il reçoit le focus
 function resetInput() {
@@ -348,12 +268,10 @@ function resetInput() {
 }
 input.addEventListener('focus', resetInput);
 
-
 // Événement pour fermer l'overlay avec la croix
 closeOverlayButton.addEventListener('click', (event) => {
     event.preventDefault(); // Empêche la page de remonter après la fermeture avec la croix
     resultOverlay.style.display = 'none'; // Cache l'overlay
-
 });
 
 // Événement pour fermer l'overlay avec un click en dehors de l'overlay
@@ -362,8 +280,6 @@ resultOverlay.addEventListener('click', (event) => {
         resultOverlay.style.display = 'none'; // Cache l'overlay
     }
 });
-
-
 
 
 
@@ -475,7 +391,7 @@ function createCalendar(month, year) {
                 // Jours du mois suivant
                 cellCalendar.innerText = dayOfNextMonth++;
                 cellCalendar.classList.add('prevAndNextMonth');
-                
+
             } else {
                 // Jours du mois actuel
                 cellCalendar.innerText = date;

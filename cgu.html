@@ -15,15 +15,19 @@
     <meta property="og:url" content="https://verify-compost.vercel.app/" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Ver'ify Compost" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400&family=Fredoka:wght@300..700&display=swap"
         rel="stylesheet">
+    <link href="./styles/index.css" rel="stylesheet">
     <link href="./styles/commun.css" rel="stylesheet">
-    <link href="./styles/liens.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.3/dist/purify.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/cnumr/ecoindex_badge@3/assets/js/ecoindex-badge.js" defer></script>
+    <link href="./styles/cgu.css" rel="stylesheet">
     <script src="./scripts/commun.js" defer></script>
-    <title>Liens et ressources | Ver'ify Compost</title>
+    <title>Ver'ify Compost | Mentions légales</title>
 </head>
 
 <body>
@@ -64,47 +68,69 @@
         <a class="linkMenuDesktop" href="liens.html" alt="liens ressources">Liens & Ressources</a>
         <a class="linkMenuDesktop" href="contact.html" alt="contact"> Contact</a>
     </div>
+
     <main>
-        <section class="links">
+        <section class="cgu">
             <article class="containArticle">
-                <div class="lineMax"></div>
-                <div class="lineMin"></div>
-                <h2>Liens & Ressources</h2>
-                <div class="lineMin"></div>
-                <div class="lineMax"></div>
+                <h2>Mentions légales</h2>
+                <div class="mentions">
+                    <h3>1. Éditeur du site</h3>
+                    <p>Ce site est édité par :</p>
+                    <ul>
+                        <li>Ver'ify Compost</li>
+                        <li>Responsable : Anaïs DIEZ</li>
+                        <li>Email : <a href="mailto:diez.anais@gmail.com" target="_blank">diez.anais@gmail.com</a></li>
+                    </ul>
 
-                <ul class="linksList" id="webSiteLinks">
-                    <li class="listSites">🌱 Sites internet 🌱</li>
-                    <li><a href="https://reseaucompost.org/" title="Plein d'infos ici, vous trouverez!"
-                            alt="site internet ReseauCompost" target="_blank">➡️ Réseau Compost Citoyen</a></li>
-                    <li><a href="https://www.info.gouv.fr/actualite/biodechets-le-tri-devient-obligatoire#:~:text=%C3%80%20partir%20du%201er%20janvier,la%20loi%20antigaspillage%20de%202020."
-                            title="lien site gouvernement" alt="lien site gouvernement sur le compostage"
-                            target="_blank">➡️ Biodéchets : le tri devient obligatoire en 2024.</a></li>
-                    <li><a href="https://plus2vers.com/fr/lombricompostage/" title="Plein d'infos ici, vous trouverez!"
-                            alt="site internet Plus2vers" target="_blank">➡️ Plus2vers: site d'informations sur le
-                            lombricompostage.</a></li>
-                    <!--<li><a href="site web" title="test lien" alt="fausse adresse pour test" target="_blank">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</a></li>
-                    <li><a href="site web" title="test lien" alt="fausse adresse pour test" target="_blank">Lorem ipsum dolor sit amet consectetur.</a></li> -->
-                </ul>
+                    <h3>2. Hébergement du site</h3>
+                    <p>Ce site est hébergé par :</p>
+                    <ul>
+                        <li>Vercel Inc</li>
+                        <li>340 S Lemon Ave #4133</li>
+                        <li>Walnut, CA 91789</li>
+                        <li>États-Unis</li>
+                        <li>Site web : <a href="https://vercel.com" target="_blank">vercel.com</a></li>
+                    </ul>
 
-                <picture>
-                    <source srcset="./Images/trois-vers.webp" type="image/webp" />
-                    <source srcset="./Images/trois-vers.png" type="image/png" />
-                    <img src="./Images/trois-vers.png" alt="vers sortant d'un compost" />
-                </picture>
+                    <h3>3. Propriété intellectuelle</h3>
+                    <p>Le contenu de ce site (textes, images, conseils, etc.) est la propriété de Ver'ify Compost et de <a href="https://freepik.com" target="_blank">Freepik</a> et est
+                        protégé
+                        par
+                        les lois relatives à la propriété intellectuelle. Toute reproduction, distribution ou
+                        utilisation
+                        non
+                        autorisée est interdite sans accord préalable écrit.</p>
 
-                <ul class="linksList">
-                    <li class="listSites">🌱 Réseaux sociaux 🌱</li>
-                    <li><a href="https://www.facebook.com/groups/les.lombricomposteurs/" title="Par ici !"
-                            alt="lien facebook Les lombricomposteurs" target="_blank">➡️ Les lombricomposteurs : groupe
-                            sur le lombricompostage</a></li>
-                    <!-- <li><a href="site web" title="test lien" alt="fausse adresse pour test" target="_blank">Lorem ipsum dolor sit amet consectetur.</a></li>
-                    <li><a href="site web" title="test lien" alt="fausse adresse pour test" target="_blank">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</a></li> -->
-                </ul>
+                    <h3>4. Données personnelles</h3>
+                    <p>Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d’un droit
+                        d’accès,
+                        de
+                        rectification et de suppression des données vous concernant. Pour exercer ce droit, vous pouvez
+                        nous
+                        contacter à l’adresse suivante : <a href="mailto:diez.anais@gmail.com" target="_blank">diez.anais@gmail.com</a></p>
+
+                    <h3>5. Responsabilité</h3>
+                    <p>Ver'ify Compost ne peut être tenu responsable de l’usage qui sera fait des conseils fournis sur
+                        le
+                        site.
+                        Chaque utilisateur est seul responsable de l’application des informations. Aucune garantie n’est
+                        donnée
+                        sur
+                        les résultats obtenus ou sur l’absence de risques liés à certaines pratiques de compostage.</p>
+
+                    <h3>6. Liens externes</h3>
+                    <p>Ce site peut contenir des liens vers des sites tiers. Ver'ify Compost décline toute
+                        responsabilité
+                        quant
+                        au
+                        contenu de ces sites ou à leur politique de confidentialité.</p>
+
+                    <h3>7. Contact</h3>
+                    <p>Pour toute question concernant ces mentions légales, vous pouvez nous écrire à :
+                        <a href="mailto:diez.anais@gmail.com" target="_blank">diez.anais@gmail.com</a>
+                    </p>
+                </div>
             </article>
-            <button id="suggestionSiteButton">
-                <a href="contact.html" alt="redirection page contact">Un lien sur le compostage à suggérer ?</a>
-            </button>
         </section>
     </main>
     <footer>
@@ -116,9 +142,8 @@
         </picture>
         <p>Copyright© 2024 <a class="attribution" href="https://monportfolio-anais.vercel.app/" target="_blank"
                 alt="lien page perso">Anaïs DIEZ</a> | Design by <a class="attribution" href="https://www.freepik.com/"
-                target="_blank" alt="lien page freepik">Freepik</a>
-            <br>
-            <a class="attribution" href="/cgu.html" target="_blank" alt="page CGU">CGU</a>
+                target="_blank" alt="lien page freepik">Freepik</a> | <a class="attribution" href="/cgu.html"
+                target="_blank" alt="page CGU">CGU</a>
         </p>
     </footer>
 </body>

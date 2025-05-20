@@ -23,6 +23,8 @@
         rel="stylesheet">
     <link href="./styles/index.css" rel="stylesheet">
     <link href="./styles/commun.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.3/dist/purify.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/cnumr/ecoindex_badge@3/assets/js/ecoindex-badge.js" defer></script>
     <script src="./scripts/index.js" defer></script>
     <script src="./scripts/commun.js" defer></script>
     <title>Ver'ify Compost | Le guide du compostage</title>
@@ -67,11 +69,11 @@
     </div>
     <main class="indexContainer">
         <!-- élément contenant le carousel + titre + fleche -->
-        <article class="carouselContainer"> 
+        <article class="carouselContainer">
             <h2>Le compostage, c'est aussi :</h2>
             <!-- élément contenant que le carousel-->
             <div class="carousel">
-                <!-- Bouton gauche --> 
+                <!-- Bouton gauche -->
                 <img class="carouselControl prev" src="./Icones/arrow-left.png" alt="fleche gauche">
                 <!-- élément contenant toutes les slides -->
                 <ul class="carouselInner">
@@ -87,7 +89,7 @@
                         soi-même<p>💰</p>
                     </li>
                 </ul>
-                <!-- Bouton droite --> 
+                <!-- Bouton droite -->
                 <img class="carouselControl next" src="./Icones/arrow-right.png" alt="fleche droite">
             </div>
         </article>
@@ -101,7 +103,8 @@
 
                 <form class="searchBar">
                     <textarea id="biowaste" name="biodéchet" placeholder="Le nom du déchet, c'est ici !" maxlength="30"
-                        cols="1" rows="1" required></textarea>
+                        cols="1" rows="1" pattern="^[A-Za-zÀ-ÿÀ-ÖØ-öø-ÿ\- ]{2,30}$" required>
+                    </textarea>
                     <button id="checkButton">
                         <picture>
                             <source srcset="./Images/loupe.webp" type="image/webp" />
@@ -125,8 +128,7 @@
             <picture>
                 <source srcset="./Images/compost.webp" type="image/webp" />
                 <source srcset="./Images/compost.png" type="image/png" />
-                <img id="separationPictureCompost" src="./Images/compost.png"
-                    alt="dessin d'un compost">
+                <img id="separationPictureCompost" src="./Images/compost.png" alt="dessin d'un compost">
             </picture>
 
             <article id="calendarFonctionnality" class="calendarFonctionnality">
@@ -222,6 +224,13 @@
                 </div>
             </article>
         </section>
+        <div id="ecoindex">
+            <p>Impact environnemental de ce site :</p>
+            <a href="https://bff.ecoindex.fr/redirect/?url=https://verify-compost.vercel.app" target="_blank">
+                <img src="https://bff.ecoindex.fr/badge/?theme=dark&url=https://verify-compost.vercel.app"
+                    alt="Ecoindex Badge" />
+            </a>
+        </div>
     </main>
 
     <footer>
@@ -231,13 +240,13 @@
             <source srcset="./Images/herbe.png" type="image/png" />
             <img id="grassPictureFooter" src="./Images/herbe.png" alt="brin d'herbe dessiné">
         </picture>
-        <p>Copyright© 2024 - 2025 | Design by <a class="attribution" href="https://www.freepik.com/" target="_blank"
-                alt="lien page freepik">Freepik</a> & <a class="attribution" href="https://anais-diez.vercel.app/"
-                target="_blank" alt="lien page perso">Anaïs DIEZ</a>
+        <p>Copyright© 2024 <a class="attribution" href="https://monportfolio-anais.vercel.app/" target="_blank"
+                alt="lien page perso">Anaïs DIEZ</a> | Design by <a class="attribution" href="https://www.freepik.com/"
+                target="_blank" alt="lien page freepik">Freepik</a>
+            <br>
+            <a class="attribution" href="/cgu.html" target="_blank" alt="page CGU">CGU</a>
         </p>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.3/dist/purify.min.js"></script>
 </body>
 
 </html>
