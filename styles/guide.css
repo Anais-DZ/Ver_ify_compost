@@ -1,4 +1,4 @@
-  .guideEntretien {
+  .maintenanceBook {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -57,24 +57,20 @@
     font-weight: 500;
   }
 
-  .conseils {
+  .advices {
     font-size: 18px;
     color: #564E4E;
     margin: 20px 15px;
     font-family: 'fredoka';
   }
 
-  #saison {
-    margin-bottom: 80px;
-  }
-
-  #verLecture {
+  #readerWorm {
     width: 100px;
     height: auto;
     margin-top: 20px;
   }
 
-  #titreEntretien {
+  #titleMaintenance {
     font-family: "cabin sketch";
     text-align: center;
     color: #564E4E;
@@ -82,7 +78,7 @@
     font-size: 24px;
   }
 
-  #aRenommer {
+  #SeasonMaintenance {
     margin-bottom: 100px;
   }
 
@@ -107,7 +103,7 @@
     margin-bottom: 5px;
   }
 
-  .paragraphePrincipal {
+  .mainParagraph {
     font-size: 18px;
     color: #564E4E;
     font-family: 'fredoka';
@@ -120,6 +116,6 @@
     margin: 10px 0 20px 0 !important;
 }
 
-.saisons {
+.seasons {
   margin-top: 35px;
 }

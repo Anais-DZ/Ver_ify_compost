@@ -46,6 +46,7 @@ const getApiWaste = async () => {
     try {
         // utilisation de fetch() pour envoyer une requête à l'adresse url de l'api
         const response = await fetch('https://api-waste.onrender.com/');
+
         if (!response.ok) {
             //s'il n'y a pas de réponse de l'api, envoi d'un message d'erreur
             throw new Error('Erreur de récupération des données, pas de chance !');
@@ -96,18 +97,37 @@ function normalizeWritting(waste) {
         .toLowerCase();  // Tout mettre en minuscule
 }
 
+// Fonction pour corriger un mot mal orthographié
+function adjustWrittingWord(word) {
+    const normalizationWord = normalizeWritting(word);
+    let bestWord = null;
+    let bestDistance = Infinity;
+
+    tabDechet.forEach(waste => {
+        const normalizeNameWaste = normalizeWritting(waste.name_waste);
+        const distance = distanceLevenshtein(normalizationWord, normalizeNameWaste);
+
+        if (distance < bestDistance) {
+            bestDistance = distance;
+            bestWord = waste.name_waste;
+        }
+    });
+    // Si la meilleure distance est raisonnable (ex: max 2 erreurs), on retourne la correction
+    return (bestDistance <= 2) ? bestWord : null;
+}
+
 // Affichage de la liste de suggestion
 function displaySuggestionList(search) {
-    suggestionListWastes.innerText = ''; // Réinitialise la liste pour qu'elle "suive" ce que rentre l'utilisateur.
+    suggestionListWastes.innerText = '';
 
     if (search) { 
         const normalizationOfSearch = normalizeWritting(search); //appel de la fonction normalizeWritting() pour normaliser le mot recherché
+
         const searchOfUser = tabDechet.filter(waste => {
 
             // Normalisation du nom du déchet sans accents, apostrophes, et espaces, etc... avec la fonction normalizeWritting()
             const normalizeNameWaste = normalizeWritting(waste.name_waste);
-            // Retourne le nom du déchet qui commence par les premières lettres tapées dans la recherche grâce à starsWith()
-            return normalizeNameWaste.startsWith(normalizationOfSearch); 
+
             // une fois les déchets comparés et retournés, ils vont être affichés par ordre alphabétique dans la liste de suggestion
         }).sort((a, b) => {
             return a.name_waste.localeCompare(b.name_waste);
@@ -116,6 +136,7 @@ function displaySuggestionList(search) {
         if (searchOfUser.length > 0) { // la liste s'affichera quand l'utilisateur commencera à taper sa recherche
             suggestionListWastes.style.display = 'block'; 
             searchOfUser.forEach(waste => { //forEach() permet de parcourir le tableau et créera une ligne (li) dans la liste du DOM (ul) à chaque élément trouvé
+
 
                 const lineSuggestion = document.createElement('li');
                 lineSuggestion.innerText = waste.name_waste;
@@ -138,7 +159,6 @@ function displaySuggestionList(search) {
         suggestionListWastes.style.display = 'none'; //la liste n'apparaît pas si aucun texte n'est tapé ou si l'utilisateur efface sa recherche
     }
 }
-
 
 
 // Fonction pour afficher l'overlay du résultat de la recherche
@@ -175,9 +195,6 @@ function resultOfSearch(searchedWaste) {
     const foundWaste = tabDechet.find(waste => {
 
         //déclaration des variables qui vont contenir les deux mots normalisés permettant ainsi de les comparer
-
-        const enterWaste = normalizeWritting(searchedWaste); // utilisation de la fonction normalizeWritting() pour normaliser le déchet recherché. 
-
         const normalizeNameWaste = normalizeWritting(waste.name_waste); // utilisation de la fonction normalizeWritting() pour normaliser le nom des déchets dans le tableau
 
         return normalizeNameWaste === enterWaste; // retourne le nom du déchet trouvé dans tabDechet s'il est strictement identique au déchet entré par l'utilisateur et le stocke dans la variable.
@@ -189,7 +206,9 @@ function resultOfSearch(searchedWaste) {
 
         if (typeContainer.includes("Composteur et lombricomposteur")) {
             displayOverlay( //appel de la fonction qui va afficher l'overlay
+
                 foundWaste.name_waste, // Affichage du mot exacte trouvé dans le tableau
+
                 "(en petits morceaux et/ou humidifiés pour nos amis les vers)",
                 "✅ Convient au composteur et lombricomposteur",
                 "compost-coeur.webp"
@@ -291,7 +310,6 @@ const addNoteButton = document.querySelector('#addNoteButton');
 // les notes sont récupérées dans le localStorage
 noteList.innerHTML = localStorage.getItem('listItems') || '';
 
-
 // Ajouter un nouvel élément
 function writteMemo() {
 
@@ -299,16 +317,24 @@ function writteMemo() {
 
     if (item) {
         const listItem = document.createElement('li');
-        listItem.innerHTML = DOMPurify.sanitize(`
-            <button class="deleteTask">❌</button>
-            <span class="item">${item}</span>
-        `);
+        const deleteButton = document.createElement('button');
+
+        deleteButton.textContent = '❌';
+        deleteButton.classList.add('deleteTask');
+
+        const span = document.createElement('span');
+        span.textContent = item;
+        span.classList.add('item');
+
+        // Elements assemblés et envoyés dans le DOM
+        listItem.appendChild(deleteButton);
+        listItem.appendChild(span);
         noteList.appendChild(listItem);
 
-        // Mettre à jour le localStorage
+        // Mise à jour du localStorage
         localStorage.setItem('listItems', noteList.innerHTML);
 
-        // Réinitialiser le champ d'entrée
+        // Reset champ texte
         noteInput.value = '';
     };
 };
