@@ -248,6 +248,7 @@ function resultOfSearch(searchedWaste) {
         return;
     }
     
+    // Variable contenant le mot entré ajusté
     let adjustedWaste = adjustWrittingWord(searchedWaste);
 
     // Si une correction est trouvée, on l'utilise
